@@ -54,7 +54,7 @@ const Students = () => {
         userInfo?.deposit < amount ?  toast({
             variant: "destructive",
             description: "You have an insufficient amount in your deposit",
-            title: "You cant but this package",
+            title: "You cant buy this package",
         })
        
         : toast({
