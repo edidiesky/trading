@@ -132,8 +132,7 @@ export const transactionSlice = createSlice({
     builder.addCase(GetSingleTransaction.fulfilled, (state, action) => {
       state.transactionisSuccess = true
       state.transactionisLoading = false
-      state.isBookMarked = action.payload.userIdIncludedInBookmarksArray
-      // state.transactionDetails = action.payload.transactionDetails
+      state.transactionDetails = action.payload
     })
     builder.addCase(GetSingleTransaction.rejected, (state, action) => {
       state.transactionisSuccess = false

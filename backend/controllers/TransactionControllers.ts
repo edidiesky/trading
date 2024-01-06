@@ -12,7 +12,7 @@ interface CustomInterface extends ExpressRequest {
 //PRIVATE/ADMIN
 const GetTransactionById = asyncHandler(async (req: CustomInterface, res: Response) => {
   // 
-  const transaction = await Transaction.find({ user: req?.user?.userId })
+  const transaction = await Transaction.findOne({ _id: req.params.id })
   .populate('user', 'fullname username email country')
   res.status(200).json({ transaction })
 }

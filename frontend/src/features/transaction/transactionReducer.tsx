@@ -157,11 +157,11 @@ export const DeleteTransactions = createAsyncThunk<
 export const GetSingleTransaction = createAsyncThunk<BookMarkATweetPayload, { Detailsdata?: string }, {
   rejectValue: KnownError,
 }>(
-  "GetSingleTweetTransaction",
+  "GetSingleTransaction",
   async ({ Detailsdata }, { rejectWithValue, getState }) => {
 
     try {
-      const { auth } = getState() as { auth: { TweetInfo: { _id: String }, token: string } };
+      const { auth } = getState() as { auth: { userInfo: { _id: String }, token: string } };
 
       const config = {
         headers: {
@@ -169,13 +169,10 @@ export const GetSingleTransaction = createAsyncThunk<BookMarkATweetPayload, { De
         },
       };
       const response = await axios.get(
-        `${import.meta.env.VITE_API_BASE_URLS}/tweet/${Detailsdata}`,
+        `${import.meta.env.VITE_API_BASE_URLS}/transaction/${Detailsdata}`,
         config
       );
-      return {
-        tweetDetails: response.data.tweet,
-        userIdIncludedInBookmarksArray: response.data.userIdIncludedInBookmarksArray
-      };
+      return response.data.transaction
 
     } catch (err: any) {
       const message = err.response && err.response.data.message

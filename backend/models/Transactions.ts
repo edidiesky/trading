@@ -40,11 +40,13 @@ const transactionSchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ['failed', 'pending', 'success'],
-      default: 'pending'
     },
     profit: {
       type: Number,
+      default: 0
+    },
+    proof_image: {
+      type: String,
       default: 0
     }
   },

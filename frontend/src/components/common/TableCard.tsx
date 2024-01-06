@@ -12,7 +12,7 @@ type TableCardProps = {
 const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
     let createddate = moment(x?.paidAt).format("MMMM Do YYYY");
     const navigate = useNavigate();
-    if (type ==='transactions') {
+    if (type === 'transactions') {
         return (
             <>
                 {/* <Delete /> */}
@@ -24,7 +24,7 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                         <span className="fs-12 text-grey">{x?.user?.fullname}</span>
                     </td>
                     <td>
-                        <span className="fs-12 text-grey">{x?.paymentMethod}</span>
+                        <span className="fs-12 tex  t-grey">{x?.paymentMethod}</span>
                     </td>
                     <td>
                         <span className="fs-12 text-grey">{x?.paymentMethod}</span>
@@ -40,6 +40,12 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                         <span className="text-grey fs-12 text-light">04 Feb 2024</span>
 
                     </td>
+
+                    <td>
+                        <Link to={`/account/dashboard/Manage_Transaction/${x?._id}`} className="icons flex hover:shadow-sm hover:bg-white items-center justify-center">
+                            <MdEdit />
+                        </Link>
+                    </td>
                 </tr>
             </>
         );
@@ -49,7 +55,7 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
             {/* <Delete /> */}
             <tr key={x?._id}>
                 <td>
-                   <span className="fs-12 text-grey">{x?.plan}</span>
+                    <span className="fs-12 text-grey">{x?.plan}</span>
                 </td>
                 <td>
                     <span className="text-grey fs-12">$ {x?.price}</span>

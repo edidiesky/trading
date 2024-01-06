@@ -16,7 +16,8 @@ import {
   Support,
   Deposit,
   Payment,
-  ManageTransactions
+  ManageTransactions,
+  TransactionList
 } from "./screens";
 import ProtectRoute from "./utils/ProtectRoute";
 import LazyLoader from "./components/loaders/Lazy";
@@ -53,8 +54,13 @@ export default function App() {
             </ProtectRoute>
           } />
           {/* admin */}
-
-          <Route path={'Manage_Transaction'} element={
+          {/* TransactionList */}
+          <Route path={'TransactionList'} element={
+            <ProtectRoute>
+              <TransactionList />
+            </ProtectRoute>
+          } />
+          <Route path={'Manage_Transaction/:id'} element={
             <ProtectRoute>
               <ManageTransactions />
             </ProtectRoute>

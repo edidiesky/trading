@@ -120,7 +120,7 @@
   --orange-1: #b4690e;
   --green-1: #1e6055;
   --green-2: #19a38c;
-  --shadow: 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow: 0 2px 4px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.16);
 }
 
 body {
@@ -179,7 +179,7 @@ h2 {
   transition: all 0.3s ease;
   z-index: 300;
   text-align: center;
-  padding: 2rem 4rem;
+  padding: 2rem 3rem;
   background-color: var(--dark-1);
   color: #fff;
   opacity: 0.9;
@@ -195,7 +195,7 @@ h2 {
 }
 .btn.btn-2 {
   background-color: #a435f0;
-  padding: 1.5rem 4rem;
+  padding: 1.5rem 3rem;
 }
 
 .icon {
@@ -233,9 +233,9 @@ button {
   font-family: inherit;
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 1);
-  padding:1.7rem 2rem;
-  font-size:17px;
-  font-weight: 400;
+  padding:1.5rem 2rem;
+  font-size:1.6rem;
+  font-weight: 600;
   color: var(--dark-1);
 }
 

@@ -14,7 +14,7 @@ import Support from './dashboard/Support'
 import Deposit from './dashboard/Deposit'
 import Payment from './dashboard/Payment'
 import ManageTransactions from './dashboard/admin/ManageTransactions'
-
+import TransactionList from './dashboard/admin/TransactionList'
 
 import LayoutIndex from './Layout'
 import DashboardLayout from './DashboardLayout'
@@ -33,5 +33,6 @@ export {
     Support,
     Deposit,
     Payment,
-    ManageTransactions
+    ManageTransactions,
+    TransactionList
 }

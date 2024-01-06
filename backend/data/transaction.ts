@@ -18,7 +18,8 @@ const transactionData = [
         isPaid: false,
         paidAt: '14/01/2024',
         status: 'success',
-        profit: '10000'
+        profit: '10000',
+        proof_image:"/images/proof_2.png"
     },
     // Micheal
     {
@@ -34,8 +35,9 @@ const transactionData = [
         paymentMethod: 'Bitcoin',
         isPaid: false,
         paidAt: '17/04/2024',
-        status: 'success',
-        profit: '10000'
+        status: 'failed',
+        profit: '10000',
+        proof_image:""
     },
     // 1
     {
@@ -49,10 +51,12 @@ const transactionData = [
             rate: '1000%',
         },
         paymentMethod: 'Bitcoin',
-        isPaid: false,
+        isPaid: true,
         paidAt: '16th Janauary 2024',
         status: 'success',
-        profit: '10000'
+        profit: '10000',
+        proof_image: "/images/proof_2.png"
+
     },
     {
         user: '659805212c813582b35e5d85',
@@ -68,7 +72,8 @@ const transactionData = [
         isPaid: true,
         paidAt: '17/04/2024',
         status: 'success',
-        profit: '10000'
+        profit: '10000',
+        proof_image:""
     },
     // Micheal
     {
@@ -84,8 +89,9 @@ const transactionData = [
         paymentMethod: 'Bitcoin',
         isPaid: false,
         paidAt: '17/04/2024',
-        status: 'success',
-        profit: '10000'
+        status: 'failed',
+        profit: '10000',
+        proof_image:""
     },
 ]
 

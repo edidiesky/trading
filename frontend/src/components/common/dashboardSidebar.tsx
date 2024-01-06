@@ -52,7 +52,7 @@ const AdminSidebarData = [
     {
         icon: <IoBriefcase />,
         title: "Manage Transaction",
-        path: "Manage_Transaction",
+        path: "TransactionList",
     }, 
 
     {
