@@ -84,6 +84,48 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
             </>
         );
     }
+    if (type === 'customerlist') {
+        return (
+            <>
+                {/* <Delete /> */}
+                <tr key={x?._id}>
+                    <td>
+                        <span className="text-grey fs-12">{x?._id}</span>
+                    </td>
+                    <td>
+                        <div className="flex flex-col">
+                            <span className="fs-14 text-dark text-bold">{x?.fullname}</span>
+                            <span className="fs-12 text-grey">{x?.email}</span>
+                        </div>
+                    </td>
+                    <td>
+                        <span className="fs-12 tex  text-grey">{x?.phone}</span>
+                    </td>
+                    <td>
+                        <span className="text-grey fs-12">{x?.country ? x?.country:'-'}</span>
+                    </td>
+                    <td>
+                        <span className="fs-12 text-grey">
+                            {x?.isAdmin === true ?
+                                <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold true"> Admin</span>
+                                : <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold true"> Customer</span>
+                            }
+                        </span>
+                    </td>
+                    
+                    <td>
+                        <span className="text-grey fs-12 text-light">04 Feb 2024</span>
+
+                    </td>
+                    <td>
+                        <Link to={`/account/dashboard/Manage_Customers/${x?._id}`} className="icons flex hover:shadow-sm hover:bg-white items-center justify-center">
+                            <MdEdit />
+                        </Link>
+                    </td>
+                </tr>
+            </>
+        );
+    }
     return (
         <>
             {/* <Delete /> */}

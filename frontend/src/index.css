@@ -177,7 +177,7 @@ h2 {
   outline: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  z-index: 300;
+  z-index: 10;
   text-align: center;
   padding: 2rem 3rem;
   background-color: var(--dark-1);

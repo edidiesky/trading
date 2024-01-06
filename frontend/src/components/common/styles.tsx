@@ -92,7 +92,7 @@ export const Table = styled.div`
          
             .tablespan {
               padding: 1rem 1.4rem;
-              border-radius: 40px;
+              border-radius: 2px;
               color: #333;
               text-align: center;
               &.true {
