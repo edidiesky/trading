@@ -7,6 +7,7 @@ import { FaCoins } from "react-icons/fa";
 import { SlSupport } from "react-icons/sl";
 import { FaHouse } from "react-icons/fa6";
 import { IoBriefcase } from "react-icons/io5";
+import { useAppSelector } from "@/hooks/reduxtoolkit";
 export const sidebarData = [
     {
         icon: <FaHouse />,
@@ -41,13 +42,15 @@ type sidebarProps = {
     active?: boolean
 }
 const DashboardSidebar: React.FC<sidebarProps> = ({ active }) => {
+    const { userInfo } = useAppSelector(store => store.auth)
+
     return (
 
         <HeaderStyles className={`w-100 flex column gap-2`}>
             <div className="100 Header_wrapper flex item-center column justify-space gap-2">
                 <h4 
-                className ="fs-16 w-90 auto text-start text-light text-white">
-                    Caleb Jonas</h4>
+                className ="fs-16 w-100 auto text-start text-bold text-dark">
+                    {userInfo?.fullname}</h4>
                 <ul className="flex column w-100">
                     {sidebarData.map((x) => {
                         return (
@@ -80,7 +83,10 @@ export const HeaderStyles = styled.div`
     left:0;
     height:100%;
     bottom:0;
-   
+   h4 {
+     padding: 10px 40px;
+     border-bottom: 1px solid rgba(0,0,0,.1);
+   }
 
      a {
         padding: 20px 40px;

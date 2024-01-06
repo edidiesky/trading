@@ -7,6 +7,7 @@ import { HiOutlineMailOpen } from "react-icons/hi";
 import { SlSupport } from "react-icons/sl";
 import { FaHouse, FaGift } from "react-icons/fa6";
 import { IoBriefcase } from "react-icons/io5";
+import { useAppSelector } from '@/hooks/reduxtoolkit';
 export const sidebarData = [
     {
         icon: <FaHouse />,
@@ -60,6 +61,8 @@ export const sidebarData = [
     },
 ];
 const Courses = () => {
+    const { userInfo } = useAppSelector(store => store.auth)
+
     React.useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }, []);
@@ -117,7 +120,7 @@ const Courses = () => {
             <div style={{ width: "95%" }} className="auto py-4 flex column gap-4">
                 <div className="flex column gap-1">
                     <h2 className="fs-45 text-dark">
-                        Welcome, VicJon!
+                        Welcome, {userInfo?.username}!
                     </h2>
                     <span className="fs-16 w-50 text-light text-grey2">
                         Welcome to MetaCore Point
