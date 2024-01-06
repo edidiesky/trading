@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { styled } from 'styled-components';
-import { IoPerson } from "react-icons/io5";
+import { useToast } from "@/components/ui/use-toast"
+import { ToastAction } from "@/components/ui/toast"
 import { FaPhoneAlt, FaKey } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { MdOutlineMailOutline } from "react-icons/md";
 import { useAppDispatch, useAppSelector } from "@/hooks/reduxtoolkit";
+import LoaderIndex from "@/components/loaders";
+import { loginUser } from "@/features/auth/authReducer";
 
 type InputData = {
     id: number;
@@ -16,12 +19,15 @@ type InputData = {
 };
 
 const Register: React.FC = () => {
+    const navigate = useNavigate()
+
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
 
-    const { loginisLoading, loginisSuccess,
-
+    const {
+        loginisLoading,
+        loginisSuccess,
         alertText,
         showAlert,
         alertType,
@@ -29,8 +35,32 @@ const Register: React.FC = () => {
 
     const dispatch = useAppDispatch()
 
+    const { toast } = useToast()
+
+    useEffect(() => {
+        if (loginisSuccess) {
+            toast({
+                variant: "success",
+                description: 'Login Succesfully, Redirection soon!',
+            })
+            const timeout = setTimeout(() => {
+                navigate('/account/dashboard')
+            }, 3000);
+
+            return () => clearTimeout(timeout)
+        }
+    }, [loginisSuccess])
+
+    const handleLoginUser = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        dispatch(loginUser({ email, password }))
+    }
+
     return (
-        <HomeStyles className='flex column'>
+        <HomeStyles className='flex column '>
+            {
+                loginisLoading && <LoaderIndex />
+            }
             <div className="login_wrapper">
                 <div className="w-90 auto flex item-center justify-center">
                     <div className="login_form_wrapper flex column item-start gap-4">
@@ -43,8 +73,11 @@ const Register: React.FC = () => {
                                 </h4>
                             </div>
 
+                           
+                        </div>
+                        <form onSubmit={(e) => handleLoginUser(e)} className="flex w-100 column gap-4">
                             <div className="w-100 flex column gap-2">
-                              
+
                                 {/* email */}
                                 <label htmlFor="" className="fs-14 flex column gap-1 text-bold text-grey2">
                                     <span>Email</span>
@@ -53,10 +86,10 @@ const Register: React.FC = () => {
                                         <input
                                             className="w-100 text-light fs-16"
                                             required={true}
-                                            value={name}
+                                            value={email}
                                             type="email"
                                             placeholder="name@example.com"
-                                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)} >
+                                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)} >
                                         </input>
                                     </div>
 
@@ -69,20 +102,23 @@ const Register: React.FC = () => {
                                         <input
                                             className="w-100 text-light fs-16"
                                             required={true}
-                                            value={name}
+                                            value={password}
                                             type="password"
                                             placeholder="Enter Your Password"
-                                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)} >
+                                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)} >
                                         </input>
                                     </div>
 
 
                                 </label>
                             </div>
-                        </div>
-                        <button className="w-100 text-center gap-2 btn btn-2 fs-16 text-bold">
-                            Login
-                        </button>
+                            <button
+                                disabled={!password || !email} 
+                                type="submit"
+                            className="w-100 text-center gap-2 btn btn-2 fs-16 text-bold">
+                                Login
+                            </button>
+                        </form>
                         <div className="auth_bottom w-100 flex item-center justify-center">
                             <span style={{ gap: "4px" }} className="fs-16 text-light flex item-center justify-center text-grey">
                                 Already have an account?
@@ -126,6 +162,11 @@ const HomeStyles = styled.div`
       }
     }
   }
+  .btn:disabled {
+      cursor: not-allowed;
+      opacity: .6;
+
+    }
 `
 
 export default Register

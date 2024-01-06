@@ -27,25 +27,19 @@ export default function App() {
       <Routes>
         <Route path={"/"} element={<LayoutIndex />}>
           <Route index element={<Suspense fallback={<LazyLoader />}>
-            <ProtectRoute>
-              <Home />
-            </ProtectRoute>
+            <Home />
           </Suspense>
           }
           />
           {/* login */}
           <Route path={'login/'} element={<Suspense fallback={<LazyLoader />}>
-            <ProtectRoute>
-              <Login />
-            </ProtectRoute>
+            <Login />
           </Suspense>
           }
           />
           {/* login */}
           <Route path={'register/'} element={<Suspense fallback={<LazyLoader />}>
-            <ProtectRoute>
-              <Register />
-            </ProtectRoute>
+            <Register />
           </Suspense>
           }
           />

@@ -236,6 +236,7 @@ button {
   padding:1.7rem 2rem;
   font-size:17px;
   font-weight: 400;
+  color: var(--dark-1);
 }
 
 .text-grey {
