@@ -1,6 +1,8 @@
 import express from "express";
+import jwt, { Secret } from "jsonwebtoken";
+import cors from "cors";
+import bcrypt from 'bcryptjs'
 import dotenv from "dotenv";
-
 dotenv.config();
 
 const app = express();
@@ -11,13 +13,25 @@ import mongoose from "mongoose";
 // middlewares
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-
+app.use(
+  cors({
+    origin: process.env.WEB_ORIGIN,
+    methods: ["POST", "GET", "DELETE", "PUT"],
+    credentials: true,
+  })
+);
 
 // routes
 import userRoute from "./routes/userRoute";
 import authRoute from "./routes/authRoute";
+import transaction from "./routes/transactionRoute";
+import investment from "./routes/InvestmentRoute";
+
+
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/auth", authRoute);
+app.use("/api/v1/transaction", transaction);
+app.use("/api/v1/investment", investment);
 
 
 const mongoUrl = process.env.MONGO_URL;

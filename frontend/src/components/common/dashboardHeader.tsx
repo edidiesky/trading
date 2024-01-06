@@ -5,9 +5,10 @@ import { BsCart3 } from "react-icons/bs";
 import Image from "./Image";
 import Rating from "./Rating";
 import { Link } from "react-router-dom";
+import { useAppSelector } from "@/hooks/reduxtoolkit";
 
 const DashboardHeader = () => {
-    let userInfo = true
+    const { userInfo } = useAppSelector(store => store.auth)
     return (
 
         <HeaderStyles className="w-100 flex item-center justify-center column gap-2">
@@ -15,13 +16,13 @@ const DashboardHeader = () => {
                 <div className="flex item-center gap-4">
                     <h4 className="fs-20 family1 text-white">Meta Core Point</h4>
                     <div className="flex item-center gap-2">
-                        <Link to={'/account/dashboard/deposit'} className="btn fs-12">Fund Your Account</Link>
-                        <button className="btn btn-2 fs-12">Withdraw funds</button>
+                        <Link to={'/account/dashboard/deposit'} className="btn fs-12 text-bold">Fund Your Account</Link>
+                        <button className="btn btn-2 fs-12 text-bold">Withdraw funds</button>
                     </div>
                 </div>
                 <div className="flex item-center gap-2">
                     <div className="flex item-center profile_wrapper relative gap-4">
-                        <div className="profile_avatar flex item-center justify-center fs-16 text-extra-bold text-white">E</div>
+                        <div className="profile_avatar flex item-center justify-center fs-16 text-extra-bold text-white">{userInfo?.username[0]}</div>
                         <div className="profile_dropdown absolute">
                             <div className="w-100 flex column gap-2">
                                 <div className="flex profile_dropdown_bottom column w-100">
@@ -58,8 +59,8 @@ export const HeaderStyles = styled.div`
         cursor:pointer;
     }
     .profile_avatar {
-        width:35px;
-        height:35px;
+        width:45px;
+        height:45px;
         border-radius:50%;
         background:#2D2F31;
     }

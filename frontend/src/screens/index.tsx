@@ -13,6 +13,7 @@ import History from './dashboard/History'
 import Support from './dashboard/Support'
 import Deposit from './dashboard/Deposit'
 import Payment from './dashboard/Payment'
+import ManageTransactions from './dashboard/admin/ManageTransactions'
 
 
 import LayoutIndex from './Layout'
@@ -31,5 +32,6 @@ export {
     History,
     Support,
     Deposit,
-    Payment
+    Payment,
+    ManageTransactions
 }

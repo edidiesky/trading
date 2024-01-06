@@ -12,7 +12,8 @@ interface CustomInterface extends ExpressRequest {
 //PRIVATE/ADMIN
 const GetTransactionById = asyncHandler(async (req: CustomInterface, res: Response) => {
   // 
-  const transaction = await Transaction.find({ user: req?.user?.userId }).populate('user', 'firstname email country')
+  const transaction = await Transaction.find({ user: req?.user?.userId })
+  .populate('user', 'fullname username email country')
   res.status(200).json({ transaction })
 }
 )
@@ -59,7 +60,7 @@ const DeleteTransaction = asyncHandler(async (req: CustomInterface, res: Respons
 // PRIVATE/ADMIN
 const GetAllTransaction = asyncHandler(async (req: CustomInterface, res: Response) => {
   // 
-  const transaction = await Transaction.find({}).populate('user', 'firstname email country')
+  const transaction = await Transaction.find({}).populate('user', 'fullname username email country')
   res.status(200).json({ transaction })
 }
 )

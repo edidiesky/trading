@@ -15,7 +15,8 @@ import {
   History,
   Support,
   Deposit,
-  Payment
+  Payment,
+  ManageTransactions
 } from "./screens";
 import ProtectRoute from "./utils/ProtectRoute";
 import LazyLoader from "./components/loaders/Lazy";
@@ -51,7 +52,13 @@ export default function App() {
               <Courses />
             </ProtectRoute>
           } />
+          {/* admin */}
 
+          <Route path={'Manage_Transaction'} element={
+            <ProtectRoute>
+              <ManageTransactions />
+            </ProtectRoute>
+          } />
           <Route path={'tradinghistory'} element={
             <ProtectRoute>
               <Messages />

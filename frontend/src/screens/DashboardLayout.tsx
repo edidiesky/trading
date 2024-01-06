@@ -30,6 +30,9 @@ const LayoutWrapper = styled.div`
         min-width: 280px;
 
         transition: all .3s;
+        @media (max-width:780px) {
+          display: none;
+        }
         &.active {
         min-width: 280px;
 

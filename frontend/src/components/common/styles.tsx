@@ -43,8 +43,6 @@ export const Table = styled.div`
           background: #f7f7f7;
           text-align: start;
           transition: all 0.3s var(--transition-2);
-    font-family: "Sussie", sans-serif;
-
 
           &:hover {
             background: rgb(0 0 0 / 13%);
@@ -68,22 +66,24 @@ export const Table = styled.div`
         tr {
           transition: all 0.5s var(--transition-2);
           z-index: 200;
+            margin-bottom: 1rem;
+
 
           &:hover {
             background: #2364c41f;
             td {
               color: var(--blue-3);
+
             }
           }
           td {
-            font-size: 1.4rem;
+            font-size: 1.7rem;
             font-weight: 500;
             text-align: start;
             padding: 2rem 1.8rem;
-
-            color: var(--dark-1);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-              font-family: "Sussie", sans-serif;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+              /* font-family: "Sussie", sans-serif; */
 
 
             .true {

@@ -8,7 +8,7 @@ import { SlSupport } from "react-icons/sl";
 import { FaHouse } from "react-icons/fa6";
 import { IoBriefcase } from "react-icons/io5";
 import { useAppSelector } from "@/hooks/reduxtoolkit";
-export const sidebarData = [
+ const sidebarData = [
     {
         icon: <FaHouse />,
         title: "Dashboard",
@@ -38,6 +38,39 @@ export const sidebarData = [
         path: "support",
     },
 ];
+const AdminSidebarData = [
+    {
+        icon: <FaHouse />,
+        title: "Dashboard",
+        path: "",
+    },
+    {
+        icon: <IoMdStats />,
+        title: "Manage Profit",
+        path: "Manage_Profit",
+    },
+    {
+        icon: <IoBriefcase />,
+        title: "Manage Transaction",
+        path: "Manage_Transaction",
+    }, 
+
+    {
+        icon: <IoBriefcase />,
+        title: "Manage Customers",
+        path: "Manage_Customers",
+    }, 
+    {
+        icon: <FaCoins />,
+        title: "Invest",
+        path: "students",
+    },
+    {
+        icon: <SlSupport />,
+        title: "Help/Support ",
+        path: "support",
+    },
+];
 type sidebarProps = {
     active?: boolean
 }
@@ -52,21 +85,46 @@ const DashboardSidebar: React.FC<sidebarProps> = ({ active }) => {
                 className ="fs-16 w-100 auto text-start text-bold text-dark">
                     {userInfo?.fullname}</h4>
                 <ul className="flex column w-100">
-                    {sidebarData.map((x) => {
-                        return (
-                            <NavLink
-                                className={({ isActive, isPending }) =>
-                                    isActive ? "active fs-16 text-dark text-extra-bold" : "fs-16 text-dark text-extra-bold"
-                                }
-                                to={`/account/dashboard/${x.path}`}
-                                end
-                            >
-                                {x.icon}
+                    {
+                        userInfo?.isAdmin ?<>
+                            {
+                                AdminSidebarData?.map((x) => {
+                                    return (
+                                        <NavLink
+                                            className={({ isActive, isPending }) =>
+                                                isActive ? "active fs-16 text-dark text-extra-bold" : "fs-16 text-dark text-extra-bold"
+                                            }
+                                            to={`/account/dashboard/${x.path}`}
+                                            end
+                                        >
+                                            {x.icon}
 
-                                { <span className='text-grey2'>{x.title}</span>}
-                            </NavLink>
-                        );
-                    })}
+                                            {<span className='text-grey2'>{x.title}</span>}
+                                        </NavLink>
+                                    );
+                                })
+                            } 
+                        </>: <>
+                                {
+                                    sidebarData.map((x) => {
+                                        return (
+                                            <NavLink
+                                                className={({ isActive, isPending }) =>
+                                                    isActive ? "active fs-16 text-dark text-extra-bold" : "fs-16 text-dark text-extra-bold"
+                                                }
+                                                to={`/account/dashboard/${x.path}`}
+                                                end
+                                            >
+                                                {x.icon}
+
+                                                {<span className='text-grey2'>{x.title}</span>}
+                                            </NavLink>
+                                        );
+                                    })
+                                }
+                        </>
+                    }
+                   
                 </ul>
             </div>
         </HeaderStyles>

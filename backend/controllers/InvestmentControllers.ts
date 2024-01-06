@@ -1,6 +1,6 @@
 import moment from 'moment'
 import asyncHandler from 'express-async-handler'
-import Investment from '../models/Investment.js'
+import Investment from '../models/Investment'
 import { NextFunction, Request as ExpressRequest, Response } from "express";
 interface CustomInterface extends ExpressRequest {
   user?: {
