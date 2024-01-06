@@ -91,21 +91,17 @@ export const Table = styled.div`
             }
          
             .tablespan {
-              display: block;
               padding: 1rem 1.4rem;
-              font-size: 1.3rem;
-              font-weight: 600;
-              width: 100%;
-              border-radius: 4px;
+              border-radius: 40px;
               color: #333;
               text-align: center;
               &.true {
-                color: #045235;
-                background: #04523517;
+                color: #28A745;
+                background: #10e24129;
               }
               &.false {
-                color: #e50b0b;
-                background: #e50b0b12;
+                color: #840a0a;
+                background: #ff060612;
               }
             }
 

@@ -24,17 +24,27 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                         <span className="fs-12 text-grey">{x?.user?.fullname}</span>
                     </td>
                     <td>
-                        <span className="fs-12 tex  t-grey">{x?.paymentMethod}</span>
+                        <span className="fs-12 tex  text-grey">{x?.paymentMethod}</span>
                     </td>
                     <td>
-                        <span className="fs-12 text-grey">{x?.paymentMethod}</span>
+                        <span className="fs-12 text-grey">
+                            {x?.status === 'Success' ? 
+                            <span className="tablespan text-light true"> Completed</span>
+                            : <span className="tablespan text-light false"> Not completed</span>
+                            }
+                        </span>
                     </td>
                     <td>
                         <span className="text-grey fs-12">$ {x?.investment?.price}</span>
                     </td>
 
                     <td>
-                        <span className="text-grey fs-12 text-light">Type 1</span>
+                        <span className="text-grey fs-12 text-light">
+                            {x?.isPaid === true ?
+                                <span className="tablespan text-light true">Paid</span>
+                                : <span className="tablespan text-light false">Not Paid</span>
+                            }
+                        </span>
                     </td>
                     <td>
                         <span className="text-grey fs-12 text-light">04 Feb 2024</span>

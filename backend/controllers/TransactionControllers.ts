@@ -38,7 +38,7 @@ const AdminUpdateTransaction = asyncHandler(async (req: CustomInterface, res: Re
   // update the transaction
   const updatedTransaction = await Transaction.findByIdAndUpdate({ _id: id }, req.body, { new: true })
 
-  res.status(200).json({ updatedTransaction })
+  res.status(200).json({ transaction:updatedTransaction })
 }
 )
 //PRIVATE/ADMIN

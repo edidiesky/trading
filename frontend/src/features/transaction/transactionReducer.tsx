@@ -107,11 +107,11 @@ export const UpdateTransactions = createAsyncThunk<{
         },
       };
       const response = await axios.put(
-        `${import.meta.env.VITE_API_BASE_URLS}/tweet/Details/${Detailsdata?._id}`,
+        `${import.meta.env.VITE_API_BASE_URLS}/transaction/${Detailsdata?._id}`,
         Detailsdata,
         config
       );
-      return response.data;
+      return response.data.transaction;
 
     } catch (err: any) {
       const message = err.response && err.response.data.message

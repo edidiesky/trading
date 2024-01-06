@@ -33,6 +33,10 @@ interface transactionState {
   createtransactionisSuccess?: boolean,
   createtransactionisError?: boolean,
 
+  updatetransactionisLoading?: boolean,
+  updatetransactionisSuccess?: boolean,
+  updatetransactionisError?: boolean,
+
   alertText?: any,
   showAlert?: boolean,
   alertType?: string,
@@ -62,6 +66,11 @@ const initialState: transactionState = {
   createtransactionisSuccess: false,
   createtransactionisError: false,
 
+ updatetransactionisLoading: false,
+ updatetransactionisSuccess: false,
+ updatetransactionisError: false,
+
+
 }
 
 export const transactionSlice = createSlice({
@@ -70,15 +79,9 @@ export const transactionSlice = createSlice({
   initialState,
   reducers: {
     cleartransaction: (state, action) => {
-      state.transactionDetails = null
-      state.usertransactions = []
-      state.transactionisLoading = false
-      state.isBookMarked = false
       state.transactionisSuccess = false
       state.transactionisError = false
-      state.alertText = ''
-      state.showAlert = false
-      state.alertType = ''
+      state.updatetransactionisSuccess = false
     },
   },
   extraReducers: (builder) => {
@@ -167,11 +170,11 @@ export const transactionSlice = createSlice({
     })
 
     builder.addCase(UpdateTransactions.pending, (state, action) => {
-      state.transactionisLoading = true
+      state.updatetransactionisLoading = true
     })
     builder.addCase(UpdateTransactions.fulfilled, (state, action) => {
-      state.transactionisSuccess = true
-      state.transactionisLoading = false
+      state.updatetransactionisSuccess = true
+      state.updatetransactionisLoading = false
       state.transactionDetails = action.payload
       state.alertText = 'transaction Update succesfully'
       state.showAlert = true
@@ -180,7 +183,7 @@ export const transactionSlice = createSlice({
     builder.addCase(UpdateTransactions.rejected, (state, action) => {
       state.transactionisSuccess = false
       state.transactionisError = true
-      state.transactionisLoading = false
+      state.updatetransactionisLoading = false
       state.showAlert = true
       state.alertType = 'danger'
       state.alertText = action.payload

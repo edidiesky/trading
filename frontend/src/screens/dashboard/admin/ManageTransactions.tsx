@@ -1,27 +1,43 @@
 import React, { useState } from 'react'
 import styled from "styled-components";
 import { useAppDispatch, useAppSelector } from '@/hooks/reduxtoolkit';
-import { GetSingleTransaction, getAllTransactions } from '@/features/transaction/transactionReducer';
-import { useParams } from 'react-router-dom';
+import { GetSingleTransaction, UpdateTransactions, getAllTransactions } from '@/features/transaction/transactionReducer';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useToast } from "@/components/ui/use-toast"
+import { ToastAction } from "@/components/ui/toast"
+import { cleartransaction } from '@/features/transaction/transactionSlice';
+
 
 const ManageTransactions = () => {
     // proof_image: "/images/proof_2.png"
+    const { toast } = useToast()
+    const navigate = useNavigate()
+
 
     const { id } = useParams()
     const dispatch = useAppDispatch()
     const [price, setPrice] = useState('')
     const [plan, setPlan] = useState('')
     const [tier, setTier] = useState('')
+    const [ispaid, setIsPaid] = useState('')
     const [status, setStatus] = useState('')
     const [proofimage, setProofImage] = useState('')
     const [paymentmethod, setPaymentMethod] = useState('')
-     const paymentData = [
+    const paymentData = [
         'Pending',
         'Failed',
         'Success',
     ]
 
-    const { transactionDetails } = useAppSelector(store => store.transaction)
+    const paymentStatus = [
+        'Customer Has Payed',
+        'Customer Has Not Payed',
+    ]
+
+    const {
+        transactionDetails,
+        updatetransactionisLoading,
+        updatetransactionisSuccess } = useAppSelector(store => store.transaction)
     React.useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
         dispatch(GetSingleTransaction({ Detailsdata: id }))
@@ -30,9 +46,37 @@ const ManageTransactions = () => {
             setPlan(transactionDetails?.investment?.plan)
             setTier(transactionDetails?.investment?.tier)
             setPaymentMethod(transactionDetails?.paymentMethod)
-            setProofImage(transactionDetails?.paymentMethod)
+            setProofImage(transactionDetails?.proof_image)
+            setIsPaid(transactionDetails?.isPaid)
+            setStatus(transactionDetails?.status)
         }
-    }, [id, setPrice, setPlan, setTier, setPaymentMethod, setProofImage]);
+    }, [id, setPrice, setPlan, setTier, setPaymentMethod, setProofImage, setIsPaid]);
+
+    const updatedData = {
+        isPaid: ispaid === 'Customer Has Payed' ? true : false,
+        status,
+        _id: transactionDetails?._id
+    }
+
+    const handleUpdateTransaction = () => {
+        dispatch(UpdateTransactions(updatedData))
+    }
+    // console.log(updatedData)
+
+    React.useEffect(() => {
+        if (updatetransactionisSuccess) {
+            toast({
+                variant: "success",
+                description: 'The Transaction has been successfully updated',
+            })
+
+            const timeout = setTimeout(() => {
+                dispatch(cleartransaction('any'))
+                navigate('/account/dashboard/TransactionList')
+            }, 5000);
+        }
+    }, [updatetransactionisSuccess])
+
 
     return (
         <HistorytStyles style={{ minHeight: "100vh" }} className="w-100">
@@ -43,11 +87,11 @@ const ManageTransactions = () => {
                             Manage Transactions
                         </h2>
                         <span className="fs-14 w-3/4 text-light text-grey2">
-                            Manage all the Transactions carried out by your customers
+                            Manage the payment status of your customer. Check for proof of payment in this section
                         </span>
                     </div>
                     <div className="flex items-center justify-end">
-                        <button className="btn fs-14 text-bold">Update Transaction</button>
+                        <button onClick={handleUpdateTransaction} className="btn fs-14 text-bold">Update Transaction</button>
                     </div>
                 </div>
                 <div className="w-100 trading_wrapper_bottom pt-12 flex flex-col gap-12">
@@ -59,7 +103,6 @@ const ManageTransactions = () => {
                                 name='price'
                                 type="number"
                                 placeholder='$1000'
-                                onChange={(e) => setPrice(e.target.value)}
                                 className="input w-100 text-xl text-dark" />
                         </div>
                         <div className="flex flex-col gap-1">
@@ -71,12 +114,12 @@ const ManageTransactions = () => {
                     <div className="w-100 grid grid-cols-1 sm:grid-cols-2 gap-4 ">
                         <div className="flex flex-col gap-1">
                             <h5 className="text-xl family1">Investment Tier</h5>
-                            <input 
-                            value={tier} 
-                            name='tier' 
-                            type="text" 
-                            placeholder='$1000' 
-                            className="input w-100 text-xl text-dark" />
+                            <input
+                                value={tier}
+                                name='tier'
+                                type="text"
+                                placeholder='$1000'
+                                className="input w-100 text-xl text-dark" />
                         </div>
                         <div className="flex flex-col gap-1">
                             <h5 className="text-xl family1">Payment Method</h5>
@@ -86,6 +129,18 @@ const ManageTransactions = () => {
                     <div className="w-100 grid grid-cols-1 sm:grid-cols-3 gap-4 ">
                         <div className="flex flex-col gap-1">
                             <h5 className="text-xl family1">Payment Status</h5>
+                            <select name="ispaid" value={ispaid} onChange={(e) => setIsPaid(e.target.value)} className="input font-bold text-xl">
+                                {/* <option disabled></option> */}
+                                {
+                                    paymentStatus.map((x?: any, index?: any) => {
+                                        return <option key={index} value={x}>{x}</option>
+                                    })
+                                }
+                            </select>
+                        </div>
+
+                        <div className="flex flex-col gap-1">
+                            <h5 className="text-xl family1">Transaction Status</h5>
                             <select name="status" onChange={(e) => setStatus(e.target.value)} className="input font-bold text-xl">
                                 {/* <option disabled></option> */}
                                 {

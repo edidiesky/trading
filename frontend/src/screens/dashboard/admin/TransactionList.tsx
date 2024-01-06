@@ -48,7 +48,7 @@ const TransactionList = () => {
                                                     <th>Amount</th>
                                                     <th>Investor</th>
                                                     <th>Payment Mode</th>
-                                                    <th>Status</th>
+                                                    <th>Transaction Status</th>
                                                     <th>Tier</th>
                                                     <th>payment status</th>
                                                     <th>Date Created</th>
