@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import styled from "styled-components";
 import { useAppDispatch, useAppSelector } from '@/hooks/reduxtoolkit';
-import { GetSingleTransaction, UpdateTransactions, getAllTransactions } from '@/features/transaction/transactionReducer';
+import { UpdateTransactions } from '@/features/transaction/transactionReducer';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useToast } from "@/components/ui/use-toast"
-import { ToastAction } from "@/components/ui/toast"
-import { cleartransaction } from '@/features/transaction/transactionSlice';
+import { GetUserProfile, UpdateProfile } from '@/features/auth/authReducer';
+import { clearUserProfile } from '@/features/auth/authSlice';
 
 
 const ManageCustomers = () => {
@@ -16,67 +16,73 @@ const ManageCustomers = () => {
 
     const { id } = useParams()
     const dispatch = useAppDispatch()
-    const [price, setPrice] = useState('')
-    const [plan, setPlan] = useState('')
-    const [tier, setTier] = useState('')
+    const [username, setUsername] = useState('')
+    const [fullname, setFullName] = useState('')
+    const [email, setEmail] = useState('')
     const [ispaid, setIsPaid] = useState('')
-    const [status, setStatus] = useState('')
-    const [proofimage, setProofImage] = useState('')
-    const [paymentmethod, setPaymentMethod] = useState('')
-    const paymentData = [
-        'Pending',
-        'Failed',
-        'Success',
-    ]
-
-    const paymentStatus = [
-      
-        'Customer Has Not Payed',
-        'Customer Has Payed',
-    ]
+    const [country, setCountry] = useState('')
 
     const {
-        transactionDetails,
-        updatetransactionisLoading,
-        updatetransactionisSuccess } = useAppSelector(store => store.transaction)
+        userDetails,
+        userprofileisLoading,
+        userprofileisSuccess,
+        updateuserprofileisLoading,
+        updateuserprofileisSuccess,
+        updateuserprofileisError,
+    } = useAppSelector(store => store.auth)
+
     React.useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-        dispatch(cleartransaction('any'))
-        dispatch(GetSingleTransaction({ Detailsdata: id }))
-        if (transactionDetails) {
-            setPrice(transactionDetails?.investment?.price)
-            setPlan(transactionDetails?.investment?.plan)
-            setTier(transactionDetails?.investment?.tier)
-            setPaymentMethod(transactionDetails?.paymentMethod)
-            setProofImage(transactionDetails?.proof_image)
-            setIsPaid(transactionDetails?.isPaid)
-            setStatus(transactionDetails?.status)
+        dispatch(clearUserProfile('any'))
+        dispatch(GetUserProfile({ profileId: id }))
+    }, [id]);
+
+    React.useEffect(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        if (userDetails) {
+            setUsername(userDetails?.username)
+            setFullName(userDetails?.fullname)
+            setEmail(userDetails?.email)
+            setCountry(userDetails?.country)
         }
-    }, [id, setPrice, setPlan, setTier, setPaymentMethod, setProofImage, setIsPaid]);
+    }, [userDetails, setUsername, setFullName, setEmail, setCountry]);
 
     const updatedData = {
-        isPaid: ispaid === 'Customer Has Payed' ? true : false,
-        _id: transactionDetails?._id
+        username,
+        fullname,
+        email,
+        country,
+        _id: userDetails?._id
     }
 
     const handleUpdateTransaction = () => {
-        dispatch(UpdateTransactions(updatedData))
+        dispatch(UpdateProfile(updatedData))
     }
-    console.log(updatedData)
+    // console.log(updatedData)
 
     React.useEffect(() => {
-        if (updatetransactionisSuccess) {
+        if (updateuserprofileisSuccess) {
             toast({
                 variant: "success",
-                description: 'The Transaction has been successfully updated',
+                description: 'User Porfile has been succesfully updated',
             })
-
             const timeout = setTimeout(() => {
-                dispatch(cleartransaction('any'))
-                navigate('/account/dashboard/TransactionList')
+                dispatch(clearUserProfile('any'))
+                navigate('/account/dashboard/Manage_Customers')
             }, 5000);
         }
-    }, [updatetransactionisSuccess])
+        if (userprofileisSuccess) {
+            toast({
+                variant: "success",
+                description: 'Users has been succesfully fetched',
+            })
+
+            // const timeout = setTimeout(() => {
+            //     dispatch(cleartransaction('any'))
+            //     navigate('/account/dashboard/TransactionList')
+            // }, 5000);
+        }
+    }, [userprofileisSuccess, updateuserprofileisSuccess])
 
 
     return (
@@ -85,82 +91,60 @@ const ManageCustomers = () => {
                 <div className="flex w-full trading_wrapper_top  items-start md:items-center md:flex-row flex-col gap-4 justify-between">
                     <div className="flex column gap-1">
                         <h2 className="text-4xl text-dark">
-                            Manage Transactions
+                            Manage Customer Details
                         </h2>
                         <span className="fs-14 w-3/4 text-light text-grey2">
                             Manage the payment status of your customer. Check for proof of payment in this section
                         </span>
                     </div>
                     <div className="flex items-center justify-end">
-                        <button onClick={handleUpdateTransaction} className="btn fs-14 text-bold">Update Transaction</button>
+                        <button onClick={handleUpdateTransaction} className="btn fs-14 text-bold">Update</button>
                     </div>
                 </div>
                 <div className="w-100 trading_wrapper_bottom pt-12 flex flex-col gap-12">
                     <div className="w-100 grid grid-cols-1 sm:grid-cols-2 gap-4 ">
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1">Investment Price ($)</h5>
+                            <h5 className="text-xl family1">UserName</h5>
                             <input
-                                value={price}
-                                name='price'
-                                type="number"
-                                placeholder='$1000'
-                                onChange={(e) => setPrice(e.target.value)}
+                                value={username}
+                                name='username'
+                                type="text"
+                                placeholder='Customers Usrename'
+                                onChange={(e) => setUsername(e.target.value)}
                                 className="input w-100 text-xl text-dark" />
                         </div>
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1">Investment Plan</h5>
-                            <input type="text" name='plan' onChange={(e) => setPlan(e.target.value)} value={plan} placeholder='$1000' className="input w-100 text-xl text-dark" />
+                            <h5 className="text-xl family1">Customer FullName</h5>
+                            <input type="text"
+                                name='fullname'
+                                onChange={(e) => setFullName(e.target.value)}
+                                value={fullname} placeholder='Customer FullName'
+                                className="input w-100 text-xl text-dark" />
                         </div>
                     </div>
 
                     <div className="w-100 grid grid-cols-1 sm:grid-cols-2 gap-4 ">
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1">Investment Tier</h5>
+                            <h5 className="text-xl family1">Email</h5>
                             <input
-                                value={tier}
-                                name='tier'
+                                value={email}
+                                name='email'
                                 type="text"
+                                onChange={(e) => setEmail(e.target.value)}
                                 placeholder='$1000'
                                 className="input w-100 text-xl text-dark" />
                         </div>
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1">Payment Method</h5>
-                            <input type="text" value={paymentmethod} placeholder='$1000' className="input w-100 text-xl text-dark" />
-                        </div>
-                    </div>
-                    <div className="w-100 grid grid-cols-1 sm:grid-cols-3 gap-4 ">
-                        <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1">Transaction Status</h5>
-                            <select name="ispaid" defaultValue={ispaid} value={ispaid} onChange={(e) => setIsPaid(e.target.value)} className="input font-bold text-xl">
-                                {/* <option disabled></option> */}
-                                {
-                                    paymentStatus.map((x?: any, index?: any) => {
-                                        return <option key={index} value={x}>{x}</option>
-                                    })
-                                }
-                            </select>
-                        </div>
-                    </div>
-                    {/* payment proff */}
-                    {
-                        proofimage === '' ?
-                            <div className="w-full proof_image_wrapper pt-8 flex flex-col gap-2">
-                                <div className="proof_image_wrapper min-h-[40rem] rounded-sm flex flex-col gap-6 items-center justify-center py-8 px-4 bg-[#F8F9FB]">
-                                    <img src="https://s.udemycdn.com/browse_components/flyout/empty-shopping-cart-v2.jpg" alt="" style={{ width: '250px' }} />
-                                    <div className="flex column item-center gap-1">
-                                        <h4 className="fs-16 text-bold text-dark">No proof of payment has been shown for this transaction</h4>
-                                    </div>
-                                </div>
-                               
-                        </div>
-                            : <div className="w-full pt-8 flex flex-col gap-2">
-                                <h5 className="text-xl family1">Payment Proof</h5>
-                                <div className="proof_image_wrapper min-h-[40rem] rounded-sm flex items-center justify-center py-8 px-4 bg-[#F8F9FB]">
-                                    <img src={proofimage} alt="" className="w-[100%] md:w-[60%]" />
-                                </div>
-                            </div>
-                    }
+                            <h5 className="text-xl family1">Country</h5>
+                            <input
+                                type="text"
+                                value={country}
+                                onChange={(e) => setCountry(e.target.value)}
 
+                                placeholder='Country'
+                                className="input w-100 text-xl text-dark" />
+                        </div>
+                    </div>
 
                 </div>
             </div>

@@ -77,11 +77,11 @@ export const UpdateProfile = createAsyncThunk<{
         },
       };
       const response = await axios.put(
-        `/api/v1/user/profile/${profiledata?._id}`,
+        `/api/v1/user/${profiledata?._id}`,
         profiledata,
         config
       );
-      return response.data;
+      return response.data.updatedUser;
 
     } catch (err: any) {
       const message = err.response && err.response.data.message
@@ -97,9 +97,9 @@ export const UpdateProfile = createAsyncThunk<{
 // Getuser profile
 export const GetUserProfile = createAsyncThunk<{
   rejectValue: KnownError,
-}, {name?:any}>(
+}, { profileId?:any}>(
   "GetProfile",
-  async (profiledata, { rejectWithValue, getState }) => {
+  async ({profileId}, { rejectWithValue, getState }) => {
 
     try {
       const { auth } = getState() as { auth: { userInfo: { _id: String }, token: string } };
@@ -110,7 +110,7 @@ export const GetUserProfile = createAsyncThunk<{
         },
       };
       const response = await axios.get(
-        `/api/v1/user/profile/${profiledata}`,
+        `/api/v1/user/${profileId}`,
         config
       );
       return response.data.user;

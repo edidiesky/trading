@@ -11,20 +11,25 @@ interface authState {
   userDetails?: any,
   users?:any,
   token?: string,
-  registerisLoading?: Boolean,
-  registerisSuccess?: Boolean,
-  registerisError?: Boolean,
+  registerisLoading?: boolean,
+  registerisSuccess?: boolean,
+  registerisError?: boolean,
 
-  loginisLoading?: Boolean,
-  loginisSuccess?: Boolean,
-  loginisError?: Boolean,
+  loginisLoading?: boolean,
+  loginisSuccess?: boolean,
+  loginisError?: boolean,
 
-  userprofileisLoading?: Boolean,
-  userprofileisSuccess?: Boolean,
-  userprofileisError?: Boolean,
+  userprofileisLoading?: boolean,
+  userprofileisSuccess?: boolean,
+  userprofileisError?: boolean,
+
+
+  updateuserprofileisLoading?: boolean,
+  updateuserprofileisSuccess?: boolean,
+  updateuserprofileisError?: boolean,
 
   alertText?: any,
-  showAlert?: Boolean,
+  showAlert?: boolean,
   alertType?: string,
 
 
@@ -53,6 +58,11 @@ const initialState: authState = {
   alertText: '',
   showAlert: false,
   alertType: '',
+
+  updateuserprofileisLoading:false,
+  updateuserprofileisSuccess:false,
+  updateuserprofileisError:false,
+
 
 }
 
@@ -105,19 +115,19 @@ export const authSlice = createSlice({
     })
 
     builder.addCase(UpdateProfile.pending, (state, action) => {
-      state.userprofileisLoading = true
+      state.updateuserprofileisLoading = true
     })
     builder.addCase(UpdateProfile.fulfilled, (state, action) => {
-      state.userprofileisSuccess = true
-      state.userprofileisLoading = false
-      state.userInfo = action.payload
+      state.updateuserprofileisSuccess = true
+      state.updateuserprofileisLoading = false
+      state.userDetails = action.payload
       state.alertText = 'Profile Update succesfully'
       state.showAlert = true
       state.alertType = 'success'
     })
     builder.addCase(UpdateProfile.rejected, (state, action) => {
-      state.userprofileisSuccess = false
-      state.userprofileisError = true
+      state.updateuserprofileisSuccess = false
+      state.updateuserprofileisError = true
       state.userprofileisLoading = false
       state.showAlert = true
       state.alertType = 'danger'
