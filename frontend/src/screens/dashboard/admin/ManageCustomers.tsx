@@ -21,6 +21,7 @@ const ManageCustomers = () => {
     const [email, setEmail] = useState('')
     const [ispaid, setIsPaid] = useState('')
     const [country, setCountry] = useState('')
+    const [deposit, setDeposit] = useState('')
 
     const {
         userDetails,
@@ -45,8 +46,9 @@ const ManageCustomers = () => {
             setFullName(userDetails?.fullname)
             setEmail(userDetails?.email)
             setCountry(userDetails?.country)
+            setDeposit(userDetails?.deposit)
         }
-    }, [userDetails, setUsername, setFullName, setEmail, setCountry]);
+    }, [userDetails, setUsername, setFullName, setEmail, setCountry, setDeposit]);
 
     const updatedData = {
         username,
@@ -133,7 +135,7 @@ const ManageCustomers = () => {
                                 name='email'
                                 type="text"
                                 onChange={(e) => setEmail(e.target.value)}
-                                placeholder='$1000'
+                                placeholder='Customer Email'
                                 className="input w-100 text-xl text-dark" />
                         </div>
                         <div className="flex flex-col gap-1">
@@ -148,6 +150,18 @@ const ManageCustomers = () => {
                         </div>
                     </div>
 
+                    <div className="w-100 grid grid-cols-1 sm:grid-cols-2 gap-4 ">
+                        <div className="flex flex-col gap-1">
+                            <h5 className="text-xl family1">Deposit ($)</h5>
+                            <input
+                                value={deposit}
+                                name='deposit'
+                                type="number"
+                                onChange={(e) => setDeposit(e.target.value)}
+                                placeholder='$1000'
+                                className="input w-100 text-xl text-dark" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </HistorytStyles>
