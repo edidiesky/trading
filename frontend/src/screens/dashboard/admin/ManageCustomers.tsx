@@ -39,6 +39,7 @@ const ManageCustomers = () => {
 
     React.useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        
         if (userDetails) {
             setUsername(userDetails?.username)
             setFullName(userDetails?.fullname)
@@ -61,6 +62,7 @@ const ManageCustomers = () => {
     // console.log(updatedData)
 
     React.useEffect(() => {
+        dispatch(clearUserProfile('any'))
         if (updateuserprofileisSuccess) {
             toast({
                 variant: "success",

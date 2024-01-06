@@ -72,7 +72,13 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     clearUserProfile: (state, action) => {
-      state = initialState
+      state.registerisSuccess = false
+      state.registerisError = false
+      state.registerisLoading = false
+
+      state.updateuserprofileisLoading = false
+      state.updateuserprofileisSuccess = false
+      state.updateuserprofileisError = false
     },
   },
   extraReducers: (builder) => {
