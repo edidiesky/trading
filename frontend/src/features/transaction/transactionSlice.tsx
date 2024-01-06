@@ -1,14 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
 import {
   UpdateTransactions,
   getAllTransactions,
   GetSingleTransaction,
   CreateTransactions,
   DeleteTransactions,
+  GetSingleTransactioOfAUser
 } from './transactionReducer'
-// const BookMarked = localStorage.getItem("isBookMarked");
-
 interface transactionDeleteType {
   _id?: string
 }
@@ -80,6 +78,8 @@ export const transactionSlice = createSlice({
   reducers: {
     cleartransaction: (state, action) => {
       state.transactionisSuccess = false
+      state.transactions = []
+      state.transactionDetails = null
       state.transactionisError = false
       state.updatetransactionisSuccess = false
     },
@@ -126,7 +126,25 @@ export const transactionSlice = createSlice({
       state.alertText = action.payload
 
     })
+    // GetSingleTransactioOfAUser
 
+    builder.addCase(GetSingleTransactioOfAUser.pending, (state, action) => {
+      // state.transactionisLoading = true
+    })
+    builder.addCase(GetSingleTransactioOfAUser.fulfilled, (state, action) => {
+      state.transactionisSuccess = true
+      state.transactionisLoading = false
+      state.transactions = action.payload
+    })
+    builder.addCase(GetSingleTransactioOfAUser.rejected, (state, action) => {
+      state.transactionisSuccess = false
+      state.transactionisError = true
+      state.transactionisLoading = false
+      state.showAlert = true
+      state.alertType = 'danger'
+      state.alertText = action.payload
+
+    })
     // get single transaction slice
 
     builder.addCase(GetSingleTransaction.pending, (state, action) => {

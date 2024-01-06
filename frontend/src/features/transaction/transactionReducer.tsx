@@ -183,3 +183,47 @@ export const GetSingleTransaction = createAsyncThunk<BookMarkATweetPayload, { De
     }
   }
 );
+
+
+
+
+
+export const GetSingleTransactioOfAUser = createAsyncThunk<BookMarkATweetPayload, { Detailsdata?: string }, {
+  rejectValue: KnownError,
+}>(
+  "GetSingleTransactioOfAUser",
+  async ({ Detailsdata }, { rejectWithValue, getState }) => {
+
+    try {
+      const { auth } = getState() as { auth: { userInfo: { _id: String }, token: string } };
+
+      const config = {
+        headers: {
+          authorization: `Bearer ${auth.token}`,
+        },
+      };
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_BASE_URLS}/transaction/profile`,
+        config
+      );
+      return response.data.transaction
+
+    } catch (err: any) {
+      const message = err.response && err.response.data.message
+        ? err.response.data.message
+        : err.message
+      return rejectWithValue(message);
+
+    }
+  }
+);
+
+
+
+
+
+
+
+
+
+

@@ -13,7 +13,15 @@ interface CustomInterface extends ExpressRequest {
 const GetTransactionById = asyncHandler(async (req: CustomInterface, res: Response) => {
   // 
   const transaction = await Transaction.findOne({ _id: req.params.id })
-  .populate('user', 'fullname username email country')
+    .populate('user', 'fullname username email country')
+  res.status(200).json({ transaction })
+}
+)
+
+const GetTransactionOfAUser = asyncHandler(async (req: CustomInterface, res: Response) => {
+  // 
+  const transaction = await Transaction.find({ user: req?.user?.userId })
+    .populate('user', 'fullname username email country')
   res.status(200).json({ transaction })
 }
 )
@@ -38,7 +46,7 @@ const AdminUpdateTransaction = asyncHandler(async (req: CustomInterface, res: Re
   // update the transaction
   const updatedTransaction = await Transaction.findByIdAndUpdate({ _id: id }, req.body, { new: true })
 
-  res.status(200).json({ transaction:updatedTransaction })
+  res.status(200).json({ transaction: updatedTransaction })
 }
 )
 //PRIVATE/ADMIN
@@ -50,7 +58,7 @@ const DeleteTransaction = asyncHandler(async (req: CustomInterface, res: Respons
     throw new Error('No such transaction has     been found')
   }
   // update the transaction
-   await Transaction.findByIdAndDelete({ _id: id })
+  await Transaction.findByIdAndDelete({ _id: id })
   res.status(200).json({ msg: 'Transaction has been sucessfully deleted' })
 }
 )
@@ -72,4 +80,5 @@ export {
   CreateTransaction,
   DeleteTransaction,
   AdminUpdateTransaction,
+  GetTransactionOfAUser
 }

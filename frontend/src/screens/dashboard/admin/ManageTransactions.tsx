@@ -30,8 +30,9 @@ const ManageTransactions = () => {
     ]
 
     const paymentStatus = [
-        'Customer Has Payed',
+      
         'Customer Has Not Payed',
+        'Customer Has Payed',
     ]
 
     const {
@@ -40,6 +41,7 @@ const ManageTransactions = () => {
         updatetransactionisSuccess } = useAppSelector(store => store.transaction)
     React.useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        dispatch(cleartransaction('any'))
         dispatch(GetSingleTransaction({ Detailsdata: id }))
         if (transactionDetails) {
             setPrice(transactionDetails?.investment?.price)
@@ -54,14 +56,13 @@ const ManageTransactions = () => {
 
     const updatedData = {
         isPaid: ispaid === 'Customer Has Payed' ? true : false,
-        status,
         _id: transactionDetails?._id
     }
 
     const handleUpdateTransaction = () => {
         dispatch(UpdateTransactions(updatedData))
     }
-    // console.log(updatedData)
+    console.log(updatedData)
 
     React.useEffect(() => {
         if (updatetransactionisSuccess) {
@@ -103,6 +104,7 @@ const ManageTransactions = () => {
                                 name='price'
                                 type="number"
                                 placeholder='$1000'
+                                onChange={(e) => setPrice(e.target.value)}
                                 className="input w-100 text-xl text-dark" />
                         </div>
                         <div className="flex flex-col gap-1">
@@ -128,8 +130,8 @@ const ManageTransactions = () => {
                     </div>
                     <div className="w-100 grid grid-cols-1 sm:grid-cols-3 gap-4 ">
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1">Payment Status</h5>
-                            <select name="ispaid" value={ispaid} onChange={(e) => setIsPaid(e.target.value)} className="input font-bold text-xl">
+                            <h5 className="text-xl family1">Transaction Status</h5>
+                            <select name="ispaid" defaultValue={ispaid} value={ispaid} onChange={(e) => setIsPaid(e.target.value)} className="input font-bold text-xl">
                                 {/* <option disabled></option> */}
                                 {
                                     paymentStatus.map((x?: any, index?: any) => {
@@ -138,26 +140,27 @@ const ManageTransactions = () => {
                                 }
                             </select>
                         </div>
-
-                        <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1">Transaction Status</h5>
-                            <select name="status" onChange={(e) => setStatus(e.target.value)} className="input font-bold text-xl">
-                                {/* <option disabled></option> */}
-                                {
-                                    paymentData.map((x?: any, index?: any) => {
-                                        return <option key={index} value={x}>{x}</option>
-                                    })
-                                }
-                            </select>
-                        </div>
                     </div>
                     {/* payment proff */}
-                    <div className="w-full pt-8 flex flex-col gap-2">
-                        <h5 className="text-xl family1">Payment Proof</h5>
-                        <div className="proof_image_wrapper min-h-[40rem] rounded-sm flex items-center justify-center py-8 px-4 bg-[#F8F9FB]">
-                            <img src={proofimage} alt="" className="w-[100%] md:w-[60%]" />
+                    {
+                        proofimage === '' ?
+                            <div className="w-full proof_image_wrapper pt-8 flex flex-col gap-2">
+                                <div className="proof_image_wrapper min-h-[40rem] rounded-sm flex flex-col gap-6 items-center justify-center py-8 px-4 bg-[#F8F9FB]">
+                                    <img src="https://s.udemycdn.com/browse_components/flyout/empty-shopping-cart-v2.jpg" alt="" style={{ width: '250px' }} />
+                                    <div className="flex column item-center gap-1">
+                                        <h4 className="fs-16 text-bold text-dark">No proof of payment has been shown for this transaction</h4>
+                                    </div>
+                                </div>
+                               
                         </div>
-                    </div>
+                            : <div className="w-full pt-8 flex flex-col gap-2">
+                                <h5 className="text-xl family1">Payment Proof</h5>
+                                <div className="proof_image_wrapper min-h-[40rem] rounded-sm flex items-center justify-center py-8 px-4 bg-[#F8F9FB]">
+                                    <img src={proofimage} alt="" className="w-[100%] md:w-[60%]" />
+                                </div>
+                            </div>
+                    }
+
 
                 </div>
             </div>

@@ -9,11 +9,13 @@ import {
   CreateTransaction,
   DeleteTransaction,
   AdminUpdateTransaction,
+  GetTransactionOfAUser
 } from "../controllers/TransactionControllers";
 
 router.get("/", authMiddleware, GetAllTransaction);
 router.post("/", authMiddleware, CreateTransaction);
-
+router.route('/profile')
+  .get(authMiddleware, GetTransactionOfAUser)
 
 router.route('/:id')
   .get(authMiddleware, GetTransactionById)

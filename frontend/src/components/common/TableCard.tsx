@@ -18,7 +18,7 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                 {/* <Delete /> */}
                 <tr key={x?._id}>
                     <td>
-                        <span className="fs-12 text-grey">{x?.investment?.plan}</span>
+                        <span className="fs-12 text-grey">${x?.investment?.price}</span>
                     </td>
                     <td>
                         <span className="fs-12 text-grey">{x?.user?.fullname}</span>
@@ -28,23 +28,14 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                     </td>
                     <td>
                         <span className="fs-12 text-grey">
-                            {x?.status === 'Success' ? 
+                            {x?.isPaid === true ? 
                             <span className="tablespan text-light true"> Completed</span>
                             : <span className="tablespan text-light false"> Not completed</span>
                             }
                         </span>
                     </td>
                     <td>
-                        <span className="text-grey fs-12">$ {x?.investment?.price}</span>
-                    </td>
-
-                    <td>
-                        <span className="text-grey fs-12 text-light">
-                            {x?.isPaid === true ?
-                                <span className="tablespan text-light true">Paid</span>
-                                : <span className="tablespan text-light false">Not Paid</span>
-                            }
-                        </span>
+                        <span className="text-grey fs-12">{x?.investment?.tier}</span>
                     </td>
                     <td>
                         <span className="text-grey fs-12 text-light">04 Feb 2024</span>
@@ -55,6 +46,39 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                         <Link to={`/account/dashboard/Manage_Transaction/${x?._id}`} className="icons flex hover:shadow-sm hover:bg-white items-center justify-center">
                             <MdEdit />
                         </Link>
+                    </td>
+                </tr>
+            </>
+        );
+    }
+    if (type === 'usertransactions') {
+        return (
+            <>
+                {/* <Delete /> */}
+                <tr key={x?._id}>
+                    <td>
+                        <span className="text-grey fs-12">${x?.investment?.price}</span>
+                    </td>
+                    <td>
+                        <span className="fs-12 text-grey">{x?.user?.fullname}</span>
+                    </td>
+                    <td>
+                        <span className="fs-12 tex  text-grey">{x?.paymentMethod}</span>
+                    </td>
+                    <td>
+                        <span className="fs-12 text-grey">
+                            {x?.isPaid === true ?
+                                <span className="tablespan text-light true"> Completed</span>
+                                : <span className="tablespan text-light false"> Not completed</span>
+                            }
+                        </span>
+                    </td>
+                    <td>
+                        <span className="text-grey fs-12">{x?.investment?.tier}</span>
+                    </td>
+                    <td>
+                        <span className="text-grey fs-12 text-light">04 Feb 2024</span>
+
                     </td>
                 </tr>
             </>

@@ -3,10 +3,17 @@ import styled from "styled-components";
 import { TransactionsPlan } from '../../data/courses';
 import { Table } from '../../components/common/styles';
 import TableCard from '../../components/common/TableCard';
+import { useAppDispatch, useAppSelector } from '@/hooks/reduxtoolkit';
+import { GetSingleTransactioOfAUser } from '@/features/transaction/transactionReducer';
 
 const History = () => {
+    const dispatch = useAppDispatch()
+    const { transactions } = useAppSelector(store => store.transaction)
+
+    // transactions
     React.useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        dispatch(GetSingleTransactioOfAUser({Detailsdata:""}))
     }, []);
     return (
         <HistorytStyles style={{ minHeight: "100vh" }} className="w-100">
@@ -16,7 +23,7 @@ const History = () => {
                         Transactions on your account
                     </h2>
                     <span className="fs-16 w-50 text-light text-grey2">
-                       A summary of all Transactions located in your account
+                        A summary of all Transactions located in your account
                     </span>
                 </div>
                 <div className="trading_card w-100 flex column gap-4">
@@ -25,7 +32,7 @@ const History = () => {
                     </div>
                     <div className="w-100">
                         {
-                            TransactionsPlan.length === 0 ? <div className="cart_none w-100">
+                            transactions.length === 0 ? <div className="cart_none w-100">
                                 <div className="w-100 flex item-center column gap-2 justify-center">
                                     <img src="https://s.udemycdn.com/browse_components/flyout/empty-shopping-cart-v2.jpg" alt="" style={{ width: '250px' }} />
                                     <div className="flex column item-center gap-1">
@@ -40,14 +47,16 @@ const History = () => {
                                             <thead>
                                                 <tr>
                                                     <th>Amount</th>
+                                                    <th>Username</th>
                                                     <th>Payment Mode</th>
-                                                    <th>Status</th>
+                                                    <th>Transaction Status</th>
+                                                    <th>Tier</th>
                                                     <th>Date Created</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                {TransactionsPlan?.map((x?: any, index?: any) => {
-                                                    return <TableCard x={x} key={x?._id} />;
+                                                {transactions?.map((x?: any, index?: any) => {
+                                                    return <TableCard type={'usertransactions'} x={x} key={x?._id} />;
                                                 })}
                                             </tbody>
                                         </table>

@@ -50,7 +50,6 @@ const TransactionList = () => {
                                                     <th>Payment Mode</th>
                                                     <th>Transaction Status</th>
                                                     <th>Tier</th>
-                                                    <th>payment status</th>
                                                     <th>Date Created</th>
                                                     <th>Manage</th>
                                                 </tr>
