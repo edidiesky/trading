@@ -11,7 +11,7 @@ interface depositDeleteType {
   _id?: string
 }
 
-const depositdata = JSON.parse(localStorage.getItem("deposit") || 'false');
+const depositdata = JSON.parse(localStorage.getItem("depositData") || 'false');
 const photo_deposit_id = localStorage.getItem("photo_deposit_id")
 
 // Define a type for the deposit state
@@ -39,6 +39,11 @@ interface depositState {
   showAlert?: boolean,
   alertType?: string,
 
+  deposit?: {
+    amount?: number,
+    paymentMethod?: string
+  }
+
 
 
 }
@@ -47,7 +52,7 @@ interface depositState {
 const initialState: depositState = {
   depositDetails: null,
 
-  deposits: depositdata ? depositdata : [],
+  deposits: [],
   userdeposits: [],
   bookmarks: [],
   deposit_photo_id: photo_deposit_id ? photo_deposit_id : '',
@@ -64,9 +69,16 @@ const initialState: depositState = {
   createdepositisSuccess: false,
   createdepositisError: false,
 
- updatedepositisLoading: false,
- updatedepositisSuccess: false,
- updatedepositisError: false,
+  updatedepositisLoading: false,
+  updatedepositisSuccess: false,
+  updatedepositisError: false,
+
+
+  deposit: depositdata ? depositdata: {
+    amount: 0,
+    paymentMethod: ''
+  }
+
 
 
 }
@@ -82,6 +94,19 @@ export const depositSlice = createSlice({
       state.depositDetails = null
       state.depositisError = false
       state.updatedepositisSuccess = false
+    },
+
+    FundDeposit: (state, action) => {
+      const amount = action.payload.amount
+      const paymentMethod = action.payload.paymentMethod
+      const depositData = {
+        amount,
+        paymentMethod
+      }
+      state.deposit = depositData
+
+      localStorage.setItem("depositData", JSON.stringify(depositData));
+
     },
   },
   extraReducers: (builder) => {
@@ -211,7 +236,7 @@ export const depositSlice = createSlice({
   },
 })
 
-export const { cleardeposit } = depositSlice.actions
+export const { cleardeposit, FundDeposit } = depositSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
 // export const selectCount = (state: RootState) => state.deposit.value

@@ -1,11 +1,21 @@
 import React, { useState } from 'react'
 import styled from "styled-components";
+import { useToast } from "@/components/ui/use-toast"
+import { ToastAction } from "@/components/ui/toast"
+import { useAppDispatch, useAppSelector } from "@/hooks/reduxtoolkit";
+
+import { useNavigate } from 'react-router-dom';
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { IoCopy } from "react-icons/io5";
-import { useNavigate } from 'react-router-dom';
-
 const Payment = () => {
     const navigate = useNavigate()
+    const { toast } = useToast()
+    const {
+        userInfo
+    } = useAppSelector(store => store.auth)
+    const {
+        deposit
+    } = useAppSelector(store => store.deposit)
     React.useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }, []);
@@ -16,6 +26,13 @@ const Payment = () => {
         value: "bc1qr27rs7tplyczjverg5sfuz6kvw8x7s3ldhf69d",
         copied: false,
     });
+    const depsoitData = {
+        ...deposit,
+        user: userInfo?._id,
+        proof_of_payment: "",
+        status: "pending"
+
+    }
     return (
         <HistorytStyles style={{ minHeight: "100vh" }} className="w-100">
             <div className="auto py-4 trading_wrapper flex column gap-4">
@@ -29,7 +46,7 @@ const Payment = () => {
                         <h4 className="fs-16 text-light text-dark">
                             You are to make payment of {" "}
                             <span className="text-extra-bold">
-                                $1,000
+                                ${deposit?.amount}
                             </span> using your selected payment method.
                             Screenshot and upload the proof of payment
                         </h4>

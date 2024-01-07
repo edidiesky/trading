@@ -1,15 +1,38 @@
 import React, { useState } from 'react'
 import styled from "styled-components";
-import { TransactionsPlan } from '../../data/courses';
-import { Table } from '../../components/common/styles';
-import TableCard from '../../components/common/TableCard';
+import { useToast } from "@/components/ui/use-toast"
+import { ToastAction } from "@/components/ui/toast"
+import { useAppDispatch, useAppSelector } from "@/hooks/reduxtoolkit";
+
 import { useNavigate } from 'react-router-dom';
+import { FundDeposit } from '@/features/deposit/depositSlice';
 
 const Deposit = () => {
+    const { toast } = useToast()
+
+    const [amount, setAmount] = useState<number>()
+    const dispatch = useAppDispatch()
+    const {
+        userInfo
+    } = useAppSelector(store => store.auth)
     const navigate = useNavigate()
     React.useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }, []);
+    const paymentData = {
+        paymentMethod: "Bitcoin",
+        amount
+    }
+    console.log(paymentData)
+    const handlePayment = () => {
+        dispatch(FundDeposit(paymentData))
+        const timeout = setTimeout(() => {
+            navigate('/account/dashboard/payment')
+        }, 3000);
+
+        return () => clearTimeout(timeout)
+
+    }
     return (
         <HistorytStyles style={{ minHeight: "100vh" }} className="w-100">
             <div className="auto py-4 trading_wrapper flex column gap-4">
@@ -19,20 +42,30 @@ const Deposit = () => {
                     </h2>
                 </div>
                 <div className="trading_card w-100 flex column gap-4">
-                    
+
                     <div className="w-100 flex column gap-1 item-start">
                         <h5 className="fs-18 text-bold">Enter your Amount</h5>
-                        <input className="input" type='number' placeholder='Enter amount to be deposited'></input>
+                        <input
+                            className="input"
+                            value={amount}
+                            onChange={(e) => setAmount(parseFloat(e.target.value))}
+                            type='number'
+                            placeholder='Enter amount to be deposited'></input>
                     </div>
                     <div className="w-100 py-1 flex item-start column gap-1">
                         <h5 className="fs-18 text-dark text-bold">Choose Payment Method from the list below</h5>
                         <div className="flex item-start column gap-2">
-                            <div className="icon_trading flex item-center  gap-1">
+                            <div onClick={() => toast({
+                                variant: "success",
+                                description: 'Bitcoin Payment method has been selected ',
+                            })} className="icon_trading flex item-center  gap-1">
                                 <img style={{ width: "3.5rem" }} src="https://img.icons8.com/color/48/000000/bitcoin--v1.png" alt="" />
                                 <h5 className="fs-16 text-light">Bitcoin</h5>
 
                             </div>
-                            <button onClick={() => navigate('/account/dashboard/payment')} className="btn fs-14 text-white text-bold">
+                            <button
+                                disabled={amount! <= 0}
+                                onClick={() => handlePayment()} className="btn fs-14 text-white text-bold">
                                 Proceeed to Payment
                             </button>
                         </div>
@@ -55,6 +88,11 @@ const HistorytStyles = styled.div`
     }
     .btn {
         min-width:200px;
+    }
+     .btn:disabled {
+      cursor: not-allowed;
+      opacity: .6;
+
     }
     .trading_card {
         width:60%;

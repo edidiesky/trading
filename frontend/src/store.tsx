@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import authSlice from './features/auth/authSlice'
 import transactionSlice from './features/transaction/transactionSlice'
 import investmentsSlice from './features/investments/investmentsSlice'
+import depositSlice from './features/deposit/depositSlice'
 // ...
 
 export const store = configureStore({
@@ -9,6 +10,7 @@ export const store = configureStore({
     auth: authSlice,
     transaction: transactionSlice,
     investments: investmentsSlice,
+    deposit: depositSlice,
   },
 })
 
