@@ -19,6 +19,9 @@ const investmentSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    proofOfPayment: {
+      type: String,
+    },
     tier: {
       type: String,
       enum: ['tier1', 'tier2', 'tier3'],

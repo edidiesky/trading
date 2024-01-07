@@ -61,7 +61,7 @@ const AdminUpdateInvestment = asyncHandler(async (req: CustomInterface, res: Res
   // update the investment
   const updatedInvestment = await Investment.findByIdAndUpdate({ _id: id }, req.body, { new: true })
 
-  res.status(200).json({ updatedInvestment })
+  res.status(200).json({ investment: updatedInvestment })
 }
 )
 //PRIVATE/ADMIN
@@ -96,6 +96,20 @@ const GetAllInvestment = asyncHandler(async (req: CustomInterface, res: Response
 )
 
 
+// PRIVATE/ADMIN
+const GetAllInvestmentOfAUser = asyncHandler(async (req: CustomInterface, res: Response) => {
+  // find all investment
+  const investment = await Investment.find({ user: req?.user?.userId })
+  // check for investment existence
+  if (!investment) {
+    throw new Error('No investment has been created')
+  }
+  res.status(200).json({ investment })
+}
+)
+
+
+
 
 
 export {
@@ -103,5 +117,6 @@ export {
   GetAllInvestment,
   CreateInvestment,
   AdminUpdateInvestment,
-  DeleteInvestment
+  DeleteInvestment,
+  GetAllInvestmentOfAUser
 }

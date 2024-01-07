@@ -8,12 +8,16 @@ import {
   GetAllInvestment,
   CreateInvestment,
   AdminUpdateInvestment,
-  DeleteInvestment
+  DeleteInvestment,
+  GetAllInvestmentOfAUser
 } from "../controllers/InvestmentControllers";
 
 router.get("/", authMiddleware, GetAllInvestment);
 router.post("/", authMiddleware, CreateInvestment);
 
+
+router.route('/profile')
+  .get(authMiddleware, GetAllInvestmentOfAUser)
 
 router.route('/:id')
   .get(authMiddleware, GetInvestmentById)
