@@ -32,9 +32,10 @@ const CreateInvestment = asyncHandler(async (req: CustomInterface, res: Response
   const user = await User.findOne({ _id: userId })
 
   const userDeposit = user?.deposit as any
+  const userBonus = user?.bonus as any
 
   const updatedUser = await User.findOneAndUpdate({ _id: userId },
-    { deposit: userDeposit - price }, { new: true })
+    { deposit: userDeposit - price, bonus: userBonus + 5 }, { new: true })
 
   const investment = await Investment.create({
     price,
