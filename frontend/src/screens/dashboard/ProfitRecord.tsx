@@ -61,9 +61,10 @@ const Messages = () => {
                                                 <tr>
                                                     <th>Plan</th>
                                                     <th>Amount</th>
-                                                    <th>Type</th>
+                                                    
                                                     <th>Start Date</th>
                                                     <th>End Date</th>
+                                                    <th>Status</th>
                                                     {/* <th>Payment Methid</th> */}
                                                     {/* <th>Payment Status</th> */}
                                                     <th>Profit</th>
