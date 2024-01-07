@@ -27,6 +27,7 @@ import authRoute from "./routes/authRoute";
 import transaction from "./routes/transactionRoute";
 import investment from "./routes/InvestmentRoute";
 import deposit from "./routes/depositRoute";
+import uploadRoute from "./routes/uploadRoute";
 
 
 app.use("/api/v1/user", userRoute);
@@ -34,6 +35,7 @@ app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/transaction", transaction);
 app.use("/api/v1/investment", investment);
 app.use("/api/v1/deposit", deposit);
+app.use("/api/v1/upload", uploadRoute);
 
 
 const mongoUrl = process.env.MONGO_URL;

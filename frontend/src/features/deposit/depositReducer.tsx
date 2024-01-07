@@ -3,20 +3,11 @@ import axios, { AxiosError } from "axios";
 
 const tweeturl: string = `${import.meta.env.VITE_API_BASE_URLS}/deposit`;
 type tweetdatatype = {
-  tweet_text?: string;
-  tweet_image?: any;
-  userIdIncludedInTweetLikesArray?: any;
-  tweetDetails?: any;
-  tweet?: any;
+  paymentMethod?: any;
+  amount?: any;
+  user?: any;
+  proof_of_payment?: any;
   _id?: string;
-  tweet_user_id?: {
-    _id?: string;
-    display_name?: string;
-    name?: string;
-    bio?: string;
-    profile_image_url?: string;
-
-  }
 }
 
 interface BookMarkATweetPayload {
