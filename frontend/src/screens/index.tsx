@@ -5,7 +5,7 @@ const Login = lazy(() => import("./Login"));
 const Register = lazy(() => import("./Register"));
 
 import Courses from './dashboard/Courses'
-import Messages from './dashboard/Messages'
+import Messages from './dashboard/ProfitRecord'
 import Overview from './dashboard/Overview'
 import Students from './dashboard/Pakages'
 import Reviews from './dashboard/Exchanges'

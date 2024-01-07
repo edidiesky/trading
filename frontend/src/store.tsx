@@ -1,12 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'
 import authSlice from './features/auth/authSlice'
 import transactionSlice from './features/transaction/transactionSlice'
+import investmentsSlice from './features/investments/investmentsSlice'
 // ...
 
 export const store = configureStore({
   reducer: {
     auth: authSlice,
-    transaction: transactionSlice
+    transaction: transactionSlice,
+    investments: investmentsSlice,
   },
 })
 

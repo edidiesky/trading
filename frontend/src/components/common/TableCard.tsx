@@ -10,7 +10,8 @@ type TableCardProps = {
     type?: any;
 }
 const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
-    let createddate = moment(x?.paidAt).format("MMMM Do YYYY");
+    let investmentStartdate = moment(x?.startDate).format("MMMM Do YYYY");
+    let investmentEnddate = moment(x?.endDate).format("MMMM Do YYYY");
     const navigate = useNavigate();
     if (type === 'transactions') {
         return (
@@ -121,6 +122,41 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                         <Link to={`/account/dashboard/Manage_Customers/${x?._id}`} className="icons flex hover:shadow-sm hover:bg-white items-center justify-center">
                             <MdEdit />
                         </Link>
+                    </td>
+                </tr>
+            </>
+        );
+    }
+    if (type === 'userinvestment') {
+        return (
+            <>
+                {/* <Delete /> */}
+                <tr key={x?._id}>
+                    <td>
+                        <span className="text-grey fs-12">{x?.plan}</span>
+                    </td>
+                    <td>
+                        <span className="text-grey fs-12">${x?.price}</span>
+                    </td>
+                    <td>
+                        <span className="fs-12 text-grey">{x?.tier}</span>
+                    </td>
+                    <td>
+                        <span className="fs-12 text-grey">{investmentStartdate}</span>
+                    </td>
+                    <td>
+                        <span className="fs-12 text-grey">{investmentEnddate}</span>
+                    </td>
+                    {/* <td>
+                        <span className="fs-12 text-grey">
+                            {x?.isPaid === true ?
+                                <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold true"> Completed</span>
+                                : <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold false"> Not completed</span>
+                            }
+                        </span>
+                    </td> */}
+                    <td>
+                        <span className="text-grey fs-12">${x?.profit}</span>
                     </td>
                 </tr>
             </>

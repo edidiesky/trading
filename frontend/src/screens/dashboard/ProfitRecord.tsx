@@ -4,10 +4,30 @@ import { TransactionsPlan } from '../../data/courses';
 import { Table } from '../../components/common/styles';
 import TableCard from '../../components/common/TableCard';
 
+import { useAppDispatch, useAppSelector } from '@/hooks/reduxtoolkit';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useToast } from "@/components/ui/use-toast"
+import { ToastAction } from "@/components/ui/toast"
+import { clearinvestment } from '@/features/investments/investmentsSlice';
+import { GetSingleInvestmentOfAUser } from '@/features/investments/investmentReducer';
+
 const Messages = () => {
+    const { toast } = useToast()
+    const navigate = useNavigate()
+    const { id } = useParams()
+    const dispatch = useAppDispatch()
+    const {
+        investments,
+    } = useAppSelector(store => store.investments)
+
+
     React.useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        dispatch(clearinvestment('any'))
+        dispatch(GetSingleInvestmentOfAUser({Detailsdata:""}))
+        dispatch(GetSingleInvestmentOfAUser({ Detailsdata: "" }))
     }, []);
+
     return (
         <HistorytStyles style={{ minHeight: "100vh" }} className="w-100">
             <div className="auto py-4 trading_wrapper flex column gap-4">
@@ -25,7 +45,7 @@ const Messages = () => {
                     </div>
                     <div className="w-100">
                         {
-                            TransactionsPlan.length === 0 ? <div className="cart_none w-100">
+                            investments?.length === 0 ? <div className="cart_none w-100">
                                 <div className="w-100 flex item-center column gap-2 justify-center">
                                     <img src="https://s.udemycdn.com/browse_components/flyout/empty-shopping-cart-v2.jpg" alt="" style={{ width: '250px' }} />
                                     <div className="flex column item-center gap-1">
@@ -42,12 +62,16 @@ const Messages = () => {
                                                     <th>Plan</th>
                                                     <th>Amount</th>
                                                     <th>Type</th>
-                                                    <th>Date Created</th>
+                                                    <th>Start Date</th>
+                                                    <th>End Date</th>
+                                                    {/* <th>Payment Methid</th> */}
+                                                    {/* <th>Payment Status</th> */}
+                                                    <th>Profit</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                {TransactionsPlan?.map((x?: any, index?: any) => {
-                                                    return <TableCard x={x} key={x?._id} />;
+                                                {investments?.map((x?: any, index?: any) => {
+                                                    return <TableCard type='userinvestment' x={x} key={x?._id} />;
                                                 })}
                                             </tbody>
                                         </table>
@@ -58,10 +82,10 @@ const Messages = () => {
                     <div className="w-100 py-1 flex item-center justify-space">
                         <h5 className="fs-14 text-grey2 family1">
                             Showing 0 to 0 of 0 entries</h5>
-                            <div className="flex item-center justify-end gap-2">
+                        <div className="flex item-center justify-end gap-2">
                             <button className="btn fs-14 text-white text-bold">Previous</button>
                             <button className="btn fs-14 text-white text-bold">Next</button>
-                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -79,6 +103,9 @@ const HistorytStyles = styled.div`
     width:95%;
     .input {
         min-width: 500px;
+    }
+    .btn {
+        padding: 1rem;
     }
     .trading_card {
         width:100%;

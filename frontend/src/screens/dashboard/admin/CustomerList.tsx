@@ -87,6 +87,9 @@ const HistorytStyles = styled.div`
     .input {
         min-width: 500px;
     }
+     .btn {
+        padding: 1rem;
+    }
     .trading_card {
         width:100%;
         padding:3rem 4rem;

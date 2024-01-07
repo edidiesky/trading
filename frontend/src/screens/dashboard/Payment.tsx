@@ -61,12 +61,17 @@ const Payment = () => {
 
                     <div className="w-100 py-1 flex item-start column gap-2">
                         <div className="w-100 flex column gap-1">
-                            <h4 className="fs-16 text-light">Upload Payment proof after payment.</h4>
-                            <div className="input input_1 flex item-center">
-                                <button className="btn btn-3 text-dark fs-12 text-extra-bold">Upload payment Image</button>
+                            <h4 className="fs-14 text-bold">Upload Payment proof after payment.</h4>
+                            <div className="w-100 flex">
+                                <button className="btn btn_3 text-white fs-12 text-extra-bold">Upload Image</button>
                             </div>
                         </div>
-                        <button style={{ background: "green", padding: "2rem", marginTop: "2rem" }} className="btn fs-14 text-white text-bold">
+                        <div className="w-100 py-4 flex column gap-1">
+                            <h4 className="fs-14 text-bold">Upload Image preview</h4>
+                            <div className="w-100 flex">
+                            </div>
+                        </div>
+                        <button style={{ background: "green", padding: "2rem", marginTop: "4rem" }} className="btn fs-14 text-white text-bold">
                             Submit Payment
                         </button>
                     </div>
@@ -85,6 +90,9 @@ const HistorytStyles = styled.div`
         height:5rem;
         background-color: #e2dfdf;
     }
+    .btn.btn_3 {
+        padding: 1rem;
+    }
     .adress_btn {
         height:5rem;
         width:6rem;
@@ -97,7 +105,7 @@ const HistorytStyles = styled.div`
     .input {
         &.input_1 {
         width: 300px !important;
-        @media (max-width:680px) {
+        @media (max-width:980px) {
 
             width:90%;
 
@@ -111,10 +119,10 @@ const HistorytStyles = styled.div`
         background-color: #fff;
         box-shadow: var(--shadow);
          /* min-width: 500px; */
-         @media (max-width:680px) {
+         @media (max-width:980px) {
             margin:0;
             width:90%;
-        padding:5rem;
+           padding:5rem;
 
          }
 
