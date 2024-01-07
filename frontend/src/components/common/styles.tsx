@@ -61,7 +61,9 @@ export const Table = styled.div`
           }
         }
       }
-
+      .btn {
+        padding: .4rem 1rem !important;
+      }
       tbody {
         tr {
           transition: all 0.5s var(--transition-2);

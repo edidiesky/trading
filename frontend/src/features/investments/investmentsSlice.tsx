@@ -104,7 +104,7 @@ export const investmentSlice = createSlice({
 
     })
     builder.addCase(CreateInvestments.fulfilled, (state, action) => {
-      state.investments = action.payload
+      state.investmentDetails = action.payload
       state.alertText = 'investment created succesfully'
       state.showAlert = true
       state.createinvestmentisLoading = false

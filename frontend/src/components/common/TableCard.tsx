@@ -29,9 +29,9 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                     </td>
                     <td>
                         <span className="fs-12 text-grey">
-                            {x?.isPaid === true ? 
-                            <span style={{fontSize:"1.2rem"}} className="tablespan fs-10 text-bold true"> Completed</span>
-                            : <span style={{fontSize:"1.2rem"}} className="tablespan fs-10 text-bold false"> Not completed</span>
+                            {x?.isPaid === true ?
+                                <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold true"> Completed</span>
+                                : <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold false"> Not completed</span>
                             }
                         </span>
                     </td>
@@ -69,8 +69,8 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                     <td>
                         <span className="fs-12 text-grey">
                             {x?.isPaid === true ?
-                                <span style={{fontSize:"1.2rem"}} className="tablespan fs-10 text-bold true"> Completed</span>
-                                : <span style={{fontSize:"1.2rem"}} className="tablespan fs-10 text-bold false"> Not completed</span>
+                                <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold true"> Completed</span>
+                                : <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold false"> Not completed</span>
                             }
                         </span>
                     </td>
@@ -103,7 +103,7 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                         <span className="fs-12 tex  text-grey">{x?.phone}</span>
                     </td>
                     <td>
-                        <span className="text-grey fs-12">{x?.country ? x?.country:'-'}</span>
+                        <span className="text-grey fs-12">{x?.country ? x?.country : '-'}</span>
                     </td>
                     <td>
                         <span className="fs-12 text-grey">
@@ -113,7 +113,7 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                             }
                         </span>
                     </td>
-                    
+
                     <td>
                         <span className="text-grey fs-12 text-light">04 Feb 2024</span>
 
@@ -138,6 +138,9 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                     <td>
                         <span className="text-grey fs-12">${x?.price}</span>
                     </td>
+                    <td>
+                        <span className="text-grey fs-12">{x?.tier}</span>
+                    </td>
                     {/* <td>
                         <span className="fs-12 text-grey">{x?.tier}</span>
                     </td> */}
@@ -150,13 +153,22 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                     <td>
                         <span className="fs-12 text-grey">
                             {x?.isPaid === true ?
-                                <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold true"> Incoming</span>
-                                : <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold false">Progress</span>
+                                <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold true"> Active</span>
+                                : <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold false">Incoming</span>
                             }
                         </span>
                     </td>
                     <td>
                         <span className="text-grey fs-12">${x?.profit}</span>
+                    </td>
+                    <td>
+                        <span style={{gap:"5px"}} className="text-grey w-100 flex fs-12">
+                            <div style={{ padding: "1rem" }} className="btn btn-1 fs-12">View</div>
+                            {
+
+                                x?.isPaid !== false && <div style={{ padding: "1rem" }} className="btn fs-12">Make Payment</div>
+                            }
+                        </span>
                     </td>
                 </tr>
             </>

@@ -3,20 +3,13 @@ import axios, { AxiosError } from "axios";
 
 const tweeturl: string = `${import.meta.env.VITE_API_BASE_URLS}/transaction`;
 type tweetdatatype = {
-  tweet_text?: string;
-  tweet_image?: any;
-  userIdIncludedInTweetLikesArray?: any;
-  tweetDetails?: any;
-  tweet?: any;
+  paymentMethod?: any;
+  amount?: any;
+  isPaid?: any;
+  user?: any;
+  proof_of_payment?: any;
   _id?: string;
-  tweet_user_id?: {
-    _id?: string;
-    display_name?: string;
-    name?: string;
-    bio?: string;
-    profile_image_url?: string;
-
-  }
+  status?: string;
 }
 
 interface BookMarkATweetPayload {
@@ -69,15 +62,9 @@ export const CreateTransactions = createAsyncThunk<{
           authorization: `Bearer ${auth.token}`,
         },
       };
-      const response = await axios.post(tweeturl, tweetData, config);
-      if (response?.data?.tweet) {
-        const response2 = await axios.get(
-          `${import.meta.env.VITE_API_BASE_URLS}/tweet`,
-          config
-        );
-        localStorage.setItem("tweet", JSON.stringify(response2.data.tweet));
-        return response2.data.tweet;
-      }
+      const { data } = await axios.post(tweeturl, tweetData, config);
+      return data.transaction;
+
 
       // console.log(tweetData)
     } catch (err: any) {

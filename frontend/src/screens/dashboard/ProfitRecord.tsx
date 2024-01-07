@@ -40,17 +40,20 @@ const Messages = () => {
                     </span>
                 </div>
                 <div className="trading_card w-100 flex column gap-4">
-                    <div className="w-100 justify-end flex item-center">
-                        <input className="input" placeholder='Search for ROI History'></input>
-                    </div>
+                    {
+                        investments?.length !== 0 && <div className="w-100 justify-end flex item-center">
+                            <input className="input" placeholder='Search for ROI History'></input>
+                        </div>
+                    }
+                   
                     <div className="w-100">
                         {
                             investments?.length === 0 ? <div className="cart_none w-100">
                                 <div className="w-100 flex item-center column gap-2 justify-center">
                                     <img src="https://s.udemycdn.com/browse_components/flyout/empty-shopping-cart-v2.jpg" alt="" style={{ width: '250px' }} />
                                     <div className="flex column item-center gap-1">
-                                        <h4 className="fs-16 text-bold text-blue">Your cart is empty. Keep shopping to find a course!</h4>
-                                        <div className="btn btn-2 fs-16 text-bold">Keep Shopping</div>
+                                        <h4 className="fs-16 text-bold text-blue">Your Investment is empty. Find a package that fit your investment</h4>
+                                        {/* <div className="btn btn-1 fs-16 text-bold">Keep Shopping</div> */}
                                     </div>
                                 </div>
                             </div> :
@@ -61,6 +64,7 @@ const Messages = () => {
                                                 <tr>
                                                     <th>Plan</th>
                                                     <th>Amount</th>
+                                                    <th>Tier</th>
                                                     
                                                     <th>Start Date</th>
                                                     <th>End Date</th>
@@ -68,6 +72,7 @@ const Messages = () => {
                                                     {/* <th>Payment Methid</th> */}
                                                     {/* <th>Payment Status</th> */}
                                                     <th>Profit</th>
+                                                    <th>Actions</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -80,14 +85,17 @@ const Messages = () => {
                                 </Table>
                         }
                     </div>
-                    <div className="w-100 py-1 flex item-center justify-space">
-                        <h5 className="fs-14 text-grey2 family1">
-                            Showing 0 to 0 of 0 entries</h5>
-                        <div className="flex item-center justify-end gap-2">
-                            <button className="btn fs-14 text-white text-bold">Previous</button>
-                            <button className="btn fs-14 text-white text-bold">Next</button>
+                    {
+                        investments?.length !== 0 && <div className="w-100 py-1 flex item-center justify-space">
+                            <h5 className="fs-14 text-grey2 family1">
+                                Showing 0 to 0 of 0 entries</h5>
+                            <div className="flex item-center justify-end gap-2">
+                                <button className="btn fs-14 text-white text-bold">Previous</button>
+                                <button className="btn fs-14 text-white text-bold">Next</button>
+                            </div>
                         </div>
-                    </div>
+                    }
+                   
 
                 </div>
             </div>

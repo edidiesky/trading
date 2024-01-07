@@ -1,6 +1,6 @@
 // import bcrypt from "bcryptjs";
 import asyncHandler from "express-async-handler";
-import User, { UserDocument } from "../models/User";
+import User from "../models/User";
 import { NextFunction, Request as ExpressRequest, Response } from "express";
 
 interface CustomInterface extends ExpressRequest {

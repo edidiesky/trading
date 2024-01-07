@@ -29,8 +29,22 @@ const GetTransactionOfAUser = asyncHandler(async (req: CustomInterface, res: Res
 //PRIVATE/ADMIN
 const CreateTransaction = asyncHandler(async (req: CustomInterface, res: Response) => {
   // get the investment item
-  const { transactionItems, user } = req.body
-  const transaction = await Transaction.create({ transactionItems, user: req?.user?.userId })
+  const { price, plan, tier, status, paymentMethod } = req.body
+  const startDate = new Date();
+  const endDate = new Date(startDate);
+  endDate.setDate(endDate.getDate() + 30);
+  const transaction = await Transaction.create({
+    investment: {
+      plan,
+      price,
+      tier,
+      rate: '1000%',
+    },
+    isPaid:true,
+    paymentMethod,
+    user: req?.user?.userId,
+    status
+  })
   res.status(200).json({ transaction })
 }
 )

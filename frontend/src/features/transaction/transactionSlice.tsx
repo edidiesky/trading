@@ -110,7 +110,7 @@ export const transactionSlice = createSlice({
 
     })
     builder.addCase(CreateTransactions.fulfilled, (state, action) => {
-      state.transactions = action.payload
+      state.transactionDetails = action.payload
       state.alertText = 'transaction created succesfully'
       state.showAlert = true
       state.createtransactionisLoading = false

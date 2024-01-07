@@ -1,20 +1,6 @@
 import mongoose from "mongoose";
 
 // a structure of the user
-export interface UserDocument extends Document {
-  fullname: string;
-  username: string;
-  image: string;
-  email: string;
-  password: string;
-  country?: string;
-  deposit: number;
-  bonus: number;
-  referralbonus: number;
-  phone: string;
-  isAdmin: boolean;
-  // ... other properties
-}
 const UserSchema = new mongoose.Schema(
   {
     fullname: {
@@ -63,4 +49,4 @@ const UserSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model < UserDocument>("User", UserSchema);
+export default mongoose.model ("User", UserSchema);

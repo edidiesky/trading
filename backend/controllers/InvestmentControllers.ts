@@ -27,7 +27,7 @@ const GetInvestmentById = asyncHandler(async (req: CustomInterface, res: Respons
 
 // //PRIVATE/ADMIN
 const CreateInvestment = asyncHandler(async (req: CustomInterface, res: Response) => {
-  const { price, plan, tier, profit, startDate, endDate } = req.body
+  const { price, plan, tier, profit,isPaid } = req.body
   const userId = req.user?.userId
   const user = await User.findOne({ _id: userId })
 
@@ -36,14 +36,17 @@ const CreateInvestment = asyncHandler(async (req: CustomInterface, res: Response
 
   const updatedUser = await User.findOneAndUpdate({ _id: userId },
     { deposit: userDeposit - price, bonus: userBonus + 5 }, { new: true })
-
+  const startDate = new Date();
+  const endDate = new Date(startDate);
+  endDate.setDate(endDate.getDate() + 30);
   const investment = await Investment.create({
     price,
     plan,
     tier,
     profit,
-    startDate: Date.now(),
-    endDate: Date.now() * 80,
+    startDate,
+    endDate,
+    isPaid,
     user: req?.user?.userId
   })
 

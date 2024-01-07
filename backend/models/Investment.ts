@@ -24,8 +24,8 @@ const investmentSchema = new mongoose.Schema(
     },
     tier: {
       type: String,
-      enum: ['tier1', 'tier2', 'tier3'],
-      default: 'tier1'
+      enum: ['tier 1', 'tier 2', 'tier 3'],
+      default: 'tier 1'
     },
     profit: {
       type: Number,
