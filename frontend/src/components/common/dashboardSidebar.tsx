@@ -46,6 +46,11 @@ const AdminSidebarData = [
     },
     {
         icon: <IoMdStats />,
+        title: "Profit Record",
+        path: "tradinghistory",
+    },
+    {
+        icon: <IoMdStats />,
         title: "Manage Profit",
         path: "Manage_Profit",
     },

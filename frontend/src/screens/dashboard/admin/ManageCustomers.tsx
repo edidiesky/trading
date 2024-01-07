@@ -22,14 +22,14 @@ const ManageCustomers = () => {
     const [ispaid, setIsPaid] = useState('')
     const [country, setCountry] = useState('')
     const [deposit, setDeposit] = useState('')
+    const [bonus, setBonus] = useState('')
+    const [referralbonus, setReferralBonus] = useState('')
 
     const {
         userDetails,
         userprofileisLoading,
         userprofileisSuccess,
-        updateuserprofileisLoading,
         updateuserprofileisSuccess,
-        updateuserprofileisError,
     } = useAppSelector(store => store.auth)
 
     React.useEffect(() => {
@@ -47,8 +47,17 @@ const ManageCustomers = () => {
             setEmail(userDetails?.email)
             setCountry(userDetails?.country)
             setDeposit(userDetails?.deposit)
+            setBonus(userDetails?.bonus)
         }
-    }, [userDetails, setUsername, setFullName, setEmail, setCountry, setDeposit]);
+    }, [
+        userDetails, 
+        setUsername, 
+        setFullName, 
+        setEmail, 
+        setCountry, 
+        setBonus,
+        setDeposit
+    ]);
 
     const updatedData = {
         username,
@@ -158,6 +167,16 @@ const ManageCustomers = () => {
                                 name='deposit'
                                 type="number"
                                 onChange={(e) => setDeposit(e.target.value)}
+                                placeholder='$1000'
+                                className="input w-100 text-xl text-dark" />
+                        </div>
+                        <div className="flex flex-col gap-1">
+                            <h5 className="text-xl family1">Bonus ($)</h5>
+                            <input
+                                value={bonus}
+                                name='bonus'
+                                type="number"
+                                onChange={(e) => setBonus(e.target.value)}
                                 placeholder='$1000'
                                 className="input w-100 text-xl text-dark" />
                         </div>

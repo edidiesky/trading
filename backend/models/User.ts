@@ -29,6 +29,14 @@ const UserSchema = new mongoose.Schema(
       type: Number,
       default: 0
     },
+    bonus: {
+      type: Number,
+      default: 0
+    },
+    referralbonus: {
+      type: Number,
+      default: 0
+    },
     phone: {
       type: String,
       default: 0

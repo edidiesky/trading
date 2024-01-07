@@ -9,7 +9,7 @@ const investmentSchema = new mongoose.Schema(
     },
     title: {
       type: String,
-      default: ''
+    default: ''
     },
     price: {
       type: Number,

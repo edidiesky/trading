@@ -27,9 +27,26 @@ const GetInvestmentById = asyncHandler(async (req: CustomInterface, res: Respons
 
 // //PRIVATE/ADMIN
 const CreateInvestment = asyncHandler(async (req: CustomInterface, res: Response) => {
-  const { user } = req.body
-  const investment = await Investment.create({ ...req.body, user: req?.user?.userId })
-  res.status(200).json({ investment })
+  const { price, plan, tier, profit, startDate, endDate } = req.body
+  const userId = req.user?.userId
+  const user = await User.findOne({ _id: userId })
+
+  const userDeposit = user?.deposit as any
+
+  const updatedUser = await User.findOneAndUpdate({ _id: userId },
+    { deposit: userDeposit - price }, { new: true })
+
+  const investment = await Investment.create({
+    price,
+    plan,
+    tier,
+    profit,
+    startDate: Date.now(),
+    endDate: Date.now() * 80,
+    user: req?.user?.userId
+  })
+
+  res.status(200).json({ investment, user: updatedUser })
 }
 )
 
