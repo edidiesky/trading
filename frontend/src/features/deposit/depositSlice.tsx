@@ -41,7 +41,8 @@ interface depositState {
 
   deposit?: {
     amount?: number,
-    paymentMethod?: string
+    paymentMethod?: string,
+    plan?: string,
   }
 
 
@@ -99,9 +100,11 @@ export const depositSlice = createSlice({
     FundDeposit: (state, action) => {
       const amount = action.payload.amount
       const paymentMethod = action.payload.paymentMethod
+      const plan = action.payload.plan
       const depositData = {
         amount,
-        paymentMethod
+        paymentMethod,
+        plan
       }
       state.deposit = depositData
 

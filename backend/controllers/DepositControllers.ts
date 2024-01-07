@@ -29,13 +29,14 @@ const GetDepositOfAUser = asyncHandler(async (req: CustomInterface, res: Respons
 //PRIVATE/ADMIN
 const CreateDeposit = asyncHandler(async (req: CustomInterface, res: Response) => {
   // get the investment item
-  const { amount, paymentMethod, status, proof_of_payment } = req.body
+  const { amount, paymentMethod, status, proof_of_payment, plan } = req.body
   const depsoit = await Deposit.create({
     amount,
     user: req?.user?.userId,
     paymentMethod,
     status: status,
-    proof_of_payment
+    proof_of_payment,
+    plan
   })
   res.status(200).json({ depsoit })
 }

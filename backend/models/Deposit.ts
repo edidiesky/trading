@@ -16,6 +16,9 @@ const depositSchema = new mongoose.Schema(
     status: {
       type: String,
     },
+    plan: {
+      type: String,
+    },
     amount: {
       type: Number,
       default: 0
