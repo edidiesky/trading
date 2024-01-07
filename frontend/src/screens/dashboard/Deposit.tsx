@@ -23,7 +23,7 @@ const Deposit = () => {
         paymentMethod: "Bitcoin",
         amount
     }
-    console.log(paymentData)
+    // console.log(paymentData)
     const handlePayment = () => {
         dispatch(FundDeposit(paymentData))
         const timeout = setTimeout(() => {

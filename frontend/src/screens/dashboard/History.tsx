@@ -50,7 +50,7 @@ const History = () => {
                                                     <th>Username</th>
                                                     <th>Payment Mode</th>
                                                     <th>Transaction Status</th>
-                                                    <th>Tier</th>
+                                                    <th>Plan</th>
                                                     <th>Date Created</th>
                                                 </tr>
                                             </thead>
