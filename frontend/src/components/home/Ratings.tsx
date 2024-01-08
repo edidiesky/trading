@@ -8,7 +8,7 @@ const Ratings = () => {
                     <h5 style={{ fontStyle: "italic" }} className="family1 fs-20 text-bold">
                         WHY CHOOSE FOREX AND BITCOIN TRADE?
                     </h5>
-                    <h4 className="leading-loose fs-20 text-grey text-light">
+                    <h4 className="leading-loose fs-20 text-dark text-light">
                         Cryptocurrencies are a borderless means of exchange allowing for instant and cost-effective transactions across the world. There is no waiting, no international fees and no limitations as to who can or cannot send funds to whom or when and where those funds can be accessed.
                     </h4>
                     <div className="w-100 flex">

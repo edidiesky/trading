@@ -75,7 +75,7 @@ const Works = () => {
                                     <h4 className="fs-12 family1 text-white">BECOME AN EXPERT in the trading world in just a short time</h4>
                                 </div>
                                 <div className="w-100 flex ">
-                                    <div className="btn btn-2 fs-16">WHAT WE DO</div>
+                                    <div className="btn fs-16">WHAT WE DO</div>
                                 </div>
                             </div>
                         </div>

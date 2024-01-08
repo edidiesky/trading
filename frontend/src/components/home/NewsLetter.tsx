@@ -65,7 +65,7 @@ const NewsLetter = () => {
     )
 }
 const NewsLetterStyles = styled.div`
-   margin: 6rem 0;
+   /* margin: 6rem 0; */
 `
 
 const CoreStyles = styled.div`
