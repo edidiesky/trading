@@ -109,7 +109,7 @@
 :root {
   --dark-1: #101112;
   --dark-2: rgb(28, 29, 31);
-  --grey-1: rgb(45, 47, 49);
+  --grey-1: rgb(197, 218, 220);
   --grey-2: #e4e8eb;
   --grey-3: #f7f9fa;
   --red-1: #612012;
@@ -143,7 +143,7 @@ body {
 }
 
 .family1 {
-  font-family: "Sussie", sans-serif;
+  font-family: Sussie, sans-serif;
 }
 
 .background {

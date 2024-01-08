@@ -36,7 +36,7 @@ const Footer = () => {
             <div className="w-90 auto footer_wrapper">
                 <div className="w-100 flex column gap-3">
                     <img style={{ width: "100px" }} src="https://metacorepoint.com/img/logo_light.png" alt="" className="" />
-                    <h4 className="fs-18 text-light text-grey">
+                    <h4 className="fs-18 text-light leading-[1.7] text-grey">
                         Our goal is to prioritise a seamless customer service experience to our customers, who are paramount to our business. We are committed to offering our clients a reliable and secure service so as to build a complete financial portfolio that empowers them to achieve financial freedom.
                     </h4>
                 </div>
@@ -71,9 +71,9 @@ const Footer = () => {
 
 
 export const FooterStyles = styled.div`
-    padding:7rem 0;
+    padding:12rem 0;
     width:100%;
-    background:var(--green-1);
+    background:#0A3041;
    .footer_wrapper {
     display: grid;
     grid-gap: 5rem;
