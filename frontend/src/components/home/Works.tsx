@@ -101,8 +101,8 @@ const Works = () => {
                             To start trading, fund your account with reliable payment channels and withdraw quickly with the fastest payout methods.
                         </span>
                     </h2>
-                    <div className="w-100 flex mt-16 column  items-center gap-4">
-                        <div className="work_top w-100 flex item-center gap-1">
+                    <div className="w-100 flex mt-16 column items-center gap-4">
+                        <div className="work_top w-100 flex md:flex-row flex-col item-center gap-1">
                             <div className="work_top_contents w-100 flex justify-center items-center column gap-4">
                                 <div className="icon_1"></div>
                                 <h3 className="fs-24 text-extra-bold text-center text-dark">CREATE AN ACCOUNT
