@@ -10,7 +10,8 @@ const Ratings = () => {
     )
 }
 const TestimonialStyles = styled.div`
-padding:6rem 0;
+padding:10rem 0;
+/* background-color: #F5F6F6; */
 `
 
 export default Ratings

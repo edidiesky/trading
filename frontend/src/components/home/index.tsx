@@ -13,6 +13,7 @@ const Home: React.FC = () => {
     <HomeStyles>
       <Hero />
       <Works />
+      <Ratings />
       {/* <Ratings />
       <Packages />
       <Chart />

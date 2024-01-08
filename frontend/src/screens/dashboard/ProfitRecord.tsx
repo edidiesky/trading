@@ -47,43 +47,32 @@ const Messages = () => {
                     }
                    
                     <div className="w-100">
-                        {
-                            investments?.length === 0 ? <div className="cart_none w-100">
-                                <div className="w-100 flex item-center column gap-2 justify-center">
-                                    <img src="https://s.udemycdn.com/browse_components/flyout/empty-shopping-cart-v2.jpg" alt="" style={{ width: '250px' }} />
-                                    <div className="flex column item-center gap-1">
-                                        <h4 className="fs-16 text-bold text-blue">Your Investment is empty. Find a package that fit your investment</h4>
-                                        {/* <div className="btn btn-1 fs-16 text-bold">Keep Shopping</div> */}
-                                    </div>
-                                </div>
-                            </div> :
-                                <Table>
-                                    <div className="TableContainer">
-                                        <table className="tableWrapper">
-                                            <thead>
-                                                <tr>
-                                                    <th>Plan</th>
-                                                    <th>Amount</th>
-                                                    <th>Tier</th>
-                                                    
-                                                    <th>Start Date</th>
-                                                    <th>End Date</th>
-                                                    <th>Status</th>
-                                                    {/* <th>Payment Methid</th> */}
-                                                    {/* <th>Payment Status</th> */}
-                                                    <th>Profit</th>
-                                                    <th>Actions</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {investments?.map((x?: any, index?: any) => {
-                                                    return <TableCard type='userinvestment' x={x} key={x?._id} />;
-                                                })}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </Table>
-                        }
+                        <Table>
+                            <div className="TableContainer">
+                                <table className="tableWrapper">
+                                    <thead>
+                                        <tr>
+                                            <th>Plan</th>
+                                            <th>Amount</th>
+                                            <th>Tier</th>
+
+                                            <th>Start Date</th>
+                                            <th>End Date</th>
+                                            <th>Status</th>
+                                            {/* <th>Payment Methid</th> */}
+                                            {/* <th>Payment Status</th> */}
+                                            <th>Profit</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {investments?.map((x?: any, index?: any) => {
+                                            return <TableCard type='userinvestment' x={x} key={x?._id} />;
+                                        })}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </Table>
                     </div>
                     {
                         investments?.length !== 0 && <div className="w-100 py-1 flex item-center justify-space">
