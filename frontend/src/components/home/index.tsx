@@ -7,6 +7,8 @@ import Chart from './Chart';
 import Packages from './Packages';
 import Ratings from './Ratings';
 import Works from './Works';
+import { BsAlignCenter } from 'react-icons/bs';
+import Banner from './Banner';
 
 const Home: React.FC = () => {
   return (
@@ -32,6 +34,7 @@ const Home: React.FC = () => {
      */}
       <Testimonial />
       <NewsLetter />
+      <Banner/>
       
     </HomeStyles>
   )
