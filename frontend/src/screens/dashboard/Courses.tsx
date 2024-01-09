@@ -90,7 +90,7 @@ const Courses = () => {
     }
 
     const TradingChart = () => {
-        return <TradingChartStyles className="w-100 flex column gap-2">
+        return <TradingChartStyles className="w-100 flex column gap-1">
             <div className="flex column gap-1">
                 <h3 className="fs-20 family1 text-grey2">
                     Personal Trading Chart
@@ -100,16 +100,12 @@ const Courses = () => {
                 <div className="">
                     <div className="w-100" style={{ margin: "30px 0px 10px 0px" }}>
                         <div id="tradingview_f933e"><div id="tradingview_be3e5-wrapper w-100 relative h-[600px]">
-                            <iframe 
-                            style={{width:"100%", height:"500px"}}
-                            title="advanced chart TradingView widget" lang="en" id="tradingview_be3e5" frameBorder="0"
+                            <iframe
+                                style={{ width: "100%", height: "600px" }}
+                                title="advanced chart TradingView widget" lang="en" id="tradingview_be3e5" frameBorder="0"
                                 allowTransparency scrolling="no" allowFullScreen
                                 src="https://s.tradingview.com/widgetembed/?hideideas=1&amp;overrides=%7B%7D&amp;enabled_features=%5B%5D&amp;disabled_features=%5B%5D&amp;locale=en#%7B%22symbol%22%3A%22COINBASE%3ABTCUSD%22%2C%22frameElementId%22%3A%22tradingview_be3e5%22%2C%22interval%22%3A%221%22%2C%22hide_side_toolbar%22%3A%220%22%2C%22allow_symbol_change%22%3A%221%22%2C%22save_image%22%3A%221%22%2C%22studies%22%3A%22BB%40tv-basicstudies%22%2C%22theme%22%3A%22light%22%2C%22style%22%3A%229%22%2C%22timezone%22%3A%22Etc%2FUTC%22%2C%22studies_overrides%22%3A%22%7B%7D%22%2C%22utm_source%22%3A%22metacorepoint.com%22%2C%22utm_medium%22%3A%22widget_new%22%2C%22utm_campaign%22%3A%22chart%22%2C%22utm_term%22%3A%22COINBASE%3ABTCUSD%22%2C%22page-uri%22%3A%22metacorepoint.com%2Faccount%2Fdashboard%22%7D"></iframe></div></div>
-                        <div className="tradingview-widget-copyright w-100 h-100" ><a href="#" rel="noopener" target="_blank">
-                            <span className="blue-text"></span> <span className="blue-text">,Personal trading chart</span></a></div>
-
-                            
-                       
+                      
                     </div>
                 </div>
             </div>
@@ -117,14 +113,28 @@ const Courses = () => {
     }
 
     const ForexChart = () => {
-        return <TradingChartStyles className="w-100 flex column gap-2">
+        return <TradingChartStyles className="w-100 flex column gap-1">
             <div className="flex column gap-1">
                 <h3 className="fs-20 family1 text-grey2">
                     Forex Trading Chart
                 </h3>
             </div>
             <div className="trading_wrapper w-100">
-                <div className="trading_card"></div>
+                <div className="">
+                    <div className="w-100" style={{ margin: "30px 0px 10px 0px" }}>
+                        <div id="tradingview_f933e"><div id="tradingview_be3e5-wrapper w-100 relative h-[600px]">
+                            <iframe
+                                style={{ width: "100%", height: "500px" }}
+                                title="advanced chart TradingView widget" lang="en" id="tradingview_be3e5" frameBorder="0"
+                                allowTransparency scrolling="no" allowFullScreen
+                                src="https://www.tradingview-widget.com/embed-widget/forex-cross-rates/?locale=en#%7B%22currencies%22%3A%5B%22EUR%22%2C%22USD%22%2C%22JPY%22%2C%22BTC%22%2C%22ETH%22%2C%22LTC%22%2C%22GBP%22%2C%22CHF%22%2C%22AUD%22%2C%22CAD%22%2C%22NZD%22%2C%22CNY%22%5D%2C%22isTransparent%22%3Afalse%2C%22colorTheme%22%3A%22light%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A%22100%25%22%2C%22utm_source%22%3A%22metacorepoint.com%22%2C%22utm_medium%22%3A%22widget%22%2C%22utm_campaign%22%3A%22forex-cross-rates%22%2C%22page-uri%22%3A%22metacorepoint.com%2Faccount%2Fdashboard%22%7D"
+                                />
+                            {/* <iframe scrolling="no" allowtransparency="true" frameborder="0" src="https://www.tradingview-widget.com/embed-widget/forex-cross-rates/?locale=en#%7B%22currencies%22%3A%5B%22EUR%22%2C%22USD%22%2C%22JPY%22%2C%22BTC%22%2C%22ETH%22%2C%22LTC%22%2C%22GBP%22%2C%22CHF%22%2C%22AUD%22%2C%22CAD%22%2C%22NZD%22%2C%22CNY%22%5D%2C%22isTransparent%22%3Afalse%2C%22colorTheme%22%3A%22light%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A%22100%25%22%2C%22utm_source%22%3A%22metacorepoint.com%22%2C%22utm_medium%22%3A%22widget%22%2C%22utm_campaign%22%3A%22forex-cross-rates%22%2C%22page-uri%22%3A%22metacorepoint.com%2Faccount%2Fdashboard%22%7D" title="forex cross-rates TradingView widget" lang="en" style="user-select: none; box-sizing: border-box; display: block; height: calc(100% - 32px); width: 100%;"></iframe> */}
+                        </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </TradingChartStyles>
     }
