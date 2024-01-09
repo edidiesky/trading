@@ -68,7 +68,7 @@ const Courses = () => {
     }, []);
     const Widget = () => {
         return <WidgetStyles className="w-100">
-            <div className="widget_wrapper w-100">
+            <div className="widget_wrapper grid-cols-1 grid sm:grid-cols-2 lg:grid-cols-4 w-100">
                 {sidebarData.map((x) => {
                     return (
                         <div
@@ -157,7 +157,7 @@ const WidgetStyles = styled.div`
     width:100%;
     display:grid;
     grid-gap: 2rem;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    /* grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); */
     .widget_card {
         padding:3rem 2rem;
         background-color: #fff;
