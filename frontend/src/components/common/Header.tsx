@@ -24,7 +24,7 @@ const Header = () => {
         <HeaderStyles className="w-100 flex column gap-2">
             <div className="hero_header w-90 auto flex item-center justify-space">
                 <img className="w-[100px] md:w-[130px]" src="https://metacorepoint.com/img/logo_light.png" alt="" />
-                <div className="hidden md:flex item-center gap-3 lg:gap-24 justify-end">
+                <div className="header_list item-center gap-3 lg:gap-24 justify-end">
                     <Link to={'/'} className="fs-16 text-bold uppercase text-white">
                         Home
                     </Link>
@@ -41,7 +41,7 @@ const Header = () => {
                         Contact
                     </Link>
                 </div>
-                <div onClick={() => setBar(!bar)} className="spam_bars flex md:hidden text-dark">
+                <div onClick={() => setBar(!bar)} className="spam_bars text-dark">
                     {bar ? <RxCross1 fontSize={'40px'} /> : <HiOutlineBars3CenterLeft fontSize={'40px'} />}
                 </div>
                 <div style={{zIndex:"200"}} className={`navbar ${bar ? 'active' : ""} flex`}>
@@ -78,9 +78,24 @@ z-index: 400000;
     border-bottom: 1px solid rgba(255,255,255,.5);
     padding-bottom: 4rem;
   }
+  .header_list{
+            display:flex;
+
+       @media (max-width:880px) {
+            display:none;
+
+       }
+  }
+  .spam_bars{
+     display:none;
+         @media (max-width:880px) {
+            display:flex;
+
+         }
+  }
    .navbar{
         display:none;
-         @media (max-width:780px) {
+         @media (max-width:880px) {
             display:flex;
              height:0;
         width:100%;

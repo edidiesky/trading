@@ -16,7 +16,7 @@ const Ratings = () => {
                     </div>
                 </div>
                 <div className="flex flex-col gap-4">
-                    <div className="flex items-start gap-4">
+                    <div className="flex flex-col md:flex-row items-start gap-4">
                         <div className="border h-[9rem] w-[9rem] fs-30 text-[#D48574] hover:text-[#fff] border-[#D48574] rounded-full hover:bg-[#D48574] flex items-center justify-center">
                             <IoBarChart />
                         </div>
@@ -32,7 +32,7 @@ const Ratings = () => {
                         </div>
                     </div>
 
-                    <div className="flex items-start gap-4">
+                    <div className="flex flex-col md:flex-row items-start gap-4">
                         <div className="border h-[9rem] w-[9rem] fs-30 text-[#D48574] hover:text-[#fff] border-[#D48574] rounded-full hover:bg-[#D48574] flex items-center justify-center">
                             <IoBarChart />
                         </div>
@@ -47,7 +47,7 @@ const Ratings = () => {
                         </div>
                     </div>
 
-                    <div className="flex items-start gap-4">
+                    <div className="flex flex-col md:flex-row items-start gap-4">
                         <div className="border h-[9rem] w-[9rem] fs-30 text-[#D48574] hover:text-[#fff] border-[#D48574] rounded-full hover:bg-[#D48574] flex items-center justify-center">
                             <IoBarChart />
                         </div>

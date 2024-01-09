@@ -18,7 +18,7 @@ const Ratings = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="flex items-start gap-4">
                         <div className="border h-[9rem] w-[9rem] fs-30 text-[#D48574] hover:text-[#fff] border-[#D48574] rounded-full flex items-center justify-center">
-                            <div className='w-[40px] h-[40px] border-4 border-[#d48574] '></div>
+                            <div className='w-[4rem] h-[4rem] border-4 border-[#d48574] '></div>
                         </div>
                         <div className="flex flex-1 flex-col gap-4">
                             <h3 className="fs-24 text-bold text-dark">
@@ -33,7 +33,7 @@ const Ratings = () => {
 
                     <div className="flex items-start gap-4">
                         <div className="border h-[9rem] w-[9rem] fs-30 text-[#D48574] hover:text-[#fff] border-[#D48574] rounded-full flex items-center justify-center">
-                            <div className='w-[40px] h-[40px] border-4 border-[#d48574] '></div>
+                            <div className='w-[4rem] h-[4rem] border-4 border-[#d48574] '></div>
                         </div>
                         <div className="flex flex-1 flex-col gap-4">
                             <h3 className="fs-24 text-bold text-dark">
@@ -48,7 +48,7 @@ const Ratings = () => {
 
                     <div className="flex items-start gap-4">
                         <div className="border h-[9rem] w-[9rem] fs-30 text-[#D48574] hover:text-[#fff] border-[#D48574] rounded-full flex items-center justify-center">
-                            <div className='w-[40px] h-[40px] border-4 border-[#d48574] '></div>
+                            <div className='w-[4rem] h-[4rem] border-4 border-[#d48574] '></div>
                         </div>
                         <div className="flex flex-1 flex-col gap-4">
                             <h3 className="fs-24 text-bold text-dark">

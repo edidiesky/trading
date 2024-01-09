@@ -4,10 +4,10 @@ const Works = () => {
         return (
             <CountingStyles className="w-100">
                 <div className="w-90 auto flex column gap-6">
-                    <h1 className="fs-50 text-white w-100 text-bold text-start md:text-center uppercase">
+                    <h1 className="text-[40px] md:text-[50px] text-white w-100 text-bold text-start md:text-center uppercase">
                         PLACE YOUR TRADES ON BEST CONDITIONS
                     </h1>
-                    <div className="w-100 grid mt-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-4">
+                    <div className="w-100 grid mt-20 grid-cols-1 sm:grid-cols-2 gap-y-20 lg:grid-cols-5 gap-x-4">
                         <h1 className="fs-50 text-white text-bold w-100 text-start md:text-center uppercase">
                             5+
                             <span className="block fs-20 text-light">

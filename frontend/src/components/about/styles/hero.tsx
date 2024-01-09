@@ -43,9 +43,6 @@ export const HeroStyles = styled.div`
       h4 {
         font-size: 3rem;
       }
-       h3 {
-        font-size: 8rem;
-      }
       @media (max-width:780px) {
         width:100%;
       }
