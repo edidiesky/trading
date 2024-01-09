@@ -20,7 +20,8 @@ import {
   TransactionList,
   ManageCustomers,
   CustomerList,
-  About
+  About,
+  FAQ
 } from "./screens";
 import ProtectRoute from "./utils/ProtectRoute";
 import LazyLoader from "./components/loaders/Lazy";
@@ -38,6 +39,11 @@ export default function App() {
           />
           <Route path={'/about'} element={<Suspense fallback={<LazyLoader />}>
             <About />
+          </Suspense>
+          }
+          />
+          <Route path={'/faq'} element={<Suspense fallback={<LazyLoader />}>
+            <FAQ />
           </Suspense>
           }
           />

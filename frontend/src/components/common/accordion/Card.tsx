@@ -35,7 +35,6 @@ const AccordionCardStyles = styled.div`
     p {
       font-size: 1.6rem;
       line-height: 1.6;
-      color: var(--grey-1);
       font-weight: 300;
       width: 90%;
       padding:3rem 4rem;
@@ -83,11 +82,11 @@ const AccordionCard: React.FC<{ x?: any }> = ({ x }) => {
         className={toggle ? "accordionCardTop active" : "accordionCardTop"}
         onClick={() => setToggle(!toggle)}
       >
-        <h3 className='fs-16 text-light2 family1 text-grey'>{x.title}</h3>
+        <h3 className='fs-18 text-light2 family1 text-grey'>{x.title}</h3>
         <div className="toggleBtn">{toggle ? <BsChevronUp /> : <BsChevronDown />}</div>
       </div>
       <div className={toggle ? "accordionBottom active" : "accordionBottom"}>
-        <p className='text-light2 family1 fs-14'>{x.response}</p>
+        <p className='text-bold text-grey2 leading-[1.7] fs-18'>{x.response}</p>
       </div>
     </AccordionCardStyles>
   )

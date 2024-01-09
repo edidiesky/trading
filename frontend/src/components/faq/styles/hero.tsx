@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const HeroStyles = styled.div`
-  min-height: 70vh;
+  /* min-height: 70vh; */
   position: relative;
     z-index: 30;
 
@@ -31,8 +31,8 @@ export const HeroStyles = styled.div`
     padding-bottom: 4rem;
   }
   .hero_center {
-    padding:20rem 0;
-    /* padding-bottom: 10rem; */
+    padding:15rem 0;
+    padding-bottom: 17rem;
     @media (max-width:780px) {
           padding-bottom: 12rem;
 

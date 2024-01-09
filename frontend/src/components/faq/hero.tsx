@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 const HeroData = [
     {
         image: "https://metacorepoint.com/img/fp-section-live-prices-1.png",
-        text: "Award winning in trading Education",
-        subtext: "We are 100% Trusted Trading Broker"
+        text: "FREQUENTLY ASKED QUESTIONS",
+        subtext: "FREQUENTLY ASKED QUESTIONS"
    
     },
 ]

@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Hero from './hero';
-import NewsLetter from './NewsLetter';
-import Ratings from './Ratings';
 import Works from './Works';
 import Banner from './Banner';
 
@@ -11,8 +9,8 @@ const About: React.FC = () => {
     <HomeStyles>
       <Hero />
       <Works />
-      <Ratings />
-      <NewsLetter />
+      {/* <Ratings /> */}
+      {/* <NewsLetter /> */}
       <Banner/>
       
     </HomeStyles>

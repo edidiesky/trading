@@ -2,6 +2,7 @@
 import { lazy } from 'react';
 const Home = lazy(() => import("./Home"));
 const About = lazy(() => import("./About"));
+const FAQ = lazy(() => import("./FAQ"));
 const Login = lazy(() => import("./Login"));
 const Register = lazy(() => import("./Register"));
 
@@ -40,5 +41,6 @@ export {
     TransactionList,
     ManageCustomers,
     CustomerList,
-    About
+    About,
+    FAQ
 }

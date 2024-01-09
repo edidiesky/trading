@@ -25,7 +25,7 @@ const Hero = () => {
     return (
         <>
             {/* <Header /> */}
-            <HeroStyles>
+            <HeroStyles className='flex items-center flex-col '>
                 <div className="image_overlay w-100"></div>
                 <div className="image_wrapper">
 
@@ -49,16 +49,16 @@ const Hero = () => {
                         <Link to={'/'} className="fs-16 text-bold uppercase text-white">
                             Home
                         </Link>
-                        <Link to={'/'} className="fs-16 text-bold uppercase text-white">
+                        <Link to={'/about'} className="fs-16 text-bold uppercase text-white">
                             About Us
-                        </Link><Link to={'/'} className="fs-16 text-bold uppercase text-white">
+                        </Link><Link to={'/trading'} className="fs-16 text-bold uppercase text-white">
                             Trading Assets
-                        </Link><Link to={'/'} className="fs-16 text-bold uppercase text-white">
+                        </Link><Link to={'/faq'} className="fs-16 text-bold uppercase text-white">
                             FAQ
-                        </Link><Link to={'/'} className="fs-16 text-bold uppercase text-white">
+                        </Link><Link to={'/documents'} className="fs-16 text-bold uppercase text-white">
                             Documents
                         </Link>
-                        <Link to={'/'} className="fs-16 text-bold uppercase text-white">
+                        <Link to={'/contact'} className="fs-16 text-bold uppercase text-white">
                             Contact
                         </Link>
                     </div>
