@@ -33,6 +33,8 @@ export const HeroStyles = styled.div`
   .hero_center {
     padding:12rem 0;
     padding-bottom: 30rem;
+    z-index:20;
+    position:relative;
     @media (max-width:780px) {
           padding-bottom: 12rem;
 
@@ -43,9 +45,7 @@ export const HeroStyles = styled.div`
       h4 {
         font-size: 3rem;
       }
-       h3 {
-        font-size: 8rem;
-      }
+      
       @media (max-width:780px) {
         width:100%;
       }

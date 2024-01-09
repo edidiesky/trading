@@ -46,7 +46,7 @@ const Works = () => {
         return (
             <div className="w-100">
                 <div className="w-90 CountingTradeTop_wrapper auto flex column">
-                    <div className="work_top w-100 flex item-center">
+                    <div className="work_top w-100 hidden md:flex item-center">
                         <div className="work_top_content w-100 flex justify-center column gap-4">
                             <div className="icon_1"></div>
                             <h3 className="fs-24 text-bold text-white">Trusted & Regulated</h3>

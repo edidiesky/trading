@@ -4,7 +4,7 @@ const NewsLetter = () => {
         return (
             <CoreStyles className="w-100">
                 <div className="w-90 auto grid core_warpper gap-24">
-                    <h1 className="fs-50 w-100 leading-[1.5] text-extra-bold text-white">
+                    <h1 className="text-[40px] lg:text-[60px] w-100 leading-[1.5] text-extra-bold text-white">
                         What Makes
                         Meta Core Trade
                         Different?
@@ -73,12 +73,6 @@ const CoreStyles = styled.div`
    padding:10rem 0;
    .core_warpper {
     h1 {
-        font-size: 70px;
-        line-height: 1.5;
-         @media (max-width:780px) {
-                font-size: 50px;
-
-    }
     }
     grid-gap: 3rem;
     grid-template-columns: 1fr 1fr;
