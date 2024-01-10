@@ -10,7 +10,7 @@ import { FundDeposit } from '@/features/deposit/depositSlice';
 const Deposit = () => {
     const { toast } = useToast()
 
-    const [amount, setAmount] = useState<number>(0)
+    const [amount, setAmount] = useState<number>()
     const dispatch = useAppDispatch()
     const {
         userInfo
@@ -25,7 +25,8 @@ const Deposit = () => {
         plan: "Deposit Only"
     }
     // console.log(paymentData)
-    const handlePayment = () => {
+    const handlePayment = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault()
         dispatch(FundDeposit(paymentData))
         const timeout = setTimeout(() => {
             navigate('/account/dashboard/payment')
@@ -34,7 +35,7 @@ const Deposit = () => {
         return () => clearTimeout(timeout)
 
     }
-    console.log(amount)
+    // console.log(amount)
     return (
         <HistorytStyles style={{ minHeight: "100vh" }} className="w-100">
             <div className="auto py-4 trading_wrapper flex column gap-4">
@@ -68,8 +69,8 @@ const Deposit = () => {
                             </div>
                             <button
                                 type='submit'
-                                disabled={amount! === 0}
-                                onClick={() => handlePayment()} className="btn fs-14 text-white text-bold">
+                                disabled={amount! === undefined}
+                                onClick={(e) => handlePayment(e)} className="btn fs-14 text-white text-bold">
                                 Proceeed to Payment
                             </button>
                         </div>

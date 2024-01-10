@@ -3,7 +3,6 @@
 import styled from "styled-components";
 import { BsCart3 } from "react-icons/bs";
 import Image from "./Image";
-import Rating from "./Rating";
 import { Link } from "react-router-dom";
 import { useAppSelector } from "@/hooks/reduxtoolkit";
 
@@ -22,7 +21,7 @@ const DashboardHeader = () => {
                 </div>
                 <div className="flex item-center gap-2">
                     <div className="flex item-center profile_wrapper relative gap-4">
-                        <div className="profile_avatar flex item-center justify-center fs-16 text-extra-bold text-white">{userInfo?.username[0]}</div>
+                        <div className="profile_avatar flex item-center justify-center fs-16 text-extra-bold text-white">{userInfo?.username && userInfo?.username[0]}</div>
                         <div className="profile_dropdown absolute">
                             <div className="w-100 flex column gap-2">
                                 <div className="flex profile_dropdown_bottom column w-100">

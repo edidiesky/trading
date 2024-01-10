@@ -173,6 +173,40 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
             </>
         );
     }
+
+    if (type === 'deposit') {
+        return (
+            <>
+                {/* <Delete /> */}
+                <tr key={x?._id}>
+                    <td>
+                        <span className="text-grey fs-12 family1">${x?.amount}</span>
+                    </td>
+                    {/* <td>
+                        <span className="fs-12 family1 text-grey">{x?.user?.fullname}</span>
+                    </td> */}
+                    <td>
+                        <span className="fs-12 family1 tex  text-grey">{x?.paymentMethod}</span>
+                    </td>
+                    <td>
+                        <span className="fs-12 family1 text-grey">
+                            {x?.isPaid === true ?
+                                <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold true"> Completed</span>
+                                : <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold false"> Not completed</span>
+                            }
+                        </span>
+                    </td>
+                    <td>
+                        <span className="text-grey fs-12 family1">{x?.plan}</span>
+                    </td>
+                    <td>
+                        <span className="text-grey fs-12 family1 text-light">04 Feb 2024</span>
+
+                    </td>
+                </tr>
+            </>
+        );
+    }
     return (
         <>
             {/* <Delete /> */}

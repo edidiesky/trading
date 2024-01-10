@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { IoCopy } from "react-icons/io5";
 import { CreateDeposit } from '@/features/deposit/depositReducer';
+import LoaderIndex from '@/components/loaders';
 const Payment = () => {
     const [image, setImage] = useState('');
 
@@ -55,6 +56,9 @@ const Payment = () => {
 
 
                 setImage(data.urls)
+            // create formdata
+                setUploading(false);
+
             } catch (err) {
                 console.log(err);
             }
@@ -77,6 +81,9 @@ const Payment = () => {
     }
     return (
         <HistorytStyles style={{ minHeight: "100vh" }} className="w-100">
+            {
+                uploading && <LoaderIndex/>
+            }
             <div className="auto py-4 trading_wrapper flex column gap-4">
                 <div className="flex column gap-1">
                     <h2 className="fs-45 text-dark">

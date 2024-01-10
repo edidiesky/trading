@@ -5,16 +5,17 @@ import { Table } from '../../components/common/styles';
 import TableCard from '../../components/common/TableCard';
 import { useAppDispatch, useAppSelector } from '@/hooks/reduxtoolkit';
 import { GetSingleTransactioOfAUser } from '@/features/transaction/transactionReducer';
+import { GetSingleDepsoitOfAUser } from '@/features/deposit/depositReducer';
 
 const History = () => {
     const dispatch = useAppDispatch()
     const [tab, setTab] = React.useState(0)
-    const { transactions } = useAppSelector(store => store.transaction)
+    const { deposits } = useAppSelector(store => store.deposit)
 
-    // transactions
+    // deposits
     React.useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-        dispatch(GetSingleTransactioOfAUser({Detailsdata:""}))
+        dispatch(GetSingleDepsoitOfAUser({Detailsdata:""}))
     }, []);
     return (
         <HistorytStyles style={{ minHeight: "100vh" }} className="w-100">
@@ -44,7 +45,7 @@ const History = () => {
                                             <thead>
                                                 <tr>
                                                     <th>Amount</th>
-                                                    <th>Username</th>
+                                                    {/* <th>Username</th> */}
                                                     <th>Payment Mode</th>
                                                     <th>Transaction Status</th>
                                                     <th>Plan</th>
@@ -52,8 +53,8 @@ const History = () => {
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                {transactions?.map((x?: any, index?: any) => {
-                                                    return <TableCard type={'usertransactions'} x={x} key={x?._id} />;
+                                                {deposits?.map((x?: any, index?: any) => {
+                                                    return <TableCard type={'deposit'} x={x} key={x?._id} />;
                                                 })}
                                             </tbody>
                                         </table>
@@ -74,7 +75,7 @@ const History = () => {
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                {transactions?.map((x?: any, index?: any) => {
+                                                {deposits?.map((x?: any, index?: any) => {
                                                     return <TableCard type={'usertransactions'} x={x} key={x?._id} />;
                                                 })}
                                             </tbody>
@@ -83,14 +84,14 @@ const History = () => {
                                 </Table>
                             </div>
                        }
-                        <div className="w-100 py-1 flex item-center justify-space">
+                        {/* <div className="w-100 py-1 flex item-center justify-space">
                             <h5 className="fs-14 text-grey2 family1">
                                 Showing 0 to 0 of 0 entries</h5>
                             <div className="flex item-center justify-end gap-2">
                                 <button className="btn fs-14 text-white text-bold">Previous</button>
                                 <button className="btn fs-14 text-white text-bold">Next</button>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
               </div>
             </div>

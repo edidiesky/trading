@@ -56,6 +56,7 @@ export const CreateDeposit = createAsyncThunk<{
   async (tweetData, { rejectWithValue, getState }) => {
     try {
       const { auth } = getState() as { auth: { token: string } };
+      console.log(auth.token)
       const config = {
         headers: {
           authorization: `Bearer ${auth.token}`,
@@ -172,10 +173,10 @@ export const GetSingleDeposit = createAsyncThunk<BookMarkATweetPayload, { Detail
 
 
 
-export const GetSingleTransactioOfAUser = createAsyncThunk<BookMarkATweetPayload, { Detailsdata?: string }, {
+export const GetSingleDepsoitOfAUser = createAsyncThunk<BookMarkATweetPayload, { Detailsdata?: string }, {
   rejectValue: KnownError,
 }>(
-  "GetSingleTransactioOfAUser",
+  "GetSingleDepsoitOfAUser",
   async ({ Detailsdata }, { rejectWithValue, getState }) => {
 
     try {

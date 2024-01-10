@@ -12,21 +12,21 @@ interface CustomInterface extends ExpressRequest {
 //PRIVATE/ADMIN
 const GetDepositById = asyncHandler(async (req: CustomInterface, res: Response) => {
   // 
-  const depsoit = await Deposit.findOne({ _id: req.params.id })
+  const deposit = await Deposit.findOne({ _id: req.params.id })
     .populate('user', 'fullname username email country')
    res.setHeader("Content-Type", "text/html");
   res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
-    res.status(200).json({ depsoit })
+    res.status(200).json({ deposit })
 }
 )
 
 const GetDepositOfAUser = asyncHandler(async (req: CustomInterface, res: Response) => {
   // 
-  const depsoit = await Deposit.find({ user: req?.user?.userId })
+  const deposit = await Deposit.find({ user: req?.user?.userId })
     .populate('user', 'fullname username email country')
    res.setHeader("Content-Type", "text/html");
   res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
-    res.status(200).json({ depsoit })
+    res.status(200).json({ deposit })
 }
 )
 
@@ -34,7 +34,7 @@ const GetDepositOfAUser = asyncHandler(async (req: CustomInterface, res: Respons
 const CreateDeposit = asyncHandler(async (req: CustomInterface, res: Response) => {
   // get the investment item
   const { amount, paymentMethod, status, proof_of_payment, plan } = req.body
-  const depsoit = await Deposit.create({
+  const deposit = await Deposit.create({
     amount,
     user: req?.user?.userId,
     paymentMethod,
@@ -44,35 +44,35 @@ const CreateDeposit = asyncHandler(async (req: CustomInterface, res: Response) =
   })
    res.setHeader("Content-Type", "text/html");
   res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
-  res.status(200).json({ depsoit })
+  res.status(200).json({ deposit })
 }
 )
 
 //PRIVATE/ADMIN
 const AdminUpdateDeposit = asyncHandler(async (req: CustomInterface, res: Response) => {
   const { id } = req.params
-  // find the depsoit
-  const depsoit = await Deposit.findById({ _id: id })
-  if (!depsoit) {
-    throw new Error('No such depsoit has been found')
+  // find the deposit
+  const deposit = await Deposit.findById({ _id: id })
+  if (!deposit) {
+    throw new Error('No such deposit has been found')
   }
-  // update the depsoit
+  // update the deposit
   const updatedDeposit = await Deposit.findByIdAndUpdate({ _id: id }, req.body, { new: true })
 
    res.setHeader("Content-Type", "text/html");
   res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
-  res.status(200).json({ depsoit: updatedDeposit })
+  res.status(200).json({ deposit: updatedDeposit })
 }
 )
 //PRIVATE/ADMIN
 const DeleteDeposit = asyncHandler(async (req: CustomInterface, res: Response) => {
   const { id } = req.params
-  // find the depsoit
-  const depsoit = await Deposit.findById({ _id: id })
-  if (!depsoit) {
-    throw new Error('No such depsoit has     been found')
+  // find the deposit
+  const deposit = await Deposit.findById({ _id: id })
+  if (!deposit) {
+    throw new Error('No such deposit has     been found')
   }
-  // update the depsoit
+  // update the deposit
   await Deposit.findByIdAndDelete({ _id: id })
    res.setHeader("Content-Type", "text/html");
   res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
@@ -85,10 +85,10 @@ const DeleteDeposit = asyncHandler(async (req: CustomInterface, res: Response) =
 // PRIVATE/ADMIN
 const GetAllDeposit = asyncHandler(async (req: CustomInterface, res: Response) => {
   // 
-  const depsoit = await Deposit.find({}).populate('user', 'fullname username email country')
+  const deposit = await Deposit.find({}).populate('user', 'fullname username email country')
    res.setHeader("Content-Type", "text/html");
   res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
-  res.status(200).json({ depsoit })
+  res.status(200).json({ deposit })
 }
 )
 

@@ -5,7 +5,7 @@ import {
   GetSingleDeposit,
   CreateDeposit,
   DeleteDeposit,
-  GetSingleTransactioOfAUser
+  GetSingleDepsoitOfAUser
 } from './depositReducer'
 interface depositDeleteType {
   _id?: string
@@ -155,17 +155,17 @@ export const depositSlice = createSlice({
       state.alertText = action.payload
 
     })
-    // GetSingleTransactioOfAUser
+    // GetSingleDepsoitOfAUser
 
-    builder.addCase(GetSingleTransactioOfAUser.pending, (state, action) => {
+    builder.addCase(GetSingleDepsoitOfAUser.pending, (state, action) => {
       // state.depositisLoading = true
     })
-    builder.addCase(GetSingleTransactioOfAUser.fulfilled, (state, action) => {
+    builder.addCase(GetSingleDepsoitOfAUser.fulfilled, (state, action) => {
       state.depositisSuccess = true
       state.depositisLoading = false
       state.deposits = action.payload
     })
-    builder.addCase(GetSingleTransactioOfAUser.rejected, (state, action) => {
+    builder.addCase(GetSingleDepsoitOfAUser.rejected, (state, action) => {
       state.depositisSuccess = false
       state.depositisError = true
       state.depositisLoading = false

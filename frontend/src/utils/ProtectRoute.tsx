@@ -9,6 +9,7 @@ interface LayoutProps {
 const ProtectRoute: React.FC<LayoutProps> = ({ children }) => {
   const navigate = useNavigate()
   const {  userInfo } = useAppSelector(store => store.auth)
+  // console.log(userInfo)
   if (userInfo !== null) {
     return <>{children}</>; // Render the children when authenticated
   } else {
