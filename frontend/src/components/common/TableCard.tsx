@@ -89,9 +89,9 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
             <>
                 {/* <Delete /> */}
                 <tr key={x?._id}>
-                    <td>
+                    {/* <td>
                         <span className="text-grey fs-12 family1">{x?._id}</span>
-                    </td>
+                    </td> */}
                     <td>
                         <div className="flex flex-col">
                             <span className="fs-14 text-dark text-bold">{x?.fullname}</span>
@@ -107,7 +107,7 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                     <td>
                         <span className="fs-12 family1 text-grey">
                             {x?.isAdmin === true ?
-                                <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold true"> Admin</span>
+                                <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold false"> Admin</span>
                                 : <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold true"> Customer</span>
                             }
                         </span>

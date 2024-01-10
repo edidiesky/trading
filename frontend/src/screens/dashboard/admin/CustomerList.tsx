@@ -46,7 +46,7 @@ const CustomerList = () => {
                                         <table className="tableWrapper">
                                             <thead>
                                                 <tr>
-                                                    <th>ID</th>
+                                                    {/* <th>ID</th> */}
                                                     <th>Investor</th>
                                                     <th>Phone</th>
                                                     <th>Country</th>

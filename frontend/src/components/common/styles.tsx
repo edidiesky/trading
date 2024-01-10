@@ -95,8 +95,8 @@ export const Table = styled.div`
             }
          
             .tablespan {
-              padding: 1rem 1.4rem;
-              border-radius: 2px;
+              padding: 1rem;
+              border-radius: 40px;
               color: #333;
               text-align: center;
               &.true {
@@ -105,7 +105,7 @@ export const Table = styled.div`
               }
               &.false {
                 color: #840a0a;
-                background: #ff060612;
+                background: rgba(255, 3, 3, 0.071);
               }
             }
 
