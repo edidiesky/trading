@@ -62,7 +62,7 @@ const Register: React.FC = () => {
         <HomeStyles className='flex column'>
             <div className="login_wrapper">
                 <div className="w-90 auto flex item-center justify-center">
-                    <form className="login_form_wrapper flex column item-start gap-4">
+                    <form onSubmit={(e) => handleRegisterUser(e)} className="login_form_wrapper flex column item-start gap-4">
                         <div className="flex w-100 column gap-2">
                             <div className="flex column gap-2">
                                 <img style={{ width: "120px" }} src="https://metacorepoint.com/img/logo_light.png" alt="" className="auto" />
@@ -165,7 +165,7 @@ const Register: React.FC = () => {
                         </div>
                         <button
                             type="submit"
-                            onClick={(e: React.ChangeEvent<HTMLInputElement>) => handleRegisterUser(e)}
+                            
                             className="w-100 text-center gap-2 btn btn-2 fs-16 text-bold">
                             Register
                         </button>
