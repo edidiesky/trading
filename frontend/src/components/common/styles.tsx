@@ -48,7 +48,7 @@ export const Table = styled.div`
             background: rgb(0 0 0 / 13%);
           }
           th {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--dark-1);
             font-weight: 600;
             text-align: start;
@@ -56,6 +56,8 @@ export const Table = styled.div`
 
             border-bottom: 1px solid rgba(0, 0, 0, 0.08);
             padding: 2rem 1.8rem;
+              font-family: "Sussie", sans-serif;
+
          
             transition: all 0.3s var(--transition-2);
           }
@@ -79,13 +81,13 @@ export const Table = styled.div`
             }
           }
           td {
-            font-size: 1.7rem;
+            font-size: 1.4rem;
             font-weight: 500;
             text-align: start;
             padding: 2rem 1.8rem;
             margin-bottom: 1rem;
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-              /* font-family: "Sussie", sans-serif; */
+              font-family: "Sussie", sans-serif;
 
 
             .true {
