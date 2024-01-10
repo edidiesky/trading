@@ -22,7 +22,7 @@ const Deposit = () => {
     const paymentData = {
         paymentMethod: "Bitcoin",
         amount,
-        plan:"Deposit Only"
+        plan: "Deposit Only"
     }
     // console.log(paymentData)
     const handlePayment = () => {
@@ -67,7 +67,7 @@ const Deposit = () => {
 
                             </div>
                             <button
-                               type='submit'
+                                type='submit'
                                 disabled={amount! === 0}
                                 onClick={() => handlePayment()} className="btn fs-14 text-white text-bold">
                                 Proceeed to Payment
