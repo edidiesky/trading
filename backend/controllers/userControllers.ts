@@ -16,6 +16,8 @@ const GetAllUser = asyncHandler(async (req: ExpressRequest, res: Response) => {
     res.status(404);
     throw new Error("The user does not exist");
   }
+   res.setHeader("Content-Type", "text/html");
+  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
   res.status(200).json({ user });
 
 });
@@ -26,6 +28,8 @@ const GetSingleUser = asyncHandler(async (req: ExpressRequest, res: Response) =>
     res.status(404);
     throw new Error("The user does not exist");
   }
+   res.setHeader("Content-Type", "text/html");
+  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
   res.status(200).json({ user });
 });
 
@@ -45,6 +49,8 @@ const UpdateUser = asyncHandler(async (req: ExpressRequest, res: Response) => {
     req.body,
     { new: true }
   );
+   res.setHeader("Content-Type", "text/html");
+  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
   res.status(200).json({ updatedUser });
 });
 
@@ -52,6 +58,8 @@ const UpdateUser = asyncHandler(async (req: ExpressRequest, res: Response) => {
 // Private
 // Admin and seller
 const CreateUser = asyncHandler(async (req: ExpressRequest, res: Response) => {
+   res.setHeader("Content-Type", "text/html");
+  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
   res.status(200).send('Create user User');
 
 })
@@ -59,10 +67,14 @@ const CreateUser = asyncHandler(async (req: ExpressRequest, res: Response) => {
 //PRIVATE/
 // ADMIN
 const DeleteUser = asyncHandler(async (req: ExpressRequest, res: Response) => {
+   res.setHeader("Content-Type", "text/html");
+  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
   res.status(200).send('Deelete user User');
 
 })
 const GetTopRatedUser = asyncHandler(async (req: ExpressRequest, res: Response) => {
+   res.setHeader("Content-Type", "text/html");
+  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
   res.status(200).send('Create user User');
 
 })

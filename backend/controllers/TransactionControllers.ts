@@ -14,7 +14,9 @@ const GetTransactionById = asyncHandler(async (req: CustomInterface, res: Respon
   // 
   const transaction = await Transaction.findOne({ _id: req.params.id })
     .populate('user', 'fullname username email country')
-  res.status(200).json({ transaction })
+   res.setHeader("Content-Type", "text/html");
+  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
+    res.status(200).json({ transaction })
 }
 )
 
@@ -22,7 +24,9 @@ const GetTransactionOfAUser = asyncHandler(async (req: CustomInterface, res: Res
   // 
   const transaction = await Transaction.find({ user: req?.user?.userId })
     .populate('user', 'fullname username email country')
-  res.status(200).json({ transaction })
+   res.setHeader("Content-Type", "text/html");
+  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
+    res.status(200).json({ transaction })
 }
 )
 
@@ -45,6 +49,8 @@ const CreateTransaction = asyncHandler(async (req: CustomInterface, res: Respons
     user: req?.user?.userId,
     status
   })
+   res.setHeader("Content-Type", "text/html");
+  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
   res.status(200).json({ transaction })
 }
 )
@@ -60,6 +66,8 @@ const AdminUpdateTransaction = asyncHandler(async (req: CustomInterface, res: Re
   // update the transaction
   const updatedTransaction = await Transaction.findByIdAndUpdate({ _id: id }, req.body, { new: true })
 
+   res.setHeader("Content-Type", "text/html");
+  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
   res.status(200).json({ transaction: updatedTransaction })
 }
 )
@@ -73,6 +81,8 @@ const DeleteTransaction = asyncHandler(async (req: CustomInterface, res: Respons
   }
   // update the transaction
   await Transaction.findByIdAndDelete({ _id: id })
+   res.setHeader("Content-Type", "text/html");
+  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
   res.status(200).json({ msg: 'Transaction has been sucessfully deleted' })
 }
 )
@@ -83,6 +93,8 @@ const DeleteTransaction = asyncHandler(async (req: CustomInterface, res: Respons
 const GetAllTransaction = asyncHandler(async (req: CustomInterface, res: Response) => {
   // 
   const transaction = await Transaction.find({}).populate('user', 'fullname username email country')
+   res.setHeader("Content-Type", "text/html");
+  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
   res.status(200).json({ transaction })
 }
 )

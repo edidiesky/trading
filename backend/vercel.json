@@ -1,0 +1,44 @@
+{
+  "version": 2,
+  "devCommand": "npm run dev",
+  "builds": [
+    {
+      "src": "index.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "index.ts"
+    },
+    {
+      "src": "/api/v1/auth/(.*)",
+      "dest": "index.ts"
+    },
+    {
+      "src": "/api/v1/user/(.*)",
+      "dest": "index.ts"
+    },
+    {
+      "src": "/api/v1/transaction/(.*)",
+      "dest": "index.ts"
+    },
+    {
+      "src": "/api/v1/investment/(.*)",
+      "dest": "index.ts"
+    },
+    {
+      "src": "/api/v1/deposit/(.*)",
+      "dest": "index.ts"
+    },
+    {
+      "src": "/api/v1/upload/(.*)",
+      "dest": "index.ts"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "index.ts"
+    }
+  ]
+}

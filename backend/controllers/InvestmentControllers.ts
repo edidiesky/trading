@@ -21,6 +21,8 @@ const GetInvestmentById = asyncHandler(async (req: CustomInterface, res: Respons
     throw new Error('No investment has been created')
   }
   // send the data
+    res.setHeader("Content-Type", "text/html");
+  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
   res.status(200).json({ investment })
 }
 )
@@ -50,6 +52,8 @@ const CreateInvestment = asyncHandler(async (req: CustomInterface, res: Response
     user: req?.user?.userId
   })
 
+    res.setHeader("Content-Type", "text/html");
+  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
   res.status(200).json({ investment, user: updatedUser })
 }
 )
@@ -65,6 +69,8 @@ const AdminUpdateInvestment = asyncHandler(async (req: CustomInterface, res: Res
   // update the investment
   const updatedInvestment = await Investment.findByIdAndUpdate({ _id: id }, req.body, { new: true })
 
+    res.setHeader("Content-Type", "text/html");
+  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
   res.status(200).json({ investment: updatedInvestment })
 }
 )
@@ -79,6 +85,8 @@ const DeleteInvestment = asyncHandler(async (req: CustomInterface, res: Response
   // update the investment
   await Investment.findByIdAndDelete({ _id: id })
 
+    res.setHeader("Content-Type", "text/html");
+  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
   res.status(200).json({ message: 'Deleted sucessfully' })
 
 
@@ -95,6 +103,8 @@ const GetAllInvestment = asyncHandler(async (req: CustomInterface, res: Response
   if (!investment) {
     throw new Error('No investment has been created')
   }
+    res.setHeader("Content-Type", "text/html");
+  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
   res.status(200).json({ investment })
 }
 )
@@ -108,6 +118,8 @@ const GetAllInvestmentOfAUser = asyncHandler(async (req: CustomInterface, res: R
   if (!investment) {
     throw new Error('No investment has been created')
   }
+    res.setHeader("Content-Type", "text/html");
+  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
   res.status(200).json({ investment })
 }
 )
