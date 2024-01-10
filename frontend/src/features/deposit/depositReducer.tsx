@@ -6,8 +6,9 @@ type tweetdatatype = {
   paymentMethod?: any;
   amount?: any;
   user?: any;
-  proof_of_payment?: any;
+   proof_of_payment?: any;
   _id?: string;
+  plan?: string;
 }
 
 interface BookMarkATweetPayload {

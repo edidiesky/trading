@@ -1,7 +1,5 @@
 import express from "express";
-import jwt, { Secret } from "jsonwebtoken";
 import cors from "cors";
-import bcrypt from 'bcryptjs'
 import dotenv from "dotenv";
 dotenv.config();
 

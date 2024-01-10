@@ -10,7 +10,7 @@ import { FundDeposit } from '@/features/deposit/depositSlice';
 const Deposit = () => {
     const { toast } = useToast()
 
-    const [amount, setAmount] = useState<number>()
+    const [amount, setAmount] = useState<number>(0)
     const dispatch = useAppDispatch()
     const {
         userInfo
@@ -21,7 +21,8 @@ const Deposit = () => {
     }, []);
     const paymentData = {
         paymentMethod: "Bitcoin",
-        amount
+        amount,
+        plan:"Deposit Only"
     }
     // console.log(paymentData)
     const handlePayment = () => {
@@ -33,6 +34,7 @@ const Deposit = () => {
         return () => clearTimeout(timeout)
 
     }
+    console.log(amount)
     return (
         <HistorytStyles style={{ minHeight: "100vh" }} className="w-100">
             <div className="auto py-4 trading_wrapper flex column gap-4">
@@ -41,11 +43,12 @@ const Deposit = () => {
                         Fund Your Account
                     </h2>
                 </div>
-                <div className="trading_card w-100 flex column gap-4">
+                <form className="trading_card w-100 flex column gap-4">
 
                     <div className="w-100 flex column gap-1 item-start">
                         <h5 className="fs-18 text-bold">Enter your Amount</h5>
                         <input
+                            required
                             className="input"
                             value={amount}
                             onChange={(e) => setAmount(parseFloat(e.target.value))}
@@ -64,13 +67,14 @@ const Deposit = () => {
 
                             </div>
                             <button
-                                disabled={amount! <= 0}
+                               type='submit'
+                                disabled={amount! === 0}
                                 onClick={() => handlePayment()} className="btn fs-14 text-white text-bold">
                                 Proceeed to Payment
                             </button>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
         </HistorytStyles>
     )
@@ -84,7 +88,7 @@ const HistorytStyles = styled.div`
   .trading_wrapper {
     width:95%;
     .input {
-        min-width: 500px;
+        min-width: 450px;
     }
     .btn {
         min-width:200px;
@@ -92,7 +96,6 @@ const HistorytStyles = styled.div`
      .btn:disabled {
       cursor: not-allowed;
       opacity: .6;
-
     }
     .trading_card {
         width:60%;
