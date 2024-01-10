@@ -6,6 +6,7 @@ type tweetdatatype = {
   paymentMethod?: any;
   amount?: any;
   user?: any;
+  status?: any;
    proof_of_payment?: any;
   _id?: string;
   plan?: string;

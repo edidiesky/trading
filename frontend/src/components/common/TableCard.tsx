@@ -257,7 +257,7 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
 
                     </td>
                     <td>
-                        <Link to={`/account/dashboard/Manage_Customers/${x?._id}`} className="icons flex hover:shadow-sm hover:bg-white items-center justify-center">
+                        <Link to={`/account/dashboard/deposit_list/${x?._id}`} className="icons flex hover:shadow-sm hover:bg-white items-center justify-center">
                             <MdEdit />
                         </Link>
                     </td>

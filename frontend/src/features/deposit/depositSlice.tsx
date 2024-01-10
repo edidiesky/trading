@@ -27,11 +27,8 @@ interface depositState {
   depositisError?: boolean,
 
   deposit_photo_id?: string,
-  createdepositisLoading?: boolean,
   createdepositisSuccess?: boolean,
   createdepositisError?: boolean,
-
-  updatedepositisLoading?: boolean,
   updatedepositisSuccess?: boolean,
   updatedepositisError?: boolean,
 
@@ -65,12 +62,8 @@ const initialState: depositState = {
   alertText: '',
   showAlert: false,
   alertType: '',
-
-  createdepositisLoading: false,
   createdepositisSuccess: false,
   createdepositisError: false,
-
-  updatedepositisLoading: false,
   updatedepositisSuccess: false,
   updatedepositisError: false,
 
@@ -135,21 +128,21 @@ export const depositSlice = createSlice({
 
     // create user deposit
     builder.addCase(CreateDeposit.pending, (state, action) => {
-      state.createdepositisLoading = true
+      state.depositisLoading = true
 
     })
     builder.addCase(CreateDeposit.fulfilled, (state, action) => {
       state.deposits = action.payload
       state.alertText = 'deposit created succesfully'
       state.showAlert = true
-      state.createdepositisLoading = false
+      state.depositisLoading = false
       state.createdepositisSuccess = true
       state.alertType = 'success'
     })
     builder.addCase(CreateDeposit.rejected, (state, action) => {
       state.depositisSuccess = false
       state.depositisError = true
-      state.createdepositisLoading = false
+      state.depositisLoading = false
       state.showAlert = true
       state.alertType = 'danger'
       state.alertText = action.payload
@@ -177,7 +170,7 @@ export const depositSlice = createSlice({
     // get single deposit slice
 
     builder.addCase(GetSingleDeposit.pending, (state, action) => {
-      // state.depositisLoading = true
+      state.depositisLoading = true
     })
     builder.addCase(GetSingleDeposit.fulfilled, (state, action) => {
       state.depositisSuccess = true
@@ -217,11 +210,11 @@ export const depositSlice = createSlice({
     })
 
     builder.addCase(UpdateDeposit.pending, (state, action) => {
-      state.updatedepositisLoading = true
+      state.depositisLoading = true
     })
     builder.addCase(UpdateDeposit.fulfilled, (state, action) => {
       state.updatedepositisSuccess = true
-      state.updatedepositisLoading = false
+      state.depositisLoading = false
       state.depositDetails = action.payload
       state.alertText = 'deposit Update succesfully'
       state.showAlert = true
@@ -230,7 +223,7 @@ export const depositSlice = createSlice({
     builder.addCase(UpdateDeposit.rejected, (state, action) => {
       state.depositisSuccess = false
       state.depositisError = true
-      state.updatedepositisLoading = false
+      state.depositisLoading = false
       state.showAlert = true
       state.alertType = 'danger'
       state.alertText = action.payload
