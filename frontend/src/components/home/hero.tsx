@@ -41,18 +41,7 @@ const Hero = () => {
 
                     <img src={HeroData[0].image} alt="" />
                 </div>
-                <div className="hero_navbar py-2 flex w-90 auto justify-end">
-                    <div className="flex item-center gap-2">
-                        <Link to={'/register'} className="login_btn btn_1 fs-14 flex item-center gap-1 text-bold text-white">
-                            <FaUser />
-                            Sign Up
-                        </Link>
-                        <Link to={'/login'} className="login_btn fs-14 flex item-center gap-1 text-bold text-white">
-                            <FaKey />
-                            Login
-                        </Link>
-                    </div>
-                </div>
+              
                 <Header/>
 
                 <div className="hero_center h-100 w-90 auto flex item-center">
