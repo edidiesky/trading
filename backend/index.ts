@@ -21,7 +21,7 @@ app.use(
   })
 );
 
-// routes
+// route
 import userRoute from "./routes/userRoute";
 import authRoute from "./routes/authRoute";
 import transaction from "./routes/transactionRoute";
