@@ -4,10 +4,17 @@ import styled from "styled-components";
 import { BsCart3 } from "react-icons/bs";
 import Image from "./Image";
 import { Link } from "react-router-dom";
-import { useAppSelector } from "@/hooks/reduxtoolkit";
+import { useAppSelector, useAppDispatch } from "@/hooks/reduxtoolkit";
 
 const DashboardHeader = () => {
     const { userInfo } = useAppSelector(store => store.auth)
+    const dispatch = useAppDispatch()
+
+
+    const handleLogOut = () => {
+        dispatch(ClearUserInfo("any"));
+        window.location.reload();
+    };
     return (
 
         <HeaderStyles className="w-100 flex item-center justify-center column gap-2">
@@ -26,7 +33,7 @@ const DashboardHeader = () => {
                             <div className="w-100 flex column gap-2">
                                 <div className="flex profile_dropdown_bottom column w-100">
                                     <Link to={'/account/dashboard/profile'} className="text-bold fs-14 w-100 profile_list text-dark block">Profile</Link>
-                                    <span className="text-bold fs-14 w-100 profile_list text-dark block">Log Out</span>
+                                    <span onClick={handleLogOut} className="text-bold fs-14 w-100 profile_list text-dark block">Log Out</span>
 
                                 </div>
                             </div>

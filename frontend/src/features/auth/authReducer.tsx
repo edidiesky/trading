@@ -5,10 +5,12 @@ const Registerurl: string = "/api/v1/auth/register";
 const Loginurl = "/api/v1/auth/login";
 
 type RegisterData = {
-  name?: string;
+  username?: string;
   email?: string;
   password?: string;
   display_name?: string,
+  fullname?: string,
+  phone?: string,
   _id?: string
 }
 

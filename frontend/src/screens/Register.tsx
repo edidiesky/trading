@@ -4,8 +4,11 @@ import { ToastAction } from "@/components/ui/toast"
 import { styled } from 'styled-components';
 import { IoPerson } from "react-icons/io5";
 import { FaPhoneAlt, FaKey } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { MdOutlineMailOutline } from "react-icons/md";
+import { useAppDispatch, useAppSelector } from "@/hooks/reduxtoolkit";
+import { registerUser } from "@/features/auth/authReducer";
+
 
 type InputData = {
     id: number;
@@ -18,16 +21,48 @@ type InputData = {
 
 const Register: React.FC = () => {
     const [email, setEmail] = useState('');
-    const [name, setName] = useState('');
+    const [username, setUsername] = useState('');
+    const [phone, setPhone] = useState('');
+    const [fullname, setFullName] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate()
+
+
+    const {
+        loginisLoading,
+        loginisSuccess,
+        alertText,
+        showAlert,
+        alertType,
+    } = useAppSelector(store => store.auth)
+
+    const dispatch = useAppDispatch()
 
     const { toast } = useToast()
 
+    const handleRegisterUser = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        dispatch(registerUser({ email, password, phone, username, fullname }))
+    }
+
+    useEffect(() => {
+        if (loginisSuccess) {
+            toast({
+                variant: "success",
+                description: 'Registration Succesfully, Redirection soon!',
+            })
+            const timeout = setTimeout(() => {
+                navigate('/login')
+            }, 3000);
+
+            return () => clearTimeout(timeout)
+        }
+    }, [loginisSuccess])
     return (
         <HomeStyles className='flex column'>
             <div className="login_wrapper">
                 <div className="w-90 auto flex item-center justify-center">
-                    <div className="login_form_wrapper flex column item-start gap-4">
+                    <form className="login_form_wrapper flex column item-start gap-4">
                         <div className="flex w-100 column gap-2">
                             <div className="flex column gap-2">
                                 <img style={{ width: "120px" }} src="https://metacorepoint.com/img/logo_light.png" alt="" className="auto" />
@@ -42,8 +77,8 @@ const Register: React.FC = () => {
                                     <span>Username</span>
                                     <div className="input flex item-center gap-1">
                                         <IoPerson fontSize={'15px'} className="text-grey" />
-                                        <input className="w-100 text-light fs-16" required={true} value={name} placeholder="Your Name"
-                                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)} >
+                                        <input className="w-100 text-light fs-16" required={true} value={username} placeholder="Your Name"
+                                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUsername(e.target.value)} >
                                         </input>
                                     </div>
                                 </label>
@@ -51,9 +86,10 @@ const Register: React.FC = () => {
                                     <span>Fullname</span>
                                     <div className="input flex item-center gap-1">
                                         <IoPerson fontSize={'15px'} className="text-grey" />
-                                        <input className="w-100 text-light fs-16" required={true} value={name}
+                                        <input className="w-100 text-light fs-16" required={true}
+                                            value={fullname}
                                             placeholder="Enter Your Full Name"
-                                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)} >
+                                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFullName(e.target.value)} >
                                         </input>
                                     </div>
 
@@ -67,10 +103,10 @@ const Register: React.FC = () => {
                                         <input
                                             className="w-100 text-light fs-16"
                                             required={true}
-                                            value={name}
+                                            value={email}
                                             type="email"
                                             placeholder="name@example.com"
-                                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)} >
+                                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)} >
                                         </input>
                                     </div>
 
@@ -84,10 +120,10 @@ const Register: React.FC = () => {
                                         <input
                                             className="w-100 text-light fs-16"
                                             required={true}
-                                            value={name}
+                                            value={phone}
                                             type="text"
                                             placeholder="Enter Your Phone Number"
-                                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)} >
+                                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPhone(e.target.value)} >
                                         </input>
                                     </div>
 
@@ -100,16 +136,16 @@ const Register: React.FC = () => {
                                         <input
                                             className="w-100 text-light fs-16"
                                             required={true}
-                                            value={name}
+                                            value={password}
                                             type="password"
                                             placeholder="Enter Your Password"
-                                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)} >
+                                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)} >
                                         </input>
                                     </div>
 
 
                                 </label>
-                                <label htmlFor="" className="fs-14 flex column gap-1 text-bold text-grey2">
+                                {/* <label htmlFor="" className="fs-14 flex column gap-1 text-bold text-grey2">
                                     <span>Confirm Password</span>
                                     <div className="input flex item-center gap-1">
                                         <FaKey fontSize={'18px'} className="text-grey" />
@@ -124,18 +160,12 @@ const Register: React.FC = () => {
                                     </div>
 
 
-                                </label>
+                                </label> */}
                             </div>
                         </div>
                         <button
-                            onClick={() => {
-                                toast({
-                                    variant: "destructive",
-                                    title: "Scheduled: Catch up",
-                                    description: "Friday, February 10, 2023 at 5:57 PM",
-                                    action: <ToastAction altText="Try again">Try again</ToastAction>,
-                                })
-                            }}
+                            type="submit"
+                            onClick={(e: React.ChangeEvent<HTMLInputElement>) => handleRegisterUser(e)}
                             className="w-100 text-center gap-2 btn btn-2 fs-16 text-bold">
                             Register
                         </button>
@@ -146,7 +176,7 @@ const Register: React.FC = () => {
                                     className="text-blue fs-14 text-extra-bold">Login</Link>
                             </span>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </HomeStyles>

@@ -6,7 +6,8 @@ import { RxCross1 } from "react-icons/rx";
 import { HiOutlineBars3CenterLeft } from "react-icons/hi2";
 import React from "react";
 import { FaKey, FaUser } from "react-icons/fa";
-import { useAppSelector } from "@/hooks/reduxtoolkit";
+import { useAppSelector, useAppDispatch } from "@/hooks/reduxtoolkit";
+import { ClearUserInfo } from "@/features/auth/authSlice";
 const Header = () => {
     const { userInfo } = useAppSelector(store => store.auth)
 
@@ -22,6 +23,13 @@ const Header = () => {
             window.removeEventListener("scroll", isActive);
         };
     }, []);
+    const dispatch = useAppDispatch()
+
+
+    const handleLogOut = () => {
+        dispatch(ClearUserInfo("any"));
+        window.location.reload();
+    };
     return (
 
         <HeaderStyles className="w-100 flex column gap-2">
@@ -40,7 +48,7 @@ const Header = () => {
                                 <div className="flex profile_dropdown_bottom column w-100">
                                     <Link to={'/account/dashboard'} className="text-bold fs-14 w-100 profile_list text-dark block">Dashboard</Link>
                                     <Link to={'/account/dashboard/profile'} className="text-bold fs-14 w-100 profile_list text-dark block">Profile</Link>
-                                    <span className="text-bold fs-14 w-100 profile_list text-dark block">Log Out</span>
+                                    <span onClick={handleLogOut} className="text-bold fs-14 w-100 profile_list text-dark block">Log Out</span>
 
                                 </div>
                             </div>
