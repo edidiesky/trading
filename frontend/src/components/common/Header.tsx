@@ -18,7 +18,7 @@ const Header = () => {
         window.scrollY > 100 ? setActive(true) : setActive(false);
     };
     React.useEffect(() => {
-        window.addEventListener("scroll", isActive);
+        window.adauthdEventListener("scroll", isActive);
         return () => {
             window.removeEventListener("scroll", isActive);
         };
