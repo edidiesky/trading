@@ -15,6 +15,8 @@ import History from './dashboard/History'
 import Support from './dashboard/Support'
 import Deposit from './dashboard/Deposit'
 import Payment from './dashboard/Payment'
+import Profile from './dashboard/Profile'
+// Profile
 import ManageTransactions from './dashboard/admin/ManageTransactions'
 import ManageDeposits from './dashboard/admin/ManageDeposits'
 import ManageCustomers from './dashboard/admin/ManageCustomers'
@@ -46,5 +48,6 @@ export {
     About,
     FAQ,
     DepositList,
-    ManageDeposits
+    ManageDeposits,
+    Profile
 }

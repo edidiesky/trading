@@ -23,7 +23,8 @@ import {
   About,
   FAQ,
   DepositList,
-  ManageDeposits
+  ManageDeposits,
+  Profile
 } from "./screens";
 import ProtectRoute from "./utils/ProtectRoute";
 import LazyLoader from "./components/loaders/Lazy";
@@ -76,6 +77,13 @@ export default function App() {
               <TransactionList />
             </ProtectRoute>
           } />
+          <Route path={'profile'} element={
+            <ProtectRoute>
+              <Profile />
+            </ProtectRoute>
+          } />
+          {/* { } */}
+          {/* Profile */}
           {/* customers */}
           <Route path={'Manage_Customers'} element={
             <ProtectRoute>

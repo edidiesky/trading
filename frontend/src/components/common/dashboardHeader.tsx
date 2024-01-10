@@ -25,7 +25,7 @@ const DashboardHeader = () => {
                         <div className="profile_dropdown absolute">
                             <div className="w-100 flex column gap-2">
                                 <div className="flex profile_dropdown_bottom column w-100">
-                                    <span className="text-bold fs-14 w-100 profile_list text-dark block">Profile</span>
+                                    <Link to={'/account/dashboard/profile'} className="text-bold fs-14 w-100 profile_list text-dark block">Profile</Link>
                                     <span className="text-bold fs-14 w-100 profile_list text-dark block">Log Out</span>
 
                                 </div>
