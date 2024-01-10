@@ -5,6 +5,7 @@ import { BsCart3 } from "react-icons/bs";
 import Image from "./Image";
 import { Link } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "@/hooks/reduxtoolkit";
+import { ClearUserInfo } from "@/features/auth/authSlice";
 
 const DashboardHeader = () => {
     const { userInfo } = useAppSelector(store => store.auth)
