@@ -6,13 +6,14 @@ import TableCard from '../../../components/common/TableCard';
 import { useAppDispatch, useAppSelector } from '@/hooks/reduxtoolkit';
 import { getAllTransactions } from '@/features/transaction/transactionReducer';
 import { GetAllUserProfile } from '@/features/auth/authReducer';
+import { getAllDeposit } from '@/features/deposit/depositReducer';
 
 const CustomerList = () => {
     const dispatch = useAppDispatch()
-    const { users } = useAppSelector(store => store.auth)
+    const { deposits } = useAppSelector(store => store.deposit)
     React.useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-        dispatch(GetAllUserProfile())
+        dispatch(getAllDeposit())
     }, []);
 
     return (
@@ -31,39 +32,29 @@ const CustomerList = () => {
                         <input className="input" placeholder='Search for ROI CustomerList'></input>
                     </div>
                     <div className="w-100">
-                        {
-                            users?.length === 0 ? <div className="cart_none w-100">
-                                <div className="w-100 flex item-center column gap-2 justify-center">
-                                    <img src="https://s.udemycdn.com/browse_components/flyout/empty-shopping-cart-v2.jpg" alt="" style={{ width: '250px' }} />
-                                    <div className="flex column item-center gap-1">
-                                        <h4 className="fs-16 text-bold text-blue">Your cart is empty. Keep shopping to find a course!</h4>
-                                        <div className="btn btn-2 fs-16 text-bold">Keep Shopping</div>
-                                    </div>
-                                </div>
-                            </div> :
-                                <Table>
-                                    <div className="TableContainer">
-                                        <table className="tableWrapper">
-                                            <thead>
-                                                <tr>
-                                                    <th>ID</th>
-                                                    <th>Investor</th>
-                                                    <th>Phone</th>
-                                                    <th>Country</th>
-                                                    <th>Role</th>
-                                                    <th>Date</th>
-                                                    <th>Manage</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {users?.map((x?: any, index?: any) => {
-                                                    return <TableCard x={x} type={'customerlist'} key={x?._id} />;
-                                                })}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </Table>
-                        }
+                        <Table>
+                            <div className="TableContainer">
+                                <table className="tableWrapper">
+                                    <thead>
+                                        <tr>
+                                            <th>Investor</th>
+                                            {/* <th>Role</th> */}
+                                            <th>Price</th>
+                                            <th>Payment Mode</th>
+                                            <th>Transaction Status</th>
+                                            <th>Plan</th>
+                                            <th>Date</th>
+                                            <th>Manage</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {deposits?.map((x?: any, index?: any) => {
+                                            return <TableCard x={x} type={'adminDepositList'} key={x?._id} />;
+                                        })}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </Table>
                     </div>
                     <div className="w-100 py-1 flex item-center justify-space">
                         <h5 className="fs-14 text-grey2 family1">
@@ -85,7 +76,7 @@ const HistorytStyles = styled.div`
   .trading_wrapper {
     width:95%;
     .input {
-        min-width: 500px;
+        min-width: 350px;
     }
      .btn {
         padding: 1rem;

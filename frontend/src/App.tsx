@@ -21,7 +21,8 @@ import {
   ManageCustomers,
   CustomerList,
   About,
-  FAQ
+  FAQ,
+  DepositList
 } from "./screens";
 import ProtectRoute from "./utils/ProtectRoute";
 import LazyLoader from "./components/loaders/Lazy";
@@ -95,7 +96,7 @@ export default function App() {
               <Messages />
             </ProtectRoute>
           } />
-
+          {/* DepositList */}
           <Route path={'accounthistory'} element={
             <ProtectRoute>
               <History />
@@ -104,6 +105,11 @@ export default function App() {
           <Route path={'deposit'} element={
             <ProtectRoute>
               <Deposit />
+            </ProtectRoute>
+          } />
+          <Route path={'deposit_list'} element={
+            <ProtectRoute>
+              <DepositList />
             </ProtectRoute>
           } />
 

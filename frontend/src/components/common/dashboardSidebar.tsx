@@ -51,8 +51,8 @@ const AdminSidebarData = [
     },
     {
         icon: <IoMdStats />,
-        title: "Manage Profit",
-        path: "Manage_Profit",
+        title: "Manage Deposit",
+        path: "deposit_list",
     },
     {
         icon: <IoBriefcase />,

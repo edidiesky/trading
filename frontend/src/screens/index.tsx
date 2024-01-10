@@ -19,6 +19,7 @@ import ManageTransactions from './dashboard/admin/ManageTransactions'
 import ManageCustomers from './dashboard/admin/ManageCustomers'
 import TransactionList from './dashboard/admin/TransactionList'
 import CustomerList from './dashboard/admin/CustomerList'
+import DepositList from './dashboard/admin/DepositList'
 
 import LayoutIndex from './Layout'
 import DashboardLayout from './DashboardLayout'
@@ -42,5 +43,6 @@ export {
     ManageCustomers,
     CustomerList,
     About,
-    FAQ
+    FAQ,
+    DepositList
 }

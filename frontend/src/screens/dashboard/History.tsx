@@ -70,7 +70,7 @@ const History = () => {
                                                     <th>Amount Charges</th>
                                                     <th>Receiving Mode</th>
                                                     <th>Transaction Status</th>
-                                                    <th>Status</th>
+                                                    {/* <th>Status</th> */}
                                                     <th>Date Created</th>
                                                 </tr>
                                             </thead>
