@@ -83,7 +83,7 @@ export const authSlice = createSlice({
     ClearUserInfo: (state, action) => {
       localStorage.removeItem("Usertoken");
       localStorage.removeItem("User");
-      state.isLoading = false;
+      // state.isLoading = false;
       state.alertType = "";
       state.showAlert = false;
       state.alertText = "";
