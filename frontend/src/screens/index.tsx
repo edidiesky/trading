@@ -1,6 +1,7 @@
 
 import { lazy } from 'react';
 const Home = lazy(() => import("./Home"));
+const Contact = lazy(() => import("./Contact"));
 const About = lazy(() => import("./About"));
 const FAQ = lazy(() => import("./FAQ"));
 const Login = lazy(() => import("./Login"));
@@ -23,7 +24,7 @@ import ManageCustomers from './dashboard/admin/ManageCustomers'
 import TransactionList from './dashboard/admin/TransactionList'
 import CustomerList from './dashboard/admin/CustomerList'
 import DepositList from './dashboard/admin/DepositList'
-
+// import Contact from './Contact'
 import LayoutIndex from './Layout'
 import DashboardLayout from './DashboardLayout'
 export {
@@ -49,5 +50,6 @@ export {
     FAQ,
     DepositList,
     ManageDeposits,
-    Profile
+    Profile,
+    Contact
 }

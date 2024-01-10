@@ -88,7 +88,9 @@ const DashboardSidebar: React.FC<sidebarProps> = ({ active }) => {
             <div className="100 Header_wrapper flex item-center column justify-space gap-2">
                 <h4 
                 className ="fs-16 w-100 auto text-start text-bold text-dark">
-                    {userInfo?.fullname}</h4>
+                    {userInfo?.fullname}
+                    <span className="block text-light fs-12 text-grey">{userInfo?.email}</span>
+                    </h4>
                 <ul className="flex column w-100">
                     {
                         userInfo?.isAdmin ?<>

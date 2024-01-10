@@ -24,7 +24,8 @@ import {
   FAQ,
   DepositList,
   ManageDeposits,
-  Profile
+  Profile,
+  Contact
 } from "./screens";
 import ProtectRoute from "./utils/ProtectRoute";
 import LazyLoader from "./components/loaders/Lazy";
@@ -40,13 +41,20 @@ export default function App() {
           </Suspense>
           }
           />
+          {/*  */}
           <Route path={'/about'} element={<Suspense fallback={<LazyLoader />}>
             <About />
           </Suspense>
           }
           />
+          {/* Contact */}
           <Route path={'/faq'} element={<Suspense fallback={<LazyLoader />}>
             <FAQ />
+          </Suspense>
+          }
+          />
+          <Route path={'/contact'} element={<Suspense fallback={<LazyLoader />}>
+            <Contact />
           </Suspense>
           }
           />

@@ -24,20 +24,21 @@ const Header = () => {
         <HeaderStyles className="w-100 flex column gap-2">
             <div className="hero_header w-90 auto flex item-center justify-space">
                 <img className="w-[100px] md:w-[130px]" src="https://metacorepoint.com/img/logo_light.png" alt="" />
-                <div className="header_list item-center gap-3 lg:gap-24 justify-end">
-                    <Link to={'/'} className="fs-16 text-bold uppercase text-white">
+                <div className="header_list item-center gap-3 lg:gap-16 justify-end">
+                    <Link to={'/'} className="fs-14 text-bold uppercase text-white">
                         Home
                     </Link>
-                    <Link to={'/about'} className="fs-16 text-bold uppercase text-white">
+                    <Link to={'/about'} className="fs-14 text-bold uppercase text-white">
                         About Us
-                    </Link><Link to={'/trading'} className="fs-16 text-bold uppercase text-white">
+                    </Link><Link to={'/trading'} className="fs-14 text-bold uppercase text-white">
                         Trading Assets
-                    </Link><Link to={'/faq'} className="fs-16 text-bold uppercase text-white">
+                    </Link><Link to={'/faq'} className="fs-14 text-bold uppercase text-white">
                         FAQ
-                    </Link><Link to={'/documents'} className="fs-16 text-bold uppercase text-white">
-                        Documents
                     </Link>
-                    <Link to={'/contact'} className="fs-16 text-bold uppercase text-white">
+                    {/* <Link to={'/documents'} className="fs-14 text-bold uppercase text-white">
+                        Documents
+                    </Link> */}
+                    <Link to={'/contact'} className="fs-14 text-bold uppercase text-white">
                         Contact
                     </Link>
                 </div>
@@ -46,19 +47,19 @@ const Header = () => {
                 </div>
                 <div style={{zIndex:"200"}} className={`navbar ${bar ? 'active' : ""} flex`}>
                     <div className="w-100 flex column">
-                        <Link to={'/'} className="fs-16 list text-light uppercase text-white">
+                        <Link to={'/'} className="fs-14 list text-light uppercase text-white">
                             Home
                         </Link>
-                        <Link to={'/about'} className="fs-16 list text-light uppercase text-white">
+                        <Link to={'/about'} className="fs-14 list text-light uppercase text-white">
                             About Us
-                        </Link><Link to={'/trading'} className="fs-16 list text-light uppercase text-white">
+                        </Link><Link to={'/trading'} className="fs-14 list text-light uppercase text-white">
                             Trading Assets
-                        </Link><Link to={'/faq'} className="fs-16 list text-light uppercase text-white">
+                        </Link><Link to={'/faq'} className="fs-14 list text-light uppercase text-white">
                             FAQ
-                        </Link><Link to={'/documents'} className="fs-16 list text-light uppercase text-white">
+                        </Link><Link to={'/documents'} className="fs-14 list text-light uppercase text-white">
                             Documents
                         </Link>
-                        <Link to={'/contact'} className="fs-16 list text-light uppercase text-white">
+                        <Link to={'/contact'} className="fs-14 list text-light uppercase text-white">
                             Contact
                         </Link>
                       
