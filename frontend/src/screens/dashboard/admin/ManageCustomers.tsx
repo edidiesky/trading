@@ -64,7 +64,10 @@ const ManageCustomers = () => {
         fullname,
         email,
         country,
-        _id: userDetails?._id
+        _id: userDetails?._id,
+        deposit,
+        bonus,
+        
     }
 
     const handleUpdateTransaction = () => {

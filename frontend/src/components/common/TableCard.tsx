@@ -190,7 +190,7 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                     </td>
                     <td>
                         <span className="fs-12 family1 text-grey">
-                            {x?.isPaid === true ?
+                            {x?.status === "true" ?
                                 <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold true"> Completed</span>
                                 : <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold false"> Not completed</span>
                             }
@@ -242,7 +242,7 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                     </td>
                     <td>
                         <span className="fs-12 family1 text-grey">
-                            {x?.isPaid === true ?
+                            {x?.status === "true" ?
                                 <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold true"> Completed</span>
                                 : <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold false"> Not completed</span>
                             }
