@@ -97,15 +97,47 @@ export const UpdateProfile = createAsyncThunk<{
 
 
 // Getuser profile
-export const GetUserProfile = createAsyncThunk<{
+export const GetSingleUser = createAsyncThunk<{
   rejectValue: KnownError,
-}, { profileId?:any}>(
-  "GetProfile",
-  async ({profileId}, { rejectWithValue, getState }) => {
+}>(
+  "GetSingleUser",
+  async (profileData, { rejectWithValue, getState }) => {
 
     try {
       const { auth } = getState() as { auth: { userInfo: { _id: String }, token: string } };
     
+      const config = {
+        headers: {
+          authorization: `Bearer ${auth.token}`,
+        },
+      };
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_BASE_URLS}/user/${auth?.userInfo?._id}`,
+        config
+      );
+      localStorage.setItem("User", JSON.stringify(response.data.user));
+
+      return response.data.user;
+
+    } catch (err: any) {
+      const message = err.response && err.response.data.message
+        ? err.response.data.message
+        : err.message
+      return rejectWithValue(message);
+
+    }
+  }
+);
+
+export const GetUserProfile = createAsyncThunk<{
+  rejectValue: KnownError,
+}, { profileId?: any }>(
+  "GetProfile",
+  async ({ profileId }, { rejectWithValue, getState }) => {
+
+    try {
+      const { auth } = getState() as { auth: { userInfo: { _id: String }, token: string } };
+
       const config = {
         headers: {
           authorization: `Bearer ${auth.token}`,

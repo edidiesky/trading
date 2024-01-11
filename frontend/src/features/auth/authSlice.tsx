@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { GetAllUserProfile, GetUserProfile, UpdateProfile, loginUser, registerUser } from './authReducer'
+import { GetAllUserProfile, GetUserProfile, UpdateProfile, loginUser, registerUser, GetSingleUser } from './authReducer'
 
 
 const userData = JSON.parse(localStorage.getItem("User") || 'false');
@@ -167,7 +167,26 @@ export const authSlice = createSlice({
       state.alertText = action.payload
 
     })
+    // GetSingleUser
 
+    builder.addCase(GetSingleUser.pending, (state, action) => {
+      state.userprofileisLoading = true
+    })
+    builder.addCase(GetSingleUser.fulfilled, (state, action) => {
+      state.userprofileisSuccess = true
+      state.userprofileisLoading = false
+      state.userDetails = action.payload
+
+    })
+    builder.addCase(GetSingleUser.rejected, (state, action) => {
+      state.userprofileisSuccess = false
+      state.userprofileisError = true
+      state.userprofileisLoading = false
+      state.showAlert = true
+      state.alertType = 'danger'
+      state.alertText = action.payload
+
+    })
 
     builder.addCase(GetAllUserProfile.pending, (state, action) => {
       state.userprofileisLoading = true

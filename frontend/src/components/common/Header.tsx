@@ -222,10 +222,6 @@ z-index: 400000;
         padding:1.4rem 2rem;
         border-bottom:1px solid rgba(0,0,0,.1);
     }
-    /* .profile_dropdown_bottom{
-        padding:1rem 0;
-
-    } */
     .profile_list{
           padding:1.6rem 2rem;
         border-bottom:1px solid rgba(0,0,0,.1);
@@ -237,7 +233,7 @@ z-index: 400000;
             }
         &:hover {
             color:var(--blue-2);
-            background: #fafafa;
+            background: #dbd7d7;
         }
     }
 `

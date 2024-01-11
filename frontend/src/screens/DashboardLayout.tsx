@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { Outlet } from "react-router-dom";
 import DashboardSidebar from "../components/common/dashboardSidebar";
 import DashboardHeader from "../components/common/dashboardHeader";
+import { useAppDispatch } from "@/hooks/reduxtoolkit";
+import { GetSingleUser } from "@/features/auth/authReducer";
 // import { Header, Smallsidebar } from "../components";
 // import Sidebar from "./Sidebar";
 const LayoutWrapper = styled.div`
@@ -49,8 +51,10 @@ const LayoutWrapper = styled.div`
 
 export default function Layout() {
   const [active, setActive] = useState(true)
+  const dispatch = useAppDispatch()
   React.useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    dispatch(GetSingleUser())
   }, []);
   return (
     <LayoutWrapper>
@@ -64,7 +68,7 @@ export default function Layout() {
             <DashboardSidebar />
           </div>
           <div className="w-100 flex column gap-4">
-            
+
             <Outlet />
           </div>
         </div>

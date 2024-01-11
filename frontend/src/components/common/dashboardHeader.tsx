@@ -90,7 +90,7 @@ export const HeaderStyles = styled.div`
             }
         &:hover {
             color:var(--blue-2);
-            background: #fafafa;
+            background: #c6c4c4;
         }
     }
     .profile_avatar_large {

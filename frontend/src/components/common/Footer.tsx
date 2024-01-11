@@ -36,7 +36,7 @@ const Footer = () => {
             <div className="w-90 auto footer_wrapper">
                 <div className="w-100 flex column gap-3">
                     <img style={{ width: "100px" }} src="https://metacorepoint.com/img/logo_light.png" alt="" className="" />
-                    <h4 className="fs-18 text-light leading-[1.7] text-grey">
+                    <h4 className="fs-18 text-light leading-[1.7] text-white">
                         Our goal is to prioritise a seamless customer service experience to our customers, who are paramount to our business. We are committed to offering our clients a reliable and secure service so as to build a complete financial portfolio that empowers them to achieve financial freedom.
                     </h4>
                 </div>
@@ -45,10 +45,10 @@ const Footer = () => {
                         footer_data_1.map((x?: any, index?: any) => {
                             return <div key={index} className="flex column gap-3 text-light text-white">
                                 <h4 className="fs-18 family1">{x?.title}</h4>
-                                <span className="fs-14 flex column gap-2 text-light text-grey">
+                                <span className="fs-14 flex column gap-2 text-light">
                                     {
                                         x?.list.map((x?: any) => {
-                                            return <span className="text-grey">{x}</span>
+                                            return <span className="text-grey2">{x}</span>
                                         })
                                     }
                                 </span>
@@ -61,7 +61,7 @@ const Footer = () => {
             </div>
             <div className="w-90 auto flex item-center justify-space gap-1">
                 {/* <img style={{ width: "100px" }} src="https://metacorepoint.com/img/logo_light.png" alt="" className="" /> */}
-                <h5 className="fs-14 text-light text-grey">
+                <h5 className="fs-14 text-light text-white">
                     © Copyrights 2021. All rights reserved.
                 </h5>
             </div>

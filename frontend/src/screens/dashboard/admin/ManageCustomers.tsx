@@ -6,6 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useToast } from "@/components/ui/use-toast"
 import { GetUserProfile, UpdateProfile } from '@/features/auth/authReducer';
 import { clearUserProfile } from '@/features/auth/authSlice';
+import LoaderIndex from '@/components/loaders';
 
 
 const ManageCustomers = () => {
@@ -40,7 +41,7 @@ const ManageCustomers = () => {
 
     React.useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-        
+
         if (userDetails) {
             setUsername(userDetails?.username)
             setFullName(userDetails?.fullname)
@@ -50,11 +51,11 @@ const ManageCustomers = () => {
             setBonus(userDetails?.bonus)
         }
     }, [
-        userDetails, 
-        setUsername, 
-        setFullName, 
-        setEmail, 
-        setCountry, 
+        userDetails,
+        setUsername,
+        setFullName,
+        setEmail,
+        setCountry,
         setBonus,
         setDeposit
     ]);
@@ -67,7 +68,7 @@ const ManageCustomers = () => {
         _id: userDetails?._id,
         deposit,
         bonus,
-        
+
     }
 
     const handleUpdateTransaction = () => {
@@ -90,7 +91,7 @@ const ManageCustomers = () => {
         if (userprofileisSuccess) {
             toast({
                 variant: "success",
-                description: 'Users has been succesfully fetched',
+                title: 'Users has been succesfully fetched',
             })
 
             // const timeout = setTimeout(() => {
@@ -103,6 +104,9 @@ const ManageCustomers = () => {
 
     return (
         <HistorytStyles style={{ minHeight: "100vh" }} className="w-100">
+            {
+                userprofileisLoading && <LoaderIndex />
+            }
             <div className="auto py-4 trading_wrapper flex column gap-4">
                 <div className="flex w-full trading_wrapper_top  items-start md:items-center md:flex-row flex-col gap-4 justify-between">
                     <div className="flex column gap-1">

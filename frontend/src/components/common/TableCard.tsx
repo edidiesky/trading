@@ -219,7 +219,7 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                     <td>
                         <div className="flex flex-col">
                             <span className="fs-14 text-dark text-bold">{x?.user?.fullname}</span>
-                            <span className="fs-12 family1 text-grey">{x?.user?.email}</span>
+                            <span className="fs-12 family1 text-grey pt-1">{x?.user?.email}</span>
                         </div>
                     </td>
                    
