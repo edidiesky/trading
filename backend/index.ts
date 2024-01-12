@@ -33,7 +33,7 @@ app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/transaction", transaction);
 app.use("/api/v1/investment", investment);
 app.use("/api/v1/deposit", deposit);
-// app.use("/api/v1/upload", uploadRoute);
+app.use("/api/v1/upload", uploadRoute);
 
 
 const mongoUrl = process.env.MONGO_URL;
