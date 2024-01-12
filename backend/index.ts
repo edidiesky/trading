@@ -25,7 +25,7 @@ import authRoute from "./routes/authRoute";
 import transaction from "./routes/transactionRoute";
 import investment from "./routes/InvestmentRoute";
 import deposit from "./routes/depositRoute";
-// import uploadRoute from "./routes/uploadRoute";
+import uploadRoute from "./routes/uploadRoute";
 
 
 app.use("/api/v1/user", userRoute);
