@@ -9,5 +9,5 @@ import {
 } from "../controllers/authControllers";
 
 router.post("/register", RegisterUser);
-router.post("/login", LoginUser);
+router.get("/login", LoginUser);
 export default router;
