@@ -10,6 +10,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import { IoCopy } from "react-icons/io5";
 import { CreateDeposit } from '@/features/deposit/depositReducer';
 import LoaderIndex from '@/components/loaders';
+import { CreateTransactions } from '@/features/transaction/transactionReducer';
 const Payment = () => {
     const [image, setImage] = useState('');
 
@@ -77,7 +78,7 @@ const Payment = () => {
     }
 
     const HandlePayment = () => {
-        dispatch(CreateDeposit(depsoitData))
+        dispatch(CreateTransactions(depsoitData))
     }
     return (
         <HistorytStyles style={{ minHeight: "100vh" }} className="w-100">

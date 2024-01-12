@@ -71,7 +71,7 @@ const initialState: depositState = {
   deposit: depositdata ? depositdata: {
     amount: 0,
     paymentMethod: '',
-    plan: '',
+    plan: 'Deposit Only',
   }
 
 

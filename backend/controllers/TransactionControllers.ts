@@ -47,7 +47,8 @@ const CreateTransaction = asyncHandler(async (req: CustomInterface, res: Respons
     isPaid:true,
     paymentMethod,
     user: req?.user?.userId,
-    status
+    status,
+    plan
   })
    res.setHeader("Content-Type", "text/html");
   res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");

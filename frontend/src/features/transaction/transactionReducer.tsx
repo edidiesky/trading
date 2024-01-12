@@ -10,6 +10,7 @@ type tweetdatatype = {
   proof_of_payment?: any;
   _id?: string;
   status?: string;
+  plan?: string;
 }
 
 interface BookMarkATweetPayload {

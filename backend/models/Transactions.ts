@@ -30,6 +30,9 @@ const transactionSchema = new mongoose.Schema(
       type: String,
       default: 'Bitcoin',
     },
+    plan: {
+      type: String,
+    },
     isPaid: {
       type: Boolean,
       required: true,

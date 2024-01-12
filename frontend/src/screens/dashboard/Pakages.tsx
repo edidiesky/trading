@@ -46,11 +46,22 @@ const Students = () => {
     const {
         userInfo
     } = useAppSelector(store => store.auth)
+    const {
+        createinvestmentisSuccess
+    } = useAppSelector(store => store.investments)
+    // createinvestmentisSuccess
     const { toast } = useToast()
 
     const dispatch = useAppDispatch()
     React.useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        if (createinvestmentisSuccess) {
+            toast({
+                variant: "success",
+                description: "You have successfully created an investment",
+                title: "Success",
+            })
+        }
     }, []);
 
 
@@ -68,10 +79,6 @@ const Students = () => {
         // console.log(packagePaymentData)
         dispatch(CreateInvestments(packagePaymentData))
         dispatch(CreateTransactions(packagePaymentData))
-        // // toast({
-        // //     variant: "success",
-        // //     title: "You can buy this investment",
-        // // })
 
     }
     const handleInvestmentPackage = (amount?: any) => {
@@ -162,7 +169,7 @@ const PackagePlanStyles = styled.div`
     display:grid;
     grid-gap: 2rem;
     grid-template-columns: repeat(3, 1fr);
-    @media (max-width:780px) {
+    @media (max-width:880px) {
         grid-template-columns: 1fr;
     }
  .trading_card {
