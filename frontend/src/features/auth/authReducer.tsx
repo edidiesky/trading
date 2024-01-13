@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 
 const Registerurl: string = `${import.meta.env.VITE_API_BASE_URLS}/auth/register`;
 const Loginurl = `${import.meta.env.VITE_API_BASE_URLS}/auth/login`;
