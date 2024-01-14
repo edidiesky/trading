@@ -40,56 +40,82 @@ const Header = () => {
                 <Link to={'/'} className="fs-14 text-bold uppercase text-white">
                     <img className="w-[100px] md:w-[130px]" src="https://metacorepoint.com/img/logo_light.png" alt="" />
                 </Link>
-                {
-                    userInfo ? <div className="flex item-center profile_wrapper relative gap-4">
-                        <div className="profile_avatar flex item-center justify-center fs-16 text-extra-bold text-white">{userInfo?.username && userInfo?.username[0]}</div>
-                        <div className="profile_dropdown absolute">
-                            <div className="w-100 flex column gap-2">
-                                <div className="flex profile_dropdown_bottom column w-100">
-                                    <Link to={'/account/dashboard'} className="text-bold fs-14 w-100 profile_list text-dark block">Dashboard</Link>
-                                    <Link to={'/account/dashboard/profile'} className="text-bold fs-14 w-100 profile_list text-dark block">Profile</Link>
-                                    <span onClick={handleLogOut} className="text-bold fs-14 w-100 profile_list text-dark block">Log Out</span>
+                <div className="flex items-center gap-2">
+                    {
+                        userInfo ? <div className="flex item-center profile_wrapper relative gap-4">
+                            <div className="profile_avatar flex item-center justify-center fs-16 text-extra-bold text-white">{userInfo?.username && userInfo?.username[0]}</div>
+                            <div className="profile_dropdown absolute">
+                                <div className="w-100 flex column gap-2">
+                                    <div className="flex profile_dropdown_bottom column w-100">
+                                        <Link to={'/account/dashboard'} className="text-bold fs-14 w-100 profile_list text-dark block">Dashboard</Link>
+                                        <Link to={'/account/dashboard/profile'} className="text-bold fs-14 w-100 profile_list text-dark block">Profile</Link>
+                                        <span onClick={handleLogOut} className="text-bold fs-14 w-100 profile_list text-dark block">Log Out</span>
 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                    </div> : <div className="w- header_list item-center gap-6 lg:gap-32 justify-end">
-                        <div className="header_list item-center gap-3 lg:gap-20 justify-end">
-                            <Link to={'/'} className="fs-14 text-bold uppercase text-white">
-                                Home
-                            </Link>
-                            <Link to={'/about'} className="fs-14 text-bold uppercase text-white">
-                                About Us
-                            </Link>
-                            {/* <Link to={'/trading'} className="fs-14 text-bold uppercase text-white">
+                        </div> : <div className="header_list item-center gap-6 lg:gap-32 justify-end">
+                            <div className="header_list item-center gap-3 lg:gap-20 justify-end">
+                                <Link to={'/'} className="fs-14 text-bold uppercase text-white">
+                                    Home
+                                </Link>
+                                <Link to={'/about'} className="fs-14 text-bold uppercase text-white">
+                                    About Us
+                                </Link>
+                                {/* <Link to={'/trading'} className="fs-14 text-bold uppercase text-white">
                         Trading Assets
                     </Link> */}
-                            <Link to={'/faq'} className="fs-14 text-bold uppercase text-white">
-                                FAQ
-                            </Link>
-                            {/* <Link to={'/documents'} className="fs-14 text-bold uppercase text-white">
+                                <Link to={'/faq'} className="fs-14 text-bold uppercase text-white">
+                                    FAQ
+                                </Link>
+                                {/* <Link to={'/documents'} className="fs-14 text-bold uppercase text-white">
                         Documents
                     </Link> */}
-                            <Link to={'/contact'} className="fs-14 text-bold uppercase text-white">
-                                Contact
-                            </Link>
+                                <Link to={'/contact'} className="fs-14 text-bold uppercase text-white">
+                                    Contact
+                                </Link>
+                            </div>
+                            <div className="flex item-center gap-2">
+                                    <Link to={'/register'} className="login_btn btn_1 fs-14 flex item-center gap-1 text-bold text-white">
+                                        <FaUser />
+                                        Sign Up
+                                    </Link>
+                                    <Link to={'/login'} className="login_btn fs-14 flex item-center gap-1 text-bold text-white">
+                                        <FaKey />
+                                        Login
+                                    </Link>
+                            </div>
                         </div>
-                        <div className="flex item-center gap-2">
-                            <Link to={'/register'} className="login_btn btn_1 fs-14 flex item-center gap-1 text-bold text-white">
-                                <FaUser />
-                                Sign Up
-                            </Link>
-                            <Link to={'/login'} className="login_btn fs-14 flex item-center gap-1 text-bold text-white">
-                                <FaKey />
-                                Login
-                            </Link>
+                    }
+
+                    <div className="flex spam_bars items-center gap-2">
+                        {
+                            userInfo ? <div className="flex item-center profile_wrapper relative gap-4">
+                                <div className="profile_avatar flex item-center justify-center fs-16 text-extra-bold text-white">{userInfo?.username && userInfo?.username[0]}</div>
+                                <div className="profile_dropdown absolute">
+                                    <div className="w-100 flex column gap-2">
+                                        <div className="flex profile_dropdown_bottom column w-100">
+                                            <Link to={'/account/dashboard'} className="text-bold fs-14 w-100 profile_list text-dark block">Dashboard</Link>
+                                            <Link to={'/account/dashboard/profile'} className="text-bold fs-14 w-100 profile_list text-dark block">Profile</Link>
+                                            <span onClick={handleLogOut} className="text-bold fs-14 w-100 profile_list text-dark block">Log Out</span>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div> : <div className="flex item-center gap-2">
+                                
+                                <Link to={'/login'} className="login_btn fs-14 flex item-center gap-1 text-bold text-white">
+                                    <FaKey />
+                                    Login
+                                </Link>
+                            </div>
+                        }
+                        <div onClick={() => setBar(!bar)} className=" text-dark">
+                            {bar ? <RxCross1 fontSize={'40px'} /> : <HiOutlineBars3CenterLeft fontSize={'40px'} />}
                         </div>
                     </div>
-                }
-               
-                <div onClick={() => setBar(!bar)} className="spam_bars text-dark">
-                    {bar ? <RxCross1 fontSize={'40px'} /> : <HiOutlineBars3CenterLeft fontSize={'40px'} />}
                 </div>
                 <div style={{zIndex:"200"}} className={`navbar ${bar ? 'active' : ""} flex`}>
                     <div className="w-100 flex column">

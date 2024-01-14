@@ -62,7 +62,7 @@ const Footer = () => {
             <div className="w-90 auto flex item-center justify-space gap-1">
                 {/* <img style={{ width: "100px" }} src="https://metacorepoint.com/img/logo_light.png" alt="" className="" /> */}
                 <h5 className="fs-14 text-light text-white">
-                    © Copyrights 2021. All rights reserved.
+                    © Copyrights 2024. All rights reserved.
                 </h5>
             </div>
         </FooterStyles>

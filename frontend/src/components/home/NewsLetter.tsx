@@ -3,10 +3,12 @@ const NewsLetter = () => {
     const CoreIdeas = () => {
         return (
             <CoreStyles className="w-100">
-                <div className="w-90 auto grid core_warpper gap-24">
+                <div className="w-90 auto grid core_warpper gap-6">
                     <h1 className="text-[40px] lg:text-[60px] w-100 leading-[1.5] text-extra-bold text-white">
                         What Makes
-                        Meta Core Trade
+                        {/* Meta Core */}
+                       {" "} OptiTrade Dynamics
+                         
                         Different?
                     </h1>
                     <div className="w-100 flex column gap-4">
@@ -74,7 +76,7 @@ const CoreStyles = styled.div`
    .core_warpper {
     h1 {
     }
-    grid-gap: 3rem;
+    grid-gap: 1rem;
     grid-template-columns: 1fr 1fr;
     @media (max-width:780px) {
         grid-template-columns: 1fr;

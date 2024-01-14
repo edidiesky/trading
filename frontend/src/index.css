@@ -182,7 +182,7 @@ h2 {
   padding: 20px 30px;
   background-color: var(--dark-1);
   color: #fff;
-  opacity: 0.9;
+  /* opacity: 0.9; */
   cursor: pointer;
 }
 .btn:hover {
@@ -194,7 +194,7 @@ h2 {
   border: 2px solid var(--dark-1);
 }
 .btn.btn-2 {
-  background-color: #D48574;
+  background-color: #371783;
   padding: 18px 30px;
 }
 

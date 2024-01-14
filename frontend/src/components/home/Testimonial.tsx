@@ -5,7 +5,8 @@ const Testimonial = () => {
             <div className="w-90 auto testimonial_wrapper flex column gap-4">
                 <h2 className="fs-30 text-dark">Testimonial
                     <span className="fs-20 block text-grey2 text-light">
-                        What people say about MetaCore Point
+                        What people say about OptiTrade Dynamics
+                        {/* MetaCore Point */}
                     </span>
                 </h2>
                 <div className="w-100 grid grid-cols-1 gap-12 items-start  md:grid-cols-2">
