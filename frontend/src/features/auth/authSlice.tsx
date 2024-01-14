@@ -5,6 +5,7 @@ import { GetAllUserProfile, GetUserProfile, UpdateProfile, loginUser, registerUs
 
 const userData = JSON.parse(localStorage.getItem("User") || 'false');
 const userToken = localStorage.getItem("Usertoken");
+// console.log(userToken)
 // Define a type for the slice stat
 interface authState {
   userInfo?: any,
