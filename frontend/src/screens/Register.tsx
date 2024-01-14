@@ -8,6 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { MdOutlineMailOutline } from "react-icons/md";
 import { useAppDispatch, useAppSelector } from "@/hooks/reduxtoolkit";
 import { registerUser } from "@/features/auth/authReducer";
+import LoaderIndex from "@/components/loaders";
 
 
 type InputData = {
@@ -29,11 +30,11 @@ const Register: React.FC = () => {
 
 
     const {
-        loginisLoading,
-        loginisSuccess,
         alertText,
         showAlert,
         alertType,
+        registerisSuccess,
+        registerisLoading
     } = useAppSelector(store => store.auth)
 
     const dispatch = useAppDispatch()
@@ -46,10 +47,11 @@ const Register: React.FC = () => {
     }
 
     useEffect(() => {
-        if (loginisSuccess) {
+        if (registerisSuccess) {
             toast({
                 variant: "success",
-                description: 'Registration Succesfully, Redirection soon!',
+                title:"Success",
+                description: 'Registration Succesfully, Redirecting soon!',
             })
             const timeout = setTimeout(() => {
                 navigate('/login')
@@ -57,9 +59,12 @@ const Register: React.FC = () => {
 
             return () => clearTimeout(timeout)
         }
-    }, [loginisSuccess])
+    }, [registerisSuccess])
     return (
         <HomeStyles className='flex column'>
+            {
+                registerisLoading && <LoaderIndex />
+            }
             <div className="login_wrapper">
                 <div className="w-90 auto flex item-center justify-center">
                     <form onSubmit={(e) => handleRegisterUser(e)} className="login_form_wrapper flex column item-start gap-4">
@@ -200,15 +205,21 @@ const HomeStyles = styled.div`
       flex-direction: column;
       background: #fff;
       box-shadow:var(--shadow);
+      border-radius: 10px;
       .auth_bottom{
     padding-top: 1rem;
     border-top:1px solid rgba(0,0,0,.1);
   }
       @media (max-width: 780px) {
-        width: 75%;
-      }
-      @media (max-width: 580px) {
         width: 90%;
+      padding: 7rem 4rem;
+
+      }
+
+       @media (max-width: 580px) {
+        width: 95%;
+      padding: 7rem 4rem;
+
       }
     }
   }

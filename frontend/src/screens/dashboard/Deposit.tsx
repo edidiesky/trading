@@ -89,7 +89,10 @@ const HistorytStyles = styled.div`
   .trading_wrapper {
     width:95%;
     .input {
-        min-width: 450px;
+        min-width: 350px;
+           @media (max-width:780px) {
+            min-width:100%;
+        }
     }
     .btn {
         min-width:200px;
@@ -99,18 +102,24 @@ const HistorytStyles = styled.div`
       opacity: .6;
     }
     .trading_card {
-        width:60%;
+        width:70%;
         padding:3rem 5rem;
         background-color: #fff;
         box-shadow: var(--shadow);
          /* min-width: 500px; */
+           @media (max-width:780px) {
+            min-width:100%;
+        }
 
         .icon_trading{
-         min-width: 400px;
+         min-width: 300px;
 
         padding:2rem 2.5rem;
         box-shadow: var(--shadow);
         background-color: #fff;
+        @media (max-width:780px) {
+            min-width:100%;
+        }
 
         }
     }

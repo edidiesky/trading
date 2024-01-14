@@ -179,7 +179,7 @@ h2 {
   transition: all 0.3s ease;
   z-index: 10;
   text-align: center;
-  padding: 2rem 3rem;
+  padding: 20px 30px;
   background-color: var(--dark-1);
   color: #fff;
   opacity: 0.9;
@@ -195,7 +195,7 @@ h2 {
 }
 .btn.btn-2 {
   background-color: #D48574;
-  padding: 1.8rem 3rem;
+  padding: 18px 30px;
 }
 
 .icon {
@@ -233,7 +233,7 @@ button {
   font-family: inherit;
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 1);
-  padding:1.5rem 2rem;
+  padding:17px 20px;
   font-size:1.6rem;
   font-weight: 600;
   color: var(--dark-1);

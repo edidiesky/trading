@@ -150,15 +150,21 @@ const HomeStyles = styled.div`
       flex-direction: column;
       background: #fff;
       box-shadow:var(--shadow);
+      border-radius: 10px;
       .auth_bottom{
     padding-top: 1rem;
     border-top:1px solid rgba(0,0,0,.1);
   }
       @media (max-width: 780px) {
-        width: 75%;
-      }
-      @media (max-width: 580px) {
         width: 90%;
+      padding: 7rem 5rem;
+
+      }
+
+       @media (max-width: 580px) {
+        width: 95%;
+      padding: 7rem 5rem;
+
       }
     }
   }

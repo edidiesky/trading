@@ -18,11 +18,11 @@ export const Table = styled.div`
     &::-webkit-scrollbar {
       width: 7px;
       height: 7px;
-      background: #f8f8f8;
+      background: #bdbbbb;
       border-radius: 10px;
     }
     &::-webkit-scrollbar-thumb {
-      background: var(--grey);
+      background: var(--grey-1);
       border-radius: 10px;
       transition: all 0.5s;
       &:hover {
@@ -34,7 +34,7 @@ export const Table = styled.div`
       border-collapse: collapse;
       width: 100%;
       min-width:100%;
-      /* max-width: 1000px; */
+      max-width: 1400px;
 
       thead {
         tr {
