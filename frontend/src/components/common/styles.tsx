@@ -32,9 +32,12 @@ export const Table = styled.div`
 
     .tableWrapper {
       border-collapse: collapse;
-      width: 100%;
-      min-width:100%;
-      max-width: 1400px;
+      /* width: 100%; */
+      /* min-width:100%; */
+      /* min-width: 1100px; */
+    overflow-x: auto;
+     border-collapse: collapse;
+    table-layout: fixed;
 
       thead {
         tr {

@@ -11,11 +11,12 @@ const History = () => {
     const dispatch = useAppDispatch()
     const [tab, setTab] = React.useState(0)
     const { deposits } = useAppSelector(store => store.deposit)
+    const { transactions } = useAppSelector(store => store.transaction)
 
     // deposits
     React.useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-        dispatch(GetSingleDepsoitOfAUser({Detailsdata:""}))
+        dispatch(GetSingleTransactioOfAUser({Detailsdata:""}))
     }, []);
     return (
         <HistorytStyles style={{ minHeight: "100vh" }} className="w-100">
@@ -53,7 +54,7 @@ const History = () => {
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                {deposits?.map((x?: any, index?: any) => {
+                                                {transactions?.map((x?: any, index?: any) => {
                                                     return <TableCard type={'deposit'} x={x} key={x?._id} />;
                                                 })}
                                             </tbody>
@@ -75,7 +76,7 @@ const History = () => {
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                {deposits?.map((x?: any, index?: any) => {
+                                                {transactions?.map((x?: any, index?: any) => {
                                                     return <TableCard type={'usertransactions'} x={x} key={x?._id} />;
                                                 })}
                                             </tbody>

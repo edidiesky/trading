@@ -11,7 +11,7 @@ const LayoutWrapper = styled.div`
   min-height: 100vh;
   width: 100%;
   display: flex;
-  background-color: #315d7214;
+  background-color: #d6d8da13;
   .LayoutContainer {
     width: 100%;
     .OutletWrapper {

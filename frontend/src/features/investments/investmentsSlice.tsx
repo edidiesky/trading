@@ -76,6 +76,9 @@ export const investmentSlice = createSlice({
       state.investmentDetails = null
       state.investmentisError = false
       state.updateinvestmentisSuccess = false
+      state.createinvestmentisLoading = false
+      state.createinvestmentisSuccess = false
+      state.updateinvestmentisSuccess = false
     },
   },
   extraReducers: (builder) => {

@@ -6,9 +6,10 @@ import { useAppDispatch, useAppSelector } from "@/hooks/reduxtoolkit";
 import { useNavigate } from 'react-router-dom';
 import { CreateInvestments } from '@/features/investments/investmentReducer';
 import { CreateTransactions } from '@/features/transaction/transactionReducer';
+import { clearinvestment } from '@/features/investments/investmentsSlice';
 const depositData = [
     {
-        "title": "First Plan",
+        "title": "Silver Plan",
         "min_deposit": "1000",
         "max_deposit": "1000",
         "min_return": "10000",
@@ -17,26 +18,26 @@ const depositData = [
         "duration": "80",
         "amount": "1000"
     },
-    // {
-    //     "title": "Second Plan",
-    //     "min_deposit": "100,000",
-    //     "max_deposit": "100,000",
-    //     "min_return": "10000",
-    //     "max_return": "10000",
-    //     "gift_bonus": "5",
-    //     "duration": "80",
-    //     "amount": "100,000"
-    // },
-    // {
-    //     "title": "Third Plan",
-    //     "min_deposit": "1000,000",
-    //     "max_deposit": "1000,000",
-    //     "min_return": "10000",
-    //     "max_return": "10000",
-    //     "gift_bonus": "5",
-    //     "duration": "80",
-    //     "amount": "1000,000"
-    // }
+    {
+        "title": "Gold Plan",
+        "min_deposit": "10,000",
+        "max_deposit": "10,000",
+        "min_return": "10000",
+        "max_return": "10000",
+        "gift_bonus": "5",
+        "duration": "80",
+        "amount": "10,000"
+    },
+    {
+        "title": "Diamond Plan",
+        "min_deposit": "100,000",
+        "max_deposit": "100,000",
+        "min_return": "10000",
+        "max_return": "10000",
+        "gift_bonus": "5",
+        "duration": "80",
+        "amount": "100,000"
+    }
 ]
 
 const Students = () => {
@@ -55,6 +56,7 @@ const Students = () => {
     const dispatch = useAppDispatch()
     React.useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        dispatch(clearinvestment("any"))
         if (createinvestmentisSuccess) {
             toast({
                 variant: "success",
@@ -62,7 +64,7 @@ const Students = () => {
                 title: "Success",
             })
         }
-    }, []);
+    }, [createinvestmentisSuccess]);
 
 
 
@@ -106,7 +108,7 @@ const Students = () => {
                         depositData?.map((x?: any, index?: any) => {
                             return <div key={index} className="trading_card flex column gap-3">
                                 <h4 className="fs-18 text-bold">{x?.title}</h4>
-                                <h3 className="fs-50 py-1 text-center family1">
+                                <h3 className="text-[40px] lg:text-[50px] py-1 text-center family1">
                                     <span className='fs-20'>$</span>
                                     {x?.amount}</h3>
                                 <div className="w-100 flex column gap-1 fs-14 text-light text-dark">
@@ -146,7 +148,7 @@ const Students = () => {
                                         userInfo?.deposit < x?.amount
                                             ? handleInvestmentPackage(x?.amount)
                                             :
-                                            handlePackagePayment(x?.amount, x?.title)} className="btn btn-2 fs-16 text-light text-white">Join Plan</button>
+                                            handlePackagePayment(x?.amount, x?.title)} className="btn btn-2 fs-16 text-bold text-white">Join Plan</button>
                                 </div>
                             </div>
                         })
@@ -169,11 +171,13 @@ const PackagePlanStyles = styled.div`
     display:grid;
     grid-gap: 2rem;
     grid-template-columns: repeat(3, 1fr);
-    @media (max-width:880px) {
+    @media (max-width:1080px) {
+        grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width:780px) {
         grid-template-columns: 1fr;
     }
  .trading_card {
-    max-width:370px;
         width:100%;
         padding:3rem;
         background-color: #fff;

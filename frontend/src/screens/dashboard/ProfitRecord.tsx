@@ -100,7 +100,7 @@ const HistorytStyles = styled.div`
   .trading_wrapper {
     width:95%;
     .input {
-        min-width: 500px;
+        min-width: 300px;
     }
     .btn {
         padding: 1rem;

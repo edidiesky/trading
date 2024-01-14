@@ -148,6 +148,9 @@ export const HeaderStyles = styled.div`
     left:0;
     height:100%;
     bottom:0;
+     border-right: 1px solid rgba(0,0,0,.1);
+     box-shadow: var(--shadow);
+
    h4 {
      padding: 10px 40px;
      border-bottom: 1px solid rgba(0,0,0,.1);
