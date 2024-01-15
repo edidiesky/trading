@@ -6,7 +6,7 @@ const Loginurl = `${import.meta.env.VITE_API_BASE_URLS}/auth/login`;
 
 type RegisterData = {
   username?: string;
-  email?: string;
+  email?: any;
   user?: any;
   token?: any;
   password?: string;
@@ -21,7 +21,7 @@ type KnownError = {
   errorMessage: string;
 }
 
-export const registerUser = createAsyncThunk < RegisterData,{
+export const registerUser = createAsyncThunk < RegisterData, RegisterData,{
   rejectValue: KnownError,
 
 }>(
@@ -45,7 +45,7 @@ export const registerUser = createAsyncThunk < RegisterData,{
   }
 );
 
-export const loginUser = createAsyncThunk < RegisterData,{
+export const loginUser = createAsyncThunk < RegisterData, RegisterData,{
   rejectValue: KnownError,
 }>(
   "loginUser",
