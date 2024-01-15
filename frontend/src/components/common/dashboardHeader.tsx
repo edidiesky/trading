@@ -56,7 +56,7 @@ export const HeaderStyles = styled.div`
     padding:1rem 0;
     width:100%;
     background:#D48574;
-    z-index:200;
+    z-index:20;
     min-height:8rem;
     .btn {
         padding: 1rem 2rem !important;
