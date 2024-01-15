@@ -98,7 +98,8 @@ export const authSlice = createSlice({
     builder.addCase(registerUser.fulfilled, (state, action) => {
       state.registerisSuccess = true
       state.registerisLoading = false
-      state.userInfo = action.payload
+      state.userInfo = action.payload.user
+      state.token = action.payload.token
     })
     builder.addCase(registerUser.rejected, (state, action) => {
       state.registerisSuccess = false
@@ -117,7 +118,8 @@ export const authSlice = createSlice({
     builder.addCase(loginUser.fulfilled, (state, action) => {
       state.loginisSuccess = true
       state.loginisLoading = false
-      state.userInfo = action.payload
+      state.userInfo = action.payload.user
+      state.token = action.payload.token
     })
     builder.addCase(loginUser.rejected, (state, action) => {
       state.loginisSuccess = false
