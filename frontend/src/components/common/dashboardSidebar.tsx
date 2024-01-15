@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import { MdOutlineCurrencyExchange } from "react-icons/md";
+import { TbChartHistogram } from "react-icons/tb";
 import { IoMdStats } from "react-icons/io";
 import { FaCoins } from "react-icons/fa";
 import { SlSupport } from "react-icons/sl";
@@ -23,17 +23,20 @@ import { useAppSelector } from "@/hooks/reduxtoolkit";
         icon: <IoBriefcase />,
         title: "Transaction History",
         path: "accounthistory",
-    }, {
-        icon: <MdOutlineCurrencyExchange />,
-        title: "Crypto Exchange",
-        path: "asset-balance",
-    }, {
+    },
+    
+    //  {
+    //      icon: <MdOutlineCurrencyExchange />,
+    //      title: "Crypto Exchange",
+    //      path: "asset-balance",
+    //  }, 
+    {
         icon: <FaCoins />,
         title: "Invest",
-        path: "students",
+        path: "invest",
     },
      {
-         icon: <FaCoins />,
+         icon: <TbChartHistogram />,
          title: "Investment History",
          path: "investment_history",
      },
@@ -42,7 +45,12 @@ import { useAppSelector } from "@/hooks/reduxtoolkit";
         title: "Help/Support ",
         path: "support",
     },
+
+
+
 ];
+
+
 const AdminSidebarData = [
     {
         icon: <FaHouse />,
@@ -73,7 +81,7 @@ const AdminSidebarData = [
     {
         icon: <FaCoins />,
         title: "Invest",
-        path: "students",
+        path: "invest",
     },
     {
         icon: <SlSupport />,

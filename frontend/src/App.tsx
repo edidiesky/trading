@@ -166,7 +166,7 @@ export default function App() {
             </ProtectRoute>
           } />
 
-          <Route path={'students'} element={
+          <Route path={'invest'} element={
             <ProtectRoute>
               <Students />
             </ProtectRoute>

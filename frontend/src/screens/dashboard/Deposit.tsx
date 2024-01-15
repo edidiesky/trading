@@ -102,7 +102,7 @@ const HistorytStyles = styled.div`
       opacity: .6;
     }
     .trading_card {
-        width:70%;
+        width:60%;
         padding:3rem 5rem;
         background-color: #fff;
         box-shadow: var(--shadow);
