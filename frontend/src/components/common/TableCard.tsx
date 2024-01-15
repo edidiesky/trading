@@ -169,11 +169,11 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                     </td>
                     <td>
                         <span style={{gap:"5px"}} className="text-grey w-100 flex fs-12 family1">
-                            <div style={{ padding: "1rem" }} className="btn btn-1 fs-12 family1">View</div>
-                            {
+                            <div style={{ padding: "1rem" }} className="btn btn-1 flex items-center justify-center fs-12 family1">View</div>
+                            {/* {
 
                                 x?.isPaid !== false && <div style={{ padding: "1rem" }} className="btn fs-12 family1">Make Payment</div>
-                            }
+                            } */}
                         </span>
                     </td>
                 </tr>

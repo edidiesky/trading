@@ -63,6 +63,11 @@ const Students = () => {
                 description: "You have successfully created an investment",
                 title: "Success",
             })
+            const timeout = setTimeout(() => {
+                navigate('/account/dashboard/investment_history')
+            }, 3000);
+
+            return () => clearTimeout(timeout)
         }
     }, [createinvestmentisSuccess]);
 
