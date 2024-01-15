@@ -41,6 +41,7 @@ const CreateInvestment = asyncHandler(async (req: CustomInterface, res: Response
   const startDate = new Date();
   const endDate = new Date(startDate);
   endDate.setDate(endDate.getDate() + 30);
+  // console.log(updatedUser)
   const investment = await Investment.create({
     price,
     plan,

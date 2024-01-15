@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { CreateInvestments } from '@/features/investments/investmentReducer';
 import { CreateTransactions } from '@/features/transaction/transactionReducer';
 import { clearinvestment } from '@/features/investments/investmentsSlice';
+import { GetSingleUser, GetUserProfile } from '@/features/auth/authReducer';
 const depositData = [
     {
         "title": "Silver Plan",
@@ -44,9 +45,13 @@ const Students = () => {
     const navigate = useNavigate()
 
     const [investmentAmount, setInvestmentAmount] = useState('');
+    const [investmentAmount1, setInvestmentAmount1] = useState('');
+    const [investmentAmount2, setInvestmentAmount2] = useState('');
     const {
         userInfo
     } = useAppSelector(store => store.auth)
+    const userData = JSON.parse(localStorage.getItem("User") || 'false');
+
     const {
         createinvestmentisSuccess
     } = useAppSelector(store => store.investments)
@@ -54,22 +59,33 @@ const Students = () => {
     const { toast } = useToast()
 
     const dispatch = useAppDispatch()
+
     React.useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-        dispatch(clearinvestment("any"))
+        dispatch(GetSingleUser())
+
         if (createinvestmentisSuccess) {
             toast({
                 variant: "success",
                 description: "You have successfully created an investment",
                 title: "Success",
             })
+            dispatch(GetSingleUser())
             const timeout = setTimeout(() => {
                 navigate('/account/dashboard/investment_history')
-            }, 3000);
+            }, 1000);
 
             return () => clearTimeout(timeout)
         }
+
     }, [createinvestmentisSuccess]);
+
+    React.useEffect(() => {
+        dispatch(clearinvestment("any"))
+        dispatch(GetSingleUser())
+    }, []);
+
+    // console.log(userInfo)
 
 
 
@@ -83,9 +99,10 @@ const Students = () => {
             status: "success",
             isPaid: true
         }
-        // console.log(packagePaymentData)
+        console.log(packagePaymentData)
         dispatch(CreateInvestments(packagePaymentData))
         dispatch(CreateTransactions(packagePaymentData))
+        // window.location.reload();
 
     }
     const handleInvestmentPackage = (amount?: any) => {
@@ -96,9 +113,23 @@ const Students = () => {
         })
         const timeout = setTimeout(() => {
             navigate('/account/dashboard/deposit')
-        }, 5000);
+        }, 3000);
 
         return () => clearTimeout(timeout)
+    }
+    const hamdlePayment = (amount: any, title?: any) => {
+
+        // console.log(amount)
+        // console.log(userInfo?.deposit)
+        // console.log(userInfo?.deposit > amount)
+
+        if (userData?.deposit >= amount) {
+            console.log('sufficient Amount')
+            handlePackagePayment(amount, title)
+        } else {
+            console.log('Insufficient Amount')
+            handleInvestmentPackage(amount)
+        }
     }
     return (
         <PackagePlanStyles style={{ minHeight: "100vh" }} className="w-100">
@@ -109,55 +140,128 @@ const Students = () => {
                     </h2>
                 </div>
                 <div className="trading_container">
-                    {
-                        depositData?.map((x?: any, index?: any) => {
-                            return <div key={index} className="trading_card flex column gap-3">
-                                <h4 className="fs-18 text-bold">{x?.title}</h4>
-                                <h3 className="text-[40px] lg:text-[50px] py-1 text-center family1">
-                                    <span className='fs-20'>$</span>
-                                    {x?.amount}</h3>
-                                <div className="w-100 flex column gap-1 fs-14 text-light text-dark">
-                                    <span className='w-100 flex gap-1 item-center justify-space'>Minimum Possible Deposit:
-                                        <span className="text-bold">${x?.min_deposit}</span>
-                                    </span>
-                                    {/* max deposit */}
-                                    <span className='w-100 flex gap-1 item-center justify-space'>Maximum Possible Deposit:
-                                        <span className="text-bold">${x?.max_deposit}</span>
-                                    </span>
-                                    {/* Min Return */}
-                                    <span className='w-100 flex gap-1 item-center justify-space'>Minimum Return:
-                                        <span className="text-bold">${x?.min_return}</span>
-                                    </span>
-                                    {/* Maximum Return */}
-                                    <span className='w-100 flex gap-1 item-center justify-space'>Maximum Return:
-                                        <span className="text-bold">${x?.max_return}</span>
-                                    </span>
+                    <div className="trading_card flex column gap-3">
+                        <h4 className="fs-18 text-bold">{depositData[0].title}</h4>
+                        <h3 className="text-[40px] lg:text-[50px] py-1 text-center family1">
+                            <span className='fs-20'>$</span>
+                            {depositData[0].amount}</h3>
+                        <div className="w-100 flex column gap-1 fs-14 text-light text-dark">
+                            <span className='w-100 flex gap-1 item-center justify-space'>Minimum Possible Deposit:
+                                <span className="text-bold">${depositData[0].min_deposit}</span>
+                            </span>
+                            {/* max deposit */}
+                            <span className='w-100 flex gap-1 item-center justify-space'>Maximum Possible Deposit:
+                                <span className="text-bold">${depositData[0].max_deposit}</span>
+                            </span>
+                            {/* Min Return */}
+                            <span className='w-100 flex gap-1 item-center justify-space'>Minimum Return:
+                                <span className="text-bold">${depositData[0].min_return}</span>
+                            </span>
+                            {/* Maximum Return */}
+                            <span className='w-100 flex gap-1 item-center justify-space'>Maximum Return:
+                                <span className="text-bold">${depositData[0].max_return}</span>
+                            </span>
 
-                                    {/* Gift Bomus Return */}
-                                    <span className='w-100 flex gap-1 item-center justify-space'>Gift Bonus:
-                                        <span className="text-bold">${x?.gift_bonus}</span>
-                                    </span>
+                            {/* Gift Bomus Return */}
+                            <span className='w-100 flex gap-1 item-center justify-space'>Gift Bonus:
+                                <span className="text-bold">${depositData[0].gift_bonus}</span>
+                            </span>
 
-                                    <span className='w-100 flex gap-1 item-center justify-space'>Duration:
-                                        <span className="text-bold">{x?.duration} Days</span>
-                                    </span>
-                                </div>
-                                <div className="w-100 flex column gap-1">
-                                    <h4 className="fs-14 text-light">Amount to invest: ($1000 default)</h4>
-                                    <input
-                                        name='investmentAmount'
-                                        value={`${x?.amount}`}
-                                        onChange={(e) => setInvestmentAmount(`${x?.amount}`)}
-                                        className="input w-100" type='number' placeholder={`${x?.amount}`}></input>
-                                    <button onClick={() =>
-                                        userInfo?.deposit < x?.amount
-                                            ? handleInvestmentPackage(x?.amount)
-                                            :
-                                            handlePackagePayment(x?.amount, x?.title)} className="btn btn-2 fs-16 text-bold text-white">Join Plan</button>
-                                </div>
-                            </div>
-                        })
-                    }
+                            <span className='w-100 flex gap-1 item-center justify-space'>Duration:
+                                <span className="text-bold">{depositData[0].duration} Days</span>
+                            </span>
+                        </div>
+                        <div className="w-100 flex column gap-1">
+                            <h4 className="fs-14 text-light">Amount to invest: ($1000 default)</h4>
+                            <input
+                                name='investmentAmount'
+                                value={investmentAmount}
+                                onChange={(e) => setInvestmentAmount(e.target.value)}
+                                className="input w-100" type='number' placeholder={`${depositData[0].amount}`}></input>
+                            <button onClick={() => hamdlePayment(depositData[0].amount, depositData[0].title)} className="btn btn-2 fs-16 text-bold text-white">Join Plan</button>
+                        </div>
+                    </div>
+                    <div className="trading_card flex column gap-3">
+                        <h4 className="fs-18 text-bold">{depositData[1].title}</h4>
+                        <h3 className="text-[40px] lg:text-[50px] py-1 text-center family1">
+                            <span className='fs-20'>$</span>
+                            {depositData[1].amount}</h3>
+                        <div className="w-100 flex column gap-1 fs-14 text-light text-dark">
+                            <span className='w-100 flex gap-1 item-center justify-space'>Minimum Possible Deposit:
+                                <span className="text-bold">${depositData[1].min_deposit}</span>
+                            </span>
+                            {/* max deposit */}
+                            <span className='w-100 flex gap-1 item-center justify-space'>Maximum Possible Deposit:
+                                <span className="text-bold">${depositData[1].max_deposit}</span>
+                            </span>
+                            {/* Min Return */}
+                            <span className='w-100 flex gap-1 item-center justify-space'>Minimum Return:
+                                <span className="text-bold">${depositData[1].min_return}</span>
+                            </span>
+                            {/* Maximum Return */}
+                            <span className='w-100 flex gap-1 item-center justify-space'>Maximum Return:
+                                <span className="text-bold">${depositData[1].max_return}</span>
+                            </span>
+
+                            {/* Gift Bomus Return */}
+                            <span className='w-100 flex gap-1 item-center justify-space'>Gift Bonus:
+                                <span className="text-bold">${depositData[1].gift_bonus}</span>
+                            </span>
+
+                            <span className='w-100 flex gap-1 item-center justify-space'>Duration:
+                                <span className="text-bold">{depositData[1].duration} Days</span>
+                            </span>
+                        </div>
+                        <div className="w-100 flex column gap-1">
+                            <h4 className="fs-14 text-light">Amount to invest: ($1000 default)</h4>
+                            <input
+                                value={investmentAmount1}
+                                onChange={(e) => setInvestmentAmount1(e.target.value)}
+                                className="input w-100" type='number' placeholder={`${depositData[1].amount}`}></input>
+                            <button onClick={() => hamdlePayment(depositData[1].amount, depositData[2].title)} className="btn btn-2 fs-16 text-bold text-white">Join Plan</button>
+                        </div>
+                    </div>
+                    <div className="trading_card flex column gap-3">
+                        <h4 className="fs-18 text-bold">{depositData[2].title}</h4>
+                        <h3 className="text-[40px] lg:text-[50px] py-1 text-center family1">
+                            <span className='fs-20'>$</span>
+                            {depositData[2].amount}</h3>
+                        <div className="w-100 flex column gap-1 fs-14 text-light text-dark">
+                            <span className='w-100 flex gap-1 item-center justify-space'>Minimum Possible Deposit:
+                                <span className="text-bold">${depositData[2].min_deposit}</span>
+                            </span>
+                            {/* max deposit */}
+                            <span className='w-100 flex gap-1 item-center justify-space'>Maximum Possible Deposit:
+                                <span className="text-bold">${depositData[2].max_deposit}</span>
+                            </span>
+                            {/* Min Return */}
+                            <span className='w-100 flex gap-1 item-center justify-space'>Minimum Return:
+                                <span className="text-bold">${depositData[2].min_return}</span>
+                            </span>
+                            {/* Maximum Return */}
+                            <span className='w-100 flex gap-1 item-center justify-space'>Maximum Return:
+                                <span className="text-bold">${depositData[2].max_return}</span>
+                            </span>
+
+                            {/* Gift Bomus Return */}
+                            <span className='w-100 flex gap-1 item-center justify-space'>Gift Bonus:
+                                <span className="text-bold">${depositData[2].gift_bonus}</span>
+                            </span>
+
+                            <span className='w-100 flex gap-1 item-center justify-space'>Duration:
+                                <span className="text-bold">{depositData[2].duration} Days</span>
+                            </span>
+                        </div>
+                        <div className="w-100 flex column gap-1">
+                            <h4 className="fs-14 text-light">Amount to invest: ($1000 default)</h4>
+                            <input
+                                name='investmentAmount'
+                                value={investmentAmount2}
+                                onChange={(e) => setInvestmentAmount2(e.target.value)}
+                                className="input w-100" type='number' placeholder={`${depositData[2].amount}`}></input>
+                            <button onClick={() => hamdlePayment(depositData[2].amount, depositData[2].title)} className="btn btn-2 fs-16 text-bold text-white">Join Plan</button>
+                        </div>
+                    </div>
 
                 </div>
             </div>

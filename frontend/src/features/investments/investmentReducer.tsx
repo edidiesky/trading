@@ -54,13 +54,15 @@ export const CreateInvestments = createAsyncThunk<{
   "CreateInvestments",
   async (tweetData, { rejectWithValue, getState }) => {
     try {
-      const { auth } = getState() as { auth: { token: string } };
+      const { auth } = getState() as { auth: { userInfo: { _id: String }, token: string } };
       const config = {
         headers: {
           authorization: `Bearer ${auth.token}`,
         },
       };
       const { data } = await axios.post(tweeturl, tweetData, config);
+      console.log(data.user)
+      localStorage.setItem("User", JSON.stringify(data.user));
       return data.investment
 
       // console.log(tweetData)

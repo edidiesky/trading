@@ -124,12 +124,9 @@ const Header = () => {
                         </Link>
                         <Link to={'/about'} className="fs-14 list text-light uppercase text-white">
                             About Us
-                        </Link><Link to={'/trading'} className="fs-14 list text-light uppercase text-white">
-                            Trading Assets
-                        </Link><Link to={'/faq'} className="fs-14 list text-light uppercase text-white">
+                        </Link>
+                        <Link to={'/faq'} className="fs-14 list text-light uppercase text-white">
                             FAQ
-                        </Link><Link to={'/documents'} className="fs-14 list text-light uppercase text-white">
-                            Documents
                         </Link>
                         <Link to={'/contact'} className="fs-14 list text-light uppercase text-white">
                             Contact
@@ -212,7 +209,7 @@ z-index: 400000;
              height:0;
         width:100%;
         position: absolute;
-        top:60%;
+        top:80%;
              box-shadow:0 2px 28px 0 rgba(0, 0, 0, 0.6);
         left:0;
         background-color: #101112;
@@ -221,7 +218,7 @@ z-index: 400000;
         visibility: hidden;
         z-index:3000;
         &.active {
-             height: 51.3rem;
+             height: 32.3rem;
                opacity:1;
         visibility: visible;
         }
