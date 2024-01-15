@@ -32,6 +32,11 @@ import { useAppSelector } from "@/hooks/reduxtoolkit";
         title: "Invest",
         path: "students",
     },
+     {
+         icon: <FaCoins />,
+         title: "Investment History",
+         path: "investment_history",
+     },
     {
         icon: <SlSupport />,
         title: "Help/Support ",

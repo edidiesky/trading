@@ -109,7 +109,7 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                         <span className="fs-12 family1 text-grey">
                             {x?.isAdmin === true ?
                                 <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold false"> Admin</span>
-                                : <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold true"> Customer</span>
+                                : <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold true"> Client</span>
                             }
                         </span>
                     </td>
@@ -119,10 +119,16 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
 
                     </td>
                     <td>
-                        <Link to={`/account/dashboard/Manage_Customers/${x?._id}`} className="icons flex hover:shadow-sm hover:bg-white items-center justify-center">
-                            <MdEdit />
-                        </Link>
+                       <div className="flex item-center justify-center">
+                            <Link to={`/account/dashboard/Manage_Customers/${x?._id}`} className="icons flex hover:shadow-sm hover:bg-white items-center justify-center">
+                                <MdEdit />
+                            </Link>
+                            <div className="icons flex hover:shadow-sm hover:bg-white items-center justify-center">
+                                <BsTrash />
+                            </div>
+                       </div>
                     </td>
+
                 </tr>
             </>
         );

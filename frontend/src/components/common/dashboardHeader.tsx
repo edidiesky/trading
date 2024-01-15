@@ -18,8 +18,8 @@ const DashboardHeader = () => {
     };
     return (
 
-        <HeaderStyles className="w-100 flex item-start column gap-2">
-            <div className=" Header_wrapper auto flex item-center justify-space">
+        <HeaderStyles className="w-100 flex items-start lg:items-center column gap-2">
+            <div className="Header_wrapper auto flex item-center justify-space">
                 <div className="flex item-center gap-4">
                     <h4 className="fs-20 family1 text-white">OptiTrade Dynamics</h4>
                     <div className="hidden md:flex item-center gap-2">
