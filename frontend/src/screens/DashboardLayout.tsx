@@ -52,7 +52,7 @@ const LayoutWrapper = styled.div`
 
 export default function Layout() {
   const [active, setActive] = useState(true)
-  const [sidebar, setSidebar] = useState(true)
+  const [sidebar, setSidebar] = useState(false)
   const dispatch = useAppDispatch()
   React.useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
