@@ -16,7 +16,7 @@ const LayoutWrapper = styled.div`
     width: 100%;
     .OutletWrapper {
       overflow: auto;
-      height: calc(100vh - 8rem);
+      height: calc(100vh);
       align-items: flex-start;
       border-right: 1px solid rgba(0, 0, 0, 0.1);
       width: auto;
@@ -62,13 +62,13 @@ export default function Layout() {
       {/* <Smallsidebar /> */}
       <div className="LayoutContainer flex column">
         {/* <Header /> */}
-        <DashboardHeader />
+        
         <div className="OutletWrapper flex">
           <div onMouseOver={() => setActive(true)} className={`sidebar_wrapper ${active ? 'active' : ""} flex column gap-2`}>
             <DashboardSidebar />
           </div>
           <div className="w-100 flex column gap-4">
-
+            <DashboardHeader />
             <Outlet />
           </div>
         </div>

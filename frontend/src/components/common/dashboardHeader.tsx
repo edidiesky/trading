@@ -33,8 +33,8 @@ const DashboardHeader = () => {
                         <div className="profile_dropdown absolute">
                             <div className="w-100 flex column gap-2">
                                 <div className="flex profile_dropdown_bottom column w-100">
-                                    <Link to={'/account/dashboard/profile'} className="text-bold fs-14 w-100 profile_list text-dark block">Profile</Link>
-                                    <span onClick={handleLogOut} className="text-bold fs-14 w-100 profile_list text-dark block">Log Out</span>
+                                    <Link to={'/account/dashboard/profile'} className="text-bold fs-14 w-100 profile_list text-white block">Profile</Link>
+                                    <span onClick={handleLogOut} className="text-bold fs-14 w-100 profile_list text-white block">Log Out</span>
 
                                 </div>
                             </div>
@@ -55,9 +55,16 @@ const DashboardHeader = () => {
 export const HeaderStyles = styled.div`
     padding:1rem 0;
     width:100%;
-    background:#D48574;
+    background:#9b9898;
     z-index:20;
     min-height:8rem;
+    position: sticky;
+    top: 0;
+    left:0;
+    /* @media (max-width:780px) {
+    background:#000;
+
+    } */
     .btn {
         padding: 1rem 2rem !important;
     }

@@ -100,7 +100,7 @@ const DashboardSidebar: React.FC<sidebarProps> = ({ active }) => {
         <HeaderStyles className={`w-100 flex column gap-2`}>
             <div className="100 Header_wrapper flex item-center column justify-space gap-2">
                 <h4 
-                className ="fs-16 w-100 auto text-start text-bold text-dark">
+                className ="fs-16 w-100 auto text-start text-bold text-white">
                     {userInfo?.fullname}
                     <span className="block text-light fs-12 text-grey">{userInfo?.email}</span>
                     </h4>
@@ -119,7 +119,7 @@ const DashboardSidebar: React.FC<sidebarProps> = ({ active }) => {
                                         >
                                             {x.icon}
 
-                                            {<span className='text-grey2'>{x.title}</span>}
+                                            {<span>{x.title}</span>}
                                         </NavLink>
                                     );
                                 })
@@ -137,7 +137,7 @@ const DashboardSidebar: React.FC<sidebarProps> = ({ active }) => {
                                             >
                                                 {x.icon}
 
-                                                {<span className='text-grey2'>{x.title}</span>}
+                                                {<span>{x.title}</span>}
                                             </NavLink>
                                         );
                                     })
@@ -155,7 +155,7 @@ const DashboardSidebar: React.FC<sidebarProps> = ({ active }) => {
 export const HeaderStyles = styled.div`
     padding:2rem 0;
     width:100%;
-    background:#fff;
+    background:#000;
     position:absolute;
     top:0;
     left:0;
@@ -176,7 +176,7 @@ export const HeaderStyles = styled.div`
         font-weight: 500;
         margin: 0 auto;
         width: 100%;
-        color: var(--dark-1);
+        color: #fff;
         display: flex;
         align-items: center;
         /* justify-content: center; */
