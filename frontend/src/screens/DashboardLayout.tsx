@@ -5,6 +5,7 @@ import DashboardSidebar from "../components/common/dashboardSidebar";
 import DashboardHeader from "../components/common/dashboardHeader";
 import { useAppDispatch } from "@/hooks/reduxtoolkit";
 import { GetSingleUser } from "@/features/auth/authReducer";
+import SmallSidebar from "@/components/common/smallsidebar";
 // import { Header, Smallsidebar } from "../components";
 // import Sidebar from "./Sidebar";
 const LayoutWrapper = styled.div`
@@ -51,6 +52,7 @@ const LayoutWrapper = styled.div`
 
 export default function Layout() {
   const [active, setActive] = useState(true)
+  const [sidebar, setSidebar] = useState(true)
   const dispatch = useAppDispatch()
   React.useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -62,13 +64,16 @@ export default function Layout() {
       {/* <Smallsidebar /> */}
       <div className="LayoutContainer flex column">
         {/* <Header /> */}
-        
+        <SmallSidebar
+          sidebar={sidebar}
+          setSidebar={setSidebar}
+        />
         <div className="OutletWrapper flex">
           <div onMouseOver={() => setActive(true)} className={`sidebar_wrapper ${active ? 'active' : ""} flex column gap-2`}>
             <DashboardSidebar />
           </div>
           <div className="w-100 flex column gap-4">
-            <DashboardHeader />
+            <DashboardHeader setSidebar={setSidebar} sidebar={sidebar} />
             <Outlet />
           </div>
         </div>

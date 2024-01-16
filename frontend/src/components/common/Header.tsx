@@ -218,7 +218,7 @@ z-index: 400000;
         visibility: hidden;
         z-index:3000;
         &.active {
-             height: 32.3rem;
+             height: 30.3rem;
                opacity:1;
         visibility: visible;
         }

@@ -1,13 +1,17 @@
 
 
 import styled from "styled-components";
-import { BsCart3 } from "react-icons/bs";
-import Image from "./Image";
+import { RxCross1 } from "react-icons/rx";
+import { HiOutlineBars3CenterLeft } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "@/hooks/reduxtoolkit";
 import { ClearUserInfo } from "@/features/auth/authSlice";
-
-const DashboardHeader = () => {
+import React from "react";
+type HeaderProps = {
+    sidebar?: boolean,
+    setSidebar: (val: boolean) => void;
+}
+const DashboardHeader: React.FC<HeaderProps> = ({ sidebar, setSidebar }) => {
     const { userInfo } = useAppSelector(store => store.auth)
     const dispatch = useAppDispatch()
 
@@ -33,19 +37,23 @@ const DashboardHeader = () => {
                         <div className="profile_dropdown absolute">
                             <div className="w-100 flex column gap-2">
                                 <div className="flex profile_dropdown_bottom column w-100">
-                                    <Link to={'/account/dashboard/profile'} className="text-bold fs-14 w-100 profile_list text-white block">Profile</Link>
-                                    <span onClick={handleLogOut} className="text-bold fs-14 w-100 profile_list text-white block">Log Out</span>
+                                    <Link to={'/account/dashboard/profile'} className="text-bold fs-14 w-100 profile_list text-dark block">Profile</Link>
+                                    <span onClick={handleLogOut} className="text-bold fs-14 w-100 profile_list text-dark block">Log Out</span>
 
                                 </div>
                             </div>
                         </div>
 
                     </div>
+                    <div onClick={() => setSidebar(!sidebar)} className="spam_bars text-dark">
+                        {sidebar ? <RxCross1 fontSize={'30px'} /> : <HiOutlineBars3CenterLeft fontSize={'30px'} />}
+                    </div>
                 </div>
             </div>
             <div className="Header_wrapper flex auto md:hidden header_bottom item-center gap-2">
                 <Link to={'/account/dashboard/deposit'} className="btn fs-12 text-bold">Fund Your Account</Link>
                 <button className="btn btn-2 fs-12 text-bold">Withdraw funds</button>
+            
             </div>
         </HeaderStyles>
     )
@@ -65,8 +73,15 @@ export const HeaderStyles = styled.div`
     background:#000;
 
     } */
+      .spam_bars{
+     display:none;
+         @media (max-width:880px) {
+            display:flex;
+
+         }
+  }
     .btn {
-        padding: 1rem 2rem !important;
+        padding: 1.5rem 2rem !important;
     }
     .header_bottom{
 
