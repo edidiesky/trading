@@ -95,9 +95,9 @@ export default function App() {
           {/* Profile */}
           {/* customers */}
           {/* InvestmentHistory */}
-          <Route path={'Manage_Customers'} element={
+          <Route path={'Manage_Customers/:id'} element={
             <ProtectRoute>
-              <CustomerList />
+              <ManageCustomers />
             </ProtectRoute>
           } />
           <Route path={'Manage_Customers'} element={
