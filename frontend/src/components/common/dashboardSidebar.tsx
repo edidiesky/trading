@@ -184,20 +184,20 @@ export const HeaderStyles = styled.div`
         position: relative;
 
         &:hover {
-          background: #315d7214;
+          background: #b9c9d11f;
         }
         svg {
           font-size: 2.4rem;
         }
         &.active {
           position: relative;
-          background:#315d7214;
+          background:#b9c9d11f;
            svg {
-            color:#5624d0;
+            color:#beb1df;
           }
           &:after {
           position: absolute;
-          background:var(--blue-3);
+          background:#b9c9d1ea;
           width: 4px;
           height: 100%;
           left: 0;
