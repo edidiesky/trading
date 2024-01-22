@@ -38,7 +38,7 @@ const Header = () => {
             </div> */}
             <div className="hero_header w-90 auto flex item-center justify-space">
                 <Link to={'/'} className="fs-18 text-bold uppercase text-white">
-                    TerraTexTrading
+                    OptiTrade Dynamics
                 </Link>
                 <div className="flex items-center gap-2">
                     {

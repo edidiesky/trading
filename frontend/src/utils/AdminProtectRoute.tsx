@@ -13,7 +13,7 @@ const AdminProtectRoute: React.FC<LayoutProps> = ({ children }) => {
   if (userInfo?.isAdmin) {
     return <>{children}</>; // Render the children when authenticated
   } else {
-    return <Navigate to="/login" />; // Redirect to the login page when not authenticated
+    return <Navigate to="/" />; // Redirect to the login page when not authenticated
   }
 
   return <>{children}</>

@@ -25,7 +25,7 @@ const DashboardHeader: React.FC<HeaderProps> = ({ sidebar, setSidebar }) => {
         <HeaderStyles className="w-100 flex items-start lg:items-center column gap-2">
             <div className="Header_wrapper auto flex item-center justify-space">
                 <div className="flex item-center gap-4">
-                    <h4 className="fs-20 family1 text-dark">TerratexTrading</h4>
+                    <h4 className="fs-20 family1 text-dark">OptiTrade Dynamics</h4>
                     <div className="hidden md:flex item-center gap-2">
                         <Link to={'/account/dashboard/deposit'} className="btn fs-12 text-bold">Fund Your Account</Link>
                         <button className="btn btn-2 fs-12 text-bold">Withdraw funds</button>

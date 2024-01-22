@@ -30,9 +30,9 @@ const NewsLetter = () => {
                     <div className="w-100 bg-[#D48574]">
                         <div className="py-32  w-90 auto flex flex-col gap-4">
                             <h2 className="fs-35 text-white leading-[1.4]">
-                                Millions of TerraTexTrading clients can’t be wrong
+                                Millions of OptiTrade Dynamics clients can’t be wrong
                             <span className="fs-24 pt-12 text-light text-light block">
-                                    At TerraTexTrading International, part of our mission is to keep that standard of excellence high. We provide a forex trading environment that is trustworthy, reliable and technologically advanced, while ensuring every client receives impeccable customer service.
+                                    At OptiTrade Dynamics International, part of our mission is to keep that standard of excellence high. We provide a forex trading environment that is trustworthy, reliable and technologically advanced, while ensuring every client receives impeccable customer service.
                           
                             </span>
                             </h2>
@@ -45,7 +45,7 @@ const NewsLetter = () => {
                                 Flexible trading options to suit your needs
                                 <span className="fs-24 pt-12 text-light text-light block">
                                
-                                    Smart investment means having a variety of options. With TerraTexTrading International, you can trade and invest the way you want to, by choosing independent trading or joining TerraTexTrading Invest and following strategies from experienced traders. With our Loyalty Cashback program, you can also get back part of your funds on different types of commission.
+                                    Smart investment means having a variety of options. With OptiTrade Dynamics International, you can trade and invest the way you want to, by choosing independent trading or joining OptiTrade Dynamics Invest and following strategies from experienced traders. With our Loyalty Cashback program, you can also get back part of your funds on different types of commission.
                                 </span>
                             </h2>
                         </div>
