@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 import Header from "../common/Header";
 const HeroData = [
     {
-        image: "https://metacorepoint.com/img/about/slider2.jpg",
-        text: "Start trading with a broker you trust",
-        subtext: "Want to get a profitable source of real net income?"
+        image: "https://www.indonez.com/html-demo/wave/img/in-slideshow-image-1.jpg",
+        text: "Tap into the world's markets and explore endless trading opportunities with tight spreads and no commission.",
+        subtext: "Award-winning Products and Trading platforms"
     },
     {
-        image: "https://metacorepoint.com/img/fp-section-live-prices-1.png",
+        image: "https://www.indonez.com/html-demo/wave/img/in-slideshow-image-3.jpg",
         text: "Award winning in trading Education",
         subtext: "Leran form the best and become a professional using our online courses"
     },
@@ -36,29 +36,62 @@ const Hero = () => {
         <>
             {/* <Header /> */}
             <HeroStyles>
-                <div className="image_overlay w-100"></div>
-                <div className="image_wrapper">
+                <div style={{ background: "rgba(242, 231, 182, 0.35)" }} className="absolute z-20 top-0 h-100 w-100 w-100"></div>
+                <div className="image_wrapper z-10">
 
-                    <img src={HeroData[0].image} alt="" />
+                    <img src={HeroData[1].image} alt="" />
                 </div>
-              
-                <Header/>
 
-                <div className="hero_center h-100 w-90 auto flex item-center">
+                <Header />
+
+                <div className="hero_center z-40 h-100 w-90 auto flex item-center">
                     <div className="hero_content flex column gap-4">
-                        <h4 className="family1 text-white">
-                            {HeroData[0].text}
-                        </h4>
-                        <h3 className="text-bold text-[46px] lg:text-[80px] text-white">
+
+                        <h3 style={{ textShadow: "2px 3px 4px rgba(0, 0, 0, 0.65)" }} className="text-extra-bold text-[46px] lg:text-[60px] text-white">
                             {HeroData[0].subtext}
                         </h3>
+                        <h4 style={{ textShadow: "2px 3px 4px rgba(0, 0, 0, 0.65)", color: "rgba(255, 255, 255, 0.7)" }} className=" text-light text-grey">
+                            {HeroData[0].text}
+                        </h4>
                         <div className="w-100 flex">
-                            <Link to={'/login'} className="btn btn-4 fs-16 text-bold">LEARN MORE</Link>
+                            <Link to={'/login'} className="btn btn-4 fs-18 text-bold">Discover it Now</Link>
                         </div>
                     </div>
                 </div>
 
             </HeroStyles>
+            <div className="w-100 bg-[#C89B42] py-4 px-2">
+                <div className="w-90 auto grid grid-cols-2 gap-y-12 gap-x-8 lg:grid-cols-4">
+                    <div className="flex pr-4 border-r border-[rgba(255,255,255,.3)] items-center gap-2">
+                        <img src="https://www.indonez.com/html-demo/wave/img/in-wave-icon-1.svg" alt="" className="w-24" />
+                        <h4 style={{color:"#eee"}} className="text-bold text-[19px]">Free
+                            analysis tools
+                        </h4>
+                    </div>
+
+                    <div className="flex items-center pr-4 border-r border-[rgba(255,255,255,.3)] gap-2">
+                        <img src="https://www.indonez.com/html-demo/wave/img/in-wave-icon-2.svg" alt="" className="w-24" />
+                        <h4 style={{ color: "#eee" }} className="text-bold text-[19px]">Fast execution
+                            0 commision
+                        </h4>
+                    </div>
+
+                    <div className="flex items-center pr-4 border-r border-[rgba(255,255,255,.3)] gap-2">
+                        <img src="https://www.indonez.com/html-demo/wave/img/in-wave-icon-3.svg" alt="" className="w-24" />
+                        <h4 style={{ color: "#eee" }} className="text-bold text-[19px]">Low minimum
+                            deposit of $100
+                        </h4>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                        <img src="https://www.indonez.com/html-demo/wave/img/in-wave-icon-4.svg" alt="" className="w-24" />
+                        <h4 style={{ color: "#eee" }} className="text-bold text-[19px]">Over 2,100
+                            assets to trade
+                        </h4>
+                    </div>
+
+                </div>
+            </div>
         </>
     )
 }

@@ -3,49 +3,7 @@ import { FaCheck } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 const packageData = [
     {
-        title: "STARTER ACCOUNT",
-        min_deposit: "$ 500",
-        list: [
-            'Spreads from 3.3 pips',
-            'Leverage 1:300',
-            'Live Chart Support'
-        ]
-    },
-    {
-        title: "BASIC ACCOUNT",
-        min_deposit: "$1,100",
-        list: [
-            'Spreads from 3.3 pips',
-            'Leverage 1:300',
-            'Live Chart Support',
-            ' All Available Platforms'
-        ]
-    },
-    {
-        title: "PROFESSIONAL ACCOUNT",
-        min_deposit: "$5,500",
-        list: [
-            'Spreads from 3.3 pips',
-            'Leverage 1:300',
-            'Live Chart Support',
-            ' All Available Platforms',
-            ' Access All Education Tools',
-        ]
-    },
-    {
-        title: "SILVER ACCOUNT",
-        min_deposit: "$10,000",
-        list: [
-            'Spreads from 3.3 pips',
-            'Leverage 1:300',
-            'Live Chart Support',
-            ' All Available Platforms',
-            ' Access All Education Tools',
-            '  Technical Analysis Report',
-        ]
-    },
-    {
-        title: "GOLD ACCOUNT",
+        title: "Classic account",
         min_deposit: "$50,000",
         list: [
             'Spreads from 3.3 pips',
@@ -58,7 +16,7 @@ const packageData = [
         ]
     },
     {
-        title: "PLATINUM ACCOUNT",
+        title: "Platinum account",
         min_deposit: "$100,000",
         list: [
             'Spreads from 3.3 pips',
@@ -73,48 +31,50 @@ const packageData = [
 ]
 const Packages = () => {
     return (
-        <PackagesStyles className="w-100 bg-[#F5F6F6]">
+        <PackagesStyles className="w-100">
             <div className='w-100 flex flex-col gap-24'>
-                <h2 className="fs-40 text-bold text-center">
-                    Live Accounts
+                <h2 className="text-[50px] text-bold text-center">
+                    Complete package for every traders
                     <span className="block fs-24 pt-12 text-grey2 text-light">Choose a package</span>
                 </h2>
-                <div className="w-90 auto grid grid-cols-1 items-start gap-x-4 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="w-[70%] auto grid grid-cols-1 items-start gap-x-4 gap-y-12 sm:grid-cols-2 lg:grid-cols-2">
                     {
                         packageData?.map((x?: any, index?: any) => {
-                            return <div className="w-100 border border-[#e5e5e5] flex flex-col">
-                                <div className="py-[20px] border-b border-[#e5e5e5] px-12 text-start w-100">
-                                    <h3 className="fs-24 text-bold text-start">{x?.title}</h3>
-                                </div>
-                                <div className="w-100 bg-[#Fff] py-12 flex gap-12 flex-col items-center justify-center">
+                            return <div className="w-100 border bg-[#fff] rounded-[30px] flex flex-col">
+                               
+                                <div className="w-100 py-24 flex gap-12 flex-col">
+                                    <h3 className="text-[35px] text-extra-bold  text-start">{x?.title}</h3>
                                     <h4 style={{ color: "rgb(244, 190, 47)" }} className="text-center fs-16 text-bold text-[rgb(244, 190, 47)] w-100">
                                         Minimum Deposit <span>{x.min_deposit}</span>
                                     </h4>
-                                    <div className="w-100 flex column items-center justify-center gap-3 fs-18 text-bold">
+                                    <div className="w-100 flex column items-center justify-center gap-2 text-[17px] text-bold">
                                         {
                                             x?.list.map((x?: any, index?: any) => {
-                                                return <div className="w-100 flex item-center text-grey2 text-light px-12 gap-2">
-                                                    <FaCheck /> {x}
+                                                return <div className="w-100 flex item-center text-grey text-bold px-12 gap-2">
+                                                    <span className="w-10 h-10 rounded-full text-[13px] text-[#fff] bg-[#1980EC] flex items-center justify-center">
+                                                        <FaCheck fontSize={'13px'} />
+                                                    </span>  {x}
                                                 </div>
                                             })
                                         }
                                     </div>
+                                    <div className=" text-start w-90 auto">
+                                        <Link to={'/register'} className="fs-16 btn btn-2 block text-extra-bold text-center">Open An Account</Link>
+                                    </div>
                                 </div>
-                                <div className="py-[24px] cursor-pointer hover:bg-[#b1b2b2] bg-[#F5F6F6] border-b border-[#e5e5e5] px-12 text-start w-100">
-                                    <Link to={'/register'} className="fs-16 uppercase block text-bold text-center">Open An Account</Link>
-                                </div>
+                               
 
                             </div>
                         })
                     }
                 </div>
             </div>
-         
+
         </PackagesStyles>
     )
 }
 const PackagesStyles = styled.div`
-padding:12rem 0;
+padding:18rem 0;
 `
 
 export default Packages

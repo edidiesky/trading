@@ -35,20 +35,25 @@ const Footer = () => {
         <FooterStyles className="w-100 flex column gap-4">
             <div className="w-90 auto footer_wrapper">
                 <div className="w-100 flex column gap-3">
-                    <h3 className="fs-24 text-bold text-white">Terratextrading</h3>
-                    <h4 className="fs-18 text-light leading-[1.7] text-white">
-                        Our goal is to prioritise a seamless customer service experience to our customers, who are paramount to our business. We are committed to offering our clients a reliable and secure service so as to build a complete financial portfolio that empowers them to achieve financial freedom.
-                    </h4>
+                    <h3 className="fs-30 text-extra-bold text-dark">OptiTrade Dynamics
+                        <span className="block fs-18 mt-3 text-grey">Trade with financial thinking.</span>
+                    </h3>
+                    <div className="flex column gap-1 text-grey text-bold">
+                        <span className="text-[15px]">Imperium Tower (Headquarters)</span>
+                        <span className="text-[15px]">Jl. Prof Dr Satrio, Kuningan</span>
+                        <span className="text-[15px]">12920</span>
+                        <span className="text-[15px]">Jakarta - Indonesia</span>
+                    </div>
                 </div>
                 <div className="footer_left_wrapper w-100">
                     {
                         footer_data_1.map((x?: any, index?: any) => {
-                            return <div key={index} className="flex column gap-3 text-light text-white">
-                                <h4 className="fs-18">{x?.title}</h4>
-                                <span className="fs-14 flex column gap-2 text-light">
+                            return <div key={index} className="flex column gap-3 text-light text-grey">
+                                <h4 className="fs-24 text-extra-bold text-dark">{x?.title}</h4>
+                                <span className="text-[15px] flex column gap-1 text-bold">
                                     {
                                         x?.list.map((x?: any) => {
-                                            return <span className="text-white">{x}</span>
+                                            return <span className="text-grey">{x}</span>
                                         })
                                     }
                                 </span>
@@ -59,9 +64,21 @@ const Footer = () => {
 
                 </div>
             </div>
+            <div className="w-90 border-b pb-16 border-[rgba(0,0,0,.1)] auto flex item-center justify-space gap-1">
+                {/* <img style={{ width: "100px" }} src="https://metacorepoint.com/img/logo_light.png" alt="" className="" /> */}
+                <h5 className="text-[13px]  leading-[1.8] text-bold text-grey">
+                    The financial products offered via this website include digitals, contracts for difference (CFDs), and other complex derivatives and financial products. 
+                    Trading options may not be suitable for everyone. Trading CFDs carries a high level of risk since leverage can work both to your advantage and disadvantage.
+                     As a result, the products offered on this website may not be suitable for all investors because of the risk of losing all of your invested capital.
+                      You should never invest money that you cannot afford to lose, and never trade with borrowed money. Before trading in the complex financial products offered, 
+                    please be sure to understand the risks involved and learn about <span className="text-blue text-extra-bold">Secure and responsible trading</span>.
+
+
+                </h5>
+            </div>
             <div className="w-90 auto flex item-center justify-space gap-1">
                 {/* <img style={{ width: "100px" }} src="https://metacorepoint.com/img/logo_light.png" alt="" className="" /> */}
-                <h5 className="fs-14 text-light text-white">
+                <h5 className="fs-14 text-light text-grey">
                     © Copyrights 2024. All rights reserved.
                 </h5>
             </div>
@@ -73,7 +90,7 @@ const Footer = () => {
 export const FooterStyles = styled.div`
     padding:12rem 0;
     width:100%;
-    background:#0A3041;
+    background:#F8F8F8;
    .footer_wrapper {
     display: grid;
     grid-gap: 5rem;

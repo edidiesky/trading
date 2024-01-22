@@ -59,7 +59,7 @@ export const Table = styled.div`
 
             border-bottom: 1px solid rgba(0, 0, 0, 0.08);
             padding: 2rem 1.8rem;
-              font-family: "Sussie", sans-serif;
+               font-family: "Montserrat", sans-serif;
 
          
             transition: all 0.3s var(--transition-2);
@@ -90,7 +90,7 @@ export const Table = styled.div`
             padding: 2rem 1.8rem;
             margin-bottom: 1rem;
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-              font-family: "Sussie", sans-serif;
+               font-family: "Montserrat", sans-serif;
 
 
             .true {

@@ -75,16 +75,14 @@
   }
 }
 
-
-
-
+@import url('https://fonts.googleapis.com/css2? family= Montserrat:wght@100;200;300;400;500;600;700;800 & display=swap');
 @font-face {
   font-family: "Sussie";
   src: url("./assets/SuisseWorks-Bold-v1.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Udemy_Sans_Bold";
+  font-family: "Montserrat";
   src: url("./assets/Udemy-Sans-Bold-v1.ttf") format("truetype");
 }
 
@@ -107,18 +105,18 @@
   box-sizing: border-box;
 }
 :root {
-  --dark-1: #101112;
-  --dark-2: rgb(28, 29, 31);
-  --grey-1: rgb(102, 102, 102);
+  --dark-1: #313131;
+  --dark-2: #313131;
+  --grey-1: #8f8f8f;
   --grey-2: #e4e8eb;
   --grey-3: #f7f9fa;
   --red-1: #612012;
   --red-2: #b32d0f;
-  --blue-1: #1e6055;
-  --blue-2: #12db2d;
-  --blue-3: #1e6055;
+  --blue-1: #C89B42;
+  --blue-2: #C89B42;
+  --blue-3: #C89B42;
   --orange-1: #b4690e;
-  --green-1: #1e6055;
+  --green-1: #C89B42;
   --green-2: #19a38c;
   --shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
 }
@@ -128,13 +126,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #fff;
-  /* font-family: "Udemy_Sans_Light", sans-serif; */
+  /*   font-family: "Montserrat", sans-serif; */
   font-weight: lighter;
   line-height: 1.23;
   color: var(--dark-1);
 }
 
-/* Nunito css */
+/* Montserrat css */
 
 .grid_wrapper {
   display: grid;
@@ -143,7 +141,7 @@ body {
 }
 
 .family1 {
-  font-family: Sussie, sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .background {
@@ -165,7 +163,7 @@ h1 {
 }
 h2 {
   font-size: 32px;
-  font-family: Sussie, sans-serif !important;
+  font-family: "Montserrat", sans-serif !important;
   line-height: 40px;
 }
 .flex-wrap {
@@ -179,10 +177,10 @@ h2 {
   transition: all 0.3s ease;
   z-index: 10;
   text-align: center;
-  padding: 20px 30px;
+  padding: 18px 30px;
   background-color: var(--dark-1);
   color: #fff;
-  /* opacity: 0.9; */
+  border-radius: 6px;
   cursor: pointer;
 }
 .btn:hover {
@@ -195,7 +193,6 @@ h2 {
 }
 .btn.btn-2 {
   background-color: var(--blue-2);
-  padding: 18px 30px;
 }
 
 .icon {
@@ -327,17 +324,14 @@ button {
 }
 
 .text-extra-bold {
-  font-family: "Udemy_Sans_Bold", sans-serif;
-  font-weight: bolder;
+  font-weight: 700;
 }
 
 .text-bold {
-  font-weight: bold;
-  font-family: "Udemy_Sans_Bold", sans-serif;
+  font-weight: 600;
 }
 
 .text-light {
-  font-family: "Udemy_Sans_Light", sans-serif;
   font-weight: 400;
 }
 
@@ -589,17 +583,17 @@ button {
 
 .w-70 {
   width: 70%;
-  max-width: 1102px;
+  max-width: 1202px;
 }
 
 .w-85 {
-  width: 86%;
-  max-width: 1102px;
+  width: 90%;
+  max-width: 1202px;
 }
 
 .w-90 {
   width: 90%;
-  max-width: 1102px;
+  max-width: 1202px;
 }
 
 .w-100 {
@@ -702,7 +696,7 @@ html {
   }
   h2 {
     line-height: 35px;
-    font-size: 3rem;
+    font-size: 5rem;
   }
   .fs-45 {
     font-size: 30px;

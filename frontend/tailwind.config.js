@@ -17,13 +17,16 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        "new": ["Montserrat", 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        custom_1:"#0A3041",
+        custom_1: "#0A3041",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

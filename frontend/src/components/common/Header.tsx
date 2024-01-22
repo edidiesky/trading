@@ -161,14 +161,13 @@ z-index: 400000;
         right:0%;
         .profile_card{
             padding:1.7rem 1.5rem;
-            border-bottom:1px solid rgba(0,0,0,.1);
+
             cursor:pointer;
         }
     }
   .hero_header{
     padding: 4rem 0;
-    border-bottom: 1px solid rgba(255,255,255,.5);
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
   }
   .header_list{
             display:flex;
@@ -230,11 +229,9 @@ z-index: 400000;
     }
      .profile_dropdown_top{
         padding:1.4rem 2rem;
-        border-bottom:1px solid rgba(0,0,0,.1);
     }
     .profile_list{
           padding:1.6rem 2rem;
-        border-bottom:1px solid rgba(0,0,0,.1);
             transition:all .3s;
             cursor:pointer;
 
