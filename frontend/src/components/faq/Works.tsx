@@ -7,10 +7,10 @@ const Works = () => {
         return (
             <HowItWorksStyles className="w-100">
                 <div className="w-90 auto flex column gap-4">
-                    <h2 className="fs-50 text-bold text-start md:text-center text-dark">
+                    <h2 className="fs-50 text-bold text-start leading-[1.7] md:text-center text-dark">
                        
-                     Some Frequently Asked Questions?
-                        <span className="text-light w-full pt-12 fs-20 mx-auto md:w-[70%] block text-grey2">
+                     Some Frequently Asked Questions on TerraTexTrading?
+                        <span className="text-light w-full pt-4 fs-20 mx-auto md:w-[70%] block text-grey2">
                         Here is a list of compounded questions asked by our various users
                        </span>
 

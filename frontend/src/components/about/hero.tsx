@@ -39,11 +39,11 @@ const Hero = () => {
                         {/* <h4 className="family1 text-white">
                             {HeroData[0].text}
                         </h4> */}
-                        <h3 className="text-bold text-[46px] lg:text-[80px] leading-[1.8] text-white">
+                        <h3 className="text-bold text-[46px] lg:text-[80px] leading-[1.6] text-white">
                             {HeroData[0].subtext}
                         </h3>
                         <div className="w-100 flex">
-                            <div className="btn btn-4 fs-16 text-bold">LEARN MORE</div>
+                            <Link to={'/login'} className="btn btn-4 fs-16 text-bold">LEARN MORE</Link>
                         </div>
                     </div>
                 </div>

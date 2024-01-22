@@ -14,6 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(
   cors({
+    // origin: 'https://terratextrading.com',
     origin: process.env.WEB_ORIGIN,
     methods: ["POST", "GET", "DELETE", "PUT"],
     credentials: true,
@@ -25,6 +26,7 @@ import userRoute from "./routes/userRoute";
 import authRoute from "./routes/authRoute";
 import transaction from "./routes/transactionRoute";
 import investment from "./routes/InvestmentRoute";
+import Roi from "./routes/RoiRoute";
 import deposit from "./routes/depositRoute";
 import uploadRoute from "./routes/uploadRoute";
 
@@ -33,6 +35,7 @@ app.use("/api/v1/user", userRoute);
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/transaction", transaction);
 app.use("/api/v1/investment", investment);
+app.use("/api/v1/roi", Roi);
 app.use("/api/v1/deposit", deposit);
 app.use("/api/v1/upload", uploadRoute);
 

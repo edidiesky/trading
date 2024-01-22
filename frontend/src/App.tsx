@@ -26,10 +26,16 @@ import {
   ManageDeposits,
   Profile,
   Contact,
-  InvestmentHistory
+  InvestmentHistory,
+
+  RoiList,
+  InvestmentList,
+  RoIDetails,
+  ManageRoi
 } from "./screens";
 import ProtectRoute from "./utils/ProtectRoute";
 import LazyLoader from "./components/loaders/Lazy";
+import AdminProtectRoute from "./utils/AdminProtectRoute";
 
 export default function App() {
   const [height, setHeight] = useState(0);
@@ -95,32 +101,32 @@ export default function App() {
           {/* Profile */}
           {/* customers */}
           {/* InvestmentHistory */}
-          <Route path={'Manage_Customers/:id'} element={
-            <ProtectRoute>
-              <ManageCustomers />
-            </ProtectRoute>
-          } />
-          <Route path={'Manage_Customers'} element={
-            <ProtectRoute>
-              <CustomerList />
-            </ProtectRoute>
-          } />
+          {/* InvestmentList */}
+
+
           <Route path={'investment_history'} element={
             <ProtectRoute>
               <InvestmentHistory />
             </ProtectRoute>
           } />
-          <Route path={'Manage_Transaction/:id'} element={
+
+          <Route path={'investment_history'} element={
             <ProtectRoute>
-              <ManageTransactions />
+              <InvestmentList />
             </ProtectRoute>
           } />
+
           <Route path={'tradinghistory'} element={
             <ProtectRoute>
               <Messages />
             </ProtectRoute>
           } />
-          {/* DepositList */}
+          
+          <Route path={'tradinghistory/:id'} element={
+            <ProtectRoute>
+              <RoIDetails />
+            </ProtectRoute>
+          } />
           <Route path={'accounthistory'} element={
             <ProtectRoute>
               <History />
@@ -152,6 +158,90 @@ export default function App() {
           <Route path={'support'} element={
             <ProtectRoute>
               <Support />
+            </ProtectRoute>
+          } />
+
+          <Route path={'asset-balance'} element={
+            <ProtectRoute>
+              <Reviews />
+            </ProtectRoute>
+          } />
+          <Route path={'payment'} element={
+            <ProtectRoute>
+              <Payment />
+            </ProtectRoute>
+          } />
+
+          <Route path={'invest'} element={
+            <ProtectRoute>
+              <Students />
+            </ProtectRoute>
+          } />
+        </Route>
+
+        <Route path={"/account/admin/dashboard"} element={
+          <AdminProtectRoute>
+            <DashboardLayout />
+          </AdminProtectRoute>
+        }>
+          <Route index element={
+            <ProtectRoute>
+              <Courses />
+            </ProtectRoute>
+          } />
+          {/* admin */}
+          {/* TransactionList */}
+          {/* TransactionList */}
+          <Route path={'TransactionList'} element={
+            <ProtectRoute>
+              <TransactionList />
+            </ProtectRoute>
+          } />
+          <Route path={'profile'} element={
+            <ProtectRoute>
+              <Profile />
+            </ProtectRoute>
+          } />
+          <Route path={'Manage_Customers/:id'} element={
+            <ProtectRoute>
+              <ManageCustomers />
+            </ProtectRoute>
+          } />
+          <Route path={'Manage_Customers'} element={
+            <ProtectRoute>
+              <CustomerList />
+            </ProtectRoute>
+          } />
+
+          <Route path={'Manage_Roi'} element={
+            <ProtectRoute>
+              <RoiList />
+            </ProtectRoute>
+          } />
+
+          <Route path={'Manage_Roi/:id'} element={
+            <ProtectRoute>
+              <ManageRoi />
+            </ProtectRoute>
+          } />
+
+
+          <Route path={'investment_history'} element={
+            <ProtectRoute>
+              <InvestmentList />
+            </ProtectRoute>
+          } />
+
+
+          <Route path={'Manage_Transaction/:id'} element={
+            <ProtectRoute>
+              <ManageTransactions />
+            </ProtectRoute>
+          } />
+
+          <Route path={'overview'} element={
+            <ProtectRoute>
+              <Overview />
             </ProtectRoute>
           } />
 

@@ -50,8 +50,8 @@ const Register: React.FC = () => {
         if (registerisSuccess) {
             toast({
                 variant: "success",
-                title:"Success",
-                description: 'Registration Succesfully, Redirecting soon!',
+                title: "Success",
+                description: 'Registration Succesfully, Welcome to TerraTexTrading!',
             })
             const timeout = setTimeout(() => {
                 navigate('/login')
@@ -66,91 +66,92 @@ const Register: React.FC = () => {
                 registerisLoading && <LoaderIndex />
             }
             <div className="login_wrapper">
-                <div className="w-90 auto flex item-center justify-center">
-                    <form onSubmit={(e) => handleRegisterUser(e)} className="login_form_wrapper flex column item-start gap-4">
-                        <div className="flex w-100 column gap-2">
-                            <div className="flex column gap-2">
-                                <img style={{ width: "120px" }} src="https://metacorepoint.com/img/logo_light.png" alt="" className="auto" />
+                <div className="auto flex item-center justify-center">
+                    <div className="login_form_wrapper flex column gap-4">
+                        <form onSubmit={(e) => handleRegisterUser(e)} className="login_form_wrapper_content  w-100 flex column item-start gap-4">
+                            <div className="flex w-100 column gap-2">
+                                <div className="flex column gap-2">
+                                    <h4 className="fs-30 py-1 w-100 text-center text-bold text-dark">
+                                        Welcome to TerraTexTrading!
+                                        <span className="block mt-3 fs-16 text-light">Please enter your details to create an account with us!</span>
 
-                                <h4 className="fs-30 py-1 w-100 text-center text-bold text-dark">
-                                    Create an Account
-                                </h4>
-                            </div>
+                                    </h4>
+                                </div>
 
-                            <div className="w-100 flex column gap-2">
-                                <label htmlFor="" className="fs-14 flex column gap-1 text-bold text-grey2">
-                                    <span>Username</span>
-                                    <div className="input flex item-center gap-1">
-                                        <IoPerson fontSize={'15px'} className="text-grey" />
-                                        <input className="w-100 text-light fs-16" required={true} value={username} placeholder="Your Name"
-                                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUsername(e.target.value)} >
-                                        </input>
-                                    </div>
-                                </label>
-                                <label htmlFor="" className="fs-14 flex column gap-1 text-bold text-grey2">
-                                    <span>Fullname</span>
-                                    <div className="input flex item-center gap-1">
-                                        <IoPerson fontSize={'15px'} className="text-grey" />
-                                        <input className="w-100 text-light fs-16" required={true}
-                                            value={fullname}
-                                            placeholder="Enter Your Full Name"
-                                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFullName(e.target.value)} >
-                                        </input>
-                                    </div>
-
-
-                                </label>
-                                {/* email */}
-                                <label htmlFor="" className="fs-14 flex column gap-1 text-bold text-grey2">
-                                    <span>Email</span>
-                                    <div className="input flex item-center gap-1">
-                                        <MdOutlineMailOutline fontSize={'18px'} className="text-grey" />
-                                        <input
-                                            className="w-100 text-light fs-16"
-                                            required={true}
-                                            value={email}
-                                            type="email"
-                                            placeholder="name@example.com"
-                                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)} >
-                                        </input>
-                                    </div>
+                                <div className="w-100 mt-8 flex column gap-2">
+                                    <label htmlFor="" className="fs-14 flex column gap-1 text-bold text-grey2">
+                                        <span>Username</span>
+                                        <div className="input flex item-center gap-1">
+                                            <IoPerson fontSize={'15px'} className="text-grey" />
+                                            <input className="w-100 text-light fs-16" required={true} value={username} placeholder="Your Name"
+                                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUsername(e.target.value)} >
+                                            </input>
+                                        </div>
+                                    </label>
+                                    <label htmlFor="" className="fs-14 flex column gap-1 text-bold text-grey2">
+                                        <span>Fullname</span>
+                                        <div className="input flex item-center gap-1">
+                                            <IoPerson fontSize={'15px'} className="text-grey" />
+                                            <input className="w-100 text-light fs-16" required={true}
+                                                value={fullname}
+                                                placeholder="Enter Your Full Name"
+                                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFullName(e.target.value)} >
+                                            </input>
+                                        </div>
 
 
-                                </label>
-                                {/* phone */}
-                                <label htmlFor="" className="fs-14 flex column gap-1 text-bold text-grey2">
-                                    <span>Phone Number</span>
-                                    <div className="input flex item-center gap-1">
-                                        <FaPhoneAlt fontSize={'18px'} className="text-grey" />
-                                        <input
-                                            className="w-100 text-light fs-16"
-                                            required={true}
-                                            value={phone}
-                                            type="text"
-                                            placeholder="Enter Your Phone Number"
-                                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPhone(e.target.value)} >
-                                        </input>
-                                    </div>
+                                    </label>
+                                    {/* email */}
+                                    <label htmlFor="" className="fs-14 flex column gap-1 text-bold text-grey2">
+                                        <span>Email</span>
+                                        <div className="input flex item-center gap-1">
+                                            <MdOutlineMailOutline fontSize={'18px'} className="text-grey" />
+                                            <input
+                                                className="w-100 text-light fs-16"
+                                                required={true}
+                                                value={email}
+                                                type="email"
+                                                placeholder="name@example.com"
+                                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)} >
+                                            </input>
+                                        </div>
 
 
-                                </label>
-                                <label htmlFor="" className="fs-14 flex column gap-1 text-bold text-grey2">
-                                    <span>Password</span>
-                                    <div className="input flex item-center gap-1">
-                                        <FaKey fontSize={'18px'} className="text-grey" />
-                                        <input
-                                            className="w-100 text-light fs-16"
-                                            required={true}
-                                            value={password}
-                                            type="password"
-                                            placeholder="Enter Your Password"
-                                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)} >
-                                        </input>
-                                    </div>
+                                    </label>
+                                    {/* phone */}
+                                    <label htmlFor="" className="fs-14 flex column gap-1 text-bold text-grey2">
+                                        <span>Phone Number</span>
+                                        <div className="input flex item-center gap-1">
+                                            <FaPhoneAlt fontSize={'18px'} className="text-grey" />
+                                            <input
+                                                className="w-100 text-light fs-16"
+                                                required={true}
+                                                value={phone}
+                                                type="text"
+                                                placeholder="Enter Your Phone Number"
+                                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPhone(e.target.value)} >
+                                            </input>
+                                        </div>
 
 
-                                </label>
-                                {/* <label htmlFor="" className="fs-14 flex column gap-1 text-bold text-grey2">
+                                    </label>
+                                    <label htmlFor="" className="fs-14 flex column gap-1 text-bold text-grey2">
+                                        <span>Password</span>
+                                        <div className="input flex item-center gap-1">
+                                            <FaKey fontSize={'18px'} className="text-grey" />
+                                            <input
+                                                className="w-100 text-light fs-16"
+                                                required={true}
+                                                value={password}
+                                                type="password"
+                                                placeholder="Enter Your Password"
+                                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)} >
+                                            </input>
+                                        </div>
+
+
+                                    </label>
+                                    {/* <label htmlFor="" className="fs-14 flex column gap-1 text-bold text-grey2">
                                     <span>Confirm Password</span>
                                     <div className="input flex item-center gap-1">
                                         <FaKey fontSize={'18px'} className="text-grey" />
@@ -166,14 +167,16 @@ const Register: React.FC = () => {
 
 
                                 </label> */}
+                                </div>
                             </div>
-                        </div>
-                        <button
-                            type="submit"
-                            
-                            className="w-100 text-center gap-2 btn btn-2 fs-16 text-bold">
-                            Register
-                        </button>
+                            <button
+                                type="submit"
+
+                                className="w-100 text-center gap-2 btn fs-16 text-bold">
+                                Register
+                            </button>
+
+                        </form>
                         <div className="auth_bottom w-100 flex item-center justify-center">
                             <span style={{ gap: "4px" }} className="fs-16 text-light flex item-center justify-center text-grey">
                                 Don't have an account?
@@ -181,7 +184,8 @@ const Register: React.FC = () => {
                                     className="text-blue fs-14 text-extra-bold">Login</Link>
                             </span>
                         </div>
-                    </form>
+                    </div>
+
                 </div>
             </div>
         </HomeStyles>
@@ -193,7 +197,7 @@ const HomeStyles = styled.div`
   width: 100%;
   position: relative;
   min-height:100vh;
-  background-color: #E4F4FF;
+  background-color: var(--grey-3);
   .login_wrapper{
     /* width:100% */
     .login_form_wrapper {
@@ -201,28 +205,45 @@ const HomeStyles = styled.div`
       display: flex;
       width: 46%;
       align-items: center;
-      padding: 7rem 5.5rem;
+     
       flex-direction: column;
+      .login_form_wrapper_content{
       background: #fff;
       box-shadow:var(--shadow);
-      border-radius: 10px;
+       border-radius: 10px;
+        padding:5.5rem;
+      }
       .auth_bottom{
-    padding-top: 1rem;
-    border-top:1px solid rgba(0,0,0,.1);
+    padding-top: 1.5rem;
   }
-      @media (max-width: 780px) {
-        width: 90%;
-      padding: 7rem 4rem;
-
+      @media (max-width: 980px) {
+        width: 95%;
+      padding: 7rem 2rem;
+       .login_form_wrapper_content{
+      background: #fff;
+      box-shadow:var(--shadow);
+       border-radius: 10px;
+        padding:5.5rem 3rem;
+      }
+      }
       }
 
        @media (max-width: 580px) {
         width: 95%;
-      padding: 7rem 4rem;
-
+      padding: 7rem 0;
+         .login_form_wrapper_content{
+      background: #fff;
+      box-shadow:var(--shadow);
+       border-radius: 10px;
+        padding:5.5rem 2rem;
+      }
       }
     }
-  }
-`
+  
+  .btn:disabled {
+      cursor: not-allowed;
+      opacity: .6;
 
+    }
+`
 export default Register

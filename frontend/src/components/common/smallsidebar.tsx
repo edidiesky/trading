@@ -9,7 +9,6 @@ import { SlSupport } from "react-icons/sl";
 import { FaHouse } from "react-icons/fa6";
 import { IoBriefcase } from "react-icons/io5";
 
-
 const sidebarData = [
     {
         icon: <FaHouse />,
@@ -52,6 +51,7 @@ const sidebarData = [
 
 ];
 
+
 const AdminSidebarData = [
     {
         icon: <FaHouse />,
@@ -60,20 +60,19 @@ const AdminSidebarData = [
     },
     {
         icon: <IoMdStats />,
-        title: "Profit Record",
-        path: "tradinghistory",
-    },
-    {
-        icon: <IoMdStats />,
-        title: "Manage Deposit",
-        path: "deposit_list",
+        title: "Manage R-O-I",
+        path: "Manage_Roi",
     },
     {
         icon: <IoBriefcase />,
-        title: "Manage Transaction",
+        title: "Manage Transaction/ Deposit",
         path: "TransactionList",
     },
-
+    {
+        icon: <TbChartHistogram />,
+        title: "Investment History",
+        path: "investment_history",
+    },
     {
         icon: <IoBriefcase />,
         title: "Manage Customers",
@@ -84,11 +83,11 @@ const AdminSidebarData = [
         title: "Invest",
         path: "invest",
     },
-    {
-        icon: <SlSupport />,
-        title: "Help/Support ",
-        path: "support",
-    },
+    // {
+    //     icon: <SlSupport />,
+    //     title: "Help/Support ",
+    //     path: "support",
+    // },
 ];
 
 type SidebarProps = {
@@ -117,7 +116,7 @@ const SmallSidebar: React.FC<SidebarProps> = ({ sidebar, setSidebar }) => {
                                                     className={({ isActive, isPending }) =>
                                                         isActive ? "active fs-18 text-dark text-extra-bold" : "fs-18 text-dark text-extra-bold"
                                                     }
-                                                    to={`/account/dashboard/${x.path}`}
+                                                    to={`/account/admin/dashboard/${x.path}`}
                                                     end
                                                 >
                                                     {x.icon}
@@ -177,7 +176,7 @@ const SmallSidebarStyles = styled.div`
     }
 
   .sidebarWrapper {
-     width: 70%;
+     width: 350px;
     height: 100vh;
     overflow:auto;
     background-color: #000;
@@ -215,8 +214,8 @@ const SmallSidebarStyles = styled.div`
 
   a {
         padding: 20px 40px;
-        font-size: 1.5rem;
-        min-height: 5rem;
+        font-size: 15px;
+        min-height: 5.5rem;
         font-weight: 500;
         margin: 0 auto;
         width: 100%;

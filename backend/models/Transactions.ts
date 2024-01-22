@@ -48,7 +48,7 @@ const transactionSchema = new mongoose.Schema(
       type: Number,
       default: 0
     },
-    proof_image: {
+    proof_of_payment: {
       type: String,
       default: 0
     }

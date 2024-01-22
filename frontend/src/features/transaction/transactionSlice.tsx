@@ -81,6 +81,7 @@ export const transactionSlice = createSlice({
       state.transactions = []
       state.transactionDetails = null
       state.transactionisError = false
+      state.createtransactionisSuccess = false
       state.updatetransactionisSuccess = false
     },
   },
@@ -129,7 +130,7 @@ export const transactionSlice = createSlice({
     // GetSingleTransactioOfAUser
 
     builder.addCase(GetSingleTransactioOfAUser.pending, (state, action) => {
-      // state.transactionisLoading = true
+      state.transactionisLoading = true
     })
     builder.addCase(GetSingleTransactioOfAUser.fulfilled, (state, action) => {
       state.transactionisSuccess = true
@@ -148,7 +149,7 @@ export const transactionSlice = createSlice({
     // get single transaction slice
 
     builder.addCase(GetSingleTransaction.pending, (state, action) => {
-      // state.transactionisLoading = true
+      state.transactionisLoading = true
     })
     builder.addCase(GetSingleTransaction.fulfilled, (state, action) => {
       state.transactionisSuccess = true

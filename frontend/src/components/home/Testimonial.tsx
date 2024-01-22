@@ -5,7 +5,7 @@ const Testimonial = () => {
             <div className="w-90 auto testimonial_wrapper flex column gap-4">
                 <h2 className="fs-30 text-dark">Testimonial
                     <span className="fs-20 block text-grey2 text-light">
-                        What people say about OptiTrade Dynamics
+                        What people say about Terratextrading
                         {/* MetaCore Point */}
                     </span>
                 </h2>
@@ -14,7 +14,7 @@ const Testimonial = () => {
                         <img src="https://i.pinimg.com/236x/97/31/02/9731022f0be7c965e880505461643850.jpg" className='w-[100px] h-[100px] rounded-full' />
                         <h3 className="fs-20 family1 flex-1">
                             <span className="fs-16 text-grey2 pb-8 leading-[1.8] text-light block family1">
-                                I have been trading forex for a couple of years and I have been across many platform but my experience with meta core trade broker has been the best so far
+                                I have been trading forex for a couple of years and I have been across many platform but my experience with Terratextrading trade broker has been the best so far
                             </span>
                             John Larson
 
@@ -28,7 +28,7 @@ const Testimonial = () => {
                         <img src="https://i.pinimg.com/236x/ed/54/d9/ed54d9730937380db84aa2a46c7c2534.jpg" className='w-[100px] h-[100px] rounded-full' />
                         <h3 className="fs-20 family1 flex-1">
                             <span className="fs-16 text-grey2 pb-8 leading-[1.8] text-light block family1">
-                                I have been trading forex for a couple of years and I have been across many platform but my experience with meta core trade broker has been the best so far
+                                I have made thousands of dollars with Terratextrading trade broker. They have been the best
                             </span>
                             Timothy Carlson
 

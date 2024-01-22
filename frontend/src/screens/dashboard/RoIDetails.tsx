@@ -3,9 +3,11 @@ import styled from "styled-components";
 import { useToast } from "@/components/ui/use-toast"
 import { ToastAction } from "@/components/ui/toast"
 import { useAppDispatch, useAppSelector } from "@/hooks/reduxtoolkit";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { CreateInvestments } from '@/features/investments/investmentReducer';
 import { CreateTransactions } from '@/features/transaction/transactionReducer';
+import { GetSingleRoi } from '@/features/roi/roiReducer';
+import { clearRoi } from '@/features/roi/roiSlice';
 const depositData = [
     {
         "title": "First Plan",
@@ -17,31 +19,11 @@ const depositData = [
         "duration": "80",
         "amount": "1000"
     },
-    // {
-    //     "title": "Second Plan",
-    //     "min_deposit": "100,000",
-    //     "max_deposit": "100,000",
-    //     "min_return": "10000",
-    //     "max_return": "10000",
-    //     "gift_bonus": "5",
-    //     "duration": "80",
-    //     "amount": "100,000"
-    // },
-    // {
-    //     "title": "Third Plan",
-    //     "min_deposit": "1000,000",
-    //     "max_deposit": "1000,000",
-    //     "min_return": "10000",
-    //     "max_return": "10000",
-    //     "gift_bonus": "5",
-    //     "duration": "80",
-    //     "amount": "1000,000"
-    // }
 ]
 
-const Students = () => {
+const RoIDetails = () => {
     const navigate = useNavigate()
-
+    const { id } = useParams()
     const [investmentAmount, setInvestmentAmount] = useState('');
     const {
         userInfo
@@ -52,6 +34,13 @@ const Students = () => {
     React.useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }, []);
+
+    React.useEffect(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        dispatch(clearRoi('any'))
+        dispatch(GetSingleRoi({ Detailsdata: id }))
+
+    }, [id]);
 
 
 
@@ -166,11 +155,15 @@ const PackagePlanStyles = styled.div`
         grid-template-columns: 1fr;
     }
  .trading_card {
-    max-width:370px;
+    max-width:400px;
         width:100%;
         padding:3rem;
         background-color: #fff;
         border:1px solid rgba(0,0,0,.1);
+         @media (max-width:780px) {
+          max-width:310px;
+
+    }
         .icon_trading{
             height: 5rem;
             width:5rem;
@@ -186,4 +179,4 @@ const PackagePlanStyles = styled.div`
   }
 `
 
-export default Students
+export default RoIDetails

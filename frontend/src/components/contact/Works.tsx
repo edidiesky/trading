@@ -46,7 +46,7 @@ const Works = () => {
                         </div>
                         <div className="flex item-center gap-4">
                             <FaMailBulk fontSize={'30px'} />
-                            support@metaorepoint.com
+                            support@TerraTexTrading.com
                         </div>
                     </div>
                     {/* <h2 className="fs-50 text-bold text-start md:text-center text-dark">

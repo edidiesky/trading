@@ -8,6 +8,7 @@ import { CreateInvestments } from '@/features/investments/investmentReducer';
 import { CreateTransactions } from '@/features/transaction/transactionReducer';
 import { clearinvestment } from '@/features/investments/investmentsSlice';
 import { GetSingleUser, GetUserProfile } from '@/features/auth/authReducer';
+import { CreateRoi } from '@/features/roi/roiReducer';
 const depositData = [
     {
         "title": "Silver Plan",
@@ -101,6 +102,7 @@ const Students = () => {
         }
         console.log(packagePaymentData)
         dispatch(CreateInvestments(packagePaymentData))
+        dispatch(CreateRoi(packagePaymentData))
         dispatch(CreateTransactions(packagePaymentData))
         // window.location.reload();
 

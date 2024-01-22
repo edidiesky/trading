@@ -12,7 +12,7 @@ const LayoutWrapper = styled.div`
   min-height: 100vh;
   width: 100%;
   display: flex;
-  background-color: #d6d8da13;
+  background-color: #eee;
   .LayoutContainer {
     width: 100%;
     .OutletWrapper {

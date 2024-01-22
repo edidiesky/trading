@@ -33,6 +33,14 @@ const UserSchema = new mongoose.Schema(
       type: Number,
       default: 0
     },
+    total_bonus: {
+      type: Number,
+      default: 0
+    },
+    account_balance: {
+      type: Number,
+      default: 0
+    },
     referralbonus: {
       type: Number,
       default: 0

@@ -31,37 +31,28 @@ const TransactionList = () => {
                     </div>
                     <div className="w-100">
                         {
-                            transactions.length === 0 ? <div className="cart_none w-100">
-                                <div className="w-100 flex item-center column gap-2 justify-center">
-                                    <img src="https://s.udemycdn.com/browse_components/flyout/empty-shopping-cart-v2.jpg" alt="" style={{ width: '250px' }} />
-                                    <div className="flex column item-center gap-1">
-                                        <h4 className="fs-16 text-bold text-blue">Your cart is empty. Keep shopping to find a course!</h4>
-                                        <div className="btn btn-2 fs-16 text-bold">Keep Shopping</div>
-                                    </div>
+                            <Table>
+                                <div className="TableContainer">
+                                    <table className="tableWrapper">
+                                        <thead>
+                                            <tr>
+                                                <th>Amount</th>
+                                                <th>Investor</th>
+                                                <th>Payment Mode</th>
+                                                <th>Transaction Status</th>
+                                                <th>Plan</th>
+                                                <th>Date Created</th>
+                                                <th>Manage</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {transactions?.map((x?: any, index?: any) => {
+                                                return <TableCard x={x} type={'transactions'} key={x?._id} />;
+                                            })}
+                                        </tbody>
+                                    </table>
                                 </div>
-                            </div> :
-                                <Table>
-                                    <div className="TableContainer">
-                                        <table className="tableWrapper">
-                                            <thead>
-                                                <tr>
-                                                    <th>Amount</th>
-                                                    <th>Investor</th>
-                                                    <th>Payment Mode</th>
-                                                    <th>Transaction Status</th>
-                                                    <th>Plan</th>
-                                                    <th>Date Created</th>
-                                                    <th>Manage</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {transactions?.map((x?: any, index?: any) => {
-                                                    return <TableCard x={x} type={'transactions'} key={x?._id} />;
-                                                })}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </Table>
+                            </Table>
                         }
                     </div>
                     <div className="w-100 py-1 flex item-center justify-space">
@@ -84,14 +75,14 @@ const HistorytStyles = styled.div`
   .trading_wrapper {
     width:95%;
     .input {
-        min-width: 500px;
+        min-width: 230px;
     }
      .btn {
         padding: 1rem;
     }
     .trading_card {
         width:100%;
-        padding:3rem 4rem;
+        padding:3rem 2rem;
         background-color: #fff;
         border:1px solid rgba(0,0,0,.1);
         .icon_trading{

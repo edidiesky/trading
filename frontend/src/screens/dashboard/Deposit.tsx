@@ -21,7 +21,7 @@ const Deposit = () => {
     }, []);
     const paymentData = {
         paymentMethod: "Bitcoin",
-        amount,
+        price:amount,
         plan: "Deposit Only"
     }
     // console.log(paymentData)
@@ -61,6 +61,7 @@ const Deposit = () => {
                         <div className="flex item-start column gap-2">
                             <div onClick={() => toast({
                                 variant: "success",
+                                title: "Success",
                                 description: 'Bitcoin Payment method has been selected ',
                             })} className="icon_trading flex item-center  gap-1">
                                 <img style={{ width: "3.5rem" }} src="https://img.icons8.com/color/48/000000/bitcoin--v1.png" alt="" />
@@ -89,10 +90,10 @@ const HistorytStyles = styled.div`
   .trading_wrapper {
     width:95%;
     .input {
-        min-width: 350px;
-           @media (max-width:780px) {
+        min-width: 270px;
+           /* @media (max-width:780px) {
             min-width:100%;
-        }
+        } */
     }
     .btn {
         min-width:200px;

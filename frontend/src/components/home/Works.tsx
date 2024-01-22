@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 const Works = () => {
     const CountingTrade = () => {
@@ -132,7 +133,7 @@ const Works = () => {
                         </div>
 
                         <div className="w-100 mt-12 flex items-center justify-center">
-                            <button style={{letterSpacing:"3px"}} className="btn btn-2 fs-18 upppercase text-bold">GET STARTED</button>
+                            <Link to={'/login'} style={{letterSpacing:"3px"}} className="btn btn-2 fs-18 upppercase text-bold">GET STARTED</Link>
                         </div>
                     </div>
                 </div>

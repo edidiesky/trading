@@ -32,37 +32,28 @@ const CustomerList = () => {
                     </div>
                     <div className="w-100">
                         {
-                            users?.length === 0 ? <div className="cart_none w-100">
-                                <div className="w-100 flex item-center column gap-2 justify-center">
-                                    <img src="https://s.udemycdn.com/browse_components/flyout/empty-shopping-cart-v2.jpg" alt="" style={{ width: '250px' }} />
-                                    <div className="flex column item-center gap-1">
-                                        <h4 className="fs-16 text-bold text-blue">Your cart is empty. Keep shopping to find a course!</h4>
-                                        <div className="btn btn-2 fs-16 text-bold">Keep Shopping</div>
-                                    </div>
+                            <Table>
+                                <div className="TableContainer">
+                                    <table className="tableWrapper">
+                                        <thead>
+                                            <tr>
+                                                {/* <th>ID</th> */}
+                                                <th>Investor</th>
+                                                <th>Phone</th>
+                                                <th>Country</th>
+                                                <th>Role</th>
+                                                <th>Date</th>
+                                                <th>Manage</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {users?.map((x?: any, index?: any) => {
+                                                return <TableCard x={x} type={'customerlist'} key={x?._id} />;
+                                            })}
+                                        </tbody>
+                                    </table>
                                 </div>
-                            </div> :
-                                <Table>
-                                    <div className="TableContainer">
-                                        <table className="tableWrapper">
-                                            <thead>
-                                                <tr>
-                                                    {/* <th>ID</th> */}
-                                                    <th>Investor</th>
-                                                    <th>Phone</th>
-                                                    <th>Country</th>
-                                                    <th>Role</th>
-                                                    <th>Date</th>
-                                                    <th>Manage</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {users?.map((x?: any, index?: any) => {
-                                                    return <TableCard x={x} type={'customerlist'} key={x?._id} />;
-                                                })}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </Table>
+                            </Table>
                         }
                     </div>
                     <div className="w-100 py-1 flex item-center justify-space">

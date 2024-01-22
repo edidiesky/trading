@@ -37,7 +37,7 @@ interface depositState {
   alertType?: string,
 
   deposit?: {
-    amount?: number,
+    price?: number,
     paymentMethod?: string,
     plan?: string,
   }
@@ -69,7 +69,7 @@ const initialState: depositState = {
 
 
   deposit: depositdata ? depositdata: {
-    amount: 0,
+    price: 0,
     paymentMethod: '',
     plan: 'Deposit Only',
   }
@@ -92,11 +92,11 @@ export const depositSlice = createSlice({
     },
 
     FundDeposit: (state, action) => {
-      const amount = action.payload.amount
+      const price = action.payload.price
       const paymentMethod = action.payload.paymentMethod
       const plan = action.payload.plan
       const depositData = {
-        amount,
+        price,
         paymentMethod,
         plan
       }

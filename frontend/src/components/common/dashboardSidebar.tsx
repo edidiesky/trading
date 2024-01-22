@@ -59,20 +59,19 @@ const AdminSidebarData = [
     },
     {
         icon: <IoMdStats />,
-        title: "Profit Record",
-        path: "tradinghistory",
-    },
-    {
-        icon: <IoMdStats />,
-        title: "Manage Deposit",
-        path: "deposit_list",
+        title: "Manage R-O-I",
+        path: "Manage_Roi",
     },
     {
         icon: <IoBriefcase />,
-        title: "Manage Transaction",
+        title: "Manage Transaction/ Deposit",
         path: "TransactionList",
     }, 
-
+    {
+        icon: <TbChartHistogram />,
+        title: "Investment History",
+        path: "investment_history",
+    },
     {
         icon: <IoBriefcase />,
         title: "Manage Customers",
@@ -82,11 +81,6 @@ const AdminSidebarData = [
         icon: <FaCoins />,
         title: "Invest",
         path: "invest",
-    },
-    {
-        icon: <SlSupport />,
-        title: "Help/Support ",
-        path: "support",
     },
 ];
 type sidebarProps = {
@@ -100,9 +94,9 @@ const DashboardSidebar: React.FC<sidebarProps> = ({ active }) => {
         <HeaderStyles className={`w-100 flex column gap-2`}>
             <div className="100 Header_wrapper flex item-center column justify-space gap-2">
                 <h4 
-                className ="fs-16 w-100 auto text-start text-bold text-white">
+                className ="fs-18 w-100 auto text-start text-bold text-dark">
                     {userInfo?.fullname}
-                    <span className="block text-light fs-12 text-grey">{userInfo?.email}</span>
+                    <span className="block text-light fs-14 mt-3 text-grey">{userInfo?.email}</span>
                     </h4>
                 <ul className="flex column w-100">
                     {
@@ -114,7 +108,7 @@ const DashboardSidebar: React.FC<sidebarProps> = ({ active }) => {
                                             className={({ isActive, isPending }) =>
                                                 isActive ? "active fs-16 text-dark text-extra-bold" : "fs-16 text-dark text-extra-bold"
                                             }
-                                            to={`/account/dashboard/${x.path}`}
+                                            to={`/account/admin/dashboard/${x.path}`}
                                             end
                                         >
                                             {x.icon}
@@ -155,7 +149,7 @@ const DashboardSidebar: React.FC<sidebarProps> = ({ active }) => {
 export const HeaderStyles = styled.div`
     padding:2rem 0;
     width:100%;
-    background:#000;
+    background:#fff;
     position:absolute;
     top:0;
     left:0;
@@ -176,7 +170,7 @@ export const HeaderStyles = styled.div`
         font-weight: 500;
         margin: 0 auto;
         width: 100%;
-        color: #fff;
+        color: var(--dark-1);
         display: flex;
         align-items: center;
         /* justify-content: center; */
@@ -191,13 +185,13 @@ export const HeaderStyles = styled.div`
         }
         &.active {
           position: relative;
-          background:#b9c9d11f;
+          background:#7cb3832f;
            svg {
-            color:#beb1df;
+            color:var(-grey-1);
           }
           &:after {
           position: absolute;
-          background:#b9c9d1ea;
+          background:#12db2d;
           width: 4px;
           height: 100%;
           left: 0;

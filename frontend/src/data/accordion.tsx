@@ -1,11 +1,11 @@
 export const AccordionData = [
     {
-        title: "Who is Apex Bitcoin Mining?",
-        response: "Apex Bitcoin Mining is one of the world's leading Forex CFD provider. The company was incorporated with the vision of providing fair and transparent Forex trading to active traders. Apex Bitcoin Mining is dedicated to bringing solutions previously only available to professionals and large global investment banks to retail investors and traders around the world. For additional information about Apex Bitcoin Mining, please visit the About Us page."
+        title: "Who is TerraTexTrading Bitcoin Mining?",
+        response: "TerraTexTrading Bitcoin Mining is one of the world's leading Forex CFD provider. The company was incorporated with the vision of providing fair and transparent Forex trading to active traders. TerraTexTrading Bitcoin Mining is dedicated to bringing solutions previously only available to professionals and large global investment banks to retail investors and traders around the world. For additional information about TerraTexTrading Bitcoin Mining, please visit the About Us page."
     },
     {
-        title: "Who owns Apex Bitcoin Mining?",
-        response: "Apex Bitcoin Mining is a privately owned company. Apex Bitcoin Mining’ management team is comprised of individuals with over 20 years' experience in derivative products. Apex Bitcoin Mining’ founders were instrumental in the success of one of the largest CFD provider."
+        title: "Who owns TerraTexTrading Bitcoin Mining?",
+        response: "TerraTexTrading Bitcoin Mining is a privately owned company. TerraTexTrading Bitcoin Mining’ management team is comprised of individuals with over 20 years' experience in derivative products. TerraTexTrading Bitcoin Mining’ founders were instrumental in the success of one of the largest CFD provider."
     }, {
         title: "Can I have more than one account in the system?",
         response: "You can have only 1 registered account. Creation of 2 or more accounts by one user is prohibited. In the case of multi-client accounts all user's accounts will be blocked and funds will be canceled."

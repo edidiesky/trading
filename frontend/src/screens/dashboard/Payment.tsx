@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import styled from "styled-components";
 import axios from "axios";
 import { useToast } from "@/components/ui/use-toast"
-import { ToastAction } from "@/components/ui/toast"
 import { useAppDispatch, useAppSelector } from "@/hooks/reduxtoolkit";
 
 import { useNavigate } from 'react-router-dom';
@@ -11,6 +10,7 @@ import { IoCopy } from "react-icons/io5";
 import { CreateDeposit } from '@/features/deposit/depositReducer';
 import LoaderIndex from '@/components/loaders';
 import { CreateTransactions } from '@/features/transaction/transactionReducer';
+import { cleartransaction } from '@/features/transaction/transactionSlice';
 const Payment = () => {
     const [image, setImage] = useState('');
 
@@ -23,16 +23,17 @@ const Payment = () => {
     const {
         deposit
     } = useAppSelector(store => store.deposit)
-    React.useEffect(() => {
-        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    }, []);
+    const {
+        createtransactionisSuccess
+    } = useAppSelector(store => store.transaction)
+
     const [uploading, setUploading] = useState(false);
 
     const [state, setState] = React.useState<{
         value: string;
         copied: boolean;
     }>({
-        value: "bc1qr27rs7tplyczjverg5sfuz6kvw8x7s3ldhf69d",
+        value: "bc1qcuctcufggz8qd6dzjzw0rqmfmu7hw59rkj7wec",
         copied: false,
     });
     const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>, type?: string) => {
@@ -53,11 +54,11 @@ const Payment = () => {
                         "Content-Type": "multipart/form-data",
                     },
                 };
-                const { data } = await axios.post(`${import.meta.env.VITE_API_BASE_URLS}/upload/single`, formData, config);
+                const { data } = await axios.post(`https://traders-expert-api.vercel.app/api/v1/upload/single`, formData, config);
 
 
                 setImage(data.urls)
-            // create formdata
+                // create formdata
                 setUploading(false);
 
             } catch (err) {
@@ -80,10 +81,26 @@ const Payment = () => {
     const HandlePayment = () => {
         dispatch(CreateTransactions(depsoitData))
     }
+
+    React.useEffect(() => {
+        if (createtransactionisSuccess) {
+            toast({
+                variant: "success",
+                title: "Success",
+                description: 'Transaction has been submitted successfully',
+            })
+            const timeout = setTimeout(() => {
+                navigate('/account/dashboard/accounthistory')
+                dispatch(cleartransaction("any"))
+            }, 3000);
+         
+            return () => clearTimeout(timeout)
+        }
+    }, [createtransactionisSuccess]);
     return (
         <HistorytStyles style={{ minHeight: "100vh" }} className="w-100">
             {
-                uploading && <LoaderIndex/>
+                uploading && <LoaderIndex />
             }
             <div className="auto py-4 trading_wrapper flex column gap-4">
                 <div className="flex column gap-1">
@@ -96,7 +113,7 @@ const Payment = () => {
                         <h4 className="fs-16 text-light text-dark">
                             You are to make payment of {" "}
                             <span className="text-extra-bold">
-                                ${deposit?.amount}
+                                ${deposit?.price}
                             </span> using your selected payment method.
                             Screenshot and upload the proof of payment
                         </h4>
@@ -109,14 +126,18 @@ const Payment = () => {
                     <div className="w-100 flex column gap-1 item-start">
                         <h5 className="fs-24 text-bold">Bitcoin Address:</h5>
                         <div className="adress_wrapper w-100 flex item-start">
-                            <div className="adress_input flex item-center justify-center w-100 fs-16">
+                            <div className="adress_input flex item-center justify-center text-bold text-grey w-100 fs-16">
                                 {state?.value}
                             </div>
                             <CopyToClipboard
                                 text={state.value}
                                 onCopy={() => setState({ copied: true, value: state.value })}
                             >
-                                <div className="adress_btn fs-20 text-grey2 flex item-center justify-center">
+                                <div onClick={() => toast({
+                                    variant: "success",
+                                    title: "Success",
+                                    description: 'Wallet Address has been copied successfully',
+                                })} className="adress_btn fs-20 text-grey2 flex item-center justify-center">
 
                                     <IoCopy />
                                 </div>
@@ -182,6 +203,11 @@ const HistorytStyles = styled.div`
    .adress_input{
         height:5rem;
         background-color: #e2dfdf;
+        /* flex:1; */
+        /* padding: 0 1rem; */
+         @media (max-width:980px) {
+font-size: 11px;
+         }
     }
     .btn.btn_3 {
         padding: 1rem;
@@ -191,13 +217,17 @@ const HistorytStyles = styled.div`
         width:6rem;
         border: 1px solid var(--dark-1);
         cursor: pointer;
+         @media (max-width:980px) {
+        width:20%;
+
+         }
     }
   .trading_wrapper {
     width:95%;
    
     .input {
         &.input_1 {
-        width: 300px !important;
+        /* width: 300px !important; */
         @media (max-width:980px) {
 
             width:90%;
@@ -207,15 +237,14 @@ const HistorytStyles = styled.div`
     }
     .trading_card {
         width:60%;
-        margin:0 auto;
         padding:7rem 5rem;
         background-color: #fff;
         box-shadow: var(--shadow);
          /* min-width: 500px; */
          @media (max-width:980px) {
             margin:0;
-            width:90%;
-           padding:5rem;
+            width:100%;
+           padding:5rem 2rem;
 
          }
 

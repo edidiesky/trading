@@ -33,7 +33,7 @@ const GetTransactionOfAUser = asyncHandler(async (req: CustomInterface, res: Res
 //PRIVATE/ADMIN
 const CreateTransaction = asyncHandler(async (req: CustomInterface, res: Response) => {
   // get the investment item
-  const { price, plan, tier, status, paymentMethod } = req.body
+  const { price, plan, tier, status, paymentMethod, proof_of_payment } = req.body
   const startDate = new Date();
   const endDate = new Date(startDate);
   endDate.setDate(endDate.getDate() + 30);
@@ -48,7 +48,8 @@ const CreateTransaction = asyncHandler(async (req: CustomInterface, res: Respons
     paymentMethod,
     user: req?.user?.userId,
     status,
-    plan
+    plan,
+    proof_of_payment
   })
    res.setHeader("Content-Type", "text/html");
   res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");

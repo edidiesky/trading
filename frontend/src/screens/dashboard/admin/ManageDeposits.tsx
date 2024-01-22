@@ -322,7 +322,7 @@ const PhotoModalStyles = styled(motion.div)`
         padding:1rem;
         .photo_image_wrapper {
           height:90%;
-          width:80%;
+          width:95%;
           img {
             height:100%;
             width:100%;

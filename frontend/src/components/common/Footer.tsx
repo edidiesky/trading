@@ -35,7 +35,7 @@ const Footer = () => {
         <FooterStyles className="w-100 flex column gap-4">
             <div className="w-90 auto footer_wrapper">
                 <div className="w-100 flex column gap-3">
-                    <img style={{ width: "100px" }} src="https://metacorepoint.com/img/logo_light.png" alt="" className="" />
+                    <h3 className="fs-24 text-bold text-white">Terratextrading</h3>
                     <h4 className="fs-18 text-light leading-[1.7] text-white">
                         Our goal is to prioritise a seamless customer service experience to our customers, who are paramount to our business. We are committed to offering our clients a reliable and secure service so as to build a complete financial portfolio that empowers them to achieve financial freedom.
                     </h4>
@@ -44,11 +44,11 @@ const Footer = () => {
                     {
                         footer_data_1.map((x?: any, index?: any) => {
                             return <div key={index} className="flex column gap-3 text-light text-white">
-                                <h4 className="fs-18 family1">{x?.title}</h4>
+                                <h4 className="fs-18">{x?.title}</h4>
                                 <span className="fs-14 flex column gap-2 text-light">
                                     {
                                         x?.list.map((x?: any) => {
-                                            return <span className="text-grey2">{x}</span>
+                                            return <span className="text-white">{x}</span>
                                         })
                                     }
                                 </span>

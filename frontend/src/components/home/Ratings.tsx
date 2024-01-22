@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 import { IoBarChart } from "react-icons/io5";
+import { FaKey } from 'react-icons/fa';
+import { Coins } from 'lucide-react';
 const Ratings = () => {
     return (
         <TestimonialStyles className="w-100 flex flex-col gap-12">
@@ -34,7 +36,7 @@ const Ratings = () => {
 
                     <div className="flex flex-col md:flex-row items-start gap-4">
                         <div className="border h-[9rem] w-[9rem] fs-30 text-[#D48574] hover:text-[#fff] border-[#D48574] rounded-full hover:bg-[#D48574] flex items-center justify-center">
-                            <IoBarChart />
+                            <FaKey />
                         </div>
                         <div className="flex flex-1 flex-col gap-4">
                             <h3 className="fs-24 text-bold text-dark">
@@ -49,7 +51,7 @@ const Ratings = () => {
 
                     <div className="flex flex-col md:flex-row items-start gap-4">
                         <div className="border h-[9rem] w-[9rem] fs-30 text-[#D48574] hover:text-[#fff] border-[#D48574] rounded-full hover:bg-[#D48574] flex items-center justify-center">
-                            <IoBarChart />
+                            <Coins />
                         </div>
                         <div className="flex flex-1 flex-col gap-4">
                             <h3 className="fs-24 text-bold text-dark">

@@ -37,8 +37,8 @@ const Header = () => {
                
             </div> */}
             <div className="hero_header w-90 auto flex item-center justify-space">
-                <Link to={'/'} className="fs-14 text-bold uppercase text-white">
-                    <img className="w-[100px] md:w-[130px]" src="https://metacorepoint.com/img/logo_light.png" alt="" />
+                <Link to={'/'} className="fs-18 text-bold uppercase text-white">
+                    TerraTexTrading
                 </Link>
                 <div className="flex items-center gap-2">
                     {
@@ -77,35 +77,22 @@ const Header = () => {
                                 </Link>
                             </div>
                             <div className="flex item-center gap-2">
-                                    <Link to={'/register'} className="login_btn btn_1 fs-14 flex item-center gap-1 text-bold text-white">
-                                        <FaUser />
-                                        Sign Up
-                                    </Link>
-                                    <Link to={'/login'} className="login_btn fs-14 flex item-center gap-1 text-bold text-white">
-                                        <FaKey />
-                                        Login
-                                    </Link>
+                                <Link to={'/register'} className="login_btn btn_1 fs-14 flex item-center gap-1 text-bold text-white">
+                                    <FaUser />
+                                    Sign Up
+                                </Link>
+                                <Link to={'/login'} className="login_btn fs-14 flex item-center gap-1 text-bold text-white">
+                                    <FaKey />
+                                    Login
+                                </Link>
                             </div>
                         </div>
                     }
 
                     <div className="flex spam_bars items-center gap-2">
                         {
-                            userInfo ? <div className="flex item-center profile_wrapper relative gap-4">
-                                <div className="profile_avatar flex item-center justify-center fs-16 text-extra-bold text-white">{userInfo?.username && userInfo?.username[0]}</div>
-                                <div className="profile_dropdown absolute">
-                                    <div className="w-100 flex column gap-2">
-                                        <div className="flex profile_dropdown_bottom column w-100">
-                                            <Link to={'/account/dashboard'} className="text-bold fs-14 w-100 profile_list text-dark block">Dashboard</Link>
-                                            <Link to={'/account/dashboard/profile'} className="text-bold fs-14 w-100 profile_list text-dark block">Profile</Link>
-                                            <span onClick={handleLogOut} className="text-bold fs-14 w-100 profile_list text-dark block">Log Out</span>
+                            userInfo ? "" : <div className="flex item-center gap-2">
 
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div> : <div className="flex item-center gap-2">
-                                
                                 <Link to={'/login'} className="login_btn fs-14 flex item-center gap-1 text-bold text-white">
                                     <FaKey />
                                     Login
@@ -117,7 +104,7 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
-                <div style={{zIndex:"200"}} className={`navbar ${bar ? 'active' : ""} flex`}>
+                <div style={{ zIndex: "200" }} className={`navbar ${bar ? 'active' : ""} flex`}>
                     <div className="w-100 flex column">
                         <Link to={'/'} className="fs-14 list text-light uppercase text-white">
                             Home
@@ -131,7 +118,7 @@ const Header = () => {
                         <Link to={'/contact'} className="fs-14 list text-light uppercase text-white">
                             Contact
                         </Link>
-                      
+
                     </div>
                 </div>
             </div>

@@ -24,6 +24,8 @@ const ManageCustomers = () => {
     const [country, setCountry] = useState('')
     const [deposit, setDeposit] = useState('')
     const [bonus, setBonus] = useState('')
+    const [totalbonus, setTotalBonus] = useState('')
+    const [accountbalance, setAccountBalance] = useState('')
     const [referralbonus, setReferralBonus] = useState('')
 
     const {
@@ -49,6 +51,8 @@ const ManageCustomers = () => {
             setCountry(userDetails?.country)
             setDeposit(userDetails?.deposit)
             setBonus(userDetails?.bonus)
+            setAccountBalance(userDetails?.account_balance)
+            setTotalBonus(userDetails?.total_bonus)
         }
     }, [
         userDetails,
@@ -57,7 +61,9 @@ const ManageCustomers = () => {
         setEmail,
         setCountry,
         setBonus,
-        setDeposit
+        setDeposit,
+        setTotalBonus,
+        setAccountBalance
     ]);
 
     const updatedData = {
@@ -68,8 +74,10 @@ const ManageCustomers = () => {
         _id: userDetails?._id,
         deposit,
         bonus,
-
+        account_balance:accountbalance,
+        total_bonus:totalbonus
     }
+    console.log(updatedData)
 
     const handleUpdateTransaction = () => {
         dispatch(UpdateProfile(updatedData))
@@ -81,24 +89,15 @@ const ManageCustomers = () => {
         if (updateuserprofileisSuccess) {
             toast({
                 variant: "success",
-                description: 'User Porfile has been succesfully updated',
+                title: "success",
+                description: 'User Profile has been succesfully updated',
             })
             const timeout = setTimeout(() => {
                 dispatch(clearUserProfile('any'))
-                navigate('/account/dashboard/Manage_Customers')
+                navigate('/account/admin/dashboard/Manage_Customers')
             }, 5000);
         }
-        if (userprofileisSuccess) {
-            toast({
-                variant: "success",
-                title: 'Users has been succesfully fetched',
-            })
-
-            // const timeout = setTimeout(() => {
-            //     dispatch(cleartransaction('any'))
-            //     navigate('/account/dashboard/TransactionList')
-            // }, 5000);
-        }
+      
     }, [userprofileisSuccess, updateuserprofileisSuccess])
 
 
@@ -184,6 +183,30 @@ const ManageCustomers = () => {
                                 name='bonus'
                                 type="number"
                                 onChange={(e) => setBonus(e.target.value)}
+                                placeholder='$1000'
+                                className="input w-100 text-xl text-dark" />
+                        </div>
+                    </div>
+
+
+                    <div className="w-100 grid grid-cols-1 sm:grid-cols-2 gap-4 ">
+                        <div className="flex flex-col gap-1">
+                            <h5 className="text-xl family1">Account Balance ($)</h5>
+                            <input
+                                value={accountbalance}
+                                name='deposit'
+                                type="number"
+                                onChange={(e) => setAccountBalance(e.target.value)}
+                                placeholder='$1000'
+                                className="input w-100 text-xl text-dark" />
+                        </div>
+                        <div className="flex flex-col gap-1">
+                            <h5 className="text-xl family1">Totalbonus ($)</h5>
+                            <input
+                                value={totalbonus}
+                                name='bonus'
+                                type="number"
+                                onChange={(e) => setTotalBonus(e.target.value)}
                                 placeholder='$1000'
                                 className="input w-100 text-xl text-dark" />
                         </div>

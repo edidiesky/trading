@@ -7,7 +7,7 @@ const NewsLetter = () => {
                     <h1 className="text-[40px] lg:text-[60px] w-100 leading-[1.5] text-extra-bold text-white">
                         What Makes
                         {/* Meta Core */}
-                       {" "} OptiTrade Dynamics
+                        {" "}Terratextrading
                          
                         Different?
                     </h1>

@@ -53,7 +53,7 @@ const Hero = () => {
                             {HeroData[0].subtext}
                         </h3>
                         <div className="w-100 flex">
-                            <div className="btn btn-4 fs-16 text-bold">LEARN MORE</div>
+                            <Link to={'/login'} className="btn btn-4 fs-16 text-bold">LEARN MORE</Link>
                         </div>
                     </div>
                 </div>
