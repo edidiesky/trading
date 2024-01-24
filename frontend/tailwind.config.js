@@ -18,7 +18,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        "new": ["Montserrat", 'sans-serif'],
+        new: ["Montserrat", "sans-serif"],
+        "barlow": ["Barlow", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

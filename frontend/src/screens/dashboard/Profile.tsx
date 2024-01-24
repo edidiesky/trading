@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import styled from "styled-components";
 import { useAppDispatch, useAppSelector } from '@/hooks/reduxtoolkit';
-import { UpdateTransactions } from '@/features/transaction/transactionReducer';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useToast } from "@/components/ui/use-toast"
 import { GetUserProfile, UpdateProfile } from '@/features/auth/authReducer';
 import { clearUserProfile } from '@/features/auth/authSlice';
+import LoaderIndex from '@/components/loaders';
 
 
 const ManageCustomers = () => {
@@ -80,6 +80,7 @@ const ManageCustomers = () => {
         if (updateuserprofileisSuccess) {
             toast({
                 variant: "success",
+                title: "success",
                 description: 'User Porfile has been succesfully updated',
             })
             const timeout = setTimeout(() => {
@@ -90,7 +91,8 @@ const ManageCustomers = () => {
         if (userprofileisSuccess) {
             toast({
                 variant: "success",
-                description: 'Users has been succesfully fetched',
+                title: "Success",
+                description: 'Your profile has been succesfully fetched',
             })
 
             // const timeout = setTimeout(() => {
@@ -103,6 +105,9 @@ const ManageCustomers = () => {
 
     return (
         <HistorytStyles style={{ minHeight: "100vh" }} className="w-100">
+            {
+                userprofileisLoading && <LoaderIndex/>
+            }
             <div className="auto py-4 trading_wrapper flex column gap-4">
                 <div className="flex w-full trading_wrapper_top  items-start md:items-center md:flex-row flex-col gap-4 justify-between">
                     <div className="flex column gap-1">
@@ -120,7 +125,7 @@ const ManageCustomers = () => {
                 <div className="w-100 trading_wrapper_bottom pt-12 flex flex-col gap-12">
                     <div className="w-100 grid grid-cols-1 sm:grid-cols-2 gap-4 ">
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1">UserName</h5>
+                            <h5 className="text-xl family1 font-medium">UserName</h5>
                             <input
                                 value={username}
                                 name='username'
@@ -130,7 +135,7 @@ const ManageCustomers = () => {
                                 className="input w-100 text-xl text-dark" />
                         </div>
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1">My FullName</h5>
+                            <h5 className="text-xl family1 font-medium">My FullName</h5>
                             <input type="text"
                                 name='fullname'
                                 onChange={(e) => setFullName(e.target.value)}
@@ -141,7 +146,7 @@ const ManageCustomers = () => {
 
                     <div className="w-100 grid grid-cols-1 sm:grid-cols-2 gap-4 ">
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1">Email</h5>
+                            <h5 className="text-xl family1 font-medium">Email</h5>
                             <input
                                 value={email}
                                 name='email'
@@ -151,7 +156,7 @@ const ManageCustomers = () => {
                                 className="input w-100 text-xl text-dark" />
                         </div>
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1">Country</h5>
+                            <h5 className="text-xl family1 font-medium">Country</h5>
                             <input
                                 type="text"
                                 value={country}
@@ -164,7 +169,7 @@ const ManageCustomers = () => {
 
                     <div className="w-100 grid grid-cols-1 sm:grid-cols-2 gap-4 ">
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1">Deposit ($)</h5>
+                            <h5 className="text-xl family1 font-medium">Deposit ($)</h5>
                             <input
                                 value={deposit}
                                 name='deposit'
@@ -174,7 +179,7 @@ const ManageCustomers = () => {
                                 className="input w-100 text-xl text-dark" />
                         </div>
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1">Bonus ($)</h5>
+                            <h5 className="text-xl family1 font-medium">Bonus ($)</h5>
                             <input
                                 value={bonus}
                                 name='bonus'

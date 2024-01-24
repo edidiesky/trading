@@ -94,9 +94,9 @@ const DashboardSidebar: React.FC<sidebarProps> = ({ active }) => {
         <HeaderStyles className={`w-100 flex column gap-2`}>
             <div className="100 Header_wrapper flex item-center column justify-space gap-2">
                 <h4 
-                className ="fs-18 w-100 auto text-start text-bold text-dark">
+                className ="text-[17px] w-100 auto text-start font-bold text-dark">
                     {userInfo?.fullname}
-                    <span className="block text-light family1 fs-14 mt-3 text-grey">{userInfo?.email}</span>
+                    <span className="block text-light family1 text-[15px] mt-1 text-grey">{userInfo?.email}</span>
                     </h4>
                 <ul className="flex column w-100">
                     {
