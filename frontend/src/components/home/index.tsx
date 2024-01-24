@@ -15,9 +15,10 @@ const Home: React.FC = () => {
     <HomeStyles>
       <Hero />
       <Works />
-      <Ratings />
-      <Packages />
-      <div className="w-100 py-32 bg-[#D48574]">
+      <Packages /> 
+      {/* <Ratings />
+      <Packages /> */}
+      {/* <div className="w-100 py-32 bg-[#D48574]">
         <div className="w-90 auto py-24 ">
           <iframe allowTransparency frameBorder="0"
             src="https://www.tradingview-widget.com/embed-widget/screener/#%7B%22width%22%3A1100%2C%22height%22%3A523%2C%22defaultColumn%22%3A%22overview%22%2C%22defaultScreen%22%3A%22general%22%2C%22market%22%3A%22forex%22%2C%22showToolbar%22%3Atrue%2C%22isTransparent%22%3Afalse%2C%22enableScrolling%22%3Atrue%2C%22utm_source%22%3A%22metacorepoint.com%22%2C%22utm_medium%22%3A%22widget_new%22%2C%22utm_campaign%22%3A%22forexscreener%22%2C%22page-uri%22%3A%22metacorepoint.com%2F%22%7D"
@@ -26,15 +27,15 @@ const Home: React.FC = () => {
 
           </iframe>
         </div>
-      </div>
+      </div> */}
      
       {/* <Ratings />
       <Packages />
       <Chart />
      */}
-      <Testimonial />
-      <NewsLetter />
-      <Banner/>
+      {/* <Testimonial /> */}
+      {/* <NewsLetter /> */}
+      {/* <Banner/> */}
       
     </HomeStyles>
   )

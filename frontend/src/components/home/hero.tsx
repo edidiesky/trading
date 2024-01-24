@@ -15,7 +15,7 @@ const HeroData = [
         subtext: "Leran form the best and become a professional using our online courses"
     },
     {
-        image: "https://metacorepoint.com/img/slider3.jpg",
+        image: "https://www.indonez.com/html-demo/wave/img/in-slideshow-image-2.jpg",
         text: "The place to trade and win",
         subtext: "Register now and get a $100 bonus instantly"
     }
@@ -39,7 +39,7 @@ const Hero = () => {
                 <div style={{ background: "rgba(242, 231, 182, 0.35)" }} className="absolute z-20 top-0 h-100 w-100 w-100"></div>
                 <div className="image_wrapper z-10">
 
-                    <img src={HeroData[1].image} alt="" />
+                    <img src={HeroData[2].image} alt="" />
                 </div>
 
                 <Header />
