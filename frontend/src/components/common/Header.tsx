@@ -61,14 +61,18 @@ const Header = () => {
                                     Home
                                 </Link>
                                 <Link to={'/about'} className="fs-14 text-bold uppercase text-white">
-                                    About Us
+                                    Markets
                                 </Link>
                                 {/* <Link to={'/trading'} className="fs-14 text-bold uppercase text-white">
                         Trading Assets
                     </Link> */}
-                                <Link to={'/faq'} className="fs-14 text-bold uppercase text-white">
-                                    FAQ
+                                    <Link to={'/about'} className="fs-14 text-bold uppercase text-white">
+                                    About Us
                                 </Link>
+
+                                    <Link to={'/faq'} className="fs-14 text-bold uppercase text-white">
+                                        FAQ
+                                    </Link>
                                 {/* <Link to={'/documents'} className="fs-14 text-bold uppercase text-white">
                         Documents
                     </Link> */}
