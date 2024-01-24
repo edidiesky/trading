@@ -37,7 +37,7 @@ const Header = () => {
                
             </div> */}
             <div className="hero_header w-90 auto flex item-center justify-space">
-                <Link to={'/'} className="fs-18 text-bold uppercase text-white">
+                <Link to={'/'} className="fs-18 text-bold family1 uppercase text-white">
                     OptiTrade Dynamics
                 </Link>
                 <div className="flex items-center gap-2">
@@ -81,11 +81,11 @@ const Header = () => {
                                 </Link>
                             </div>
                             <div className="flex item-center gap-2">
-                                <Link to={'/register'} className="login_btn btn_1 fs-14 flex item-center gap-1 text-bold text-white">
+                                <Link to={'/register'} className="btn btn-1 btn_1 fs-14 flex item-center gap-1 text-bold text-white">
                                     <FaUser />
                                     Sign Up
                                 </Link>
-                                <Link to={'/login'} className="login_btn fs-14 flex item-center gap-1 text-bold text-white">
+                                <Link to={'/login'} className="btn btn-2 fs-14 flex item-center gap-1 text-bold text-white">
                                     <FaKey />
                                     Login
                                 </Link>
@@ -97,7 +97,7 @@ const Header = () => {
                         {
                             userInfo ? "" : <div className="flex item-center gap-2">
 
-                                <Link to={'/login'} className="login_btn fs-14 flex item-center gap-1 text-bold text-white">
+                                <Link to={'/login'} className="btn btn-2 fs-14 flex item-center gap-1 text-bold text-white">
                                     <FaKey />
                                     Login
                                 </Link>
@@ -108,21 +108,31 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
-                <div style={{ zIndex: "200" }} className={`navbar ${bar ? 'active' : ""} flex`}>
-                    <div className="w-100 flex column">
-                        <Link to={'/'} className="fs-14 list text-light uppercase text-white">
-                            Home
-                        </Link>
-                        <Link to={'/about'} className="fs-14 list text-light uppercase text-white">
-                            About Us
-                        </Link>
-                        <Link to={'/faq'} className="fs-14 list text-light uppercase text-white">
-                            FAQ
-                        </Link>
-                        <Link to={'/contact'} className="fs-14 list text-light uppercase text-white">
-                            Contact
-                        </Link>
+                <div style={{ zIndex: "200" }} className={`${bar ? "left-0" : "-left-[100%]"} w-[300px] h-full transition-all ease duration-700 z-40 fixed flex md:hidden top-0 bg-[#000] column gap-2`}>
+                    <div onClick={() => setBar(!bar)} style={{ zIndex: "200" }} className={`${bar ? "left-0" : "-left-[100%]"} w-full h-full transition-all ease duration-300 z-40 fixed flex md:hidden top-0 bg-[#42424227] column gap-2`}>
+                    </div>
 
+                    <div style={{ zIndex: "200" }} className="w-full Header_wrapper flex item-center column justify-space gap-2">
+
+                        <ul className="flex flex-col w-full">
+                            <Link to={'/'} className="text-white flex items-center gap-2 w-full family1 font-light hover:bg-[rgba(255,255,255,.1)] py-[20px] family1 px-8 text-[14px]">
+                                Home
+                            </Link>
+                            <Link to={'/market'} className="text-white flex items-center gap-2 w-full family1 font-light hover:bg-[rgba(255,255,255,.1)] py-[20px] family1 px-8 text-[14px]">
+                                Markets
+                            </Link>
+                            <Link to={'/about'} className="text-white flex items-center gap-2 w-full family1 font-light hover:bg-[rgba(255,255,255,.1)] py-[20px] family1 px-8 text-[14px]">
+                                About Us
+                            </Link>
+                            <Link to={'/faq'} className="text-white flex items-center gap-2 w-full family1 font-light hover:bg-[rgba(255,255,255,.1)] py-[20px] family1 px-8 text-[14px]">
+                                FAQ
+                            </Link>
+                            <Link to={'/contact'} className="text-white flex items-center gap-2 w-full family1 font-light hover:bg-[rgba(255,255,255,.1)] py-[20px] family1 px-8 text-[14px]">
+                                Contact
+                            </Link>
+
+
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -135,6 +145,10 @@ export const HeaderStyles = styled.div`
 width:100%;
 position:relative;
 z-index: 400000;
+.btn {
+    border-radius: 40px !important;
+    padding: 10px 2rem !important;
+}
     .profile_avatar_large {
     width:70px;
         height:70px;

@@ -23,15 +23,7 @@ const HeroData = [
 
 const Hero = () => {
     const [tabindex, setTabIndex] = React.useState(0);
-    const handleImagePosition = (position?: string) => {
-        if (position === "left") {
-            setTabIndex(tabindex < 0 ? HeroData?.length - 1 : tabindex + 1);
-        }
-        if (position === "right") {
-            setTabIndex(tabindex >= HeroData?.length - 1 ? 0 : tabindex - 1);
-        }
-    };
-    // console.log(tabindex)
+
     return (
         <>
             {/* <Header /> */}
@@ -61,22 +53,22 @@ const Hero = () => {
 
             </HeroStyles>
             <div className="w-100 bg-[#C89B42] py-4 px-2">
-                <div className="w-90 auto grid grid-cols-2 gap-y-12 gap-x-8 lg:grid-cols-4">
-                    <div className="flex pr-4 border-r border-[rgba(255,255,255,.3)] items-center gap-2">
+                <div className="w-90 auto grid grid-cols-1 sm:grid-cols-2 gap-y-12 gap-x-8 lg:grid-cols-4">
+                    <div className="flex pr-4 border-r-0 pb-12 sm:pb-0 border-b sm:border-b-0 sm:border-r border-[rgba(255,255,255,.3)] items-center gap-2">
                         <img src="https://www.indonez.com/html-demo/wave/img/in-wave-icon-1.svg" alt="" className="w-24" />
                         <h4 style={{color:"#eee"}} className="text-bold text-[19px]">Free
                             analysis tools
                         </h4>
                     </div>
 
-                    <div className="flex items-center pr-4 border-r border-[rgba(255,255,255,.3)] gap-2">
+                    <div className="flex items-center pr-4 border-r-0 pb-12 sm:pb-0 border-b sm:border-b-0 sm:border-r border-[rgba(255,255,255,.3)] gap-2">
                         <img src="https://www.indonez.com/html-demo/wave/img/in-wave-icon-2.svg" alt="" className="w-24" />
                         <h4 style={{ color: "#eee" }} className="text-bold text-[19px]">Fast execution
                             0 commision
                         </h4>
                     </div>
 
-                    <div className="flex items-center pr-4 border-r border-[rgba(255,255,255,.3)] gap-2">
+                    <div className="flex items-center pr-4 border-r-0 pb-12 sm:pb-0 border-b sm:border-b-0 sm:border-r border-[rgba(255,255,255,.3)] gap-2">
                         <img src="https://www.indonez.com/html-demo/wave/img/in-wave-icon-3.svg" alt="" className="w-24" />
                         <h4 style={{ color: "#eee" }} className="text-bold text-[19px]">Low minimum
                             deposit of $100

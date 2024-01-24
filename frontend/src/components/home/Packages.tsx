@@ -71,9 +71,10 @@ const Packages = () => {
 
                                 <div className="w-90 px-16 auto py-24 flex gap-12 flex-col">
                                     <h3 className="text-[35px] text-extra-bold  text-start">
-                                        <span className="block text-xl font-medium uppercase">MINIMUM FUNDING</span>
+                                        <span className="block text-xl font-medium uppercase family1">MINIMUM FUNDING</span>
                                         {packageData[0]?.title}
-                                        <span className="block text-[26px] font-light mt-4 pb-10 border-b border-[rgba(0,0,0,.1)] text-grey">Benefit from industry-leading entry prices</span>
+                                        <span className="block text-[26px] font-light mt-4 pb-10 border-b border-[rgba(0,0,0,.1)] family1 text-grey">
+                                            Benefit from industry-leading entry prices</span>
                                     </h3>
                                     {/* <h4 style={{ color: "rgb(244, 190, 47)" }} className="text-center fs-16 text-bold text-[rgb(244, 190, 47)] w-100">
                                 Minimum Deposit <span>{packageData[0].min_deposit}</span>
@@ -81,8 +82,8 @@ const Packages = () => {
                                     <div className="w-100 flex column items-center justify-center gap-2 text-[17px] text-bold">
                                         {
                                             packageData[0].list.map((x?: any, index?: any) => {
-                                                return <div className="w-100 flex item-center text-medium gap-2">
-                                                    <span className="w-8 h-8 rounded-full text-[13px] text-[#fff] bg-[#1980EC] flex items-center justify-center">
+                                                return <div className="w-100 family1 flex item-center text-medium gap-2">
+                                                    <span className="w-8 h-8 family1 rounded-full text-[13px] text-[#fff] bg-[#1980EC] flex items-center justify-center">
                                                         <FaCheck fontSize={'10px'} />
                                                     </span>  {x}
                                                 </div>

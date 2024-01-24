@@ -1,18 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import Hero from './hero';
-import NewsLetter from './NewsLetter';
 import Ratings from './Ratings';
 import Works from './Works';
-import Banner from './Banner';
+import Banner from '../home/Banner';
+import Navbar from '../common/Navbar';
 
 const About: React.FC = () => {
   return (
     <HomeStyles>
-      <Hero />
+      <Navbar/>
       <Works />
       <Ratings />
-      <NewsLetter />
       <Banner/>
       
     </HomeStyles>

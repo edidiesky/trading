@@ -8,7 +8,7 @@ const Works = () => {
                     <h2 className="text-extra-bold text-[50px] leading-[1.3]">Industry-leading prices
 
                     </h2>
-                    <span className="block w-[70%] text-[20px] lg:text-[30px] leading-[1.3] mt-4 font-normal text-grey">
+                    <span className="block w-[70%] text-[20px] lg:text-[30px] leading-[1.3] mt-4 family1 font-normal text-grey">
                         Get ultra-competitive spreads and commissions across all asset classes. Receive even better rates as your volume increases.
                     </span>
                     <div className="w-100 pt-24 grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-x-8 gap-y-20">
@@ -82,7 +82,7 @@ const Works = () => {
                             className="w-40" />
                         <h2 className="text-[45px] font-extrabold">Market analysis and
                             trade inspiration</h2>
-                        <span className="text-[20px] leading-[1.5] font-medium text-grey">
+                        <span className="text-[20px] leading-[1.5] family1 font-medium text-grey">
                             We  offer in-depth insights into various markets. This include financial markets, stock markets, cryptocurrency markets,
                             or any other relevant industry.
                         </span>
@@ -90,14 +90,14 @@ const Works = () => {
                             <div className="py-6 w-[190px] rounded-3xl border px-4 border-[#C89B42] flex flex-col">
                                 <div className="flex py-4 flex-col w-90 auto gap-1 items-center justify-center">
                                     <img src="https://www.indonez.com/html-demo/wave/img/in-wave-icon-7.svg" alt="" className="w-20" />
-                                    <h4 className="font-extrabold text-[16px] text-dark text-center">Forecasts & Educations</h4>
+                                    <h4 className="font-extrabold text-[16px] text-dark text-center family1">Forecasts & Educations</h4>
                                 </div>
                             </div>
 
                             <div className="py-6 w-[190px] rounded-3xl border px-4 border-[#C89B42] flex flex-col">
-                                <div className="flex py-4 flex-col w-90 auto gap-1 items-center justify-center">
+                                <div className="flex py-4 flex-col w-90 auto gap-1 items-center family1 justify-center family1">
                                     <img src="https://www.indonez.com/html-demo/wave/img/in-wave-icon-6.svg" alt="" className="w-20" />
-                                    <h4 className="font-extrabold text-[16px] text-dark text-center">Strategies & Discussions</h4>
+                                    <h4 className="font-extrabold text-[16px] text-dark text-center family1">Strategies & Discussions</h4>
                                 </div>
                             </div>
                         </div>

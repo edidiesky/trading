@@ -6,16 +6,16 @@ const Works = () => {
         return (
             <HowItWorksStyles className="w-100">
                 <div className="w-90 auto flex column gap-4">
-                    <h2 className="fs-50 text-bold text-start leading-[1.4] md:text-center text-dark">
-                        <span style={{ letterSpacing: "7px", color: "rgb(177, 177, 177)" }} className="text-light w-full pb-8 fs-20 mx-auto md:w-[70%] block">
+                    <h2 className="fs-50 text-extra-bold w-full md:w-[70%] text-start leading-[1.4] text-dark">
+                        <span style={{ letterSpacing: "7px", color: "rgb(177, 177, 177)" }} className="text-light family1 w-full pb-8 fs-20  block">
                             About OptiTrade Dynamics
                         </span>
                         The future is bright with OptiTrade Dynamics
-                        <span className="text-light w-full pt-24 fs-20 leading-[1.8] mx-auto md:w-[70%] block text-grey2">
+                        <span className="text-light family1 w-full pt-24 fs-20 leading-[1.8] block text-grey2">
                             OptiTrade Dynamics is one of largest forex and cryptocurrency brands around. At OptiTrade Dynamics International we work hard to make sure our clients make the best trading and investment decisions. Our broad range of services enable you to get the best guidance, advice and resources to build a richer future
                         </span>
 
-                        <span className="text-light w-full pt-12 fs-20 leading-[1.8] mx-auto md:w-[70%] block text-grey2">
+                        <span className="text-light family1 w-full pt-12 fs-20 leading-[1.8] block text-grey2">
                       
                             We work day and night to create and sustain a forex and cryptocurrencies trading environment that helps everyone access the markets – from first-timers to those who’ve turned trading into a career.
                         </span>
@@ -97,13 +97,10 @@ padding-bottom: 0;
 `
 const HowItWorksStyles = styled.div`
 padding:12rem 0;
-background-color: #F5F6F6;
 `
 const CountingStyles = styled.div`
 margin-top: 12rem;
 padding:6rem 0;
-background:#D48574;
-/* padding-bottom: 0; */
 `
 
 export default Works
