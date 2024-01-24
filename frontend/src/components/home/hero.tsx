@@ -56,28 +56,28 @@ const Hero = () => {
                 <div className="w-90 auto grid grid-cols-1 sm:grid-cols-2 gap-y-12 gap-x-8 lg:grid-cols-4">
                     <div className="flex pr-4 border-r-0 pb-12 sm:pb-0 border-b sm:border-b-0 sm:border-r border-[rgba(255,255,255,.3)] items-center gap-2">
                         <img src="https://www.indonez.com/html-demo/wave/img/in-wave-icon-1.svg" alt="" className="w-24" />
-                        <h4 style={{color:"#eee"}} className="text-bold text-[19px]">Free
+                        <h4 style={{color:"#eee"}} className="text-bold family1 text-[19px]">Free
                             analysis tools
                         </h4>
                     </div>
 
                     <div className="flex items-center pr-4 border-r-0 pb-12 sm:pb-0 border-b sm:border-b-0 sm:border-r border-[rgba(255,255,255,.3)] gap-2">
                         <img src="https://www.indonez.com/html-demo/wave/img/in-wave-icon-2.svg" alt="" className="w-24" />
-                        <h4 style={{ color: "#eee" }} className="text-bold text-[19px]">Fast execution
+                        <h4 style={{ color: "#eee" }} className="text-bold family1 text-[19px]">Fast execution
                             0 commision
                         </h4>
                     </div>
 
                     <div className="flex items-center pr-4 border-r-0 pb-12 sm:pb-0 border-b sm:border-b-0 sm:border-r border-[rgba(255,255,255,.3)] gap-2">
                         <img src="https://www.indonez.com/html-demo/wave/img/in-wave-icon-3.svg" alt="" className="w-24" />
-                        <h4 style={{ color: "#eee" }} className="text-bold text-[19px]">Low minimum
+                        <h4 style={{ color: "#eee" }} className="text-bold family1 text-[19px]">Low minimum
                             deposit of $100
                         </h4>
                     </div>
 
                     <div className="flex items-center gap-2">
                         <img src="https://www.indonez.com/html-demo/wave/img/in-wave-icon-4.svg" alt="" className="w-24" />
-                        <h4 style={{ color: "#eee" }} className="text-bold text-[19px]">Over 2,100
+                        <h4 style={{ color: "#eee" }} className="text-bold family1 text-[19px]">Over 2,100
                             assets to trade
                         </h4>
                     </div>
