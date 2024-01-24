@@ -653,7 +653,7 @@ html {
 }
 
   h1,h2 {
-    font-size: 6.8rem;
+    font-size: 35px;
   }
 @media (max-width: 1080px) {
   html {

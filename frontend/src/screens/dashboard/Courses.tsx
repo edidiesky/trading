@@ -97,9 +97,9 @@ const Courses = () => {
                                 {x.icon}
                             </span>
 
-                            <span className='text-dark family1 fs-24 text-bold'>
+                            <span className='text-dark  fs-24 text-bold'>
                                 {x?.value}
-                                <span className="block fs-12 text-light text-grey2">{x?.title}</span>
+                                <span className="block fs-14 family1 font-medium text-grey2">{x?.title}</span>
                             </span>
                         </div>
                     );
@@ -111,7 +111,7 @@ const Courses = () => {
     const TradingChart = () => {
         return <TradingChartStyles className="w-100 flex column gap-1">
             <div className="flex column gap-1">
-                <h3 className="fs-20 family1 text-grey2">
+                <h3 className="fs-20 family1 font-bold text-grey2">
                     Personal Trading Chart
                 </h3>
             </div>
@@ -134,7 +134,7 @@ const Courses = () => {
     const ForexChart = () => {
         return <TradingChartStyles className="w-100 flex column gap-1">
             <div className="flex column gap-1">
-                <h3 className="fs-20 family1 text-grey2">
+                <h3 className="fs-20 family1 font-bold text-grey2">
                     Forex Trading Chart
                 </h3>
             </div>

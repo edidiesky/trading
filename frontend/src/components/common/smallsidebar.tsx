@@ -114,7 +114,7 @@ const SmallSidebar: React.FC<SidebarProps> = ({ sidebar, setSidebar }) => {
                                                 <NavLink
                                                     onClick={() => setSidebar(false)}
                                                     className={({ isActive, isPending }) =>
-                                                        isActive ? "active fs-18 text-dark text-extra-bold" : "fs-18 text-dark text-extra-bold"
+                                                        isActive ? "active fs-18 text-dark family1 text-extra-bold" : "fs-18 text-dark family1 text-extra-bold"
                                                     }
                                                     to={`/account/admin/dashboard/${x.path}`}
                                                     end
@@ -133,7 +133,7 @@ const SmallSidebar: React.FC<SidebarProps> = ({ sidebar, setSidebar }) => {
                                                 <NavLink
                                                     onClick={() => setSidebar(false)}
                                                     className={({ isActive, isPending }) =>
-                                                        isActive ? "active fs-18 text-dark text-extra-bold" : "fs-18 text-dark text-extra-bold"
+                                                        isActive ? "active fs-18 text-dark family1 text-extra-bold" : "fs-18 text-dark family1 text-extra-bold"
                                                     }
                                                     to={`/account/dashboard/${x.path}`}
                                                     end

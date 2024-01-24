@@ -96,7 +96,7 @@ const DashboardSidebar: React.FC<sidebarProps> = ({ active }) => {
                 <h4 
                 className ="fs-18 w-100 auto text-start text-bold text-dark">
                     {userInfo?.fullname}
-                    <span className="block text-light fs-14 mt-3 text-grey">{userInfo?.email}</span>
+                    <span className="block text-light family1 fs-14 mt-3 text-grey">{userInfo?.email}</span>
                     </h4>
                 <ul className="flex column w-100">
                     {
@@ -106,7 +106,7 @@ const DashboardSidebar: React.FC<sidebarProps> = ({ active }) => {
                                     return (
                                         <NavLink
                                             className={({ isActive, isPending }) =>
-                                                isActive ? "active fs-16 text-dark text-extra-bold" : "fs-16 text-dark text-extra-bold"
+                                                isActive ? "active fs-16 text-dark family1 text-extra-bold" : "fs-16 text-dark family1 text-extra-bold"
                                             }
                                             to={`/account/admin/dashboard/${x.path}`}
                                             end
@@ -124,7 +124,7 @@ const DashboardSidebar: React.FC<sidebarProps> = ({ active }) => {
                                         return (
                                             <NavLink
                                                 className={({ isActive, isPending }) =>
-                                                    isActive ? "active fs-16 text-dark text-extra-bold" : "fs-16 text-dark text-extra-bold"
+                                                    isActive ? "active fs-16 text-dark family1 text-extra-bold" : "fs-16 text-dark family1 text-extra-bold"
                                                 }
                                                 to={`/account/dashboard/${x.path}`}
                                                 end
