@@ -80,19 +80,19 @@ const Navbar = () => {
                                 <Link to={'/'} className="fs-14 family1 font-medium uppercase text-dark">
                                     Home
                                 </Link>
-                                    <Link to={'/market'} className="fs-14 family1 font-medium uppercase text-dark">
+                                <Link to={'/market'} className="fs-14 family1 font-medium uppercase text-dark">
                                     Markets
                                 </Link>
                                 {/* <Link to={'/trading'} className="fs-14 family1 font-medium uppercase text-dark">
                         Trading Assets
                     </Link> */}
-                                    <Link to={'/about'} className="fs-14 family1 font-medium uppercase text-dark">
+                                <Link to={'/about'} className="fs-14 family1 font-medium uppercase text-dark">
                                     About Us
                                 </Link>
 
-                                    <Link to={'/faq'} className="fs-14 family1 font-medium uppercase text-dark">
-                                        FAQ
-                                    </Link>
+                                <Link to={'/faq'} className="fs-14 family1 font-medium uppercase text-dark">
+                                    FAQ
+                                </Link>
                                 {/* <Link to={'/documents'} className="fs-14 family1 font-medium uppercase text-dark">
                         Documents
                     </Link> */}
@@ -128,23 +128,26 @@ const Navbar = () => {
                         </div>
                     </div>
                 </div>
-                <div style={{ zIndex: "200" }} className={`${bar ? "left-0" : "-left-[100%]"} w-[300px] h-full transition-all ease duration-300 z-40 fixed flex md:hidden top-0 bg-[#000] column gap-2`}>
+                <div style={{ zIndex: "200" }} className={`${bar ? "left-0" : "-left-[100%]"} w-[300px] h-full transition-all ease duration-700 z-40 fixed flex md:hidden top-0 bg-[#000] column gap-2`}>
+                    <div onClick={() => setBar(!bar)} style={{ zIndex: "200" }} className={`${bar ? "left-0" : "-left-[100%]"} w-full h-full transition-all ease duration-300 z-40 fixed flex md:hidden top-0 bg-[#42424227] column gap-2`}>
+                    </div>
+
                     <div style={{ zIndex: "200" }} className="w-full Header_wrapper flex item-center column justify-space gap-2">
 
                         <ul className="flex flex-col w-full">
-                            <Link to={'/'}   className="text-white flex items-center gap-2 w-full family1 font-light hover:bg-[rgba(255,255,255,.1)] py-[20px] family1 px-8 text-[14px]">
+                            <Link to={'/'} className="text-white flex items-center gap-2 w-full family1 font-light hover:bg-[rgba(255,255,255,.1)] py-[20px] family1 px-8 text-[14px]">
                                 Home
                             </Link>
                             <Link to={'/market'} className="text-white flex items-center gap-2 w-full family1 font-light hover:bg-[rgba(255,255,255,.1)] py-[20px] family1 px-8 text-[14px]">
-                               Markets
+                                Markets
                             </Link>
-                            <Link to={'/about'}   className="text-white flex items-center gap-2 w-full family1 font-light hover:bg-[rgba(255,255,255,.1)] py-[20px] family1 px-8 text-[14px]">
+                            <Link to={'/about'} className="text-white flex items-center gap-2 w-full family1 font-light hover:bg-[rgba(255,255,255,.1)] py-[20px] family1 px-8 text-[14px]">
                                 About Us
                             </Link>
-                            <Link to={'/faq'}   className="text-white flex items-center gap-2 w-full family1 font-light hover:bg-[rgba(255,255,255,.1)] py-[20px] family1 px-8 text-[14px]">
+                            <Link to={'/faq'} className="text-white flex items-center gap-2 w-full family1 font-light hover:bg-[rgba(255,255,255,.1)] py-[20px] family1 px-8 text-[14px]">
                                 FAQ
                             </Link>
-                            <Link to={'/contact'}   className="text-white flex items-center gap-2 w-full family1 font-light hover:bg-[rgba(255,255,255,.1)] py-[20px] family1 px-8 text-[14px]">
+                            <Link to={'/contact'} className="text-white flex items-center gap-2 w-full family1 font-light hover:bg-[rgba(255,255,255,.1)] py-[20px] family1 px-8 text-[14px]">
                                 Contact
                             </Link>
 

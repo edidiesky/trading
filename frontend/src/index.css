@@ -163,6 +163,8 @@ h2,h1 {
   color: #fff;
   border-radius: 10px;
   cursor: pointer;
+  font-family: "Barlow", sans-serif;
+
 }
 .btn:hover {
   opacity: 0.7;
@@ -217,6 +219,8 @@ button {
   border-radius: 10px;
   color: var(--dark-1);
   transition: all .5s;
+  font-family: "Barlow", sans-serif;
+
 }
 .input:hover{
   border: 1px solid #1980EC;
