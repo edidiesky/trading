@@ -15,56 +15,56 @@ const Works = () => {
                         <div className="w-100 bg-[#F6F7F8] rounded-2xl pt-8 px-2">
                             <div className="w-100">
                                 <div className="w-90 auto flex flex-col">
-                                    <h3 className="fs-16 font-bold text-blue">
-                                        <span className="text-blue block fs-20 font-bolder">FX</span>
+                                    <h3 className="fs-16 family1 font-medium text-blue">
+                                        <span className="text-blue block fs-20 font-extrabold">FX</span>
                                         Spread as low as
                                     </h3>
                                     <h2 className="text-[60px] my-3 font-bold">0.2</h2>
-                                    <p className="text-[15px] text-bold text-grey">Trade 182 FX spot pairs and 140 forwards across majors, minors, exotics and metals.</p>
+                                    <p className="text-[15px] text-bold text-grey family1">Trade 182 FX spot pairs and 140 forwards across majors, minors, exotics and metals.</p>
                                 </div>
-                                <img src="https://www.indonez.com/html-demo/wave/img/in-wave-card-bg-3.png" alt="" className="w-100 h-40" />
+                                <img src="https://www.indonez.com/html-demo/wave/img/in-wave-card-bg-3.png" alt="" className="w-100 h-32" />
                             </div>
                         </div>
 
                         <div className="w-100 bg-[#F6F7F8] rounded-2xl pt-8 px-2">
                             <div className="w-100">
                                 <div className="w-90 auto flex flex-col">
-                                    <h3 className="fs-16 font-bold text-blue">
-                                        <span className="text-blue block fs-20 font-bolder">FX</span>
+                                    <h3 className="fs-16 family1 font-medium text-blue">
+                                        <span className="text-blue block fs-20 font-extrabold">FX</span>
                                         Spread as low as
                                     </h3>
                                     <h2 className="text-[60px] my-3 font-bold">0.4</h2>
-                                    <p className="text-[15px] text-bold text-grey">TGo long or short on 9,000+ instruments with tight spreads & low commissions.</p>
+                                    <p className="text-[15px] text-bold text-grey family1">TGo long or short on 9,000+ instruments with tight spreads & low commissions.</p>
                                 </div>
-                                <img src="https://www.indonez.com/html-demo/wave/img/in-wave-card-bg-3.png" alt="" className="w-100 h-40" />
+                                <img src="https://www.indonez.com/html-demo/wave/img/in-wave-card-bg-3.png" alt="" className="w-100 h-32" />
                             </div>
                         </div>
 
                         <div className="w-100 bg-[#F6F7F8] rounded-2xl pt-8 px-2">
                             <div className="w-100">
                                 <div className="w-90 auto flex flex-col">
-                                    <h3 className="fs-16 font-bold text-blue">
-                                        <span className="text-blue block fs-20 font-bolder">FX</span>
+                                    <h3 className="fs-16 family1 font-medium text-blue">
+                                        <span className="text-blue block fs-20 font-extrabold">FX</span>
                                         Spread as low as
                                     </h3>
                                     <h2 className="text-[60px] my-3 font-bold">0.6</h2>
-                                    <p className="text-[15px] text-bold text-grey">Trade 182 FX spot pairs and 140 forwards across majors, minors, exotics and metals.</p>
+                                    <p className="text-[15px] text-bold text-grey family1">Trade 182 FX spot pairs and 140 forwards across majors, minors, exotics and metals.</p>
                                 </div>
-                                <img src="https://www.indonez.com/html-demo/wave/img/in-wave-card-bg-3.png" alt="" className="w-100 h-40" />
+                                <img src="https://www.indonez.com/html-demo/wave/img/in-wave-card-bg-3.png" alt="" className="w-100 h-32" />
                             </div>
                         </div>
 
                         <div className="w-100 bg-[#F6F7F8] rounded-2xl pt-8 px-2">
                             <div className="w-100">
                                 <div className="w-90 auto flex flex-col">
-                                    <h3 className="fs-16 font-bold text-blue">
-                                        <span className="text-blue block fs-20 font-bolder">FX</span>
+                                    <h3 className="fs-16 family1 font-medium text-blue">
+                                        <span className="text-blue block fs-20 font-extrabold">FX</span>
                                         Spread as low as
                                     </h3>
                                     <h2 className="text-[60px] my-3 font-bold">0.8</h2>
-                                    <p className="text-[15px] text-bold text-grey">Trade 182 FX spot pairs and 140 forwards across majors, minors, exotics and metals.</p>
+                                    <p className="text-[15px] text-bold text-grey family1">Trade 182 FX spot pairs and 140 forwards across majors, minors, exotics and metals.</p>
                                 </div>
-                                <img src="https://www.indonez.com/html-demo/wave/img/in-wave-card-bg-3.png" alt="" className="w-100 h-40" />
+                                <img src="https://www.indonez.com/html-demo/wave/img/in-wave-card-bg-3.png" alt="" className="w-100 h-32" />
                             </div>
                         </div>
                     </div>
