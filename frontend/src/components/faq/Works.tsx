@@ -1,21 +1,21 @@
 import styled from 'styled-components'
 import Accordion from '../common/accordion'
 const Works = () => {
-   
+
 
     const HowItWorks = () => {
         return (
             <HowItWorksStyles className="w-100">
                 <div className="w-90 auto flex column gap-4">
-                    <h2 className="fs-50 text-bold text-start leading-[1.7] md:text-center text-dark">
-                       
-                     Some Frequently Asked Questions on TerraTexTrading?
-                        <span className="text-light w-full pt-4 fs-20 mx-auto md:w-[70%] block text-grey2">
-                        Here is a list of compounded questions asked by our various users
-                       </span>
+                    <h2 className="fs-40 w-100 lg:w-[70%] text-bold text-start leading-[1.4] text-dark">
+
+                        Some Frequently Asked Questions on TerraTexTrading?
+                        <span className="text-light w-full pt-4 fs-30 family1 block text-grey2">
+                            Here is a list of compounded questions asked by our various users
+                        </span>
 
                     </h2>
-                    <Accordion/>
+                    <Accordion />
                 </div>
             </HowItWorksStyles>
         )
@@ -93,13 +93,6 @@ padding-bottom: 0;
 `
 const HowItWorksStyles = styled.div`
 padding:12rem 0;
-background-color: #F5F6F6;
-`
-const CountingStyles = styled.div`
-margin-top: 12rem;
-padding:6rem 0;
-background:#D48574;
-/* padding-bottom: 0; */
 `
 
 export default Works

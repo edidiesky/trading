@@ -13,7 +13,7 @@ const AccordionCardStyles = styled.div`
     cursor: pointer;
     .accordionCardTop {
       transform:translateX(20px);
-
+      
       .toggleBtn {
         svg {
           color: var(--blue-2);
@@ -33,9 +33,7 @@ const AccordionCardStyles = styled.div`
       max-height: 28rem;
     }
     p {
-      font-size: 1.6rem;
       line-height: 1.6;
-      font-weight: 300;
       width: 90%;
       padding:3rem 4rem;
     }
@@ -44,6 +42,7 @@ const AccordionCardStyles = styled.div`
     width: 100%;
     display: flex;
     transition: all 0.6s;
+    /* background-color: var(--blue-1); */
   background: #fff;
     align-items: center;
     border-bottom: 1px dotted #CEE1F8;
@@ -82,11 +81,11 @@ const AccordionCard: React.FC<{ x?: any }> = ({ x }) => {
         className={toggle ? "accordionCardTop active" : "accordionCardTop"}
         onClick={() => setToggle(!toggle)}
       >
-        <h3 className='fs-18 text-light2 family1 text-grey'>{x.title}</h3>
+        <h3 className='fs-18 font-medium family1 text-white'>{x.title}</h3>
         <div className="toggleBtn">{toggle ? <BsChevronUp /> : <BsChevronDown />}</div>
       </div>
       <div className={toggle ? "accordionBottom active" : "accordionBottom"}>
-        <p className='text-bold text-grey2 leading-[1.7] fs-18'>{x.response}</p>
+        <p className='font-normal family1 text-grey2 leading-[1.7] fs-20'>{x.response}</p>
       </div>
     </AccordionCardStyles>
   )
