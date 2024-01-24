@@ -2,6 +2,7 @@
 import { lazy } from 'react';
 const Home = lazy(() => import("./Home"));
 const Contact = lazy(() => import("./Contact"));
+const Market = lazy(() => import("./Market"));
 const About = lazy(() => import("./About"));
 const FAQ = lazy(() => import("./FAQ"));
 const Login = lazy(() => import("./Login"));
@@ -42,6 +43,7 @@ export {
     LayoutIndex,
     Login,
     Register,
+    Market,
     DashboardLayout,
     Courses,
     Overview,

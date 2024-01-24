@@ -60,7 +60,7 @@ const Header = () => {
                                 <Link to={'/'} className="fs-14 text-bold uppercase text-white">
                                     Home
                                 </Link>
-                                <Link to={'/about'} className="fs-14 text-bold uppercase text-white">
+                                    <Link to={'/market'} className="fs-14 text-bold uppercase text-white">
                                     Markets
                                 </Link>
                                 {/* <Link to={'/trading'} className="fs-14 text-bold uppercase text-white">

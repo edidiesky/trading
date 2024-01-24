@@ -2,9 +2,9 @@
 
 import React, { useEffect, useRef } from 'react';
 import { styled } from 'styled-components';
-import Home from '../components/faq';
+import Home from '../components/market';
 import Footer from '../components/common/Footer';
-const FAQ: React.FC = () => {
+const Market: React.FC = () => {
   return (
     <HomeStyles>
       <Home />
@@ -19,4 +19,4 @@ const HomeStyles = styled.div`
   position: relative;
 `
 
-export default FAQ
+export default Market

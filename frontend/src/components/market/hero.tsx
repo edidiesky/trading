@@ -1,0 +1,75 @@
+import React from "react"
+import { FaSeedling, FaChartBar, FaChartPie, FaChalkboardTeacher, FaFunnelDollar, FaHandshake } from "react-icons/fa";
+const data = [
+    {
+        image: <FaSeedling color="#fff" />,
+        text: "Investing",
+        subtext: "A wide selection of investment product to help build diversified portfolio",
+        maincolor: "#27BC9C",
+        subColor: "#68D0BA"
+    },
+    {
+        image: <FaChartBar color="#fff" />,
+        text: "Trading",
+        subtext: "Powerful trading tools, resources, insight and support",
+        maincolor: "#4284DD",
+        subColor: "#7BA9E8"
+    }, {
+        image: <FaChartPie color="#fff" />,
+        text: "Wealth management",
+        subtext: "Dedicated financial consultant to help reach your own specific goals",
+        maincolor: "#9A5BB4",
+        subColor: "#B98DCB"
+    }, {
+        image: <FaChalkboardTeacher color="#fff" />,
+        text: "Investment advisory",
+        subtext: "A wide selection of investing strategies from seasoned portfolio managers",
+        maincolor: "#35495D",
+        subColor: "#72808E"
+    }, {
+        image: <FaFunnelDollar color="#fff" />,
+        text: "Smart portfolio",
+        subtext: "A revolutionary, fully-automated investmend advisory services",
+        maincolor: "#95A5A6",
+        subColor: "#B5C0C1"
+    }, {
+        image: <FaHandshake color="#fff" />,
+        text: "Mutual fund advisor",
+        subtext: "Specialized guidance from independent local advisor for hight-net-worth investors",
+        maincolor: "#FD6A4F",
+        subColor: "#FE9784"
+    },
+]
+
+const Hero = () => {
+    return (
+        <>
+            <div className="w-100 py-20">
+                <div className="w-90 auto flex column gap-24">
+                    <h2 className="text-[45px] font-extrabold">A relationship on your terms.
+                        <span className="block fs-24 font-medium text-grey">Work with us the way you want.</span>
+                        <span className="text-[18px] family1 font-medium text-grey2 leading-[1.5] pt-16 block">Some believe you must choose between an online broker and a wealth management firm. At Wave Capital, you don’t need to compromise. Whether you invest on your own, with an advisor, or a little of both — we can support you.</span>
+                    </h2>
+                    <div className="w-100 mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 gap-y-20">
+                        {
+                            data?.map((x?: any, index?: any) => {
+                                return <div style={{ backgroundColor: `${x?.maincolor}` }} className="p-16 rounded-2xl w-100 flex">
+                                    <div  className="w-90 auto flex flex-col gap-2">
+                                        <div style={{ backgroundColor: `${x?.subColor}` }} className="w-40 h-40 rounded-2xl flex items-center justify-center text-white fs-30">
+                                            {x?.image}</div>
+                                        <h2 className="fs-24 pb-12 border-b-2 border-[rgba(255,255,255,.2)] text-white font-bold">{x?.text}</h2>
+                                        <span style={{color:"#eee"}} className="block fs-16 font-medium">{x?.subtext}</span>
+
+                                    </div>
+                                </div>
+                            })
+                        }
+                    </div>
+                </div>
+
+            </div>
+        </>
+    )
+}
+
+export default Hero

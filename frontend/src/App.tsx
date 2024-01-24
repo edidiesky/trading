@@ -2,6 +2,7 @@ import React, { useState, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./index.css";
 import {
+  Market,
   Home,
   LayoutIndex,
   Login,
@@ -49,18 +50,23 @@ export default function App() {
           }
           />
           {/*  */}
-          <Route path={'/about'} element={<Suspense fallback={<LazyLoader />}>
+          <Route path={'about'} element={<Suspense fallback={<LazyLoader />}>
             <About />
           </Suspense>
           }
           />
+          <Route path={'market'} element={<Suspense fallback={<LazyLoader />}>
+            <Market />
+          </Suspense>
+          }
+          />
           {/* Contact */}
-          <Route path={'/faq'} element={<Suspense fallback={<LazyLoader />}>
+          <Route path={'faq'} element={<Suspense fallback={<LazyLoader />}>
             <FAQ />
           </Suspense>
           }
           />
-          <Route path={'/contact'} element={<Suspense fallback={<LazyLoader />}>
+          <Route path={'contact'} element={<Suspense fallback={<LazyLoader />}>
             <Contact />
           </Suspense>
           }
