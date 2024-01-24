@@ -49,7 +49,7 @@ const data = [
 const Hero = () => {
     return (
         <>
-            <div className="w-100 py-20 flex flex-col gap-20">
+            <div className="w-100 py-8 flex flex-col gap-20">
                 <div className="w-90 auto flex column gap-24">
                     <h2 className="text-[45px] font-extrabold">A relationship on your terms.
                         <span className="block fs-24 font-medium text-grey">Work with us the way you want.</span>
@@ -63,7 +63,7 @@ const Hero = () => {
                                         <div style={{ backgroundColor: `${x?.subColor}` }} className="w-40 h-40 rounded-2xl flex items-center justify-center text-white fs-30">
                                             {x?.image}</div>
                                         <h2 className="fs-24 pb-12 border-b-2 border-[rgba(255,255,255,.2)] text-white font-bold">{x?.text}</h2>
-                                        <span style={{color:"#eee"}} className="block fs-16 font-medium">{x?.subtext}</span>
+                                        <span style={{color:"#eee"}} className="block fs-16 family1 font-medium">{x?.subtext}</span>
 
                                     </div>
                                 </div>
@@ -73,82 +73,71 @@ const Hero = () => {
                 </div>
                 <TestimonialStyles className="w-100 py-12 flex column ">
                     <div className="w-90 auto wrapper">
-                        <div className="flex items-start gap-8">
+                        <div className="flex lg:flex-row flex-col items-start gap-8">
                             <div className="w-40 h-40 rounded-full text-white flex items-center justify-center text-[40px] bg-[#C89B42]">
                                 <FaMoneyBillWave />
                             </div>
-                            <div className="flex flex-1 flex-col gap-2">
+                            <div className="flex flex-1 flex-col  gap-2">
                                 <h3 className="fs-24 font-bold">Why trade with Wave Capital?</h3>
                                 <span className="family1 fs-18 text-grey2 font-medium">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation repudiandae ullamco.
                                 </span>
-                                <div className="w-100 flex flex-wrap gap-2">
+                                <div className="w-100 mt-12 flex flex-wrap gap-2">
                                     <span className="fs-18 font-medium family1 flex items-center gap-2">
-                                        <div className="h-20 bg-[#C89B42] w-20 text-white fs-16 rounded-full flex items-center justify-center">
+                                        <div className="h-12 bg-[#C89B42] w-12 text-white fs-16 rounded-full flex items-center justify-center">
                                             <BiCheck/>
                                         </div>
                                         Direct Market Access (DMA)
                                     </span>
 
                                     <span className="fs-18 font-medium family1 flex items-center gap-2">
-                                        <div className="h-20 bg-[#C89B42] w-20 text-white fs-16 rounded-full flex items-center justify-center">
+                                        <div className="h-12 bg-[#C89B42] w-12 text-white fs-16 rounded-full flex items-center justify-center">
                                             <BiCheck />
                                         </div>
-                                        Direct Market Access (DMA)
+                                        Free from UK Stamp Duty
                                     </span>
 
                                     <span className="fs-18 font-medium family1 flex items-center gap-2">
-                                        <div className="h-20 bg-[#C89B42] w-20 text-white fs-16 rounded-full flex items-center justify-center">
+                                        <div className="h-12 bg-[#C89B42] w-12 text-white fs-16 rounded-full flex items-center justify-center">
                                             <BiCheck />
                                         </div>
-                                        Direct Market Access (DMA)
+                                        Leverage up to 1:500
                                     </span>
 
 
                                     <span className="fs-18 font-medium family1 flex items-center gap-2">
-                                        <div className="h-20 bg-[#C89B42] w-20 text-white fs-16 rounded-full flex items-center justify-center">
+                                        <div className="h-12 bg-[#C89B42] w-12 text-white fs-16 rounded-full flex items-center justify-center">
                                             <BiCheck />
                                         </div>
-                                        Direct Market Access (DMA)
+                                        Short selling available
                                     </span>
 
 
                                      <span className="fs-18 font-medium family1 flex items-center gap-2">
-                                        <div className="h-20 bg-[#C89B42] w-20 text-white fs-16 rounded-full flex items-center justify-center">
+                                        <div className="h-12 bg-[#C89B42] w-12 text-white fs-16 rounded-full flex items-center justify-center">
                                             <BiCheck/>
                                         </div>
-                                        Direct Market Access (DMA)
+                                        T+0 settlement
                                     </span>
 
 
                                     <span className="fs-18 font-medium family1 flex items-center gap-2">
-                                        <div className="h-20 bg-[#C89B42] w-20 text-white fs-16 rounded-full flex items-center justify-center">
+                                        <div className="h-12 bg-[#C89B42] w-12 text-white fs-16 rounded-full flex items-center justify-center">
                                             <BiCheck />
                                         </div>
-                                        Direct Market Access (DMA)
+                                        Commissions from 0.08%
                                     </span>
 
                                      <span className="fs-18 font-medium family1 flex items-center gap-2">
-                                        <div className="h-20 bg-[#C89B42] w-20 text-white fs-16 rounded-full flex items-center justify-center">
+                                        <div className="h-12 bg-[#C89B42] w-12 text-white fs-16 rounded-full flex items-center justify-center">
                                             <BiCheck/>
                                         </div>
-                                        Direct Market Access (DMA)
+                                        Dividends paid in cash
                                     </span> <span className="fs-18 font-medium family1 flex items-center gap-2">
-                                        <div className="h-20 bg-[#C89B42] w-20 text-white fs-16 rounded-full flex items-center justify-center">
+                                        <div className="h-12 bg-[#C89B42] w-12 text-white fs-16 rounded-full flex items-center justify-center">
                                             <BiCheck/>
                                         </div>
-                                        Direct Market Access (DMA)
-                                    </span>
-                                     <span className="fs-18 font-medium family1 flex items-center gap-2">
-                                        <div className="h-20 bg-[#C89B42] w-20 text-white fs-16 rounded-full flex items-center justify-center">
-                                            <BiCheck/>
-                                        </div>
-                                        Direct Market Access (DMA)
-                                    </span> <span className="fs-18 font-medium family1 flex items-center gap-2">
-                                        <div className="h-20 bg-[#C89B42] w-20 text-white fs-16 rounded-full flex items-center justify-center">
-                                            <BiCheck/>
-                                        </div>
-                                        Direct Market Access (DMA)
+                                        Access to 1500 global shares
                                     </span>
                                     
                                 </div>
