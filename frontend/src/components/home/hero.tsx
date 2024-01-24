@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Header from "../common/Header";
 const HeroData = [
     {
-        image: "https://www.indonez.com/html-demo/wave/img/in-slideshow-image-1.jpg",
+        image: "https://www.indonez.com/html-demo/wave/img/in-slideshow-image-4.jpg",
         text: "Tap into the world's markets and explore endless trading opportunities with tight spreads and no commission.",
         subtext: "Award-winning Products and Trading platforms"
     },
@@ -39,7 +39,7 @@ const Hero = () => {
                 <div style={{ background: "rgba(242, 231, 182, 0.35)" }} className="absolute z-20 top-0 h-100 w-100 w-100"></div>
                 <div className="image_wrapper z-10">
 
-                    <img src={HeroData[2].image} alt="" />
+                    <img src={HeroData[0].image} alt="" />
                 </div>
 
                 <Header />
