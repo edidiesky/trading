@@ -208,10 +208,12 @@ button {
   font-family: inherit;
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, .09);
-  padding: 15px 20px;
+  padding: 12px 20px;
   font-size: 1.6rem;
-  font-weight: 600;
+  font-weight: 500;
+  border-radius: 10px;
   color: var(--dark-1);
+  transition: all .5s;
 }
 .input:hover{
   border: 1px solid #1980EC;
