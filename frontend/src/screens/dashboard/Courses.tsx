@@ -195,7 +195,6 @@ const WidgetStyles = styled.div`
         padding:3rem 2rem;
         background-color: #fff;
          border:1px solid rgba(0,0,0,.1);
-  box-shadow: var(--shadow);
         .icon_widget{
             height: 5rem;
             width:5rem;

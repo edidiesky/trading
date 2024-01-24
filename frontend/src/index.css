@@ -670,9 +670,6 @@ html {
   .fs-35 {
     font-size: 28px;
   }
-  .fs-45 {
-    font-size: 30px;
-  }
   h1 {
     font-size: 6.8rem;
   }
@@ -683,21 +680,6 @@ html {
 
 @media (max-width: 680px) {
 
-  .fs-45 {
-    font-size: 30px;
-  }
-  .fs-40 {
-    font-size: 30px;
-  }
-  .fs-20 {
-    font-size: 18px;
-  }
-  .fs-18 {
-    font-size: 16px;
-  }
-  .fs-16 {
-    font-size: 14px;
-  }
   .w-70 {
     width: 100%;
   }
@@ -707,18 +689,13 @@ html {
   .w-50 {
     width: 90%;
   }
-  .grid-2 {
-    grid-template-columns: 1fr;
+  h2 {
+    font-size: 36px !important;
+  font-family: "Barlow", sans-serif !important;
+
   }
 }
 
 @media (max-width: 380px) {
-  h1 {
-    font-size: 5.5rem;
-    line-height: 50px;
-  }
-  h2 {
-    line-height: 35px;
-    font-size: 2.7rem;
-  }
+
 }

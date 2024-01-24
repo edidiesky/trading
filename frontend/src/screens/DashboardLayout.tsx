@@ -43,11 +43,6 @@ const LayoutWrapper = styled.div`
       }
     }
   }
-  h2 {
-    @media (max-width: 480px) {
-      font-size: 2rem;
-    }
-  }
 `;
 
 export default function Layout() {
