@@ -97,7 +97,7 @@
   --grey-3: #f7f9fa;
   --red-1: #612012;
   --red-2: #b32d0f;
-  --blue-1: #c89b42;
+  --blue-1: #1980EC;
   --blue-2: #c89b42;
   --blue-3: #c89b42;
   --orange-1: #b4690e;
@@ -207,11 +207,14 @@ button {
   outline: none;
   font-family: inherit;
   background-color: transparent;
-  border: 1px solid rgba(0, 0, 0, 1);
-  padding: 17px 20px;
+  border: 1px solid rgba(0, 0, 0, .09);
+  padding: 15px 20px;
   font-size: 1.6rem;
   font-weight: 600;
   color: var(--dark-1);
+}
+.input:hover{
+  border: 1px solid #1980EC;
 }
 
 .text-grey {
