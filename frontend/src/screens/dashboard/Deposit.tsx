@@ -57,7 +57,7 @@ const Deposit = () => {
                             placeholder='Enter amount to be deposited'></input>
                     </div>
                     <div className="w-100 py-1 flex item-start column gap-1">
-                        <h5 className="fs-18 text-dark text-bold">Choose Payment Method from the list below</h5>
+                        <h5 className="fs-18 text-dark text-bold family1">Choose Payment Method from the list below</h5>
                         <div className="flex item-start column gap-2">
                             <div onClick={() => toast({
                                 variant: "success",
@@ -65,13 +65,13 @@ const Deposit = () => {
                                 description: 'Bitcoin Payment method has been selected ',
                             })} className="icon_trading flex item-center  gap-1">
                                 <img style={{ width: "3.5rem" }} src="https://img.icons8.com/color/48/000000/bitcoin--v1.png" alt="" />
-                                <h5 className="fs-16 text-light">Bitcoin</h5>
+                                <h5 className="fs-16 text-light family1">Bitcoin</h5>
 
                             </div>
                             <button
                                 type='submit'
                                 disabled={amount! === undefined}
-                                onClick={(e) => handlePayment(e)} className="btn fs-14 text-white text-bold">
+                                onClick={(e) => handlePayment(e)} className="btn family1 fs-14 text-white text-bold">
                                 Proceeed to Payment
                             </button>
                         </div>

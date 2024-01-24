@@ -652,9 +652,6 @@ html {
   z-index: 10;
 }
 
-  h1,h2 {
-    font-size: 35px;
-  }
 @media (max-width: 1080px) {
   html {
     font-size: 50%;
@@ -689,11 +686,11 @@ html {
   .w-50 {
     width: 90%;
   }
-  h2 {
+  /* h2 {
     font-size: 36px !important;
   font-family: "Barlow", sans-serif !important;
 
-  }
+  } */
 }
 
 @media (max-width: 380px) {

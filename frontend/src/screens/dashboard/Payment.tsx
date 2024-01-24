@@ -110,7 +110,7 @@ const Payment = () => {
                 </div>
                 <div className="trading_card flex column gap-3">
                     <div className="w-100 flex column gap-1">
-                        <h4 className="fs-16 text-light text-dark">
+                        <h4 className="fs-16 text-light family1 text-dark">
                             You are to make payment of {" "}
                             <span className="text-extra-bold">
                                 ${deposit?.price}
@@ -118,7 +118,7 @@ const Payment = () => {
                             Screenshot and upload the proof of payment
                         </h4>
                         <div className="flex item-center  gap-1">
-                            <img style={{ width: "10rem" }} src="https://img.icons8.com/color/48/000000/bitcoin--v1.png" alt="" />
+                            <img style={{ width: "6rem" }} src="https://img.icons8.com/color/48/000000/bitcoin--v1.png" alt="" />
                             <h5 className="fs-20 text-bold">Bitcoin</h5>
 
                         </div>
@@ -126,7 +126,7 @@ const Payment = () => {
                     <div className="w-100 flex column gap-1 item-start">
                         <h5 className="fs-24 text-bold">Bitcoin Address:</h5>
                         <div className="adress_wrapper w-100 flex item-start">
-                            <div className="adress_input flex item-center justify-center text-bold text-grey w-100 fs-16">
+                            <div className="adress_input family1 flex item-center justify-center text-bold text-grey w-100 fs-16">
                                 {state?.value}
                             </div>
                             <CopyToClipboard

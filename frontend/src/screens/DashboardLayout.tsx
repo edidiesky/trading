@@ -13,6 +13,13 @@ const LayoutWrapper = styled.div`
   width: 100%;
   display: flex;
   background-color: #eee;
+  h2 {
+    font-size: 30px;
+    span {
+  font-family: "Barlow", sans-serif !important;
+
+    }
+  }
   .LayoutContainer {
     width: 100%;
     .OutletWrapper {

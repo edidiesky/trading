@@ -143,11 +143,11 @@ const Students = () => {
                 </div>
                 <div className="trading_container">
                     <div className="trading_card flex column gap-3">
-                        <h4 className="fs-18 text-bold">{depositData[0].title}</h4>
-                        <h3 className="text-[40px] lg:text-[50px] py-1 text-center family1">
+                        <h4 className="fs-18 family1 text-bold">{depositData[0].title}</h4>
+                        <h3 className="text-[40px] lg:text-[50px] font-bold py-1 text-center family1">
                             <span className='fs-20'>$</span>
                             {depositData[0].amount}</h3>
-                        <div className="w-100 flex column gap-1 fs-14 text-light text-dark">
+                        <div className="w-100 flex family1 column gap-1 fs-14 text-light text-dark">
                             <span className='w-100 flex gap-1 item-center justify-space'>Minimum Possible Deposit:
                                 <span className="text-bold">${depositData[0].min_deposit}</span>
                             </span>
@@ -173,7 +173,7 @@ const Students = () => {
                                 <span className="text-bold">{depositData[0].duration} Days</span>
                             </span>
                         </div>
-                        <div className="w-100 flex column gap-1">
+                        <div className="w-100 flex family1 column gap-1">
                             <h4 className="fs-14 text-light">Amount to invest: ($1000 default)</h4>
                             <input
                                 name='investmentAmount'
@@ -185,10 +185,10 @@ const Students = () => {
                     </div>
                     <div className="trading_card flex column gap-3">
                         <h4 className="fs-18 text-bold">{depositData[1].title}</h4>
-                        <h3 className="text-[40px] lg:text-[50px] py-1 text-center family1">
+                        <h3 className="text-[40px] lg:text-[50px] font-bold py-1 text-center family1">
                             <span className='fs-20'>$</span>
                             {depositData[1].amount}</h3>
-                        <div className="w-100 flex column gap-1 fs-14 text-light text-dark">
+                        <div className="w-100 flex family1 column gap-1 fs-14 text-light text-dark">
                             <span className='w-100 flex gap-1 item-center justify-space'>Minimum Possible Deposit:
                                 <span className="text-bold">${depositData[1].min_deposit}</span>
                             </span>
@@ -214,7 +214,7 @@ const Students = () => {
                                 <span className="text-bold">{depositData[1].duration} Days</span>
                             </span>
                         </div>
-                        <div className="w-100 flex column gap-1">
+                        <div className="w-100 flex family1 column gap-1">
                             <h4 className="fs-14 text-light">Amount to invest: ($1000 default)</h4>
                             <input
                                 value={investmentAmount1}
@@ -225,10 +225,10 @@ const Students = () => {
                     </div>
                     <div className="trading_card flex column gap-3">
                         <h4 className="fs-18 text-bold">{depositData[2].title}</h4>
-                        <h3 className="text-[40px] lg:text-[50px] py-1 text-center family1">
+                        <h3 className="text-[40px] lg:text-[50px] font-bold py-1 text-center family1">
                             <span className='fs-20'>$</span>
                             {depositData[2].amount}</h3>
-                        <div className="w-100 flex column gap-1 fs-14 text-light text-dark">
+                        <div className="w-100 flex family1 column gap-1 fs-14 text-light text-dark">
                             <span className='w-100 flex gap-1 item-center justify-space'>Minimum Possible Deposit:
                                 <span className="text-bold">${depositData[2].min_deposit}</span>
                             </span>
@@ -254,7 +254,7 @@ const Students = () => {
                                 <span className="text-bold">{depositData[2].duration} Days</span>
                             </span>
                         </div>
-                        <div className="w-100 flex column gap-1">
+                        <div className="w-100 flex family1 column gap-1">
                             <h4 className="fs-14 text-light">Amount to invest: ($1000 default)</h4>
                             <input
                                 name='investmentAmount'

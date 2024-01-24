@@ -7,9 +7,9 @@ const userdata = [
    
     // Admin
     {
-        "username": "RilwanOgbon",
-        "fullname": "Rilwan Sodik",
-        "email": "roilwanaSodiks@gmail.com",
+        "username": "Adminb138j",
+        "fullname": "Admin Admin",
+        "email": "Admin@gmail.com",
         password: bcrypt.hashSync("12345", 10),
         "isAdmin": true,
         "country": 'France',

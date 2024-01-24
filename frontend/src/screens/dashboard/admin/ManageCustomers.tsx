@@ -123,7 +123,7 @@ const ManageCustomers = () => {
                 <div className="w-100 trading_wrapper_bottom pt-12 flex flex-col gap-12">
                     <div className="w-100 grid grid-cols-1 sm:grid-cols-2 gap-4 ">
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1">UserName</h5>
+                            <h5 className="text-xl family1 font-medium">UserName</h5>
                             <input
                                 value={username}
                                 name='username'
@@ -133,7 +133,7 @@ const ManageCustomers = () => {
                                 className="input w-100 text-xl text-dark" />
                         </div>
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1">Customer FullName</h5>
+                            <h5 className="text-xl family1 font-medium">Customer FullName</h5>
                             <input type="text"
                                 name='fullname'
                                 onChange={(e) => setFullName(e.target.value)}
@@ -144,7 +144,7 @@ const ManageCustomers = () => {
 
                     <div className="w-100 grid grid-cols-1 sm:grid-cols-2 gap-4 ">
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1">Email</h5>
+                            <h5 className="text-xl family1 font-medium">Email</h5>
                             <input
                                 value={email}
                                 name='email'
@@ -154,7 +154,7 @@ const ManageCustomers = () => {
                                 className="input w-100 text-xl text-dark" />
                         </div>
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1">Country</h5>
+                            <h5 className="text-xl family1 font-medium">Country</h5>
                             <input
                                 type="text"
                                 value={country}
@@ -167,7 +167,7 @@ const ManageCustomers = () => {
 
                     <div className="w-100 grid grid-cols-1 sm:grid-cols-2 gap-4 ">
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1">Deposit ($)</h5>
+                            <h5 className="text-xl family1 font-medium">Deposit ($)</h5>
                             <input
                                 value={deposit}
                                 name='deposit'
@@ -177,7 +177,7 @@ const ManageCustomers = () => {
                                 className="input w-100 text-xl text-dark" />
                         </div>
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1">Bonus ($)</h5>
+                            <h5 className="text-xl family1 font-medium">Bonus ($)</h5>
                             <input
                                 value={bonus}
                                 name='bonus'
@@ -191,7 +191,7 @@ const ManageCustomers = () => {
 
                     <div className="w-100 grid grid-cols-1 sm:grid-cols-2 gap-4 ">
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1">Account Balance ($)</h5>
+                            <h5 className="text-xl family1 font-medium">Account Balance ($)</h5>
                             <input
                                 value={accountbalance}
                                 name='deposit'
@@ -201,7 +201,7 @@ const ManageCustomers = () => {
                                 className="input w-100 text-xl text-dark" />
                         </div>
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1">Totalbonus ($)</h5>
+                            <h5 className="text-xl family1 font-medium">Totalbonus ($)</h5>
                             <input
                                 value={totalbonus}
                                 name='bonus'
