@@ -37,8 +37,8 @@ const DashboardHeader: React.FC<HeaderProps> = ({ sidebar, setSidebar }) => {
                         <div className="profile_dropdown absolute">
                             <div className="w-100 flex column gap-2">
                                 <div className="flex profile_dropdown_bottom column w-100">
-                                    <Link to={'/account/dashboard/profile'} className="text-bold fs-14 w-100 profile_list text-dark block">Profile</Link>
-                                    <span onClick={handleLogOut} className="text-bold fs-14 w-100 profile_list text-dark block">Log Out</span>
+                                    <Link to={'/account/dashboard/profile'} className="text-bold family1 fs-14 w-100 profile_list text-dark block">Profile</Link>
+                                    <span onClick={handleLogOut} className="text-bold family1 fs-14 w-100 profile_list text-dark block">Log Out</span>
 
                                 </div>
                             </div>
