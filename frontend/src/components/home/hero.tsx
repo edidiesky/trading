@@ -42,7 +42,7 @@ const Hero = () => {
                         <h3 style={{ textShadow: "2px 3px 4px rgba(0, 0, 0, 0.65)" }} className="text-extra-bold text-[46px] lg:text-[60px] text-white">
                             {HeroData[0].subtext}
                         </h3>
-                        <h4 style={{ textShadow: "2px 3px 4px rgba(0, 0, 0, 0.65)", color: "rgba(255, 255, 255, 0.7)" }} className=" text-light text-grey">
+                        <h4 style={{ textShadow: "2px 3px 4px rgba(0, 0, 0, 0.65)", color: "rgba(255, 255, 255, 0.7)" }} className="family1 text-light text-grey">
                             {HeroData[0].text}
                         </h4>
                         <div className="w-100 flex">
