@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const HeroStyles = styled.div`
-min-height:70vh;
+/* min-height:70vh; */
   position: relative;
     z-index: 30;
 
