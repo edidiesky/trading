@@ -22,7 +22,7 @@ const CustomerList = () => {
                     <h2 className="fs-45 text-dark">
                       Manage Customers
                     </h2>
-                    <span className="fs-16 w-50 text-light text-grey2">
+                    <span className="fs-16 w-50 family1 text-light text-grey2">
                       See a list of your customers who are investing
                     </span>
                 </div>

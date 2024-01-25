@@ -6,6 +6,7 @@ import mongoose from "mongoose";
 
 import User from "./models/User";
 import Transactions from "./models/Transactions";
+import Investment from "./models/Investment";
 import userdata from "./data/userdata";
 import transaction from "./data/transaction";
 
@@ -19,8 +20,8 @@ mongoose.connection.on('error', (error: Error) => console.log('Error'))
 
 const importData = async () => {
   try {
-    await User.insertMany(userdata);
-    // await Transactions.insertMany(transaction);
+    // await User.insertMany(userdata);
+    await Investment.insertMany(transaction);
     console.log("Data Imported!");
     process.exit();
   } catch (error) {

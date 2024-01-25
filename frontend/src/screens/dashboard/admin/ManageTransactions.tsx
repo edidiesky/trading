@@ -10,6 +10,7 @@ import LoaderIndex from '@/components/loaders';
 import { motion } from 'framer-motion';
 import MyAnimatePresence from '../../../utils/AnimatePresence';
 import { RxCross1 } from 'react-icons/rx';
+import { BiChevronDown, BiChevronUp } from 'react-icons/bi';
 
 const ManageTransactions = () => {
     // proof_image: "/images/proof_2.png"
@@ -22,7 +23,8 @@ const ManageTransactions = () => {
     const [price, setPrice] = useState('')
     const [plan, setPlan] = useState('')
     const [tier, setTier] = useState('')
-    const [ispaid, setIsPaid] = useState('')
+    const [ispaid, setIsPaid] = useState(false)
+    const [paydropdown, setPayDropdown] = useState(false)
     const [status, setStatus] = useState('')
     const [proofimage, setProofImage] = useState('')
     const [paymentmethod, setPaymentMethod] = useState('')
@@ -31,13 +33,6 @@ const ManageTransactions = () => {
         'Failed',
         'Success',
     ]
-
-    const paymentStatus = [
-      
-        'Customer Has Not Payed',
-        'Customer Has Payed',
-    ]
-
     const {
         transactionDetails,
         transactionisLoading,
@@ -46,7 +41,7 @@ const ManageTransactions = () => {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
         dispatch(cleartransaction('any'))
         dispatch(GetSingleTransaction({ Detailsdata: id }))
-  
+
     }, [id]);
 
     React.useEffect(() => {
@@ -62,19 +57,20 @@ const ManageTransactions = () => {
     }, [transactionDetails, setPrice, setPlan, setTier, setPaymentMethod, setProofImage, setIsPaid]);
 
     const updatedData = {
-        isPaid: ispaid === 'Customer Has Payed' ? true : false,
+        isPaid: ispaid,
         _id: transactionDetails?._id
     }
 
     const handleUpdateTransaction = () => {
         dispatch(UpdateTransactions(updatedData))
     }
-    // console.log(transactionDetails)
+    console.log(transactionDetails, updatedData)
 
     React.useEffect(() => {
         if (updatetransactionisSuccess) {
             toast({
                 variant: "success",
+                title: "Success",
                 description: 'The Transaction has been successfully updated',
             })
 
@@ -89,7 +85,7 @@ const ManageTransactions = () => {
     return (
         <HistorytStyles style={{ minHeight: "100vh" }} className="w-100">
             {
-                transactionisLoading && <LoaderIndex/>
+                transactionisLoading && <LoaderIndex />
             }
             <MyAnimatePresence>
                 {
@@ -127,7 +123,7 @@ const ManageTransactions = () => {
                         <h2 className="text-4xl text-dark">
                             Manage Transactions
                         </h2>
-                        <span className="fs-14 w-3/4 text-light text-grey2">
+                        <span className="fs-16 w-3/4 family1 font-medium text-light text-grey2">
                             Manage the payment status of your customer. Check for proof of payment in this section
                         </span>
                     </div>
@@ -138,7 +134,7 @@ const ManageTransactions = () => {
                 <div className="w-100 trading_wrapper_bottom pt-12 flex flex-col gap-12">
                     <div className="w-100 grid grid-cols-1 sm:grid-cols-2 gap-4 ">
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1">Investment Price ($)</h5>
+                            <h5 className="text-xl family1 font-medium">Investment Price ($)</h5>
                             <input
                                 value={price}
                                 name='price'
@@ -148,14 +144,14 @@ const ManageTransactions = () => {
                                 className="input w-100 text-xl text-dark" />
                         </div>
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1">Investment Plan</h5>
+                            <h5 className="text-xl family1 font-medium">Investment Plan</h5>
                             <input type="text" name='plan' onChange={(e) => setPlan(e.target.value)} value={plan} placeholder='$1000' className="input w-100 text-xl text-dark" />
                         </div>
                     </div>
 
                     <div className="w-100 grid grid-cols-1 sm:grid-cols-2 gap-4 ">
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1">Investment Tier</h5>
+                            <h5 className="text-xl family1 font-medium">Investment Tier</h5>
                             <input
                                 value={tier}
                                 name='tier'
@@ -164,26 +160,47 @@ const ManageTransactions = () => {
                                 className="input w-100 text-xl text-dark" />
                         </div>
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1">Payment Method</h5>
+                            <h5 className="text-xl family1 font-medium">Payment Method</h5>
                             <input type="text" value={paymentmethod} placeholder='$1000' className="input w-100 text-xl text-dark" />
                         </div>
                     </div>
                     <div className="w-100 grid grid-cols-1 sm:grid-cols-3 gap-4 ">
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1">Transaction Status</h5>
-                            <select name="ispaid" defaultValue={ispaid} value={ispaid} onChange={(e) => setIsPaid(e.target.value)} className="input font-bold text-xl">
-                                {/* <option disabled></option> */}
+                            <h5 className="text-xl family1 font-medium">Transaction Status</h5>
+                            {/* {
+                                paymentStatus.map((x?: any, index?: any) => {
+                                    return <option key={index} value={x}>{x}</option>
+                                })
+                            } */}
+                            <div className="select relative input">
+                                <div onClick={() => setPayDropdown(!paydropdown)} className="w-100 z-20 fs-13 flex items-center justify-space family1 font-medium">
+
+                                    Customer has paid
+                                    <span>
+                                        {
+                                            paydropdown ? <BiChevronDown fontSize={'17px'} /> : <BiChevronUp fontSize={'17px'} />
+                                        }
+                                        </span>
+                                </div>
                                 {
-                                    paymentStatus.map((x?: any, index?: any) => {
-                                        return <option key={index} value={x}>{x}</option>
-                                    })
+                                    paydropdown && <div className="w-100 bg-[#fff] z-10 rounded-xl border border-[rgba(0,0,0,.09)] flex absolute right-0 top-[100%]">
+                                        <div onClick={() => setPayDropdown(false)} className="w-100 flex flex-col">
+                                            <span onClick={()=> setIsPaid(false)} className="fs-13 px-2 font-medium w-100 hover:bg-[rgba(0,0,0,.1)] cursor-pointer border-b py-1 border-[rgba(0,0,0,.1)]">
+                                                Customer has not paid
+                                            </span>
+                                            <span onClick={()=> setIsPaid(true)} className="fs-13 px-2 font-medium w-100 hover:bg-[rgba(0,0,0,.1)] cursor-pointer border-b py-1 border-[rgba(0,0,0,.1)]">
+                                                Customer has paid
+                                            </span>
+                                        </div>
+                                    </div>
                                 }
-                            </select>
+                               
+                            </div>
                         </div>
                     </div>
                     {/* payment proff */}
                     {
-                        transactionDetails?.pla === 'Deposit Only' && <div className="w-100">
+                        transactionDetails?.plan === 'Deposit Only' && <div className="w-100">
                             {
                                 proofimage === '' ?
                                     <div className="w-full proof_image_wrapper pt-8 flex flex-col gap-2">
@@ -196,7 +213,7 @@ const ManageTransactions = () => {
 
                                     </div>
                                     : <div className="w-full pt-8 flex flex-col gap-2">
-                                        <h5 className="text-xl family1">Payment Proof</h5>
+                                        <h5 className="text-xl family1 font-medium">Payment Proof</h5>
                                         <div onClick={() => setImageActive(true)} className="proof_image_wrapper min-h-[40rem] rounded-sm flex items-center justify-center py-8 px-4 bg-[#F8F9FB]">
                                             <img src={proofimage} alt="" className="w-[100%] md:w-[60%]" />
                                         </div>
@@ -204,7 +221,7 @@ const ManageTransactions = () => {
                             }
                         </div>
                     }
-                    
+
 
 
                 </div>

@@ -35,16 +35,16 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                             }
                         </span>
                     </td>
-                    <td>
+                    {/* <td>
                         <span className="text-grey fs-12 family1">{x?.plan}</span>
-                    </td>
+                    </td> */}
                     <td>
                         <span className="text-grey fs-12 family1 text-light">{depositdate}</span>
 
                     </td>
 
                     <td>
-                        <Link to={`/account/dashboard/Manage_Transaction/${x?._id}`} className="icons flex hover:shadow-sm hover:bg-white items-center justify-center">
+                        <Link to={`/account/admin/dashboard/Manage_Transaction/${x?._id}`} className="icons flex hover:shadow-sm hover:bg-white items-center justify-center">
                             <MdEdit />
                         </Link>
                     </td>
@@ -306,7 +306,7 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
 
                     </td>
                     <td>
-                        <Link to={`/account/dashboard/deposit_list/${x?._id}`} className="icons flex hover:shadow-sm hover:bg-white items-center justify-center">
+                        <Link to={`/account/admin/dashboard/deposit_list/${x?._id}`} className="icons flex hover:shadow-sm hover:bg-white items-center justify-center">
                             <MdEdit />
                         </Link>
                     </td>

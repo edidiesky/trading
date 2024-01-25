@@ -112,7 +112,7 @@ const ManageCustomers = () => {
                         <h2 className="text-4xl text-dark">
                             Manage Customer Details
                         </h2>
-                        <span className="fs-14 w-3/4 text-light text-grey2">
+                        <span className="fs-14 w-3/4 family1 text-light text-grey2">
                             Manage the payment status of your customer. Check for proof of payment in this section
                         </span>
                     </div>

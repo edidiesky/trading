@@ -21,7 +21,7 @@ const TransactionList = () => {
                     <h2 className="fs-45 text-dark">
                       Manage Transactions
                     </h2>
-                    <span className="fs-16 w-50 text-light text-grey2">
+                    <span className="fs-16 w-50 family1 text-light text-grey2">
                        Manage all the Transactions carried out by your customers
                     </span>
                 </div>
@@ -40,7 +40,7 @@ const TransactionList = () => {
                                                 <th>Investor</th>
                                                 <th>Payment Mode</th>
                                                 <th>Transaction Status</th>
-                                                <th>Plan</th>
+                                                {/* <th>Plan</th> */}
                                                 <th>Date Created</th>
                                                 <th>Manage</th>
                                             </tr>
