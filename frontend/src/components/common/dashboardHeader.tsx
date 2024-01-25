@@ -82,7 +82,7 @@ export const HeaderStyles = styled.div`
          }
   }
     .btn {
-        padding: 1.5rem 2rem !important;
+        padding: 10px 14px !important;
     }
     .header_bottom{
 

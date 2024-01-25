@@ -33,10 +33,10 @@ const RoiSchema = new mongoose.Schema(
     },
 
     startDate: {
-      type: Date,
+      type: String,
     },
     endDate: {
-      type: Date,
+      type: String,
     },
 
   },

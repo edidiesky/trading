@@ -7,8 +7,10 @@ import mongoose from "mongoose";
 import User from "./models/User";
 import Transactions from "./models/Transactions";
 import Investment from "./models/Investment";
+import Roi from "./models/Roi";
 import userdata from "./data/userdata";
 import transaction from "./data/transaction";
+import roi from "./data/roi";
 
 const mongoUrl = process.env.MONGO_URL;
 if (!mongoUrl) {
@@ -21,7 +23,7 @@ mongoose.connection.on('error', (error: Error) => console.log('Error'))
 const importData = async () => {
   try {
     // await User.insertMany(userdata);
-    await Investment.insertMany(transaction);
+    await Roi.insertMany(roi);
     console.log("Data Imported!");
     process.exit();
   } catch (error) {

@@ -25,7 +25,7 @@ const InvestmentHistory = () => {
                     <h2 className="fs-45 text-dark">
                       Customers Investments
                     </h2>
-                    <span className="fs-16 w-50 text-light text-grey2">
+                    <span className="fs-16 w-50 family1 text-light text-grey2">
                         My summary of all your customers investments
                     </span>
                 </div>

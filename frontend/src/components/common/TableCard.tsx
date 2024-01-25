@@ -9,8 +9,8 @@ type TableCardProps = {
     type?: any;
 }
 const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
-    let investmentStartdate = moment(x?.startDate).format("MMMM Do YYYY");
-    let investmentEnddate = moment(x?.endDate).format("MMMM Do YYYY");
+    let investmentStartdate = moment(x?.startDate, 'DD/MM/YYYY').format("MMMM Do YYYY");
+    let investmentEnddate = moment(x?.endDate, 'DD/MM/YYYY').format("MMMM Do YYYY");
     let depositdate = moment(x?.createdAt).format("MMMM Do YYYY");
     const navigate = useNavigate();
     if (type === 'transactions') {

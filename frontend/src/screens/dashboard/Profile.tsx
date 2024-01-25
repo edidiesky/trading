@@ -114,7 +114,7 @@ const ManageCustomers = () => {
                         <h2 className="text-4xl text-dark">
                            My Profile
                         </h2>
-                        <span className="fs-14  text-light text-grey2">
+                        <span className="fs-18 family1 text-light text-grey2">
                             Make changes on your profile. 
                         </span>
                     </div>

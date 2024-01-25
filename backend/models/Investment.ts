@@ -12,12 +12,11 @@ const investmentSchema = new mongoose.Schema(
     default: ''
     },
     price: {
-      type: Number,
+      type: String,
       default: 0.0,
     },
     plan: {
       type: String,
-      required: true,
     },
     proofOfPayment: {
       type: String,
@@ -28,15 +27,15 @@ const investmentSchema = new mongoose.Schema(
       default: 'tier 1'
     },
     profit: {
-      type: Number,
+      type: String,
       default: 0.0,
     },
 
     startDate: {
-      type: Date,
+      type: String,
     },
     endDate: {
-      type: Date,
+      type: String,
     },
 
   },

@@ -33,8 +33,8 @@ const Messages = () => {
                     <h2 className="fs-45 text-dark">
                         Your ROI history
                     </h2>
-                    <span className="fs-16 w-50 text-light text-grey2">
-                        A History of all your ROI history
+                    <span className="fs-16 w-50 family1 text-light text-grey2">
+                    History of all your ROI history
                     </span>
                 </div>
                 <div className="trading_card w-100 flex column gap-4">

@@ -26,8 +26,8 @@ const InvestmentHistory = () => {
                     <h2 className="fs-45 text-dark">
                        My InvestmentHistory
                     </h2>
-                    <span className="fs-16 w-50 text-light text-grey2">
-                        My summary of all my investments I have done
+                    <span className="fs-16 w-50 family1 text-light text-grey2">
+                         Summary of all my investments I have done
                     </span>
                 </div>
               <div className="flex flex-col">

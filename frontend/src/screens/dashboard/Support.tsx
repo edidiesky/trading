@@ -14,11 +14,11 @@ const Support = () => {
                         <h2 className="fs-45 text-dark">
                            OptiTrade Dynamics Support
                         </h2>
-                        <span className="fs-16 w-50 text-light text-center text-grey2">
+                        <span className="fs-16 family1 w-50 text-light text-center text-grey2">
                             For inquiries, suggestions or complains. Mail us
                         </span>
 
-                        <span className="fs-30 w-100 text-light text-center text-blue">
+                        <span className="fs-30 family1 w-100 text-light text-center text-blue">
                             support@OptiTrade Dynamics.com
                         </span>
                     </div>

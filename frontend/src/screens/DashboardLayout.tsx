@@ -14,7 +14,7 @@ const LayoutWrapper = styled.div`
   display: flex;
   background-color: #eee;
   h2 {
-    font-size: 30px;
+    font-size: 26px;
     span {
   font-family: "Barlow", sans-serif !important;
 
