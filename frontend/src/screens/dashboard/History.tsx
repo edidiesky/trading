@@ -25,7 +25,7 @@ const History = () => {
                     <h2 className="fs-45 text-dark">
                         Transactions on your account
                     </h2>
-                    <span className="fs-16 w-50 text-light text-grey2">
+                    <span className="fs-16 w-50 family1 text-light text-grey2">
                         A summary of all Transactions located in your account
                     </span>
                 </div>
@@ -76,9 +76,9 @@ const History = () => {
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                {transactions?.map((x?: any, index?: any) => {
+                                                {/* {transactions?.map((x?: any, index?: any) => {
                                                     return <TableCard type={'usertransactions'} x={x} key={x?._id} />;
-                                                })}
+                                                })} */}
                                             </tbody>
                                         </table>
                                     </div>
@@ -112,12 +112,17 @@ const HistorytStyles = styled.div`
     }
      .btn {
         padding: 1rem;
+        border-radius:0px !important;
     }
     .btn.btn-4 {
         padding:1.6rem 3rem;
         min-width:300px;
         background-color: #c2c0c079;
         border:2px solid #fff;
+        @media (max-width:780px) {
+        min-width:150px;
+
+        }
         &.active {
              background-color: #Fff;
         }

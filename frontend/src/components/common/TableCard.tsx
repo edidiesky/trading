@@ -11,6 +11,9 @@ type TableCardProps = {
 const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
     let investmentStartdate = moment(x?.startDate, 'DD/MM/YYYY').format("MMMM Do YYYY");
     let investmentEnddate = moment(x?.endDate, 'DD/MM/YYYY').format("MMMM Do YYYY");
+
+    let roiStartdate = moment(x?.startDate).format("MMMM Do YYYY");
+    let roiEnddate = moment(x?.endDate).format("MMMM Do YYYY");
     let depositdate = moment(x?.createdAt).format("MMMM Do YYYY");
     const navigate = useNavigate();
     if (type === 'transactions') {
@@ -191,10 +194,10 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                         <span className="fs-12 family1 text-grey">{x?.tier}</span>
                     </td> */}
                     <td>
-                        <span className="fs-12 family1 text-grey">{investmentStartdate}</span>
+                        <span className="fs-12 family1 text-grey">{roiStartdate}</span>
                     </td>
                     <td>
-                        <span className="fs-12 family1 text-grey">{investmentEnddate}</span>
+                        <span className="fs-12 family1 text-grey">{roiEnddate}</span>
                     </td>
                     <td>
                         <span className="fs-12 family1 text-grey">
