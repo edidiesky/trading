@@ -89,7 +89,7 @@ const Packages = () => {
                                 <div className="w-90 px-16 auto py-24 flex gap-12 flex-col">
                                     <h3 className="text-[27px] text-extra-bold  text-start">
                                         <span className="flex items-center gap-2 text-xl mb-3 font-medium uppercase family1">MINIMUM FUNDING
-                                            <span className="px-[12px] py-[7px] flex items-center rounded-[40px] text-white font-bold text-[10px] bg-[#1980EC]">
+                                            <span className="px-[12px] py-[7px] flex items-center rounded-[40px] text-white font-bold text-[1.8rem] bg-[#1980EC]">
                                             {x?.min_deposit}
                                          </span>
                                         </span>

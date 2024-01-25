@@ -3,6 +3,7 @@ import { HeroStyles } from "./styles/hero"
 import { FaUser, FaKey } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Header from "../common/Header";
+import { BiChevronsRight } from "react-icons/bi";
 const HeroData = [
     {
         image: "https://www.indonez.com/html-demo/wave/img/in-slideshow-image-4.jpg",
@@ -46,7 +47,9 @@ const Hero = () => {
                             {HeroData[0].text}
                         </h4>
                         <div className="w-100 flex">
-                            <Link to={'/login'} className="btn btn-4 fs-18 text-bold">Discover it Now</Link>
+                            <Link to={'/login'} className="btn btn-4 flex items-center gap-2 fs-18 text-bold">Get Started Now
+                                <BiChevronsRight fontSize={'24px'} />
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -56,7 +59,7 @@ const Hero = () => {
                 <div className="w-90 auto grid grid-cols-1 sm:grid-cols-2 gap-y-12 gap-x-8 lg:grid-cols-4">
                     <div className="flex pr-4 border-r-0 pb-12 sm:pb-0 border-b sm:border-b-0 sm:border-r border-[rgba(255,255,255,.3)] items-center gap-2">
                         <img src="https://www.indonez.com/html-demo/wave/img/in-wave-icon-1.svg" alt="" className="w-24" />
-                        <h4 style={{color:"#eee"}} className="text-bold family1 text-[19px]">Free
+                        <h4 style={{ color: "#eee" }} className="text-bold family1 text-[19px]">Free
                             analysis tools
                         </h4>
                     </div>
