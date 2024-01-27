@@ -1,31 +1,29 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 
-const tweeturl: string = `https://traders-expert-api.vercel.app/api/v1/deposit`;
+const tweeturl: string = `${import.meta.env.VITE_API_BASE_URLS}/withdrawal`;
 type tweetdatatype = {
   paymentMethod?: any;
-  amount?: any;
+  price?: any;
+  isPaid?: any;
+  plan?: any;
   user?: any;
-  status?: any;
-   proof_of_payment?: any;
+  proof_of_payment?: any;
   _id?: string;
-  plan?: string;
 }
 
-interface BookMarkATweetPayload {
-  userIdIncludedInBookmarksArray: boolean;
-  tweetDetails: any;
+interface investmentPayload {
 }
 
 type KnownError = {
   errorMessage: string;
 }
 
-export const getAllDeposit = createAsyncThunk<string, void, {
+export const getAllWithdrawal = createAsyncThunk<string, void, {
   rejectValue: KnownError,
 
 }>(
-  "getAllDeposit",
+  "getAllWithdrawal",
   async (_, { rejectWithValue, getState }) => {
     try {
       const { auth } = getState() as { auth: { token: string } };
@@ -35,7 +33,7 @@ export const getAllDeposit = createAsyncThunk<string, void, {
         },
       };
       const response = await axios.get(tweeturl, config);
-      const tweetData = response.data.deposit
+      const tweetData = response.data.withdrawal
       // console.log(tweetData)
       return tweetData;
     } catch (err: any) {
@@ -50,21 +48,23 @@ export const getAllDeposit = createAsyncThunk<string, void, {
 
 
 // Create User tweet
-export const CreateDeposit = createAsyncThunk<{
+export const CreateWithdrawal = createAsyncThunk<{
   rejectValue: KnownError,
 }, tweetdatatype>(
-  "CreateDeposit",
+  "CreateWithdrawal",
   async (tweetData, { rejectWithValue, getState }) => {
     try {
-      const { auth } = getState() as { auth: { token: string } };
-      console.log(auth.token)
+      const { auth } = getState() as { auth: { userInfo: { _id: String }, token: string } };
       const config = {
         headers: {
           authorization: `Bearer ${auth.token}`,
         },
       };
-      const {data} = await axios.post(tweeturl, tweetData, config);
-    return data.deposit
+      const { data } = await axios.post(tweeturl, tweetData, config);
+      console.log(data.user)
+      localStorage.setItem("User", JSON.stringify(data.user));
+      return data.withdrawal
+
       // console.log(tweetData)
     } catch (err: any) {
       const message = err.response && err.response.data.message
@@ -77,10 +77,10 @@ export const CreateDeposit = createAsyncThunk<{
 );
 
 // update User tweet
-export const UpdateDeposit = createAsyncThunk<{
+export const UpdateWithdrawal = createAsyncThunk<{
   rejectValue: KnownError,
 }, tweetdatatype>(
-  "UpdateDeposit",
+  "UpdateWithdrawal",
   async (Detailsdata, { rejectWithValue, getState }) => {
 
     try {
@@ -93,11 +93,11 @@ export const UpdateDeposit = createAsyncThunk<{
         },
       };
       const response = await axios.put(
-        `https://traders-expert-api.vercel.app/api/v1/deposit/${Detailsdata?._id}`,
+        `${import.meta.env.VITE_API_BASE_URLS}/withdrawal/${Detailsdata?._id}`,
         Detailsdata,
         config
       );
-      return response.data.deposit;
+      return response.data.withdrawal;
 
     } catch (err: any) {
       const message = err.response && err.response.data.message
@@ -110,14 +110,14 @@ export const UpdateDeposit = createAsyncThunk<{
 );
 
 // Deelete User tweet
-export const DeleteDeposit = createAsyncThunk<
+export const DeleteWithdrawal = createAsyncThunk<
   string, // Return type (Detailsdata)
   { Detailsdata: string },
   {
     rejectValue: KnownError;
   }
 >(
-  "DeleteDeposit",
+  "deletetweet",
   async ({ Detailsdata }, { rejectWithValue, getState }) => {
     try {
       const { auth } = getState() as { auth: { token: string } };
@@ -126,7 +126,7 @@ export const DeleteDeposit = createAsyncThunk<
           authorization: `Bearer ${auth.token}`,
         },
       };
-      await axios.delete(`https://traders-expert-api.vercel.app/api/v1/tweet/${Detailsdata}`, config);
+      await axios.delete(`${import.meta.env.VITE_API_BASE_URLS}/tweet/${Detailsdata}`, config);
       return Detailsdata; // Return the data
     } catch (err: any) {
       const message = err.response && err.response.data.message
@@ -140,10 +140,10 @@ export const DeleteDeposit = createAsyncThunk<
 
 
 // GetTweet Details
-export const GetSingleDeposit = createAsyncThunk<BookMarkATweetPayload, { Detailsdata?: string }, {
+export const GetSingleTransaction = createAsyncThunk<investmentPayload, { Detailsdata?: string }, {
   rejectValue: KnownError,
 }>(
-  "GetSingleDeposit",
+  "GetSingleTransaction",
   async ({ Detailsdata }, { rejectWithValue, getState }) => {
 
     try {
@@ -155,10 +155,10 @@ export const GetSingleDeposit = createAsyncThunk<BookMarkATweetPayload, { Detail
         },
       };
       const response = await axios.get(
-        `https://traders-expert-api.vercel.app/api/v1/deposit/${Detailsdata}`,
+        `${import.meta.env.VITE_API_BASE_URLS}/withdrawal/${Detailsdata}`,
         config
       );
-      return response.data.deposit
+      return response.data.withdrawal
 
     } catch (err: any) {
       const message = err.response && err.response.data.message
@@ -174,10 +174,10 @@ export const GetSingleDeposit = createAsyncThunk<BookMarkATweetPayload, { Detail
 
 
 
-export const GetSingleDepsoitOfAUser = createAsyncThunk<BookMarkATweetPayload, { Detailsdata?: string }, {
+export const GetSingleInvestmentOfAUser = createAsyncThunk<investmentPayload, { Detailsdata?: string }, {
   rejectValue: KnownError,
 }>(
-  "GetSingleDepsoitOfAUser",
+  "GetSingleInvestmentOfAUser",
   async ({ Detailsdata }, { rejectWithValue, getState }) => {
 
     try {
@@ -189,10 +189,10 @@ export const GetSingleDepsoitOfAUser = createAsyncThunk<BookMarkATweetPayload, {
         },
       };
       const response = await axios.get(
-        `https://traders-expert-api.vercel.app/api/v1/deposit/profile`,
+        `${import.meta.env.VITE_API_BASE_URLS}/withdrawal/profile`,
         config
       );
-      return response.data.deposit
+      return response.data.withdrawal
 
     } catch (err: any) {
       const message = err.response && err.response.data.message

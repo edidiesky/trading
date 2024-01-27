@@ -23,8 +23,6 @@ import {
   CustomerList,
   About,
   FAQ,
-  DepositList,
-  ManageDeposits,
   Profile,
   Contact,
   InvestmentHistory,
@@ -32,7 +30,9 @@ import {
   RoiList,
   InvestmentList,
   RoIDetails,
-  ManageRoi
+  ManageRoi,
+  Withdrawals,
+  Withdrawal
 } from "./screens";
 import ProtectRoute from "./utils/ProtectRoute";
 import LazyLoader from "./components/loaders/Lazy";
@@ -115,7 +115,18 @@ export default function App() {
               <InvestmentHistory />
             </ProtectRoute>
           } />
+          <Route path={'investment_withdrawal'} element={
+            <ProtectRoute>
+              <Withdrawals />
+            </ProtectRoute>
+          } />
+          <Route path={'investment_withdrawal/:id'} element={
+            <ProtectRoute>
+              <Withdrawal />
+            </ProtectRoute>
+          } />
 
+{/* Withdrawal */}
           <Route path={'investment_history'} element={
             <ProtectRoute>
               <InvestmentList />
@@ -141,16 +152,6 @@ export default function App() {
           <Route path={'deposit'} element={
             <ProtectRoute>
               <Deposit />
-            </ProtectRoute>
-          } />
-          <Route path={'deposit_list'} element={
-            <ProtectRoute>
-              <DepositList />
-            </ProtectRoute>
-          } />
-          <Route path={'deposit_list/:id'} element={
-            <ProtectRoute>
-              <ManageDeposits />
             </ProtectRoute>
           } />
           {/* ManageDeposits */}

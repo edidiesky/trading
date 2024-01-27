@@ -86,9 +86,6 @@ const HistorytStyles = styled.div`
     }
     .trading_card {
         width:100%;
-        padding:3rem 1rem;
-        background-color: #fff;
-        border:1px solid rgba(0,0,0,.1);
         .icon_trading{
             height: 5rem;
             width:5rem;

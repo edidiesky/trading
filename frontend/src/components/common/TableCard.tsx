@@ -12,8 +12,15 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
     let investmentStartdate = moment(x?.startDate, 'DD/MM/YYYY').format("MMMM Do YYYY");
     let investmentEnddate = moment(x?.endDate, 'DD/MM/YYYY').format("MMMM Do YYYY");
 
+    let userinvestmentStartdate = moment(x?.startDate).format("MMMM Do YYYY");
+    let userinvestmentEnddate = moment(x?.endDate).format("MMMM Do YYYY");
+
     let roiStartdate = moment(x?.startDate).format("MMMM Do YYYY");
     let roiEnddate = moment(x?.endDate).format("MMMM Do YYYY");
+
+
+    let roiuserStartdate = moment(x?.startDate).format("MMMM Do YYYY");
+    let roiuserEnddate = moment(x?.endDate).format("MMMM Do YYYY");
     let depositdate = moment(x?.createdAt).format("MMMM Do YYYY");
     const navigate = useNavigate();
     if (type === 'transactions') {
@@ -155,10 +162,10 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                         <span className="fs-12 family1 text-grey">{x?.tier}</span>
                     </td> */}
                     <td>
-                        <span className="fs-12 family1 text-grey">{investmentStartdate}</span>
+                        <span className="fs-12 family1 text-grey">{userinvestmentStartdate !== 'Invalid date' ? userinvestmentStartdate : investmentStartdate}</span>
                     </td>
                     <td>
-                        <span className="fs-12 family1 text-grey">{investmentEnddate}</span>
+                        <span className="fs-12 family1 text-grey">{userinvestmentEnddate !== 'Invalid date' ? userinvestmentEnddate :investmentEnddate}</span>
                     </td>
                     <td>
                         <span className="fs-12 family1 text-grey">
@@ -176,6 +183,41 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
         );
     }
 
+
+    if (type === 'userwithdrawal') {
+        return (
+            <>
+                {/* <Delete /> */}
+                <tr key={x?._id}>
+                    <td>
+                        <span className="text-grey fs-12 family1">{x?.plan}</span>
+                    </td>
+                    <td>
+                        <span className="text-grey fs-12 family1">${x?.price}</span>
+                    </td>
+                    <td>
+                        <span className="text-grey fs-12 family1">{x?.tier}</span>
+                    </td>
+                    {/* <td>
+                        <span className="fs-12 family1 text-grey">{x?.tier}</span>
+                    </td> */}
+                    <td>
+                        <span className="fs-12 family1 text-grey">{userinvestmentStartdate !== 'Invalid date' ? userinvestmentStartdate : investmentStartdate}</span>
+                    </td>
+                    <td>
+                        <span className="fs-12 family1 text-grey">{userinvestmentEnddate !== 'Invalid date' ? userinvestmentEnddate : investmentEnddate}</span>
+                    </td>
+                    <td>
+                        <span className="fs-12 family1 text-grey">
+                            <Link to={`/account/dashboard/investment_withdrawal/${x?._id}`}
+                            
+                             style={{ fontSize: "1.2rem" }} className="tablespan tablespan_withdrawal fs-10 text-bold">Request Withdrawal</Link>
+                        </span>
+                    </td>
+                </tr>
+            </>
+        );
+    }
     if (type === 'userroi') {
         return (
             <>
@@ -194,10 +236,14 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                         <span className="fs-12 family1 text-grey">{x?.tier}</span>
                     </td> */}
                     <td>
-                        <span className="fs-12 family1 text-grey">{roiStartdate}</span>
+                        <span className="fs-12 family1 text-grey">
+                            {roiStartdate !== 'Invalid date' ? roiStartdate : investmentStartdate}
+                        </span>
                     </td>
                     <td>
-                        <span className="fs-12 family1 text-grey">{roiEnddate}</span>
+                        <span className="fs-12 family1 text-grey">
+                            {roiEnddate !== 'Invalid date' ? roiEnddate : investmentEnddate}
+                        </span>
                     </td>
                     <td>
                         <span className="fs-12 family1 text-grey">
@@ -224,99 +270,6 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
         );
     }
 
-    if (type === 'deposit') {
-        return (
-            <>
-                {/* <Delete /> */}
-                <tr key={x?._id}>
-                    <td>
-                        {/* <span className="text-grey fs-12 family1">${x?.amount}</span> */}
-                        <span className="text-grey fs-12 family1">${x?.investment?.price}</span>
-
-                    </td>
-                    {/* <td>
-                        <span className="fs-12 family1 text-grey">{x?.user?.fullname}</span>
-                    </td> */}
-                    <td>
-                        <span className="fs-12 family1 tex  text-grey">{x?.paymentMethod}</span>
-                    </td>
-                    <td>
-                        <span className="fs-12 family1 text-grey">
-                            {x?.status === "true" ?
-                                <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold true"> Completed</span>
-                                : <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold false"> Not completed</span>
-                            }
-                        </span>
-                    </td>
-                    <td>
-                        <span className="text-grey fs-12 family1">{x?.plan}</span>
-                    </td>
-                    <td>
-                        <span className="text-grey fs-12 family1 text-light">{depositdate}</span>
-
-                    </td>
-                </tr>
-            </>
-        );
-    }
-
-    if (type === 'adminDepositList') {
-        return (
-            <>
-                {/* <Delete /> */}
-                <tr key={x?._id}>
-                    {/* <td>
-                        <span className="text-grey fs-12 family1">{x?._id}</span>
-                    </td> */}
-                    <td>
-                        <div className="flex flex-col">
-                            <span className="fs-14 text-dark text-bold">{x?.user?.fullname}</span>
-                            <span className="fs-12 family1 text-grey pt-1">{x?.user?.email}</span>
-                        </div>
-                    </td>
-                   
-                    {/* <td>
-                        <span className="fs-12 family1 text-grey">
-                            {x?.isAdmin === true ?
-                                <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold true"> Admin</span>
-                                : <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold true"> Customer</span>
-                            }
-                        </span>
-                    </td> */}
-                    <td>
-                        <span className="text-grey fs-12 family1">${x?.amount}</span>
-                    </td>
-                    {/* <td>
-                        <span className="fs-12 family1 text-grey">{x?.user?.fullname}</span>
-                    </td> */}
-                    <td>
-                        <span className="fs-12 family1 tex  text-grey">{x?.paymentMethod}</span>
-                    </td>
-                    <td>
-                        <span className="fs-12 family1 text-grey">
-                            {x?.status === "true" ?
-                                <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold true"> Completed</span>
-                                : <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold false"> Not completed</span>
-                            }
-                        </span>
-                    </td>
-                    <td>
-                        <span className="text-grey fs-12 family1">{x?.plan}</span>
-                    </td>
-
-                    <td>
-                        <span className="text-grey fs-12 family1 text-light">{depositdate}</span>
-
-                    </td>
-                    <td>
-                        <Link to={`/account/admin/dashboard/deposit_list/${x?._id}`} className="icons flex hover:shadow-sm hover:bg-white items-center justify-center">
-                            <MdEdit />
-                        </Link>
-                    </td>
-                </tr>
-            </>
-        );
-    }
 
     if (type === 'adminroi') {
         return (
@@ -339,10 +292,14 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                         <span className="fs-12 family1 text-grey">{x?.tier}</span>
                     </td> */}
                     <td>
-                        <span className="fs-12 family1 text-grey">{investmentStartdate}</span>
+                        <span className="fs-12 family1 text-grey">
+                            {roiStartdate !== 'Invalid date' ? roiStartdate : investmentStartdate}
+                        </span>
                     </td>
                     <td>
-                        <span className="fs-12 family1 text-grey">{investmentEnddate}</span>
+                        <span className="fs-12 family1 text-grey">
+                            {roiEnddate !== 'Invalid date' ? roiEnddate : investmentEnddate}
+                        </span>
                     </td>
                     <td>
                         <span className="fs-12 family1 text-grey">

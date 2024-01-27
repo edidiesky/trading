@@ -106,6 +106,10 @@ export const Table = styled.div`
                 color: #28A745;
                 background: #10e24129;
               }
+              &.tablespan_withdrawal {
+                background: #28A745;
+                color:#fff;
+              }
               &.false {
                 color: #840a0a;
                 background: rgba(255, 3, 3, 0.071);

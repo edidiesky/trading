@@ -14,11 +14,15 @@ const LayoutWrapper = styled.div`
   display: flex;
   background-color: #eee;
   h2 {
-    font-size: 26px;
+    font-size: 3rem;
     span {
   font-family: "Barlow", sans-serif !important;
 
     }
+      @media (max-width: 580px) {
+          font-size: 2.6rem;
+
+      }
   }
   .LayoutContainer {
     width: 100%;

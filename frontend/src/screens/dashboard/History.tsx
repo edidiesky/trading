@@ -116,7 +116,7 @@ const HistorytStyles = styled.div`
     }
     .btn.btn-4 {
         padding:1.6rem 3rem;
-        min-width:300px;
+        min-width:240px;
         background-color: #c2c0c079;
         border:2px solid #fff;
         @media (max-width:780px) {
@@ -129,9 +129,7 @@ const HistorytStyles = styled.div`
     }
     .trading_card {
         width:100%;
-        padding:3rem 1rem;
-        background-color: #fff;
-        border:1px solid rgba(0,0,0,.1);
+        padding:0;
         .icon_trading{
             height: 5rem;
             width:5rem;
