@@ -60,7 +60,6 @@ const Messages = () => {
                                             {/* <th>Payment Methid</th> */}
                                             {/* <th>Payment Status</th> */}
                                             <th>Profit</th>
-                                            <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
