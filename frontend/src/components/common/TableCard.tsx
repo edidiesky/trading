@@ -183,6 +183,41 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
         );
     }
 
+    // userroi
+    if (type === 'deposit') {
+        return (
+            <>
+                {/* <Delete /> */}
+                <tr key={x?._id}>
+                    <td>
+                        <span className="text-grey fs-12 family1">$ {x?.investment?.price}</span>
+                    </td>
+                    <td>
+                        <span className="text-grey fs-12 family1">{x?.paymentMethod}</span>
+                    </td>
+                    <td>
+                        <span className="fs-12 family1 text-grey">
+                            {x?.isPaid === true ?
+                                <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold true"> Active</span>
+                                : <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold false">Incoming</span>
+                            }
+                        </span>
+                    </td>
+                    <td>
+                        <span className="fs-12 family1 text-grey">{x?.plan}</span>
+                    </td>
+                    <td>
+                        <span className="fs-12 family1 text-grey">{depositdate}</span>
+                    </td>
+                   
+                    {/* <td>
+                        <span className="text-grey fs-12 family1">${x?.profit}</span>
+                    </td> */}
+                </tr>
+            </>
+        );
+    }
+
 
     if (type === 'userwithdrawal') {
         return (

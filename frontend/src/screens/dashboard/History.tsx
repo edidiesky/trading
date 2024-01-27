@@ -5,12 +5,10 @@ import { Table } from '../../components/common/styles';
 import TableCard from '../../components/common/TableCard';
 import { useAppDispatch, useAppSelector } from '@/hooks/reduxtoolkit';
 import { GetSingleTransactioOfAUser } from '@/features/transaction/transactionReducer';
-import { GetSingleDepsoitOfAUser } from '@/features/deposit/depositReducer';
 
 const History = () => {
     const dispatch = useAppDispatch()
     const [tab, setTab] = React.useState(0)
-    const { deposits } = useAppSelector(store => store.deposit)
     const { transactions } = useAppSelector(store => store.transaction)
 
     // deposits
