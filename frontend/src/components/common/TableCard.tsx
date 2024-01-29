@@ -274,7 +274,7 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                         <span className="fs-12 family1 text-grey">
                             {roiStartdate !== 'Invalid date' ? roiStartdate : investmentStartdate}
                         </span>
-                    </td>
+                    </td>k
                     <td>
                         <span className="fs-12 family1 text-grey">
                             {roiEnddate !== 'Invalid date' ? roiEnddate : investmentEnddate}
