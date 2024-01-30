@@ -42,7 +42,7 @@ const Register: React.FC = () => {
             toast({
                 variant: "success",
                 title: "Success",
-                description: 'Login Succesfully, Welcome to OptiTrade Dynamics!',
+                description: 'Login Succesfully, Welcome to RockTrading!',
             })
             const timeout = setTimeout(() => {
                 navigate('/account/dashboard')
