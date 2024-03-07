@@ -30,19 +30,19 @@ const Courses = () => {
             title: "Account Balance",
             path: ``,
             value: `$ ${userData?.account_balance}`,
-            color: "#6861CE"
+            color: "#3693FF"
         },
         {
             icon: <FaCoins />,
             title: "Investment",
             path: "Total Profit",
             value: `${investments?.length}`,
-            color: "#F25961",
+            color: "#5B5E81",
         },
         {
             icon: <FaGift />,
             title: "Total Bonus",
-            color: "#31CE36",
+            color: "#FFAB2D",
             value: `$ ${userData?.total_bonus}`,
             path: "overview",
         },
@@ -51,7 +51,7 @@ const Courses = () => {
             title: "Total Referral Bonus",
             value: `$ ${userData?.referralbonus}`,
             path: "messages",
-            color: "#6861CE",
+            color: "#AC4CBC",
         }, {
             icon: <AiOutlineMail />,
             title: "Total Investment Plans",
@@ -91,15 +91,16 @@ const Courses = () => {
                 {sidebarData.map((x) => {
                     return (
                         <div
+                            style={{ background: `${x?.color}` }} 
                             className='widget_card w-100 flex item-center gap-2'
                         >
-                            <span style={{ background: `${x?.color}` }} className="icon_widget flex item-center justify-center">
+                            <span className="icon_widget flex item-center justify-center">
                                 {x.icon}
                             </span>
 
-                            <span className='text-dark  fs-24 text-bold'>
+                            <span className='text-dark fs-30 text-bold'>
                                 {x?.value}
-                                <span className="block fs-14 family1 font-medium text-grey2">{x?.title}</span>
+                                <span className="block fs-16 family1 font-medium text-white">{x?.title}</span>
                             </span>
                         </div>
                     );
@@ -160,14 +161,13 @@ const Courses = () => {
 
     return (
         <div style={{ minHeight: "100vh" }} className="w-100">
-            <div style={{ width: "95%" }} className="auto py-4 flex column gap-4">
+            <div style={{ width: "95%" }} className="auto flex column gap-4">
                 <div className="flex column gap-1">
                     <h2 className="fs-45 text-dark">
-                        Welcome, {userInfo?.username}!
+                        Dashboard, <span className="text-2xl md:text-3xl family1 text-light text-grey">
+                           Welcome {userInfo?.username}!
+                        </span>
                     </h2>
-                    <span className="fs-16 w-50 text-light text-grey2">
-                        Welcome to RockTrading
-                    </span>
                 </div>
                 <div className="w-100 flex column gap-4">
                     <Widget />
@@ -181,24 +181,23 @@ const Courses = () => {
 
 const WidgetStyles = styled.div`
   width: 100%;
-  margin: 2rem auto;
+  margin: 1rem auto;
   .widget_wrapper {
     width:100%;
     display:grid;
     grid-gap: 2rem;
     /* grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); */
-     grid-template-columns: 1fr 1fr 1fr 1fr;
+     grid-template-columns: 1fr 1fr 1fr;
     @media (max-width:780px) {
         grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
     }
     .widget_card {
         padding:3rem 2rem;
-        background-color: #fff;
-         border:1px solid rgba(0,0,0,.1);
+        border-radius: 10px;
         .icon_widget{
             height: 5rem;
             width:5rem;
-         border:1px solid rgba(0,0,0,.1);
+        
 
         svg {
             font-size: 20px;

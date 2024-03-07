@@ -93,8 +93,8 @@ const DashboardSidebar: React.FC<sidebarProps> = ({ active }) => {
 
         <HeaderStyles className={`w-100 flex column gap-2`}>
             <div className="w-full flex items-center flex-col justify-space gap-4">
-               <div className="flex flex-col w-full items-start px-2 gap-4 py-2">
-                    <h4 className="text-3xl font-bold text-dark">RockTrading</h4>
+               <div className="flex flex-col w-full items-start px-2 gap-4 py-1">
+                    <h4 className="text-3xl font-bold uppercase text-dark">RockTrading</h4>
                     {/* <div className="hidden md:flex item-center gap-2">
                         <Link to={'/account/dashboard/deposit'} className="btn fs-12 text-bold">Fund Your Account</Link>
                         <Link to={'/account/dashboard/investment_withdrawal'} className="btn btn-2 fs-12 text-bold">Withdraw funds</Link>
@@ -108,7 +108,7 @@ const DashboardSidebar: React.FC<sidebarProps> = ({ active }) => {
                                     return (
                                         <NavLink
                                             className={({ isActive, isPending }) =>
-                                                isActive ? "active fs-16 text-dark family1 text-extra-bold" : "fs-16 text-dark family1 text-extra-bold"
+                                                isActive ? "active fs-12 text-dark family1 uppercase text-extra-bold" : "fs-12 text-dark family1 uppercase text-extra-bold"
                                             }
                                             to={`/account/admin/dashboard/${x.path}`}
                                             end
@@ -161,7 +161,7 @@ export const HeaderStyles = styled.div`
      box-shadow: var(--shadow);
      a {
         padding: 20px 30px;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         min-height: 5rem;
         font-weight: 500;
         margin: 0 auto;
