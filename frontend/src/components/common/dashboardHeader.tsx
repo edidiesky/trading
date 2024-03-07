@@ -25,15 +25,30 @@ const DashboardHeader: React.FC<HeaderProps> = ({ sidebar, setSidebar }) => {
         <HeaderStyles className="w-100 flex items-start lg:items-center column gap-2">
             <div className="Header_wrapper auto flex item-center justify-space">
                 <div className="flex item-center gap-4">
-                    <h4 className="fs-20 font-bold text-dark">RockTrading</h4>
-                    <div className="hidden md:flex item-center gap-2">
+                    <input type="text" placeholder="Search Dashboard" className="input text-2xl w-full font-normal lg:w-[400px]" />
+                    {/* <h4 className="fs-20 font-bold text-dark">RockTrading</h4> */}
+                    {/* <div className="hidden md:flex item-center gap-2">
                         <Link to={'/account/dashboard/deposit'} className="btn fs-12 text-bold">Fund Your Account</Link>
                         <Link to={'/account/dashboard/investment_withdrawal'} className="btn btn-2 fs-12 text-bold">Withdraw funds</Link>
-                    </div>
+                    </div> */}
                 </div>
                 <div className="flex item-center gap-2">
+                    {/* <div className="hidden md:flex item-center gap-2">
+                        <Link to={'/account/dashboard/deposit'} className="btn fs-12 text-bold">Fund Your Account</Link>
+                        <Link to={'/account/dashboard/investment_withdrawal'} className="btn btn-2 fs-12 text-bold">Withdraw funds</Link>
+                    </div> */}
                     <div className="flex item-center profile_wrapper relative gap-4">
-                        <div className="profile_avatar flex item-center justify-center fs-16 text-extra-bold text-white">{userInfo?.username && userInfo?.username[0]}</div>
+                        
+                        <div className="flex items-center gap-2">
+                            <h4
+                                className="text-2xl auto text-start font-bold text-dark">
+                                {userInfo?.fullname}
+                                <span className="block text-light family1 text-xl mt-1 text-grey">{userInfo?.email}</span>
+                            </h4>
+                            <div className="profile_avatar flex item-center justify-center fs-16 text-extra-bold text-white">{userInfo?.username && userInfo?.username[0]}</div>
+
+                        </div>
+
                         <div className="profile_dropdown absolute">
                             <div className="w-100 flex column gap-2">
                                 <div className="flex profile_dropdown_bottom column w-100">
@@ -53,7 +68,7 @@ const DashboardHeader: React.FC<HeaderProps> = ({ sidebar, setSidebar }) => {
             <div className="Header_wrapper flex auto md:hidden header_bottom item-center gap-2">
                 <Link to={'/account/dashboard/deposit'} className="btn fs-12 text-bold">Fund Your Account</Link>
                 <Link to={'/account/dashboard/investment_withdrawal'} className="btn btn-2 fs-12 text-bold">Withdraw funds</Link>
-            
+
             </div>
         </HeaderStyles>
     )
@@ -63,17 +78,24 @@ const DashboardHeader: React.FC<HeaderProps> = ({ sidebar, setSidebar }) => {
 export const HeaderStyles = styled.div`
     padding:1rem 0;
     width:100%;
-    background:#fff;
+    background:#F9F6FF;
     z-index:20;
-    min-height:8rem;
+    min-height:10rem;
     position: sticky;
     top: 0;
     left:0;
-    border-bottom: 1px solid rgba(0,0,0,.1);
+    /* border-bottom: 1px solid rgba(0,0,0,.1); */
     /* @media (max-width:780px) {
     background:#000;
 
     } */
+    .input {
+        font-size: 1.6rem !important;
+        height: 6rem !important;
+       border-radius: 40px !important;
+        border: 1px solid rgba(0,0,0,.09) !important;
+        background-color: #Fff;
+    }
       .spam_bars{
      display:none;
          @media (max-width:880px) {
@@ -82,7 +104,7 @@ export const HeaderStyles = styled.div`
          }
   }
     .btn {
-        padding: 10px 14px !important;
+        padding: 20px 14px !important;
     }
     .header_bottom{
 

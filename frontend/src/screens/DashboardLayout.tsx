@@ -12,7 +12,7 @@ const LayoutWrapper = styled.div`
   min-height: 100vh;
   width: 100%;
   display: flex;
-  background-color: #eee;
+  background-color: #F9F6FF;
   h2 {
     font-size: 3rem;
     span {
@@ -23,6 +23,10 @@ const LayoutWrapper = styled.div`
           font-size: 2.6rem;
 
       }
+  }
+  .btn {
+         padding: 10px 14px !important;
+    
   }
   .LayoutContainer {
     width: 100%;

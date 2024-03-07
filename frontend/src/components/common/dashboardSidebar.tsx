@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { TbChartHistogram } from "react-icons/tb";
 import { IoMdStats } from "react-icons/io";
 import { FaCoins } from "react-icons/fa";
@@ -92,13 +92,15 @@ const DashboardSidebar: React.FC<sidebarProps> = ({ active }) => {
     return (
 
         <HeaderStyles className={`w-100 flex column gap-2`}>
-            <div className="100 Header_wrapper flex item-center column justify-space gap-2">
-                <h4 
-                className ="text-[17px] w-100 auto text-start font-bold text-dark">
-                    {userInfo?.fullname}
-                    <span className="block text-light family1 text-[15px] mt-1 text-grey">{userInfo?.email}</span>
-                    </h4>
-                <ul className="flex column w-100">
+            <div className="w-full flex items-center flex-col justify-space gap-4">
+               <div className="flex flex-col w-full items-start px-2 gap-4 py-2">
+                    <h4 className="text-3xl font-bold text-dark">RockTrading</h4>
+                    {/* <div className="hidden md:flex item-center gap-2">
+                        <Link to={'/account/dashboard/deposit'} className="btn fs-12 text-bold">Fund Your Account</Link>
+                        <Link to={'/account/dashboard/investment_withdrawal'} className="btn btn-2 fs-12 text-bold">Withdraw funds</Link>
+                    </div> */}
+               </div>
+                <ul className="flex flex-col gap-1 w-100">
                     {
                         userInfo?.isAdmin ?<>
                             {
@@ -147,29 +149,24 @@ const DashboardSidebar: React.FC<sidebarProps> = ({ active }) => {
 
 
 export const HeaderStyles = styled.div`
-    padding:2rem 0;
+    padding:2rem;
     width:100%;
-    background:#fff;
+    background:#F9F6FF;
     position:absolute;
     top:0;
     left:0;
     height:100%;
     bottom:0;
-     border-right: 1px solid rgba(0,0,0,.1);
+     /* border-right: 1px solid rgba(0,0,0,.1); */
      box-shadow: var(--shadow);
-
-   h4 {
-     padding: 10px 40px;
-     border-bottom: 1px solid rgba(0,0,0,.1);
-   }
-
      a {
-        padding: 20px 40px;
+        padding: 20px 30px;
         font-size: 1.5rem;
         min-height: 5rem;
         font-weight: 500;
         margin: 0 auto;
         width: 100%;
+        border-radius: 40px;
         color: var(--dark-1);
         display: flex;
         align-items: center;
@@ -178,18 +175,18 @@ export const HeaderStyles = styled.div`
         position: relative;
 
         &:hover {
-          background: #b9c9d11f;
+          background: #DEF2B1;
         }
         svg {
           font-size: 2.4rem;
         }
         &.active {
           position: relative;
-          background:#7cb3832f;
+          background:#DEF2B1;
            svg {
-            color:var(-grey-1);
+            color:var(--dark-1);
           }
-          &:after {
+          /* &:after {
           position: absolute;
           background:#12db2d;
           width: 4px;
@@ -198,7 +195,7 @@ export const HeaderStyles = styled.div`
           top: 0;
          
           content:"";
-          }
+          } */
         }
       }
 `;
