@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from "react";
+import React, { useState, Suspense, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./index.css";
 import {
@@ -37,9 +37,13 @@ import {
 import ProtectRoute from "./utils/ProtectRoute";
 import LazyLoader from "./components/loaders/Lazy";
 import AdminProtectRoute from "./utils/AdminProtectRoute";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 export default function App() {
   const [height, setHeight] = useState(0);
+  useEffect(() => {
+    AOS.init({ duration: 7000 });
+  }, []);
   return (
     <div className="based" style={{ height }}>
       <Routes>

@@ -36,9 +36,9 @@ const Header = () => {
             {/* <div className="hero_navbar py-2 flex w-90 auto justify-end">
                
             </div> */}
-            <div className="hero_header w-90 auto flex item-center justify-space">
+            <div className="hero_headers w-90 auto flex item-center justify-space">
                 <Link to={'/'} className="fs-18 text-bold family1 uppercase text-white">
-                    OptiTrade Dynamics
+                    Terratextrading
                 </Link>
                 <div className="flex items-center gap-2">
                     {
@@ -60,19 +60,19 @@ const Header = () => {
                                 <Link to={'/'} className="fs-14 text-bold uppercase text-white">
                                     Home
                                 </Link>
-                                    <Link to={'/market'} className="fs-14 text-bold uppercase text-white">
+                                <Link to={'/market'} className="fs-14 text-bold uppercase text-white">
                                     Markets
                                 </Link>
                                 {/* <Link to={'/trading'} className="fs-14 text-bold uppercase text-white">
                         Trading Assets
                     </Link> */}
-                                    <Link to={'/about'} className="fs-14 text-bold uppercase text-white">
+                                <Link to={'/about'} className="fs-14 text-bold uppercase text-white">
                                     About Us
                                 </Link>
 
-                                    <Link to={'/faq'} className="fs-14 text-bold uppercase text-white">
-                                        FAQ
-                                    </Link>
+                                <Link to={'/faq'} className="fs-14 text-bold uppercase text-white">
+                                    FAQ
+                                </Link>
                                 {/* <Link to={'/documents'} className="fs-14 text-bold uppercase text-white">
                         Documents
                     </Link> */}
@@ -143,11 +143,19 @@ const Header = () => {
 
 export const HeaderStyles = styled.div`
 width:100%;
-position:relative;
+position:absolute;
+top:0;
+left:0;
 z-index: 400000;
+/* background-color: transparent; */
+
 .btn {
     border-radius: 40px !important;
     padding: 10px 2rem !important;
+}
+.hero_headers{
+    padding-bottom: 4rem;
+    border-bottom: 1px solid rgba(255,255,255,.09);
 }
     .profile_avatar_large {
     width:70px;
@@ -183,7 +191,7 @@ z-index: 400000;
             cursor:pointer;
         }
     }
-  .hero_header{
+  .hero_headers{
     padding: 4rem 0;
     padding-bottom: 2rem;
   }
@@ -202,7 +210,7 @@ z-index: 400000;
 
          }
   }
-   .hero_navbar,.hero_header,.hero_center {
+   .hero_navbar,.hero_headers,.hero_center {
     z-index:40;
     position: relative;
   }

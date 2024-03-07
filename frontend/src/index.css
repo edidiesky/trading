@@ -100,10 +100,10 @@
   --red-1: #612012;
   --red-2: #b32d0f;
   --blue-1: #1980EC;
-  --blue-2: #c89b42;
-  --blue-3: #c89b42;
-  --orange-1: #b4690e;
-  --green-1: #c89b42;
+  --blue-2: #25249D;
+  --blue-3: #25249D;
+  --orange-1: #25249D;
+  --green-1: #25249D;
   --green-2: #19a38c;
   --shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
@@ -138,8 +138,8 @@ body {
   background-color: var(--grey-3);
 }
 .shadow {
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-  transition: all 0.5s;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, .1);
+  transition: all .4s;
 }
 
 .shadow:hover {
@@ -162,7 +162,7 @@ h2,h1 {
   z-index: 10;
   text-align: center;
   padding: 1.5rem 2.6rem;
-  background-color: var(--dark-1);
+  background-color: #25249D;
   color: #fff;
   border-radius: 40px;
   cursor: pointer;
@@ -174,8 +174,8 @@ h2,h1 {
 }
 .btn.btn-1 {
   background-color: transparent;
-  color: var(--dark-1);
-  border: 2px solid var(--dark-1);
+  color: var(--blue-1);
+  border: 1px solid var(--blue-1);
 }
 .btn.btn-2 {
   background-color: var(--blue-2);

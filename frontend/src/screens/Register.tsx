@@ -51,7 +51,7 @@ const Register: React.FC = () => {
             toast({
                 variant: "success",
                 title: "Success",
-                description: 'Registration Succesfully, Welcome to RockTrading!',
+                description: 'Registration Succesfully, Welcome to Terratextrading!',
             })
             const timeout = setTimeout(() => {
                 navigate('/login')
@@ -77,7 +77,7 @@ const Register: React.FC = () => {
                                 <div className="flex w-100 column gap-2">
                                     <div className="flex column gap-2">
                                         <h3 className="text-[30px] py-1 w-100 text-center font-bold text-dark">
-                                            Welcome to RockTrading!
+                                            Welcome to Terratextrading!
                                             <span className="block mt-3 fs-18 text-light">Please enter your details to create an account with us!</span>
 
                                         </h3>

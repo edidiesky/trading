@@ -27,7 +27,7 @@ const footer_data_1 = [
     {
         title: "Contact Us",
         list: [
-            'support@RockTrading.com'
+            'support@Terratextrading.com'
         ]
     }
 ]
@@ -36,7 +36,7 @@ const Footer = () => {
         <FooterStyles className="w-100 flex column gap-4">
             <div className="w-90 auto footer_wrapper">
                 <div className="w-100 flex column gap-3">
-                    <h3 className="fs-24 text-extra-bold text-dark">RockTrading
+                    <h3 className="fs-24 text-extra-bold text-dark">Terratextrading
                         <span className="block fs-18 mt-3 text">Trade with financial thinking.</span>
                     </h3>
                     <div className="flex column gap-1 text text-bold">

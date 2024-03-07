@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const HeroStyles = styled.div`
-/* min-height:70vh; */
+height:100vh;
   position: relative;
     z-index: 30;
 
@@ -18,7 +18,11 @@ export const HeroStyles = styled.div`
     position:absolute;
     height:100%;
     width:100%;
-    /* z-index: 20; */
+    opacity: 0;
+    transition: all .8s ease;
+    &.active {
+      opacity:1;
+    }
     
     img {
     height:100%;
@@ -31,18 +35,46 @@ export const HeroStyles = styled.div`
     padding-bottom: 4rem;
   }
   .hero_center {
-    padding:12rem 0;
+    padding:25rem 0;
     z-index:20;
+     height:100%;
+    /* width:100%; */
+    padding-top: 40rem;
     position:relative;
     @media (max-width:780px) {
+    padding-top: 20rem;
+
           padding-bottom: 12rem;
 
       }
 
     .hero_content {
       width:900px;
+      .btn {
+         opacity: 0;
+    transition: all 1s ease;
+    &.active {
+      opacity:1;
+    }
+      }
       h4 {
-        font-size: 3rem;
+        font-size: 2.7rem;
+         opacity: 0;
+    transition: all 1.6s ease;
+    &.active {
+      opacity:1;
+    }
+      }
+      h3 {
+        width: 700px;
+         opacity: 0;
+    transition: all 1s ease;
+    &.active {
+      opacity:1;
+    }
+         @media (max-width:780px) {
+        width:100%;
+      }
       }
       
       @media (max-width:780px) {

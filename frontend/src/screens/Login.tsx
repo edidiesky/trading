@@ -42,7 +42,7 @@ const Register: React.FC = () => {
             toast({
                 variant: "success",
                 title: "Success",
-                description: 'Login Succesfully, Welcome to RockTrading!',
+                description: 'Login Succesfully, Welcome to Terratextrading!',
             })
             const timeout = setTimeout(() => {
                 navigate('/account/dashboard')

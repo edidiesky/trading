@@ -6,7 +6,7 @@ import Header from "../common/Header";
 const HeroData = [
     {
         image: "https://metacorepoint.com/img/slider3.jpg",
-        text: "FREQUENTLY ASKED QUESTIONS",
+        text: "FREQUENTLY ASKED QUESTIONS ON Terratextrading",
         subtext: "Need Information? Contact Us"
    
     },

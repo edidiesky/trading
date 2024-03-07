@@ -1,11 +1,11 @@
 export const AccordionData = [
     {
-        title: "Who is OptiTrade Dynamics Bitcoin Mining?",
-        response: "OptiTrade Dynamics Bitcoin Mining is one of the world's leading Forex CFD provider. The company was incorporated with the vision of providing fair and transparent Forex trading to active traders. OptiTrade Dynamics Bitcoin Mining is dedicated to bringing solutions previously only available to professionals and large global investment banks to retail investors and traders around the world. For additional information about OptiTrade Dynamics Bitcoin Mining, please visit the About Us page."
+        title: "Who is Terratextrading Bitcoin Mining?",
+        response: "Terratextrading Bitcoin Mining is one of the world's leading Forex CFD provider. The company was incorporated with the vision of providing fair and transparent Forex trading to active traders. Terratextrading Bitcoin Mining is dedicated to bringing solutions previously only available to professionals and large global investment banks to retail investors and traders around the world. For additional information about Terratextrading Bitcoin Mining, please visit the About Us page."
     },
     {
-        title: "Who owns OptiTrade Dynamics Bitcoin Mining?",
-        response: "OptiTrade Dynamics Bitcoin Mining is a privately owned company. OptiTrade Dynamics Bitcoin Mining’ management team is comprised of individuals with over 20 years' experience in derivative products. OptiTrade Dynamics Bitcoin Mining’ founders were instrumental in the success of one of the largest CFD provider."
+        title: "Who owns Terratextrading Bitcoin Mining?",
+        response: "Terratextrading Bitcoin Mining is a privately owned company. Terratextrading Bitcoin Mining’ management team is comprised of individuals with over 20 years' experience in derivative products. Terratextrading Bitcoin Mining’ founders were instrumental in the success of one of the largest CFD provider."
     }, {
         title: "Can I have more than one account in the system?",
         response: "You can have only 1 registered account. Creation of 2 or more accounts by one user is prohibited. In the case of multi-client accounts all user's accounts will be blocked and funds will be canceled."

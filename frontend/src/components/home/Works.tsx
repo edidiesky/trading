@@ -5,12 +5,23 @@ const Works = () => {
         return (
             <div className="w-100">
                 <div className="w-90 auto flex column">
-                    <h2 className="text-extra-bold text-[50px] leading-[1.3]">Industry-leading prices
+                   <div className="overflow-hidden">
+                        <h2
+                            data-aos="fade-up"
+                            data-aos-duration="1200"
+                            className="text-extra-bold text-[50px] leading-[1.3]">Industry-leading prices
 
-                    </h2>
-                    <span className="block w-[70%] text-[20px] lg:text-[30px] leading-[1.3] mt-4 family1 font-normal text-grey">
-                        Get ultra-competitive spreads and commissions across all asset classes. Receive even better rates as your volume increases.
-                    </span>
+                        </h2>
+                   </div>
+                    <div className="overflow-hidden">
+                        <span
+                            data-aos="fade-up"
+                            data-aos-duration="1600"
+                            className="block w-[70%] text-[20px] lg:text-[30px] leading-[1.3] mt-4 family1 font-normal text-grey">
+                            Get ultra-competitive spreads and commissions across all asset classes. Receive even better rates as your volume increases.
+                        </span>
+                    </div>
+                   
                     <div className="w-100 pt-24 grid grid-cols-2 sm:grid-cols-2  lg:grid-cols-4 gap-x-8 gap-y-20">
                         <div className="w-100 bg-[#F6F7F8] rounded-2xl pt-8 px-2">
                             <div className="w-100">
