@@ -91,7 +91,7 @@ const Courses = () => {
                 {sidebarData.map((x) => {
                     return (
                         <div
-                            style={{ background: `${x?.color}` }} 
+                            style={{ background: `${x?.color}` }}
                             className='widget_card w-100 flex item-center gap-2'
                         >
                             <span className="icon_widget flex item-center justify-center">
@@ -112,8 +112,8 @@ const Courses = () => {
     const TradingChart = () => {
         return <TradingChartStyles className="w-100 flex column gap-1">
             <div className="flex column gap-1">
-                <h3 className="fs-20 family1 font-bold text-grey2">
-                    Personal Trading Chart
+                <h3 className="fs-30 family1 font-bold text-grey2">
+                    Crypto Statistics
                 </h3>
             </div>
             <div className="trading_wrapper w-100">
@@ -133,9 +133,9 @@ const Courses = () => {
     }
 
     const ForexChart = () => {
-        return <TradingChartStyles className="w-100 flex column gap-1">
+        return <TradingChartStyles className="w-100 shadow flex column gap-1">
             <div className="flex column gap-1">
-                <h3 className="fs-20 family1 font-bold text-grey2">
+                <h3 className="fs-30 family1 font-bold text-grey2">
                     Forex Trading Chart
                 </h3>
             </div>
@@ -151,11 +151,12 @@ const Courses = () => {
                             />
                             {/* <iframe scrolling="no" allowtransparency="true" frameborder="0" src="https://www.tradingview-widget.com/embed-widget/forex-cross-rates/?locale=en#%7B%22currencies%22%3A%5B%22EUR%22%2C%22USD%22%2C%22JPY%22%2C%22BTC%22%2C%22ETH%22%2C%22LTC%22%2C%22GBP%22%2C%22CHF%22%2C%22AUD%22%2C%22CAD%22%2C%22NZD%22%2C%22CNY%22%5D%2C%22isTransparent%22%3Afalse%2C%22colorTheme%22%3A%22light%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A%22100%25%22%2C%22utm_source%22%3A%22metacorepoint.com%22%2C%22utm_medium%22%3A%22widget%22%2C%22utm_campaign%22%3A%22forex-cross-rates%22%2C%22page-uri%22%3A%22metacorepoint.com%2Faccount%2Fdashboard%22%7D" title="forex cross-rates TradingView widget" lang="en" style="user-select: none; box-sizing: border-box; display: block; height: calc(100% - 32px); width: 100%;"></iframe> */}
                         </div>
-                        </div>
+                        </div >
 
-                    </div>
-                </div>
-            </div>
+                    </div >
+                </div >
+            </div >
+
         </TradingChartStyles>
     }
 
@@ -165,14 +166,16 @@ const Courses = () => {
                 <div className="flex column gap-1">
                     <h2 className="fs-45 text-dark">
                         Dashboard, <span className="text-2xl md:text-3xl family1 text-light text-grey">
-                           Welcome {userInfo?.username}!
+                            Welcome {userInfo?.username}!
                         </span>
                     </h2>
                 </div>
                 <div className="w-100 flex column gap-4">
                     <Widget />
-                    <TradingChart />
-                    <ForexChart />
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                        <TradingChart />
+                        <ForexChart />
+                    </div>
                 </div>
             </div>
         </div>
@@ -209,9 +212,14 @@ const WidgetStyles = styled.div`
 `
 
 
+
 const TradingChartStyles = styled.div`
   width: 100%;
   margin: 2rem auto;
+  background:#fff;
+  padding:2rem 3rem;
+  border-radius: 10px;
+
   .trading_wrapper {
     width:100%;
     .trading_card {

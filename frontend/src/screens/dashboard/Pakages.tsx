@@ -135,13 +135,13 @@ const Students = () => {
     }
     return (
         <PackagePlanStyles style={{ minHeight: "100vh" }} className="w-100">
-            <div className="trading_wrapper auto py-4 flex column gap-4">
+            <div className="trading_wrapper auto flex column gap-4">
                 <div className="flex column gap-1">
                     <h2 className="fs-45 text-dark">
                         Available packages
                     </h2>
                 </div>
-                <div className="trading_container">
+                <div className="trading_container gap-12">
                     <div className="trading_card flex column gap-3">
                         <h4 className="fs-18 family1 text-bold">{depositData[0].title}</h4>
                         <h3 className="text-[40px] lg:text-[50px] font-bold py-1 text-center family1">
@@ -274,7 +274,7 @@ const Students = () => {
 
 const PackagePlanStyles = styled.div`
   width: 100%;
-  margin: 2rem auto;
+  margin: 0 auto;
   .trading_wrapper {
     width:95%;
     .trading_container {

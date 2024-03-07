@@ -51,7 +51,7 @@ export const Table = styled.div`
             background: rgb(0 0 0 / 13%);
           }
           th {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             color: var(--dark-1);
             font-weight: 600;
             text-align: start;
@@ -73,24 +73,33 @@ export const Table = styled.div`
         tr {
           transition: all 0.5s var(--transition-2);
           z-index: 200;
+           &:nth-of-type(odd) {
+                background-color: #Fff;
+              }
             margin-bottom: 1rem;
+             transition: all .4s;
+             cursor: pointer;
 
 
           &:hover {
-            background: #2364c41f;
+            /* background: #2364c41f; */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .08);
+  background-color: #fff;
+ 
             td {
               color: var(--blue-3);
 
             }
           }
           td {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             font-weight: 500;
             text-align: start;
             padding: 2rem 1.8rem;
             margin-bottom: 1rem;
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
               font-family: "Barlow", sans-serif;
+             
 
 
             .true {

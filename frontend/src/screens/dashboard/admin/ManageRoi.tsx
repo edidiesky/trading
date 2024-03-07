@@ -145,13 +145,13 @@ const ManageRoi = () => {
 
 const PackagePlanStyles = styled.div`
   width: 100%;
-  margin: 2rem auto;
+  margin: 0 auto;
   .trading_wrapper {
     width:95%;
     .trading_container {
     width:100%;
     display:grid;
-    grid-gap: 2rem;
+    grid-gap: 0;
     grid-template-columns: repeat(3, 1fr);
     @media (max-width:780px) {
         grid-template-columns: 1fr;

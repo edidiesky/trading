@@ -66,7 +66,7 @@ const InvestmentHistory = () => {
 
 const HistorytStyles = styled.div`
   width: 100%;
-  margin: 2rem auto;
+  margin: 0 auto;
   .trading_wrapper {
     width:95%;
     .input {

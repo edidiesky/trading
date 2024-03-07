@@ -29,16 +29,16 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                 {/* <Delete /> */}
                 <tr key={x?._id}>
                     <td>
-                        <span className="fs-12 family1 text-grey">${x?.investment?.price}</span>
+                        <span className="fs-14 family1 text-grey">${x?.investment?.price}</span>
                     </td>
                     <td>
-                        <span className="fs-12 family1 text-grey">{x?.user?.fullname}</span>
+                        <span className="fs-14 family1 text-grey">{x?.user?.fullname}</span>
                     </td>
                     <td>
-                        <span className="fs-12 family1 tex  text-grey">{x?.paymentMethod}</span>
+                        <span className="fs-14 family1 tex  text-grey">{x?.paymentMethod}</span>
                     </td>
                     <td>
-                        <span className="fs-12 family1 text-grey">
+                        <span className="fs-14 family1 text-grey">
                             {x?.isPaid === true ?
                                 <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold true"> Completed</span>
                                 : <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold false"> Not completed</span>
@@ -46,10 +46,10 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                         </span>
                     </td>
                     {/* <td>
-                        <span className="text-grey fs-12 family1">{x?.plan}</span>
+                        <span className="text-grey fs-14 family1">{x?.plan}</span>
                     </td> */}
                     <td>
-                        <span className="text-grey fs-12 family1 text-light">{depositdate}</span>
+                        <span className="text-grey fs-14 family1 text-light">{depositdate}</span>
 
                     </td>
 
@@ -68,16 +68,16 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                 {/* <Delete /> */}
                 <tr key={x?._id}>
                     <td>
-                        <span className="text-grey fs-12 family1">${x?.investment?.price}</span>
+                        <span className="text-grey fs-14 family1">${x?.investment?.price}</span>
                     </td>
                     <td>
-                        <span className="fs-12 family1 text-grey">{x?.user?.fullname}</span>
+                        <span className="fs-14 family1 text-grey">{x?.user?.fullname}</span>
                     </td>
                     <td>
-                        <span className="fs-12 family1 tex  text-grey">{x?.paymentMethod}</span>
+                        <span className="fs-14 family1 tex  text-grey">{x?.paymentMethod}</span>
                     </td>
                     <td>
-                        <span className="fs-12 family1 text-grey">
+                        <span className="fs-14 family1 text-grey">
                             {x?.isPaid === true ?
                                 <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold true"> Completed</span>
                                 : <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold false"> Not completed</span>
@@ -85,10 +85,10 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                         </span>
                     </td>
                     <td>
-                        <span className="text-grey fs-12 family1">{x?.investment?.tier}</span>
+                        <span className="text-grey fs-14 family1">{x?.investment?.tier}</span>
                     </td>
                     <td>
-                        <span className="text-grey fs-12 family1 text-light">{depositdate}</span>
+                        <span className="text-grey fs-14 family1 text-light">{depositdate}</span>
 
                     </td>
                 </tr>
@@ -101,22 +101,22 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                 {/* <Delete /> */}
                 <tr key={x?._id}>
                     {/* <td>
-                        <span className="text-grey fs-12 family1">{x?._id}</span>
+                        <span className="text-grey fs-14 family1">{x?._id}</span>
                     </td> */}
                     <td>
                         <div className="flex flex-col">
                             <span className="fs-14 text-dark text-bold">{x?.fullname}</span>
-                            <span className="fs-12 family1 text-grey">{x?.email}</span>
+                            <span className="fs-14 family1 text-grey">{x?.email}</span>
                         </div>
                     </td>
                     <td>
-                        <span className="fs-12 family1 tex  text-grey">{x?.phone}</span>
+                        <span className="fs-14 family1 tex  text-grey">{x?.phone}</span>
                     </td>
                     <td>
-                        <span className="text-grey fs-12 family1">{x?.country ? x?.country : '-'}</span>
+                        <span className="text-grey fs-14 family1">{x?.country ? x?.country : '-'}</span>
                     </td>
                     <td>
-                        <span className="fs-12 family1 text-grey">
+                        <span className="fs-14 family1 text-grey">
                             {x?.isAdmin === true ?
                                 <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold false"> Admin</span>
                                 : <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold true"> Client</span>
@@ -125,7 +125,7 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                     </td>
 
                     <td>
-                        <span className="text-grey fs-12 family1 text-light">{depositdate}</span>
+                        <span className="text-grey fs-14 family1 text-light">{depositdate}</span>
 
                     </td>
                     <td>
@@ -150,25 +150,25 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                 {/* <Delete /> */}
                 <tr key={x?._id}>
                     <td>
-                        <span className="text-grey fs-12 family1">{x?.plan}</span>
+                        <span className="text-grey fs-14 family1">{x?.plan}</span>
                     </td>
                     <td>
-                        <span className="text-grey fs-12 family1">${x?.price}</span>
+                        <span className="text-grey fs-14 family1">${x?.price}</span>
                     </td>
                     <td>
-                        <span className="text-grey fs-12 family1">{x?.tier}</span>
+                        <span className="text-grey fs-14 family1">{x?.tier}</span>
                     </td>
                     {/* <td>
-                        <span className="fs-12 family1 text-grey">{x?.tier}</span>
+                        <span className="fs-14 family1 text-grey">{x?.tier}</span>
                     </td> */}
                     <td>
-                        <span className="fs-12 family1 text-grey">{userinvestmentStartdate !== 'Invalid date' ? userinvestmentStartdate : investmentStartdate}</span>
+                        <span className="fs-14 family1 text-grey">{userinvestmentStartdate !== 'Invalid date' ? userinvestmentStartdate : investmentStartdate}</span>
                     </td>
                     <td>
-                        <span className="fs-12 family1 text-grey">{userinvestmentEnddate !== 'Invalid date' ? userinvestmentEnddate :investmentEnddate}</span>
+                        <span className="fs-14 family1 text-grey">{userinvestmentEnddate !== 'Invalid date' ? userinvestmentEnddate :investmentEnddate}</span>
                     </td>
                     <td>
-                        <span className="fs-12 family1 text-grey">
+                        <span className="fs-14 family1 text-grey">
                             {x?.isPaid === true ?
                                 <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold true"> Active</span>
                                 : <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold false">Incoming</span>
@@ -176,7 +176,7 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                         </span>
                     </td>
                     {/* <td>
-                        <span className="text-grey fs-12 family1">${x?.profit}</span>
+                        <span className="text-grey fs-14 family1">${x?.profit}</span>
                     </td> */}
                 </tr>
             </>
@@ -190,13 +190,13 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                 {/* <Delete /> */}
                 <tr key={x?._id}>
                     <td>
-                        <span className="text-grey fs-12 family1">$ {x?.investment?.price}</span>
+                        <span className="text-grey fs-14 family1">$ {x?.investment?.price}</span>
                     </td>
                     <td>
-                        <span className="text-grey fs-12 family1">{x?.paymentMethod}</span>
+                        <span className="text-grey fs-14 family1">{x?.paymentMethod}</span>
                     </td>
                     <td>
-                        <span className="fs-12 family1 text-grey">
+                        <span className="fs-14 family1 text-grey">
                             {x?.isPaid === true ?
                                 <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold true"> Active</span>
                                 : <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold false">Incoming</span>
@@ -204,14 +204,14 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                         </span>
                     </td>
                     <td>
-                        <span className="fs-12 family1 text-grey">{x?.plan}</span>
+                        <span className="fs-14 family1 text-grey">{x?.plan}</span>
                     </td>
                     <td>
-                        <span className="fs-12 family1 text-grey">{depositdate}</span>
+                        <span className="fs-14 family1 text-grey">{depositdate}</span>
                     </td>
                    
                     {/* <td>
-                        <span className="text-grey fs-12 family1">${x?.profit}</span>
+                        <span className="text-grey fs-14 family1">${x?.profit}</span>
                     </td> */}
                 </tr>
             </>
@@ -225,25 +225,25 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                 {/* <Delete /> */}
                 <tr key={x?._id}>
                     <td>
-                        <span className="text-grey fs-12 family1">{x?.plan}</span>
+                        <span className="text-grey fs-14 family1">{x?.plan}</span>
                     </td>
                     <td>
-                        <span className="text-grey fs-12 family1">${x?.price}</span>
+                        <span className="text-grey fs-14 family1">${x?.price}</span>
                     </td>
                     <td>
-                        <span className="text-grey fs-12 family1">{x?.tier}</span>
+                        <span className="text-grey fs-14 family1">{x?.tier}</span>
                     </td>
                     {/* <td>
-                        <span className="fs-12 family1 text-grey">{x?.tier}</span>
+                        <span className="fs-14 family1 text-grey">{x?.tier}</span>
                     </td> */}
                     <td>
-                        <span className="fs-12 family1 text-grey">{userinvestmentStartdate !== 'Invalid date' ? userinvestmentStartdate : investmentStartdate}</span>
+                        <span className="fs-14 family1 text-grey">{userinvestmentStartdate !== 'Invalid date' ? userinvestmentStartdate : investmentStartdate}</span>
                     </td>
                     <td>
-                        <span className="fs-12 family1 text-grey">{userinvestmentEnddate !== 'Invalid date' ? userinvestmentEnddate : investmentEnddate}</span>
+                        <span className="fs-14 family1 text-grey">{userinvestmentEnddate !== 'Invalid date' ? userinvestmentEnddate : investmentEnddate}</span>
                     </td>
                     <td>
-                        <span className="fs-12 family1 text-grey">
+                        <span className="fs-14 family1 text-grey">
                             <Link to={`/account/dashboard/investment_withdrawal/${x?._id}`}
                             
                              style={{ fontSize: "1.2rem" }} className="tablespan tablespan_withdrawal fs-10 text-bold">Request Withdrawal</Link>
@@ -259,29 +259,29 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                 {/* <Delete /> */}
                 <tr key={x?._id}>
                     <td>
-                        <span className="text-grey fs-12 family1">{x?.plan}</span>
+                        <span className="text-grey fs-14 family1">{x?.plan}</span>
                     </td>
                     <td>
-                        <span className="text-grey fs-12 family1">${x?.price}</span>
+                        <span className="text-grey fs-14 family1">${x?.price}</span>
                     </td>
                     <td>
-                        <span className="text-grey fs-12 family1">{x?.tier}</span>
+                        <span className="text-grey fs-14 family1">{x?.tier}</span>
                     </td>
                     {/* <td>
-                        <span className="fs-12 family1 text-grey">{x?.tier}</span>
+                        <span className="fs-14 family1 text-grey">{x?.tier}</span>
                     </td> */}
                     <td>
-                        <span className="fs-12 family1 text-grey">
+                        <span className="fs-14 family1 text-grey">
                             {roiStartdate !== 'Invalid date' ? roiStartdate : investmentStartdate}
                         </span>
                     </td>k
                     <td>
-                        <span className="fs-12 family1 text-grey">
+                        <span className="fs-14 family1 text-grey">
                             {roiEnddate !== 'Invalid date' ? roiEnddate : investmentEnddate}
                         </span>
                     </td>
                     <td>
-                        <span className="fs-12 family1 text-grey">
+                        <span className="fs-14 family1 text-grey">
                             {x?.isPaid === true ?
                                 <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold true"> Active</span>
                                 : <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold false">Incoming</span>
@@ -289,7 +289,7 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                         </span>
                     </td>
                     <td>
-                        <span className="text-grey fs-12 family1">${x?.profit}</span>
+                        <span className="text-grey fs-14 family1">${x?.profit}</span>
                     </td>
                 </tr>
             </>
@@ -305,30 +305,30 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                     <td>
                         <span className="text-dark text-bold fs-14 family1">
                             {x?.user?.fullname}
-                            <span className="block fs-12 mt-2 text-light">{x?.user?.email}</span>
+                            <span className="block fs-14 mt-2 text-light">{x?.user?.email}</span>
                         </span>
                     </td>
                     <td>
-                        <span className="text-grey fs-12 family1">${x?.price}</span>
+                        <span className="text-grey fs-14 family1">${x?.price}</span>
                     </td>
                     {/* <td>
-                        <span className="text-grey fs-12 family1">{x?.tier}</span>
+                        <span className="text-grey fs-14 family1">{x?.tier}</span>
                     </td> */}
                     {/* <td>
-                        <span className="fs-12 family1 text-grey">{x?.tier}</span>
+                        <span className="fs-14 family1 text-grey">{x?.tier}</span>
                     </td> */}
                     <td>
-                        <span className="fs-12 family1 text-grey">
+                        <span className="fs-14 family1 text-grey">
                             {roiStartdate !== 'Invalid date' ? roiStartdate : investmentStartdate}
                         </span>
                     </td>
                     <td>
-                        <span className="fs-12 family1 text-grey">
+                        <span className="fs-14 family1 text-grey">
                             {roiEnddate !== 'Invalid date' ? roiEnddate : investmentEnddate}
                         </span>
                     </td>
                     <td>
-                        <span className="fs-12 family1 text-grey">
+                        <span className="fs-14 family1 text-grey">
                             {x?.isPaid === true ?
                                 <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold true"> Active</span>
                                 : <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold false">Incoming</span>
@@ -336,14 +336,14 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                         </span>
                     </td>
                     <td>
-                        <span className="text-grey fs-12 family1">${x?.profit}</span>
+                        <span className="text-grey fs-14 family1">${x?.profit}</span>
                     </td>
                     <td>
-                        <span style={{ gap: "5px" }} className="text-grey w-100 flex fs-12 family1">
-                            <Link to={`${x?._id}`} style={{ padding: "1rem" }} className="btn btn-1 flex items-center justify-center fs-12 family1">View</Link>
+                        <span style={{ gap: "5px" }} className="text-grey w-100 flex fs-14 family1">
+                            <Link to={`${x?._id}`} style={{ padding: "1rem" }} className="btn btn-1 flex items-center justify-center fs-14 family1">View</Link>
                             {/* {
 
-                                x?.isPaid !== false && <div style={{ padding: "1rem" }} className="btn fs-12 family1">Make Payment</div>
+                                x?.isPaid !== false && <div style={{ padding: "1rem" }} className="btn fs-14 family1">Make Payment</div>
                             } */}
                         </span>
                     </td>
@@ -356,17 +356,17 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
             {/* <Delete /> */}
             <tr key={x?._id}>
                 <td>
-                    <span className="fs-12 family1 text-grey">{x?.plan}</span>
+                    <span className="fs-14 family1 text-grey">{x?.plan}</span>
                 </td>
                 <td>
-                    <span className="text-grey fs-12 family1">$ {x?.price}</span>
+                    <span className="text-grey fs-14 family1">$ {x?.price}</span>
                 </td>
 
                 <td>
-                    <span className="text-grey fs-12 family1 text-light">Type 1</span>
+                    <span className="text-grey fs-14 family1 text-light">Type 1</span>
                 </td>
                 <td>
-                    <span className="text-grey fs-12 family1 text-light">{x?.date}</span>
+                    <span className="text-grey fs-14 family1 text-light">{x?.date}</span>
 
                 </td>
             </tr>
