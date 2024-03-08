@@ -60,7 +60,7 @@ height:100vh;
       h4 {
         font-size: 2.7rem;
          opacity: 0;
-    transition: all 1.6s ease;
+    transition: all 1.2s ease;
     &.active {
       opacity:1;
     }

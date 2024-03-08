@@ -38,7 +38,7 @@ const DashboardHeader: React.FC<HeaderProps> = ({ sidebar, setSidebar }) => {
                         <Link to={'/account/dashboard/investment_withdrawal'} className="btn btn-2 fs-12 text-bold">Withdraw funds</Link>
                     </div> */}
                     <div className="flex item-center profile_wrapper relative gap-4">
-                        
+
                         <div className="flex items-center gap-2">
                             <h4
                                 className="text-2xl auto text-start font-bold text-dark">
@@ -142,7 +142,7 @@ export const HeaderStyles = styled.div`
             }
         &:hover {
             color:var(--blue-2);
-            background: #c6c4c4;
+            background: #f0efef;
         }
     }
     .profile_avatar_large {
@@ -165,10 +165,10 @@ export const HeaderStyles = styled.div`
     .profile_dropdown{
         width:200px;
          opacity:0;
-        transform:scale(0.8);
+        transform:scale(0.86);
         transition:all .3s;
         visibility:hidden;
-        box-shadow:0 2px 4px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.08);
+        box-shadow:0 12px 24px rgba(0,0,0,.1);
         z-index:220;
         background:#fff;
         top:100%;

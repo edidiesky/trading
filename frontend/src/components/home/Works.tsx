@@ -5,14 +5,14 @@ const Works = () => {
         return (
             <div className="w-100">
                 <div className="w-90 auto flex column">
-                   <div className="overflow-hidden">
+                    <div className="overflow-hidden">
                         <h2
                             data-aos="fade-up"
                             data-aos-duration="1200"
                             className="text-extra-bold text-[50px] leading-[1.3]">Industry-leading prices
 
                         </h2>
-                   </div>
+                    </div>
                     <div className="overflow-hidden">
                         <span
                             data-aos="fade-up"
@@ -21,9 +21,13 @@ const Works = () => {
                             Get ultra-competitive spreads and commissions across all asset classes. Receive even better rates as your volume increases.
                         </span>
                     </div>
-                   
+
                     <div className="w-100 pt-24 grid grid-cols-2 sm:grid-cols-2  lg:grid-cols-4 gap-x-8 gap-y-20">
-                        <div className="w-100 bg-[#F6F7F8] rounded-2xl pt-8 px-2">
+                        <div
+                            data-aos="fade"
+                            data-aos-delay='10'
+                            data-aos-duration="1200"
+                            className="w-100 bg-[#F6F7F8] rounded-2xl pt-8 px-2">
                             <div className="w-100">
                                 <div className="w-90 auto flex flex-col">
                                     <h3 className="fs-16 family1 font-medium text-blue">
@@ -37,7 +41,11 @@ const Works = () => {
                             </div>
                         </div>
 
-                        <div className="w-100 bg-[#F6F7F8] rounded-2xl pt-8 px-2">
+                        <div
+                            data-aos="fade"
+                            data-aos-delay='10'
+                            data-aos-duration="1200"
+                            className="w-100 bg-[#F6F7F8] rounded-2xl pt-8 px-2">
                             <div className="w-100">
                                 <div className="w-90 auto flex flex-col">
                                     <h3 className="fs-16 family1 font-medium text-blue">
@@ -51,7 +59,11 @@ const Works = () => {
                             </div>
                         </div>
 
-                        <div className="w-100 bg-[#F6F7F8] rounded-2xl pt-8 px-2">
+                        <div
+                            data-aos="fade"
+                            data-aos-delay='10'
+                            data-aos-duration="1200"
+                            className="w-100 bg-[#F6F7F8] rounded-2xl pt-8 px-2">
                             <div className="w-100">
                                 <div className="w-90 auto flex flex-col">
                                     <h3 className="fs-16 family1 font-medium text-blue">
@@ -65,7 +77,11 @@ const Works = () => {
                             </div>
                         </div>
 
-                        <div className="w-100 bg-[#F6F7F8] rounded-2xl pt-8 px-2">
+                        <div
+                            data-aos="fade"
+                            data-aos-delay='10'
+                            data-aos-duration="1200"
+                            className="w-100 bg-[#F6F7F8] rounded-2xl pt-8 px-2">
                             <div className="w-100">
                                 <div className="w-90 auto flex flex-col">
                                     <h3 className="fs-16 family1 font-medium text-blue">
