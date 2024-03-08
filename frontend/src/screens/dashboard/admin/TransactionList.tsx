@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from "styled-components";
+import { BiChevronRight, BiChevronLeft } from 'react-icons/bi'
 import { TransactionsPlan } from '../../../data/courses';
 import { Table } from '../../../components/common/styles';
 import TableCard from '../../../components/common/TableCard';
@@ -8,11 +9,12 @@ import { getAllTransactions } from '@/features/transaction/transactionReducer';
 
 const TransactionList = () => {
     const dispatch = useAppDispatch()
-    const { transactions } = useAppSelector(store => store.transaction)
+    const [page, setPage] = useState(1)
+    const { transactions, noOfPages } = useAppSelector(store => store.transaction)
     React.useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-        dispatch(getAllTransactions())
-    }, []);
+        dispatch(getAllTransactions({ page: page }))
+    }, [page]);
 
     return (
         <HistorytStyles style={{ minHeight: "100vh" }} className="w-100">
@@ -58,9 +60,19 @@ const TransactionList = () => {
                     <div className="w-100 py-1 flex item-center justify-space">
                         <h5 className="fs-14 text-grey2 family1">
                             Showing 0 to 0 of 0 entries</h5>
-                        <div className="flex item-center justify-end gap-2">
-                            <button className="btn fs-14 text-white text-bold">Previous</button>
-                            <button className="btn fs-14 text-white text-bold">Next</button>
+                        <div className="flex item-center text-4xl family1 font-extrabold justify-end gap-2">
+                            <span
+                                onClick={() => setPage(page === 0 ? 1 : page - 1)}
+                                className="w-20 h-20 flex items-center justify-center rounded-full bg-[#fff] shadow-2xl text-2xl text-text_dark_1 text-bold">
+                                <BiChevronLeft fontSize={'24px'} />
+                            </span>
+                            {page || 1}
+                            <span
+                                onClick={() => setPage(page + 1 > noOfPages! ? 1 : page + 1)}
+                                className="w-20 h-20 flex items-center rounded-full bg-[#fff] shadow-2xl justify-center text-2xl text-text_dark_1 text-bold">
+                                <BiChevronRight fontSize={'24px'} />
+                            </span>
+
                         </div>
                     </div>
                 </div>

@@ -94,10 +94,18 @@ const DeleteTransaction = asyncHandler(async (req: CustomInterface, res: Respons
 // PRIVATE/ADMIN
 const GetAllTransaction = asyncHandler(async (req: CustomInterface, res: Response) => {
   // 
-  const transaction = await Transaction.find({}).populate('user', 'fullname username email country')
+  const page = req.query.page as unknown as number || 1
+  const limit = req.query.limit as unknown as number || 3
+  const skip = (page - 1) * limit
+
+  const transaction = await Transaction.find({}).limit(limit!).skip(skip!)
+  .populate('user', 'fullname username email country')
+  const totalUser = await Transaction.countDocuments({})
+  const totalPages = Math.ceil(totalUser / limit)
+
    res.setHeader("Content-Type", "text/html");
   res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
-  res.status(200).json({ transaction })
+  res.status(200).json({ transaction, totalPages })
 }
 )
 

@@ -12,19 +12,21 @@ interface CustomInterface extends ExpressRequest {
 //  Public
 const GetAllUser = asyncHandler(async (req: ExpressRequest, res: Response) => {
   // no of page
-  const page = req.query.page as unknown as number || 1 
-  const limit = req.query.limit as unknown as number || 6 
+  const page = req.query.page as unknown as number || 1
+  const limit = req.query.limit as unknown as number || 4
   const skip = (page - 1) * limit
   // no of limit
   // no of skip
   const user = await User.find({}).limit(limit!).skip(skip!)
+  const totalUser = await User.countDocuments({})
+  const totalPages = Math.ceil(totalUser / limit)
   if (!user) {
     res.status(404);
     throw new Error("The user does not exist");
   }
   res.setHeader("Content-Type", "text/html");
   res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
-  res.status(200).json({ user });
+  res.status(200).json({ user, totalPages });
 
 });
 

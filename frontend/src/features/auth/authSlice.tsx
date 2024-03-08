@@ -32,6 +32,7 @@ interface authState {
   alertText?: any,
   showAlert?: boolean,
   alertType?: string,
+  noOfPages?: number,
 
 
 }
@@ -63,6 +64,10 @@ const initialState: authState = {
   updateuserprofileisLoading:false,
   updateuserprofileisSuccess:false,
   updateuserprofileisError:false,
+  noOfPages: 1,
+
+
+
 
 
 }
@@ -197,7 +202,8 @@ export const authSlice = createSlice({
     builder.addCase(GetAllUserProfile.fulfilled, (state, action) => {
       state.userprofileisSuccess = true
       state.userprofileisLoading = false
-      state.users = action.payload
+      state.users = action.payload.user
+      state.noOfPages = action.payload.totalPages
 
     })
     builder.addCase(GetAllUserProfile.rejected, (state, action) => {

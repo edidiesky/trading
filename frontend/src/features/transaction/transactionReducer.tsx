@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios, { AxiosError } from "axios";
 
-const tweeturl: string = `${import.meta.env.VITE_API_BASE_URLS}/transaction`;
+const trannsactionUrl: string = `${import.meta.env.VITE_API_BASE_URLS}/transaction`;
 type tweetdatatype = {
   paymentMethod?: any;
   amount?: any;
@@ -11,6 +11,9 @@ type tweetdatatype = {
   _id?: string;
   status?: string;
   plan?: string;
+  transaction?: any,
+  totalPages?: number,
+  page?: number,
 }
 
 interface BookMarkATweetPayload {
@@ -22,12 +25,12 @@ type KnownError = {
   errorMessage: string;
 }
 
-export const getAllTransactions = createAsyncThunk<string, void, {
+export const getAllTransactions = createAsyncThunk < tweetdatatype, tweetdatatype, {
   rejectValue: KnownError,
 
 }>(
   "getAllTweet",
-  async (_, { rejectWithValue, getState }) => {
+  async ({ page }, { rejectWithValue, getState }) => {
     try {
       const { auth } = getState() as { auth: { token: string } };
       const config = {
@@ -35,8 +38,8 @@ export const getAllTransactions = createAsyncThunk<string, void, {
           authorization: `Bearer ${auth.token}`,
         },
       };
-      const response = await axios.get(tweeturl, config);
-      const tweetData = response.data.transaction
+      const response = await axios.get(`${import.meta.env.VITE_API_BASE_URLS}/transaction/?page=${page}`, config);
+      const tweetData = response.data
       // console.log(tweetData)
       return tweetData;
     } catch (err: any) {
@@ -63,7 +66,7 @@ export const CreateTransactions = createAsyncThunk<{
           authorization: `Bearer ${auth.token}`,
         },
       };
-      const { data } = await axios.post(tweeturl, tweetData, config);
+      const { data } = await axios.post(trannsactionUrl, tweetData, config);
       return data.transaction;
 
 

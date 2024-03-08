@@ -15,15 +15,16 @@ type RegisterData = {
   display_name?: string,
   fullname?: string,
   phone?: string,
-  _id?: string
-
+  _id?: string,
+  page?: number,
+  totalPages?: number,
 }
 
 type KnownError = {
   errorMessage: string;
 }
 
-export const registerUser = createAsyncThunk < RegisterData, RegisterData,{
+export const registerUser = createAsyncThunk<RegisterData, RegisterData, {
   rejectValue: KnownError,
 
 }>(
@@ -47,7 +48,7 @@ export const registerUser = createAsyncThunk < RegisterData, RegisterData,{
   }
 );
 
-export const loginUser = createAsyncThunk < RegisterData, RegisterData,{
+export const loginUser = createAsyncThunk<RegisterData, RegisterData, {
   rejectValue: KnownError,
 }>(
   "loginUser",
@@ -172,11 +173,11 @@ export const GetUserProfile = createAsyncThunk<{
 
 
 // Getuser profile
-export const GetAllUserProfile = createAsyncThunk<{
+export const GetAllUserProfile = createAsyncThunk<RegisterData, RegisterData, {
   rejectValue: KnownError,
 }>(
   "getalluserprofile",
-  async (_, { rejectWithValue, getState }) => {
+  async ({ page }, { rejectWithValue, getState }) => {
 
     try {
       const { auth } = getState() as { auth: { userInfo: { _id: String }, token: string } };
@@ -187,10 +188,10 @@ export const GetAllUserProfile = createAsyncThunk<{
         },
       };
       const response = await axios.get(
-        `${import.meta.env.VITE_API_BASE_URLS}/user`,
+        `${import.meta.env.VITE_API_BASE_URLS}/user/?page=${page}`,
         config
       );
-      return response.data.user;
+      return response.data;
 
     } catch (err: any) {
       const message = err.response && err.response.data.message

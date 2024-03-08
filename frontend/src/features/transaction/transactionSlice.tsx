@@ -38,7 +38,7 @@ interface transactionState {
   alertText?: any,
   showAlert?: boolean,
   alertType?: string,
-
+  noOfPages?: number,
 
 
 }
@@ -68,6 +68,8 @@ const initialState: transactionState = {
  updatetransactionisSuccess: false,
  updatetransactionisError: false,
 
+  noOfPages: 1,
+
 
 }
 
@@ -93,7 +95,8 @@ export const transactionSlice = createSlice({
     builder.addCase(getAllTransactions.fulfilled, (state, action) => {
       state.transactionisSuccess = true
       state.transactionisLoading = false
-      state.transactions = action.payload
+      state.transactions = action.payload.transaction
+      state.noOfPages = action.payload.totalPages
     })
     builder.addCase(getAllTransactions.rejected, (state, action) => {
       state.transactionisSuccess = false
