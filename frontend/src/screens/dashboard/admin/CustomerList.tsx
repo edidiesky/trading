@@ -29,9 +29,6 @@ const CustomerList = () => {
                     </span>
                 </div>
                 <div className="trading_card w-100 flex column gap-4">
-                    <div className="w-100 justify-end flex item-center">
-                        <input className="input" placeholder='Search for ROI CustomerList'></input>
-                    </div>
                     <div className="w-100">
                         {
                             <Table>
@@ -64,13 +61,13 @@ const CustomerList = () => {
                         <div className="flex item-center text-4xl family1 font-extrabold justify-end gap-2">
                             <span
                                 onClick={() => setPage(page === 0 ? 1 : page - 1)}
-                                className="w-20 h-20 flex items-center justify-center rounded-full bg-[#fff] shadow-2xl text-2xl text-text_dark_1 text-bold">
+                                className="w-16 h-16 flex cursor-pointer items-center justify-center rounded-full bg-[#000] shadow-2xl text-2xl text-white text-bold">
                                 <BiChevronLeft fontSize={'24px'} />
                             </span>
                             {page || 1}
                             <span
                                 onClick={() => setPage(page + 1 > noOfPages! ? 1 : page + 1)}
-                                className="w-20 h-20 flex items-center rounded-full bg-[#fff] shadow-2xl justify-center text-2xl text-text_dark_1 text-bold">
+                                className="w-16 h-16 flex cursor-pointer items-center rounded-full bg-[#000] shadow-2xl justify-center text-2xl text-white text-bold">
                                 <BiChevronRight fontSize={'24px'} />
                             </span>
 

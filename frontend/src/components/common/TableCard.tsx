@@ -338,15 +338,6 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                     <td>
                         <span className="text-grey fs-14 family1">${x?.profit}</span>
                     </td>
-                    <td>
-                        <span style={{ gap: "5px" }} className="text-grey w-100 flex fs-14 family1">
-                            <Link to={`${x?._id}`} style={{ padding: "1rem" }} className="btn btn-1 flex items-center justify-center fs-14 family1">View</Link>
-                            {/* {
-
-                                x?.isPaid !== false && <div style={{ padding: "1rem" }} className="btn fs-14 family1">Make Payment</div>
-                            } */}
-                        </span>
-                    </td>
                 </tr>
             </>
         );

@@ -29,9 +29,6 @@ const CustomerList = () => {
                     </span>
                 </div>
                 <div className="trading_card w-100 flex column gap-4">
-                    <div className="w-100 justify-end flex item-center">
-                        <input className="input" placeholder='Search for ROI CustomerList'></input>
-                    </div>
                     <div className="w-100">
                         <Table>
                             <div className="TableContainer">
@@ -45,7 +42,7 @@ const CustomerList = () => {
                                             <th>End Date</th>
                                             <th>Status</th>
                                             <th>Profit</th>
-                                            <th>Manage</th>
+                                            {/* <th>Manage</th> */}
                                         </tr>
                                     </thead>
                                     <tbody>
