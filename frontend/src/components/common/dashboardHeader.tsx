@@ -33,10 +33,10 @@ const DashboardHeader: React.FC<HeaderProps> = ({ sidebar, setSidebar }) => {
                     </div> */}
                 </div>
                 <div className="flex item-center gap-2">
-                    {/* <div className="hidden md:flex item-center gap-2">
+                    <div className="hidden md:flex item-center gap-2">
                         <Link to={'/account/dashboard/deposit'} className="btn fs-12 text-bold">Fund Your Account</Link>
                         <Link to={'/account/dashboard/investment_withdrawal'} className="btn btn-2 fs-12 text-bold">Withdraw funds</Link>
-                    </div> */}
+                    </div>
                     <div className="flex item-center profile_wrapper relative gap-4">
 
                         <div className="flex items-center gap-2">

@@ -8,7 +8,7 @@ import { SlSupport } from "react-icons/sl";
 import { FaHouse } from "react-icons/fa6";
 import { IoBriefcase } from "react-icons/io5";
 import { useAppSelector } from "@/hooks/reduxtoolkit";
- const sidebarData = [
+const sidebarData = [
     {
         icon: <FaHouse />,
         title: "Dashboard",
@@ -24,7 +24,7 @@ import { useAppSelector } from "@/hooks/reduxtoolkit";
         title: "Transaction History",
         path: "accounthistory",
     },
-    
+
     //  {
     //      icon: <MdOutlineCurrencyExchange />,
     //      title: "Crypto Exchange",
@@ -35,11 +35,11 @@ import { useAppSelector } from "@/hooks/reduxtoolkit";
         title: "Invest",
         path: "invest",
     },
-     {
-         icon: <TbChartHistogram />,
-         title: "Investment History",
-         path: "investment_history",
-     },
+    {
+        icon: <TbChartHistogram />,
+        title: "Investment History",
+        path: "investment_history",
+    },
     {
         icon: <SlSupport />,
         title: "Help/Support ",
@@ -66,7 +66,7 @@ const AdminSidebarData = [
         icon: <IoBriefcase />,
         title: "Manage Transaction/ Deposit",
         path: "TransactionList",
-    }, 
+    },
     {
         icon: <TbChartHistogram />,
         title: "Investment History",
@@ -76,7 +76,7 @@ const AdminSidebarData = [
         icon: <IoBriefcase />,
         title: "Manage Customers",
         path: "Manage_Customers",
-    }, 
+    },
     {
         icon: <FaCoins />,
         title: "Invest",
@@ -93,16 +93,16 @@ const DashboardSidebar: React.FC<sidebarProps> = ({ active }) => {
 
         <HeaderStyles className={`w-100 flex column gap-2`}>
             <div className="w-full flex items-center flex-col justify-space gap-4">
-               <div className="flex flex-col w-full items-start px-2 gap-4 py-1">
+                <div className="flex flex-col w-full items-start px-2 gap-4 py-1">
                     <h4 className="text-3xl font-bold uppercase text-dark">RockTrading</h4>
                     {/* <div className="hidden md:flex item-center gap-2">
                         <Link to={'/account/dashboard/deposit'} className="btn fs-12 text-bold">Fund Your Account</Link>
                         <Link to={'/account/dashboard/investment_withdrawal'} className="btn btn-2 fs-12 text-bold">Withdraw funds</Link>
                     </div> */}
-               </div>
+                </div>
                 <ul className="flex flex-col gap-1 w-100">
                     {
-                        userInfo?.isAdmin ?<>
+                        userInfo?.isAdmin ? <>
                             {
                                 AdminSidebarData?.map((x) => {
                                     return (
@@ -115,32 +115,32 @@ const DashboardSidebar: React.FC<sidebarProps> = ({ active }) => {
                                         >
                                             {x.icon}
 
+                                            {<span className="text-center lg:text-start">{x.title}</span>}
+                                        </NavLink>
+                                    );
+                                })
+                            }
+                        </> : <>
+                            {
+                                sidebarData.map((x) => {
+                                    return (
+                                        <NavLink
+                                            className={({ isActive, isPending }) =>
+                                                isActive ? "active fs-16 text-dark family1 text-extra-bold" : "fs-16 text-dark family1 text-extra-bold"
+                                            }
+                                            to={`/account/dashboard/${x.path}`}
+                                            end
+                                        >
+                                            {x.icon}
+
                                             {<span>{x.title}</span>}
                                         </NavLink>
                                     );
                                 })
-                            } 
-                        </>: <>
-                                {
-                                    sidebarData.map((x) => {
-                                        return (
-                                            <NavLink
-                                                className={({ isActive, isPending }) =>
-                                                    isActive ? "active fs-16 text-dark family1 text-extra-bold" : "fs-16 text-dark family1 text-extra-bold"
-                                                }
-                                                to={`/account/dashboard/${x.path}`}
-                                                end
-                                            >
-                                                {x.icon}
-
-                                                {<span>{x.title}</span>}
-                                            </NavLink>
-                                        );
-                                    })
-                                }
+                            }
                         </>
                     }
-                   
+
                 </ul>
             </div>
         </HeaderStyles>
@@ -173,6 +173,14 @@ export const HeaderStyles = styled.div`
         /* justify-content: center; */
         gap: 2rem;
         position: relative;
+
+         @media (max-width: 1080px) {
+         flex-direction: column;
+         justify-content:center;
+           padding:14px;
+            font-size: 1.3rem;
+             gap: 1rem;
+        }
 
         &:hover {
           background: #DEF2B1;

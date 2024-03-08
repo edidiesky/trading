@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Outlet } from "react-router-dom";
@@ -48,12 +49,17 @@ const LayoutWrapper = styled.div`
         min-width: 280px;
 
         transition: all .3s;
+        @media (max-width:980px) {
+           min-width: 180px;
+        }
         @media (max-width:780px) {
           display: none;
         }
         &.active {
         min-width: 280px;
-
+ @media (max-width:980px) {
+           min-width: 180px;
+        }
         }
       }
     }

@@ -192,7 +192,10 @@ const WidgetStyles = styled.div`
     /* grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); */
      grid-template-columns: 1fr 1fr 1fr;
     @media (max-width:780px) {
-        grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    }
+    @media (max-width:480px) {
+        grid-template-columns: 1fr;
     }
     .widget_card {
         padding:3rem 2rem;
