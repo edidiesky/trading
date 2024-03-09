@@ -65,25 +65,25 @@ const Navbar = () => {
                         userInfo ? 
                         <div className="w-100 flex items-center gap-4">
                               <div className="header_list item-center gap-3 lg:gap-20 justify-end">
-                                <Link to={'/'} className="fs-14 family1 font-medium uppercase text-dark">
+                                <Link to={'/'} className="fs-14 family1 font-medium hover:text-[#19a38c] uppercase text-dark">
                                     Home
                                 </Link>
-                                <Link to={'/market'} className="fs-14 family1 font-medium uppercase text-dark">
+                                <Link to={'/market'} className="fs-14 family1 font-medium hover:text-[#19a38c] uppercase text-dark">
                                     Markets
                                 </Link>
-                                <Link to={'/about'} className="fs-14 family1 font-medium uppercase text-dark">
+                                <Link to={'/about'} className="fs-14 family1 font-medium hover:text-[#19a38c] uppercase text-dark">
                                     About Us
                                 </Link>
 
-                                <Link to={'/faq'} className="fs-14 family1 font-medium uppercase text-dark">
+                                <Link to={'/faq'} className="fs-14 family1 font-medium hover:text-[#19a38c] uppercase text-dark">
                                     FAQ
                                 </Link>
-                                <Link to={'/contact'} className="fs-14 family1 font-medium uppercase text-dark">
+                                <Link to={'/contact'} className="fs-14 family1 font-medium hover:text-[#19a38c] uppercase text-dark">
                                     Contact
                                 </Link>
                             </div>
                                 <div className="flex item-center profile_wrapper relative gap-4">
-                                    <div className="profile_avatar flex item-center justify-center fs-16 text-font-medium text-dark">{userInfo?.username && userInfo?.username[0]}</div>
+                                    <div className="profile_avatar flex item-center justify-center fs-16 text-font-medium text-white">{userInfo?.username && userInfo?.username[0]}</div>
                                     <div className="profile_dropdown absolute">
                                         <div className="w-100 flex column gap-2">
                                             <div className="flex profile_dropdown_bottom column w-100">
@@ -99,26 +99,26 @@ const Navbar = () => {
                         </div>
                         : <div className="header_list item-center gap-6 lg:gap-32 justify-end">
                             <div className="header_list item-center gap-3 lg:gap-20 justify-end">
-                                <Link to={'/'} className="fs-14 family1 font-medium uppercase text-dark">
+                                <Link to={'/'} className="fs-14 family1 font-medium hover:text-[#19a38c] uppercase text-dark">
                                     Home
                                 </Link>
-                                <Link to={'/market'} className="fs-14 family1 font-medium uppercase text-dark">
+                                <Link to={'/market'} className="fs-14 family1 font-medium hover:text-[#19a38c] uppercase text-dark">
                                     Markets
                                 </Link>
-                                {/* <Link to={'/trading'} className="fs-14 family1 font-medium uppercase text-dark">
+                                {/* <Link to={'/trading'} className="fs-14 family1 font-medium hover:text-[#19a38c] uppercase text-dark">
                         Trading Assets
                     </Link> */}
-                                <Link to={'/about'} className="fs-14 family1 font-medium uppercase text-dark">
+                                <Link to={'/about'} className="fs-14 family1 font-medium hover:text-[#19a38c] uppercase text-dark">
                                     About Us
                                 </Link>
 
-                                <Link to={'/faq'} className="fs-14 family1 font-medium uppercase text-dark">
+                                <Link to={'/faq'} className="fs-14 family1 font-medium hover:text-[#19a38c] uppercase text-dark">
                                     FAQ
                                 </Link>
-                                {/* <Link to={'/documents'} className="fs-14 family1 font-medium uppercase text-dark">
+                                {/* <Link to={'/documents'} className="fs-14 family1 font-medium hover:text-[#19a38c] uppercase text-dark">
                         Documents
                     </Link> */}
-                                <Link to={'/contact'} className="fs-14 family1 font-medium uppercase text-dark">
+                                <Link to={'/contact'} className="fs-14 family1 font-medium hover:text-[#19a38c] uppercase text-dark">
                                     Contact
                                 </Link>
                             </div>
