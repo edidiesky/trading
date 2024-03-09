@@ -119,76 +119,76 @@ const ManageCustomers = () => {
                         </span>
                     </div>
                     <div className="flex items-center justify-end">
-                        <button onClick={handleUpdateTransaction} className="btn fs-14 text-bold">Update</button>
+                        <button onClick={handleUpdateTransaction} className="btn fs-14 text-bold">Update Your Profile</button>
                     </div>
                 </div>
-                <div className="w-100 trading_wrapper_bottom pt-12 flex flex-col gap-12">
-                    <div className="w-100 grid grid-cols-1 sm:grid-cols-2 gap-4 ">
+                <div className="w-full md:w-[700px] mx-auto trading_wrapper_bottom pt-12 flex flex-col gap-12">
+                    <div className="w-100 grid grid-cols-1 gap-4 ">
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1 font-medium">UserName</h5>
+                            <h5 className="text-2xl family1 font-medium">UserName</h5>
                             <input
                                 value={username}
                                 name='username'
                                 type="text"
                                 placeholder='Customers Usrename'
                                 onChange={(e) => setUsername(e.target.value)}
-                                className="input w-100 text-xl text-dark" />
+                                className="input w-100 text-2xl text-dark" />
                         </div>
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1 font-medium">My FullName</h5>
+                            <h5 className="text-2xl family1 font-medium">My FullName</h5>
                             <input type="text"
                                 name='fullname'
                                 onChange={(e) => setFullName(e.target.value)}
                                 value={fullname} placeholder='My FullName'
-                                className="input w-100 text-xl text-dark" />
+                                className="input w-100 text-2xl text-dark" />
                         </div>
                     </div>
 
-                    <div className="w-100 grid grid-cols-1 sm:grid-cols-2 gap-4 ">
+                    <div className="w-100 grid grid-cols-1 gap-4 ">
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1 font-medium">Email</h5>
+                            <h5 className="text-2xl family1 font-medium">Email</h5>
                             <input
                                 value={email}
                                 name='email'
                                 type="text"
                                 onChange={(e) => setEmail(e.target.value)}
                                 placeholder='My Email'
-                                className="input w-100 text-xl text-dark" />
+                                className="input w-100 text-2xl text-dark" />
                         </div>
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1 font-medium">Country</h5>
+                            <h5 className="text-2xl family1 font-medium">Country</h5>
                             <input
                                 type="text"
                                 value={country}
                                 onChange={(e) => setCountry(e.target.value)}
 
                                 placeholder='Country'
-                                className="input w-100 text-xl text-dark" />
+                                className="input w-100 text-2xl text-dark" />
                         </div>
                     </div>
 
-                    <div className="w-100 grid grid-cols-1 sm:grid-cols-2 gap-4 ">
+                    {/* <div className="w-100 grid grid-cols-1 sm:grid-cols-2 gap-4 ">
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1 font-medium">Deposit ($)</h5>
+                            <h5 className="text-2xl family1 font-medium">Deposit ($)</h5>
                             <input
                                 value={deposit}
                                 name='deposit'
                                 type="number"
                                 onChange={(e) => setDeposit(e.target.value)}
                                 placeholder='$1000'
-                                className="input w-100 text-xl text-dark" />
+                                className="input w-100 text-2xl text-dark" />
                         </div>
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1 font-medium">Bonus ($)</h5>
+                            <h5 className="text-2xl family1 font-medium">Bonus ($)</h5>
                             <input
                                 value={bonus}
                                 name='bonus'
                                 type="number"
                                 onChange={(e) => setBonus(e.target.value)}
                                 placeholder='$1000'
-                                className="input w-100 text-xl text-dark" />
+                                className="input w-100 text-2xl text-dark" />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </HistorytStyles>
@@ -214,6 +214,7 @@ const HistorytStyles = styled.div`
     }
        .trading_wrapper_bottom {
          padding:1rem 4rem;
+         
     }
     .trading_card {
         width:100%;

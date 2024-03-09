@@ -99,8 +99,7 @@ const HistorytStyles = styled.div`
         width:60%;
         padding:3rem 5rem;
         background-color: #fff;
-        box-shadow: var(--shadow);
-         /* min-width: 500px; */
+        border-radius:20px;
            @media (max-width:780px) {
             min-width:100%;
         }

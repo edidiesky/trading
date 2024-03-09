@@ -117,7 +117,7 @@ const ManageCustomers = () => {
                         </span>
                     </div>
                     <div className="flex items-center justify-end">
-                        <button onClick={handleUpdateTransaction} className="btn fs-14 text-bold">Update</button>
+                        <button onClick={handleUpdateTransaction} className="btn fs-14 text-bold">Update Customers Profile</button>
                     </div>
                 </div>
                 <div className="w-100 trading_wrapper_bottom pt-12 flex flex-col gap-12">

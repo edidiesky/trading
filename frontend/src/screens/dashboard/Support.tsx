@@ -12,14 +12,14 @@ const Support = () => {
                 <div className="trading_card flex column gap-4 w-100">
                     <div className="flex column w-100 item-center justify-center gap-1">
                         <h2 className="fs-45 text-dark">
-                           RockTrading Support
+                            Terratextrading Support
                         </h2>
                         <span className="fs-16 family1 w-50 text-light text-center text-grey2">
                             For inquiries, suggestions or complains. Mail us
                         </span>
 
                         <span className="fs-30 family1 w-100 text-light text-center text-blue">
-                            support@RockTrading.com
+                            support@Terratextrading.com
                         </span>
                     </div>
                     <div className="formarea auto flex column gap-2">
@@ -28,7 +28,7 @@ const Support = () => {
                             <textarea placeholder='Send us a message' className="input area w-100"></textarea>
 
                         </div>
-                      <button className="btn fs-18 text-white">Send Us A Message</button>
+                        <button className="btn fs-18 text-white">Send Us A Message</button>
                     </div>
                 </div>
             </div>
@@ -47,6 +47,7 @@ const HistorytStyles = styled.div`
     .trading_card {
         width:100%;
         padding:6rem 2rem;
+        border-radius:20px;
         background-color: #fff;
         border:1px solid rgba(0,0,0,.1);
         .formarea {

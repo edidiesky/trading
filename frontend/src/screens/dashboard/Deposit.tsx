@@ -21,7 +21,7 @@ const Deposit = () => {
     }, []);
     const paymentData = {
         paymentMethod: "Bitcoin",
-        price:amount,
+        price: amount,
         plan: "Deposit Only"
     }
     // console.log(paymentData)
@@ -47,7 +47,7 @@ const Deposit = () => {
                 <form className="trading_card w-100 flex column gap-4">
 
                     <div className="w-100 flex column gap-1 item-start">
-                        <h5 className="fs-18 text-bold">Enter your Amount</h5>
+                        <h5 className="fs-18 family1 uppercase text-bold">Enter your Amount</h5>
                         <input
                             required
                             className="input"
@@ -86,7 +86,7 @@ const Deposit = () => {
 
 const HistorytStyles = styled.div`
   width: 100%;
-  margin: 2rem auto;
+  margin: 0 auto;
   .trading_wrapper {
     width:95%;
     .input {
@@ -104,19 +104,26 @@ const HistorytStyles = styled.div`
     }
     .trading_card {
         width:60%;
-        padding:3rem 5rem;
+        padding:5rem 5rem;
         background-color: #fff;
-        box-shadow: var(--shadow);
+        border-radius: 20px;
+        /* box-shadow: var(--shadow); */
          /* min-width: 500px; */
            @media (max-width:780px) {
             min-width:100%;
         }
 
         .icon_trading{
-         min-width: 300px;
+         min-width:160px;
 
-        padding:2rem 2.5rem;
-        box-shadow: var(--shadow);
+        padding:1.8rem 2.5rem;
+        cursor: pointer;
+        transition: all .4s;
+        border-radius: 20px;
+        border: 1px solid rgba(0,0,0,.1);
+        &:hover {
+            box-shadow: var(--shadow);
+        }
         background-color: #fff;
         @media (max-width:780px) {
             min-width:100%;

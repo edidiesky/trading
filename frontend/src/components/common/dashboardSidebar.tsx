@@ -189,7 +189,7 @@ export const HeaderStyles = styled.div`
         }
         &.active {
           position: relative;
-          background:#DEF2B1;
+          background:#EDDDF5;
            box-shadow: 0 2px 3px rgba(0, 0, 0, .2);
            svg {
             color:var(--dark-1);
