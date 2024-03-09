@@ -137,7 +137,7 @@ const Students = () => {
             status: "success",
             isPaid: true
         }
-        console.log(packagePaymentData)
+        // console.log(packagePaymentData)
         dispatch(CreateInvestments(packagePaymentData))
         dispatch(CreateRoi(packagePaymentData))
         dispatch(CreateTransactions(packagePaymentData))
@@ -251,11 +251,11 @@ const Students = () => {
                                     </div>
                                     <div className="w-100 flex family1 column gap-1">
                                         <h4 className="fs-14 text-bold">Amount to invest: (${x.amount} default)</h4>
-                                        <input
+                                        {/* <input
                                             value={investmentAmount1}
                                             onChange={(e) => setInvestmentAmount1(e.target.value)}
-                                            className="input w-100" type='number' placeholder={`${x.amount}`}></input>
-                                        <button onClick={() => handlePayment(x.amount, x.title)} className="btn btn-2 shadow-2xl  fs-16 text-bold text-white">Join Plan</button>
+                                            className="input w-100" type='number' placeholder={`${x.amount}`}></input> */}
+                                        <button onClick={() => handlePayment(x.amount, x.title)} className="btn btn-2 shadow-2xl mt-8 fs-16 text-bold text-white">Join Plan</button>
                                     </div>
                                 </div>
 

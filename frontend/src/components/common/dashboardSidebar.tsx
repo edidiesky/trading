@@ -151,7 +151,6 @@ const DashboardSidebar: React.FC<sidebarProps> = ({ active }) => {
 export const HeaderStyles = styled.div`
     padding:2rem 1.5rem;
     width:100%;
-    background:#F9F6FF;
     position:absolute;
     top:0;
     left:0;

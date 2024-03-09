@@ -220,11 +220,13 @@ const ManageCustomers = () => {
 const HistorytStyles = styled.div`
   width: 100%;
   margin: 0 auto;
+  padding-bottom: 4rem;
   .proof_image_wrapper {
 
   }
   .trading_wrapper {
     width:95%;
+       border-radius: 20px;
     /* box-shadow: var(--shadow); */
         background-color: #fff;
 

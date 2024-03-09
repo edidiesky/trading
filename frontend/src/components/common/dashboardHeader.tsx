@@ -78,7 +78,6 @@ const DashboardHeader: React.FC<HeaderProps> = ({ sidebar, setSidebar }) => {
 export const HeaderStyles = styled.div`
     padding:1rem 0;
     width:100%;
-    background:#F9F6FF;
     z-index:20;
     min-height:10rem;
     position: sticky;

@@ -43,7 +43,8 @@ export const Table = styled.div`
         tr {
           text-align: start;
           z-index: 200;
-          background: #f7f7f7;
+          color: #Fff;
+          background: #000;
           text-align: start;
           transition: all 0.3s var(--transition-2);
 
@@ -52,13 +53,13 @@ export const Table = styled.div`
           }
           th {
             font-size: 1.5rem;
-            color: var(--dark-1);
+            color: #fff;
             font-weight: 600;
             text-align: start;
             text-transform: uppercase;
 
             border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-            padding: 2rem 1.8rem;
+            padding: 2.5rem 1.8rem;
               font-family: "Barlow", sans-serif;
 
          

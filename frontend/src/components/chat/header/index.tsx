@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink, Link } from "react-router-dom";
-import { GoThreeBars } from "react-icons/go";
+// import { GoThreeBars } from "react-icons/go";
 import { BiBell, BiHeart, BiMessage, BiSearch } from "react-icons/bi";
 import { AiOutlineMail } from "react-icons/ai";
-import Profile from "../../common/Profile";
+// import Profile from "../../common/Profile";
 const data = [
   { id: 1, title: "Fiverr Business", path: "/business" },
   { id: 2, title: "Explore", path: "/explore" },
@@ -73,7 +73,7 @@ export default function Header() {
               E
             </div>
             <div className="notification"></div>
-            <Profile profile={profile} />
+            {/* <Profile profile={profile} /> */}
           </div>
         </div>
       );
@@ -147,9 +147,9 @@ export default function Header() {
         }
       >
         <div className="headerTopWrapperContainer flex item-center w-90 auto">
-          <div className="icons">
+          {/* <div className="icons">
             <GoThreeBars />
-          </div>
+          </div> */}
           <HeaderTopLeft />
           <HeaderTopCenter />
           <HeaderTopRight />

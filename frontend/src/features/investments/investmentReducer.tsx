@@ -61,7 +61,7 @@ export const CreateInvestments = createAsyncThunk<{
         },
       };
       const { data } = await axios.post(tweeturl, tweetData, config);
-      console.log(data.user)
+      // console.log(data.user)
       localStorage.setItem("User", JSON.stringify(data.user));
       return data.investment
 

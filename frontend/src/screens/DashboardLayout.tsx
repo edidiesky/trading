@@ -13,7 +13,7 @@ const LayoutWrapper = styled.div`
   min-height: 100vh;
   width: 100%;
   display: flex;
-  background-color: #F9F6FF;
+  background-color: #EEEDF1;
   h2 {
     font-size: 3rem;
     span {
