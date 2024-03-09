@@ -5,7 +5,8 @@ import InboxLeft from "./Left";
 
 export default function InboxIndex() {
   return (
-    <InboxIndexWrapper>
+    <InboxIndexWrapper className="bg-[#fff]">
+
       <InboxLeft />
       <ConversationIndex />
     </InboxIndexWrapper>
@@ -14,8 +15,8 @@ export default function InboxIndex() {
 
 const InboxIndexWrapper = styled.div`
   width: 100%;
-  height: 90vh;
-  overflow: auto;
+  border: 1px solid rgba(0,0,0,.2);
+  height:65vh;
   display: flex;
   align-items: flex-start;
   @media (max-width: 980px) {

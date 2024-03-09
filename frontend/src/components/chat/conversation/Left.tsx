@@ -12,6 +12,34 @@ const converstionData = [
           "https://a0.muscache.com/im/pictures/user/9f63574d-3b11-44c5-937b-5a2eeef401db.jpg?im_w=240",
         text: "Hi Dear",
       },
+      {
+        image:
+          "https://a0.muscache.com/im/pictures/user/9f63574d-3b11-44c5-937b-5a2eeef401db.jpg?im_w=240",
+        text: "Hi Dear",
+      },
+    ],
+    recieverMessage: [
+      {
+        image:
+          "https://fiverr-res.cloudinary.com/image/upload/t_profile_original,q_auto,f_auto/v1/attachments/profile/photo/56a09771086f0077fcfe38f13d80ff28-1639316525935/140c8b5f-0558-4460-8c47-c2ba3af3b736.jpg",
+        text: "I am fine",
+      },
+      // {
+      //   image:
+      //     "https://fiverr-res.cloudinary.com/image/upload/t_profile_original,q_auto,f_auto/v1/attachments/profile/photo/56a09771086f0077fcfe38f13d80ff28-1639316525935/140c8b5f-0558-4460-8c47-c2ba3af3b736.jpg",
+      //   text: "How was the wekend",
+      // },
+    ],
+  },
+
+  {
+    id: 1,
+    senderMessage: [
+      {
+        image:
+          "https://a0.muscache.com/im/pictures/user/9f63574d-3b11-44c5-937b-5a2eeef401db.jpg?im_w=240",
+        text: "Hi Dear",
+      },
     ],
     recieverMessage: [
       {
@@ -31,9 +59,12 @@ const converstionData = [
 export default function Left({ onsidebar, setOnSidebar }: { onsidebar: boolean, setOnSidebar: (value: any) => void }) {
   const LeftBottom = () => {
     return (
-      <LeftBottomWrapper className="w-100 flex item-center justify-center">
-        <div className="flex w-90 auto item-center justify-center gap-1">
-          <textarea className="area flex item-center fs-16" placeholder="Type a message"></textarea>
+      <LeftBottomWrapper className="w-100 sticky bottom-0 left-0 flex item-center justify-center">
+        <div className="flex w-100 item-center justify-center gap-1">
+          <input className="input w-100 flex item-center fs-16 family1" placeholder="Type a message"
+
+          />
+
 
         </div>
       </LeftBottomWrapper>
@@ -47,76 +78,77 @@ export default function Left({ onsidebar, setOnSidebar }: { onsidebar: boolean, 
           {converstionData.map((x) => {
             return (
               <div className="flex ">
-                <div className="chatCard flex w-100 item-start column gap-1">
-                  {x.senderMessage.map((x) => {
-                    return (
-                      <div className="SenderChat flex py-2 item-center family1 text-light">
-                        <div className="flex w-85 auto gap-1">
-                          <img src={x.image} alt="" className="avatar" />
-                          <div className="flex column" style={{ gap: "6px" }}>
-                            <div
-                              className="w-100 flex item-center"
-                              style={{ gap: "2px" }}
-                            >
-                              <h4
-                                className="fs-18"
-                                style={{ fontWeight: "800" }}
+                <div className="chatCard flex w-100 item-start gap-1">
+                  <div className="flex flex-col">
+                    {x.senderMessage.map((x:any, index:any) => {
+                      return (
+                        <div key={index} className="SenderChat flex flex-1 py-2 item-center family1 text-light">
+                          <div className="flex w-85 auto gap-1">
+                            <img src={x.image} alt="" className="avatar" />
+                            <div className="flex column" style={{ gap: "6px" }}>
+                              <div
+                                className="w-100 flex item-center"
+                                style={{ gap: "2px" }}
                               >
-                                Bookipy
-                              </h4>
-                              <h5
-                                className="text-bold fs-10 text-grey"
-                                style={{ fontSize: "11px" }}
-                              >
-                                1:17 AM
-                              </h5>
-                            </div>
-                            <div className="w-100">
-                              <h4 className="fs-16 text-dark text-light">
-                                {x.text}
-                              </h4>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
-                  {x.recieverMessage.map((x) => {
-                    return (
-                      <div className="recieverChat flex py-2 item-center family1 text-light">
-                        <div className="flex w-85 auto gap-1">
-                          <img src={x.image} alt="" className="avatar" />
-                          <div className="flex column" style={{ gap: "6px" }}>
-                            <div
-                              className="w-100 flex item-center"
-                              style={{ gap: "2px" }}
-                            >
-                              <h4
-                                className="fs-18"
-                                style={{ fontWeight: "800" }}
-                              >
-                                Edidiong
-                              </h4>
-                              <h5
-                                className="text-bold fs-10 text-grey"
-                                style={{ fontSize: "11px" }}
-                              >
-                                1:17 AM
-                              </h5>
-                            </div>
-                            <div className="w-100">
-                              <h4 style={{ fontSize: "16px", lineHeight: "1.4" }} className=" text-dark text-light">
-                                Thank you for your message. How can we help you?
-                                Please don't hesitate to contact us again should
-                                you have any further requests or questions. Kind
-                                regards, Fatlind - Bookiply Customer Happiness
-                              </h4>
+                                <h4
+                                  className="fs-16 font-bold"
+
+                                >
+                                  Bookipy
+                                </h4>
+                                <h5
+                                  className="text-bold fs-10 text-grey"
+                                  style={{ fontSize: "11px" }}
+                                >
+                                  1:17 AM
+                                </h5>
+                              </div>
+                              <div className="w-100">
+                                <h4 className="fs-14 text-dark text-light">
+                                  {x.text}
+                                </h4>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
+                  </div>
+                 <div className="flex flex-col">
+                    {x.recieverMessage.map((x:any, index:any) => {
+                      return (
+                        <div key={index} className="recieverChat flex-1 flex py-2 item-center family1 text-light">
+                          <div className="flex w-85 auto gap-1">
+                            <img src={x.image} alt="" className="avatar" />
+                            <div className="flex column" style={{ gap: "6px" }}>
+                              <div
+                                className="w-100 flex item-center"
+                                style={{ gap: "2px" }}
+                              >
+                                <h4
+                                  className="fs-16 font-bold"
+
+                                >
+                                  Edidiong
+                                </h4>
+                                <h5
+                                  className="text-bold fs-10 text-grey"
+                                  style={{ fontSize: "11px" }}
+                                >
+                                  1:17 AM
+                                </h5>
+                              </div>
+                              <div className="w-100">
+                                <h4 style={{ fontSize: "14px", lineHeight: "1.4" }} className=" text-dark text-light">
+                                  {x.text}
+                                </h4>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                 </div>
                 </div>
               </div>
             );
@@ -136,7 +168,7 @@ export default function Left({ onsidebar, setOnSidebar }: { onsidebar: boolean, 
 
 const LeftTopWrapper = styled.div`
   width: 100%;
-  height: 60%;
+  height: 100%;
   overflow: auto;
   background-color: #fff;
   z-index: 300;
@@ -151,23 +183,31 @@ const LeftTopWrapper = styled.div`
     width: 2.5rem;
     height: 2.5rem;
   }
-  .recieverChat {
+   .revieverWrapper {
     justify-content: flex-end;
     gap: 1.2rem;
     align-self: flex-end;
     position: relative;
   }
+  .recieverChat {
+    background-color: var(--light-grey);
+    border-radius: 30px;
+  }
+  .SenderChat {
+    border-radius: 24px;
+    border-bottom-right-radius: 4px;
+    background-color: var(--primary);
+    color: #fff;
+  }
   .SenderChat,
   .recieverChat {
-    padding: 1rem 0;
-    width: 100%;
-    border-radius: 10px;
-    &:hover {
-      background-color: #f2f2f2;
-    }
+    padding: 1rem 1.5rem;
+    width: fit-content;
+    max-width: 300px;
     @media (max-width: 980px) {
       background-color: #fff;
       padding: 2rem 4rem;
+      max-width: 280px;
     }
   }
   .chatCard {
@@ -178,20 +218,16 @@ const LeftTopWrapper = styled.div`
 `;
 const LeftBottomWrapper = styled.div`
   width: 100%;
-  height: 30%;
   background-color: #fff;
   z-index: 300;
   .area {
-    /* margin-bottom: 4rem; */
     border: 1px solid rgba(0,0,0,.4);
-    border-radius: 10px;
     padding:20px 30px;
     resize: none;
-    /* padding-top: 4px; */
     height: 100%;
     width: 100%;
     font-family: inherit;
-    height: 120px;
+    height: 60px;
   }
   .icon {
     width: 4rem;
@@ -211,5 +247,7 @@ const LeftBottomWrapper = styled.div`
 
 const LeftIndexWrapper = styled.div`
   width: 100%;
+  height: 100%;
+  overflow: hidden;
   position: relative;
 `;

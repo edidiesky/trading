@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { GoFilter } from "react-icons/go";
 import { BiSearch, BiStar } from "react-icons/bi";
-export default function InboxLeft({ toggle }) {
-  const [search, setSearch] = useState(false);
+export default function InboxLeft({ toggle }: { toggle?: boolean }) {
+    const [search, setSearch] = useState(false);
   let image = true;
   const MessageSearch = () => {
     return (
@@ -39,10 +39,10 @@ export default function InboxLeft({ toggle }) {
           </div>
         </div>
       )}
-      <div className="center flex column gap-2">
+      <div className="center flex column">
         <div
-          onClick={toggle}
-          className="w-85 auto py-1 borderB flex item-center justify-space"
+          // onClick={toggle}
+          className="w-100 cursor-pointer auto py-1 borderB flex item-center justify-space"
         >
           {/* image and title */}
           <div className="flex1 flex item-center" style={{ gap: "10px" }}>
@@ -51,20 +51,19 @@ export default function InboxLeft({ toggle }) {
               alt=""
               className="avatar"
             />
-            <h4 className="text-dark fs-16 text-extra-bold">
-              Bookiply
+            <h4 className="text-dark family1 fs-16 text-extra-bold">
+              
               <span
-                className="block text-dark"
+                className="block family1  text-dark"
                 style={{
                   margin: "5px auto",
                   fontSize: "15px",
-                  fontWeight: "300",
                 }}
               >
                 Dear Edidiong, Thank you for your message. How can we help you?
               </span>
-              <span className="fs-12 text-extra-bold text-grey">
-                Inquiry. Dec 8 - 13
+              <span className="fs-14 family1 text-bold text-grey">
+                <span>Nakumera Honas</span> <span className="text-light fs-12"> Inquiry. Dec 8 - 13</span>
               </span>
             </h4>
           </div>
@@ -76,8 +75,9 @@ export default function InboxLeft({ toggle }) {
 const InboxLeftWrapper = styled.div`
   /* width: 500px; */
   flex: 0 0 400px;
-  min-height: 100%;
+ height: 100%;
   position: sticky;
+  overflow: auto;
   top: 0;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
   .avatar {
@@ -89,10 +89,13 @@ const InboxLeftWrapper = styled.div`
     display: none;
   }
   .borderB {
-    border-radius: 10px;
+    /* border-radius: 10px; */
     /* margin: 10px auto; */
     padding: 1.2rem 2rem;
-    background-color: #f7f7f7;
+    &:hover {
+  background-color: #f7f7f7;
+    }
+  
   }
   .top {
     min-height: 4.7rem;

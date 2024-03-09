@@ -39,6 +39,7 @@ import LazyLoader from "./components/loaders/Lazy";
 import AdminProtectRoute from "./utils/AdminProtectRoute";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ChatIndex from "./components/chat/Chat";
 export default function App() {
   const [height, setHeight] = useState(0);
   useEffect(() => {
@@ -206,6 +207,12 @@ export default function App() {
           <Route path={'TransactionList'} element={
             <ProtectRoute>
               <TransactionList />
+            </ProtectRoute>
+          } />
+
+          <Route path={'chats'} element={
+            <ProtectRoute>
+              <ChatIndex />
             </ProtectRoute>
           } />
           <Route path={'profile'} element={

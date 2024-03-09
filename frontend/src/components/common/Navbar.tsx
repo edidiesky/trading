@@ -58,24 +58,46 @@ const Navbar = () => {
         <Navbartyles className="w-100 flex column gap-2">
             <div className="hero_header w-90 auto flex item-center justify-space">
                 <Link to={'/'} className="fs-18 font-bold uppercase text-dark">
-                    OptiTrade Dynamics
+                    Terratextrading
                 </Link>
                 <div className="flex items-center gap-2">
                     {
-                        userInfo ? <div className="flex item-center profile_wrapper relative gap-4">
-                            <div className="profile_avatar flex item-center justify-center fs-16 text-font-medium text-dark">{userInfo?.username && userInfo?.username[0]}</div>
-                            <div className="profile_dropdown absolute">
-                                <div className="w-100 flex column gap-2">
-                                    <div className="flex profile_dropdown_bottom column w-100">
-                                        <Link to={'/account/dashboard'} className="font-medium fs-14 family1 w-100 profile_list text-dark block">Dashboard</Link>
-                                        <Link to={'/account/dashboard/profile'} className="font-medium fs-14 family1 w-100 profile_list text-dark block">Profile</Link>
-                                        <span onClick={handleLogOut} className="font-medium fs-14 family1 w-100 profile_list text-dark block">Log Out</span>
+                        userInfo ? 
+                        <div className="w-100 flex items-center gap-4">
+                              <div className="header_list item-center gap-3 lg:gap-20 justify-end">
+                                <Link to={'/'} className="fs-14 family1 font-medium uppercase text-dark">
+                                    Home
+                                </Link>
+                                <Link to={'/market'} className="fs-14 family1 font-medium uppercase text-dark">
+                                    Markets
+                                </Link>
+                                <Link to={'/about'} className="fs-14 family1 font-medium uppercase text-dark">
+                                    About Us
+                                </Link>
 
-                                    </div>
-                                </div>
+                                <Link to={'/faq'} className="fs-14 family1 font-medium uppercase text-dark">
+                                    FAQ
+                                </Link>
+                                <Link to={'/contact'} className="fs-14 family1 font-medium uppercase text-dark">
+                                    Contact
+                                </Link>
                             </div>
+                                <div className="flex item-center profile_wrapper relative gap-4">
+                                    <div className="profile_avatar flex item-center justify-center fs-16 text-font-medium text-dark">{userInfo?.username && userInfo?.username[0]}</div>
+                                    <div className="profile_dropdown absolute">
+                                        <div className="w-100 flex column gap-2">
+                                            <div className="flex profile_dropdown_bottom column w-100">
+                                                <Link to={'/account/dashboard'} className="font-medium fs-14 family1 w-100 profile_list text-dark block">Dashboard</Link>
+                                                <Link to={'/account/dashboard/profile'} className="font-medium fs-14 family1 w-100 profile_list text-dark block">Profile</Link>
+                                                <span onClick={handleLogOut} className="font-medium fs-14 family1 w-100 profile_list text-dark block">Log Out</span>
 
-                        </div> : <div className="header_list item-center gap-6 lg:gap-32 justify-end">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div> 
+                        </div>
+                        : <div className="header_list item-center gap-6 lg:gap-32 justify-end">
                             <div className="header_list item-center gap-3 lg:gap-20 justify-end">
                                 <Link to={'/'} className="fs-14 family1 font-medium uppercase text-dark">
                                     Home
