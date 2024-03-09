@@ -83,8 +83,7 @@ const Register: React.FC = () => {
 
                                     {/*  */}
                                 </div>
-                                {/* onSubmit={(e) => handleLoginUser(e)} */}
-                                <form  className="flex w-100 column gap-4">
+                                <form onSubmit={(e) => handleLoginUser(e)} className="flex w-100 column gap-4">
                                     <div className="w-100 flex column gap-2">
 
                                         {/* email */}
