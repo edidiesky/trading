@@ -11,7 +11,7 @@ const Register = lazy(() => import("./Register"));
 import Courses from './dashboard/Dashboard'
 import Messages from './dashboard/ProfitRecord'
 import Overview from './dashboard/Overview'
-import Students from './dashboard/Pakages'
+import Students from './dashboard/Packages'
 import Reviews from './dashboard/Exchanges'
 import History from './dashboard/History'
 import Support from './dashboard/Support'

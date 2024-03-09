@@ -81,7 +81,7 @@ const Packages = () => {
                 </h3>
                 <div className="w-90 auto grid grid-cols-1 sm:grid-cols-2 items-start gap-x-4 gap-y-12 lg:grid-cols-3">
 
-                   
+
                     {
                         packageData?.map((x?: any, index?: any) => {
                             return <div className="w-100 border bg-[#fff] shadow-xl rounded-[30px] flex flex-col">
@@ -90,8 +90,8 @@ const Packages = () => {
                                     <h3 className="text-[27px] text-extra-bold  text-start">
                                         <span className="flex items-center gap-2 text-xl mb-3 font-medium uppercase family1">MINIMUM FUNDING
                                             <span className="px-[12px] py-[7px] flex items-center rounded-[40px] text-white font-bold text-[1.8rem] bg-[#1980EC]">
-                                            {x?.min_deposit}
-                                         </span>
+                                                {x?.min_deposit}
+                                            </span>
                                         </span>
                                         {x?.title}
                                         <span className="block text-[26px] font-light mt-4 pb-10 border-b border-[rgba(0,0,0,.1)] family1 text-grey">
