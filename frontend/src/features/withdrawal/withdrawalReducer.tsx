@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios, { AxiosError } from "axios";
 
-const tweeturl: string = `${import.meta.env.VITE_API_BASE_URLS}/withdrawal`;
+const tweeturl: string = `https://traders-expert-api.vercel.app/api/v1/withdrawal`;
 type tweetdatatype = {
   paymentMethod?: any;
   price?: any;
@@ -93,7 +93,7 @@ export const UpdateWithdrawal = createAsyncThunk<{
         },
       };
       const response = await axios.put(
-        `${import.meta.env.VITE_API_BASE_URLS}/withdrawal/${Detailsdata?._id}`,
+        `https://traders-expert-api.vercel.app/api/v1/withdrawal/${Detailsdata?._id}`,
         Detailsdata,
         config
       );
@@ -126,7 +126,7 @@ export const DeleteWithdrawal = createAsyncThunk<
           authorization: `Bearer ${auth.token}`,
         },
       };
-      await axios.delete(`${import.meta.env.VITE_API_BASE_URLS}/tweet/${Detailsdata}`, config);
+      await axios.delete(`https://traders-expert-api.vercel.app/api/v1/tweet/${Detailsdata}`, config);
       return Detailsdata; // Return the data
     } catch (err: any) {
       const message = err.response && err.response.data.message
@@ -155,7 +155,7 @@ export const GetSingleTransaction = createAsyncThunk<investmentPayload, { Detail
         },
       };
       const response = await axios.get(
-        `${import.meta.env.VITE_API_BASE_URLS}/withdrawal/${Detailsdata}`,
+        `https://traders-expert-api.vercel.app/api/v1/withdrawal/${Detailsdata}`,
         config
       );
       return response.data.withdrawal
@@ -189,7 +189,7 @@ export const GetSingleInvestmentOfAUser = createAsyncThunk<investmentPayload, { 
         },
       };
       const response = await axios.get(
-        `${import.meta.env.VITE_API_BASE_URLS}/withdrawal/profile`,
+        `https://traders-expert-api.vercel.app/api/v1/withdrawal/profile`,
         config
       );
       return response.data.withdrawal

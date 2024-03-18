@@ -135,8 +135,8 @@ const Courses = () => {
     const ForexChart = () => {
         return <TradingChartStyles className="w-100 shadow flex column gap-1">
             <div className="flex column gap-1">
-                <h3 className="fs-30 family1 font-bold text-grey2">
-                    Forex Trading Chart
+                <h3 className="fs-40 family1 font-bold text-grey2">
+                    Why Savvy Traders Choose Us
                 </h3>
             </div>
             <div className="trading_wrapper w-100">
@@ -198,7 +198,7 @@ const WidgetStyles = styled.div`
         grid-template-columns: 1fr;
     }
     .widget_card {
-        padding:3rem 2rem;
+        padding:4.5rem 2rem;
         border-radius: 10px;
         .icon_widget{
             height: 5rem;

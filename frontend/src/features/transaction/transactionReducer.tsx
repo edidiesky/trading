@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios, { AxiosError } from "axios";
 
-const trannsactionUrl: string = `${import.meta.env.VITE_API_BASE_URLS}/transaction`;
+const trannsactionUrl: string = `https://traders-expert-api.vercel.app/api/v1/transaction`;
 type tweetdatatype = {
   paymentMethod?: any;
   amount?: any;
@@ -38,7 +38,7 @@ export const getAllTransactions = createAsyncThunk < tweetdatatype, tweetdatatyp
           authorization: `Bearer ${auth.token}`,
         },
       };
-      const response = await axios.get(`${import.meta.env.VITE_API_BASE_URLS}/transaction/?page=${page}`, config);
+      const response = await axios.get(`https://traders-expert-api.vercel.app/api/v1/transaction/?page=${page}`, config);
       const tweetData = response.data
       // console.log(tweetData)
       return tweetData;
@@ -98,7 +98,7 @@ export const UpdateTransactions = createAsyncThunk<{
         },
       };
       const response = await axios.put(
-        `${import.meta.env.VITE_API_BASE_URLS}/transaction/${Detailsdata?._id}`,
+        `https://traders-expert-api.vercel.app/api/v1/transaction/${Detailsdata?._id}`,
         Detailsdata,
         config
       );
@@ -131,7 +131,7 @@ export const DeleteTransactions = createAsyncThunk<
           authorization: `Bearer ${auth.token}`,
         },
       };
-      await axios.delete(`${import.meta.env.VITE_API_BASE_URLS}/tweet/${Detailsdata}`, config);
+      await axios.delete(`https://traders-expert-api.vercel.app/api/v1/tweet/${Detailsdata}`, config);
       return Detailsdata; // Return the data
     } catch (err: any) {
       const message = err.response && err.response.data.message
@@ -160,7 +160,7 @@ export const GetSingleTransaction = createAsyncThunk<BookMarkATweetPayload, { De
         },
       };
       const response = await axios.get(
-        `${import.meta.env.VITE_API_BASE_URLS}/transaction/${Detailsdata}`,
+        `https://traders-expert-api.vercel.app/api/v1/transaction/${Detailsdata}`,
         config
       );
       return response.data.transaction
@@ -194,7 +194,7 @@ export const GetSingleTransactioOfAUser = createAsyncThunk<BookMarkATweetPayload
         },
       };
       const response = await axios.get(
-        `${import.meta.env.VITE_API_BASE_URLS}/transaction/profile`,
+        `https://traders-expert-api.vercel.app/api/v1/transaction/profile`,
         config
       );
       return response.data.transaction

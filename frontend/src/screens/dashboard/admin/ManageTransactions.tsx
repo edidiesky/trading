@@ -134,39 +134,39 @@ const ManageTransactions = () => {
                 <div className="w-100 trading_wrapper_bottom pt-12 flex flex-col gap-12">
                     <div className="w-100 grid grid-cols-1 sm:grid-cols-2 gap-4 ">
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1 font-medium">Investment Price ($)</h5>
+                            <h5 className="text-2xl family1 font-medium">Investment Price ($)</h5>
                             <input
                                 value={price}
                                 name='price'
                                 type="number"
                                 placeholder='$1000'
                                 onChange={(e) => setPrice(e.target.value)}
-                                className="input w-100 text-xl text-dark" />
+                                className="input w-100 text-2xl text-dark" />
                         </div>
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1 font-medium">Investment Plan</h5>
-                            <input type="text" name='plan' onChange={(e) => setPlan(e.target.value)} value={plan} placeholder='$1000' className="input w-100 text-xl text-dark" />
+                            <h5 className="text-2xl family1 font-medium">Investment Plan</h5>
+                            <input type="text" name='plan' onChange={(e) => setPlan(e.target.value)} value={plan} placeholder='$1000' className="input w-100 text-2xl text-dark" />
                         </div>
                     </div>
 
                     <div className="w-100 grid grid-cols-1 sm:grid-cols-2 gap-4 ">
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1 font-medium">Investment Tier</h5>
+                            <h5 className="text-2xl family1 font-medium">Investment Tier</h5>
                             <input
                                 value={tier}
                                 name='tier'
                                 type="text"
                                 placeholder='$1000'
-                                className="input w-100 text-xl text-dark" />
+                                className="input w-100 text-2xl text-dark" />
                         </div>
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1 font-medium">Payment Method</h5>
-                            <input type="text" value={paymentmethod} placeholder='$1000' className="input w-100 text-xl text-dark" />
+                            <h5 className="text-2xl family1 font-medium">Payment Method</h5>
+                            <input type="text" value={paymentmethod} placeholder='$1000' className="input w-100 text-2xl text-dark" />
                         </div>
                     </div>
                     <div className="w-100 grid grid-cols-1 sm:grid-cols-3 gap-4 ">
                         <div className="flex flex-col gap-1">
-                            <h5 className="text-xl family1 font-medium">Transaction Status</h5>
+                            <h5 className="text-2xl family1 font-medium">Transaction Status</h5>
                             {/* {
                                 paymentStatus.map((x?: any, index?: any) => {
                                     return <option key={index} value={x}>{x}</option>
@@ -180,21 +180,21 @@ const ManageTransactions = () => {
                                         {
                                             paydropdown ? <BiChevronDown fontSize={'17px'} /> : <BiChevronUp fontSize={'17px'} />
                                         }
-                                        </span>
+                                    </span>
                                 </div>
                                 {
-                                    paydropdown && <div className="w-100 bg-[#fff] z-10 rounded-xl border border-[rgba(0,0,0,.09)] flex absolute right-0 top-[100%]">
+                                    paydropdown && <div className="w-100 bg-[#fff] z-10 rounded-2xl border border-[rgba(0,0,0,.09)] flex absolute right-0 top-[100%]">
                                         <div onClick={() => setPayDropdown(false)} className="w-100 flex flex-col">
-                                            <span onClick={()=> setIsPaid(false)} className="fs-13 px-2 font-medium w-100 hover:bg-[rgba(0,0,0,.1)] cursor-pointer border-b py-1 border-[rgba(0,0,0,.1)]">
+                                            <span onClick={() => setIsPaid(false)} className="fs-13 px-2 font-medium w-100 hover:bg-[rgba(0,0,0,.1)] cursor-pointer border-b py-1 border-[rgba(0,0,0,.1)]">
                                                 Customer has not paid
                                             </span>
-                                            <span onClick={()=> setIsPaid(true)} className="fs-13 px-2 font-medium w-100 hover:bg-[rgba(0,0,0,.1)] cursor-pointer border-b py-1 border-[rgba(0,0,0,.1)]">
+                                            <span onClick={() => setIsPaid(true)} className="fs-13 px-2 font-medium w-100 hover:bg-[rgba(0,0,0,.1)] cursor-pointer border-b py-1 border-[rgba(0,0,0,.1)]">
                                                 Customer has paid
                                             </span>
                                         </div>
                                     </div>
                                 }
-                               
+
                             </div>
                         </div>
                     </div>
@@ -213,7 +213,7 @@ const ManageTransactions = () => {
 
                                     </div>
                                     : <div className="w-full pt-8 flex flex-col gap-2">
-                                        <h5 className="text-xl family1 font-medium">Payment Proof</h5>
+                                        <h5 className="text-2xl family1 font-medium">Payment Proof</h5>
                                         <div onClick={() => setImageActive(true)} className="proof_image_wrapper min-h-[40rem] rounded-sm flex items-center justify-center py-8 px-4 bg-[#F8F9FB]">
                                             <img src={proofimage} alt="" className="w-[100%] md:w-[60%]" />
                                         </div>
@@ -238,7 +238,7 @@ const HistorytStyles = styled.div`
   }
   .trading_wrapper {
     width:95%;
-    box-shadow: var(--shadow);
+      border-radius: 20px;
         background-color: #fff;
 
     .trading_wrapper_top {
